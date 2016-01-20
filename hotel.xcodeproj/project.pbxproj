@@ -7,14 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A88EB3C21C50088D008DC5CF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C11C50088D008DC5CF /* SearchViewController.m */; };
+		A88EB3C91C500E97008DC5CF /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* ResultsTableViewController.m */; };
+		A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */; };
+		A88EB3DA1C5015AA008DC5CF /* ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* ResultCell.m */; };
+		A88EB3DB1C5015AA008DC5CF /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88EB3D91C5015AA008DC5CF /* ResultCell.xib */; };
+		A88EB3E01C5015F0008DC5CF /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3DF1C5015F0008DC5CF /* Hotel.m */; };
+		A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3E41C501918008DC5CF /* ParsingData.m */; };
+		A88EB3F71C50374B008DC5CF /* ConnectionUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F61C50374B008DC5CF /* ConnectionUser.m */; };
+		A88EB3FA1C503754008DC5CF /* InscriptionUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F91C503754008DC5CF /* InscriptionUser.m */; };
+		A88EB3FD1C503763008DC5CF /* GetHotelsListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3FC1C503763008DC5CF /* GetHotelsListAction.m */; };
+		A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */; };
+		A88EB4031C503958008DC5CF /* UserProfil.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4021C503958008DC5CF /* UserProfil.m */; };
+		A88EB4141C503F60008DC5CF /* Customization_Tuto.txt in Resources */ = {isa = PBXBuildFile; fileRef = A88EB40B1C503F60008DC5CF /* Customization_Tuto.txt */; };
+		A88EB4151C503F60008DC5CF /* libScanpay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4111C503F60008DC5CF /* libScanpay.a */; };
+		A88EB4161C503F60008DC5CF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4121C503F60008DC5CF /* opencv2.framework */; };
+		A88EB4171C503F60008DC5CF /* V3.3.6 in Resources */ = {isa = PBXBuildFile; fileRef = A88EB4131C503F60008DC5CF /* V3.3.6 */; };
+		A88EB4191C504008008DC5CF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4181C504008008DC5CF /* CoreVideo.framework */; };
+		A88EB41B1C50400F008DC5CF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB41A1C50400F008DC5CF /* CoreMedia.framework */; };
+		A88EB41D1C504015008DC5CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB41C1C504015008DC5CF /* AVFoundation.framework */; };
+		A88EB41F1C50401C008DC5CF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB41E1C50401C008DC5CF /* QuartzCore.framework */; };
+		A88EB4211C504020008DC5CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4201C504020008DC5CF /* AudioToolbox.framework */; };
+		A88EB4231C504026008DC5CF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4221C504026008DC5CF /* AssetsLibrary.framework */; };
+		A88EB4251C50402D008DC5CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4241C50402D008DC5CF /* Security.framework */; };
+		A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4271C504056008DC5CF /* MangopayViewController.m */; };
+		A88EB42A1C504130008DC5CF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4291C504130008DC5CF /* libc++.dylib */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
-		A8A63DBF1C5005C30026E456 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBE1C5005C30026E456 /* ViewController.m */; };
+		A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBE1C5005C30026E456 /* HomePageViewController.m */; };
 		A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC01C5005C30026E456 /* Main.storyboard */; };
 		A8A63DC41C5005C30026E456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC31C5005C30026E456 /* Assets.xcassets */; };
 		A8A63DC71C5005C30026E456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC51C5005C30026E456 /* LaunchScreen.storyboard */; };
 		A8A63DD21C5005C30026E456 /* hotelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DD11C5005C30026E456 /* hotelTests.m */; };
 		A8A63DDD1C5005C30026E456 /* hotelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DDC1C5005C30026E456 /* hotelUITests.m */; };
+		A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CF58C51C5007A2002D227A /* InscriptionViewController.m */; };
+		FC3E8C90B71CCA6AAEE87C2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C91B09CC94CDA73374504379 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +62,56 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		381A166E8C10B1F505A87604 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A88EB3C01C50088D008DC5CF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		A88EB3C11C50088D008DC5CF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		A88EB3C71C500E97008DC5CF /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
+		A88EB3C81C500E97008DC5CF /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
+		A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
+		A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilViewController.m; sourceTree = "<group>"; };
+		A88EB3CD1C50108E008DC5CF /* hotel-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hotel-Prefix.pch"; sourceTree = "<group>"; };
+		A88EB3D71C5015AA008DC5CF /* ResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultCell.h; sourceTree = "<group>"; };
+		A88EB3D81C5015AA008DC5CF /* ResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCell.m; sourceTree = "<group>"; };
+		A88EB3D91C5015AA008DC5CF /* ResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
+		A88EB3DE1C5015F0008DC5CF /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
+		A88EB3DF1C5015F0008DC5CF /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+		A88EB3E31C501918008DC5CF /* ParsingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsingData.h; sourceTree = "<group>"; };
+		A88EB3E41C501918008DC5CF /* ParsingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParsingData.m; sourceTree = "<group>"; };
+		A88EB3F51C50374B008DC5CF /* ConnectionUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionUser.h; sourceTree = "<group>"; };
+		A88EB3F61C50374B008DC5CF /* ConnectionUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionUser.m; sourceTree = "<group>"; };
+		A88EB3F81C503754008DC5CF /* InscriptionUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InscriptionUser.h; sourceTree = "<group>"; };
+		A88EB3F91C503754008DC5CF /* InscriptionUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InscriptionUser.m; sourceTree = "<group>"; };
+		A88EB3FB1C503763008DC5CF /* GetHotelsListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHotelsListAction.h; sourceTree = "<group>"; };
+		A88EB3FC1C503763008DC5CF /* GetHotelsListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetHotelsListAction.m; sourceTree = "<group>"; };
+		A88EB3FE1C50377A008DC5CF /* NetworkManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManagement.h; sourceTree = "<group>"; };
+		A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManagement.m; sourceTree = "<group>"; };
+		A88EB4011C503958008DC5CF /* UserProfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfil.h; sourceTree = "<group>"; };
+		A88EB4021C503958008DC5CF /* UserProfil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfil.m; sourceTree = "<group>"; };
+		A88EB40B1C503F60008DC5CF /* Customization_Tuto.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Customization_Tuto.txt; sourceTree = "<group>"; };
+		A88EB40D1C503F60008DC5CF /* ScanPayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanPayDelegate.h; sourceTree = "<group>"; };
+		A88EB40E1C503F60008DC5CF /* ScanPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanPayViewController.h; sourceTree = "<group>"; };
+		A88EB40F1C503F60008DC5CF /* ScanPayViewController_Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanPayViewController_Extras.h; sourceTree = "<group>"; };
+		A88EB4101C503F60008DC5CF /* SPCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCreditCard.h; sourceTree = "<group>"; };
+		A88EB4111C503F60008DC5CF /* libScanpay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libScanpay.a; sourceTree = "<group>"; };
+		A88EB4121C503F60008DC5CF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		A88EB4131C503F60008DC5CF /* V3.3.6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = V3.3.6; sourceTree = "<group>"; };
+		A88EB4181C504008008DC5CF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A88EB41A1C50400F008DC5CF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A88EB41C1C504015008DC5CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A88EB41E1C50401C008DC5CF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A88EB4201C504020008DC5CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A88EB4221C504026008DC5CF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		A88EB4241C50402D008DC5CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A88EB4261C504056008DC5CF /* MangopayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangopayViewController.h; sourceTree = "<group>"; };
+		A88EB4271C504056008DC5CF /* MangopayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangopayViewController.m; sourceTree = "<group>"; };
+		A88EB4291C504130008DC5CF /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libc++.dylib"; sourceTree = "<group>"; };
 		A8A63DB41C5005C30026E456 /* hotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A63DB81C5005C30026E456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8A63DBA1C5005C30026E456 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A8A63DBB1C5005C30026E456 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A8A63DBD1C5005C30026E456 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A8A63DBE1C5005C30026E456 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A8A63DBD1C5005C30026E456 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		A8A63DBE1C5005C30026E456 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		A8A63DC11C5005C30026E456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8A63DC31C5005C30026E456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8A63DC61C5005C30026E456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +122,9 @@
 		A8A63DD81C5005C30026E456 /* hotelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A63DDC1C5005C30026E456 /* hotelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hotelUITests.m; sourceTree = "<group>"; };
 		A8A63DDE1C5005C30026E456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8CF58C41C5007A2002D227A /* InscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InscriptionViewController.h; sourceTree = "<group>"; };
+		A8CF58C51C5007A2002D227A /* InscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InscriptionViewController.m; sourceTree = "<group>"; };
+		C91B09CC94CDA73374504379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +132,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88EB4251C50402D008DC5CF /* Security.framework in Frameworks */,
+				A88EB4231C504026008DC5CF /* AssetsLibrary.framework in Frameworks */,
+				A88EB4211C504020008DC5CF /* AudioToolbox.framework in Frameworks */,
+				A88EB41F1C50401C008DC5CF /* QuartzCore.framework in Frameworks */,
+				A88EB41D1C504015008DC5CF /* AVFoundation.framework in Frameworks */,
+				A88EB41B1C50400F008DC5CF /* CoreMedia.framework in Frameworks */,
+				A88EB4191C504008008DC5CF /* CoreVideo.framework in Frameworks */,
+				A88EB42A1C504130008DC5CF /* libc++.dylib in Frameworks */,
+				A88EB4161C503F60008DC5CF /* opencv2.framework in Frameworks */,
+				FC3E8C90B71CCA6AAEE87C2C /* libPods.a in Frameworks */,
+				A88EB4151C503F60008DC5CF /* libScanpay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +163,263 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E132D418700495F3A2D0CAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB4241C50402D008DC5CF /* Security.framework */,
+				A88EB4221C504026008DC5CF /* AssetsLibrary.framework */,
+				A88EB4201C504020008DC5CF /* AudioToolbox.framework */,
+				A88EB41E1C50401C008DC5CF /* QuartzCore.framework */,
+				A88EB41C1C504015008DC5CF /* AVFoundation.framework */,
+				A88EB41A1C50400F008DC5CF /* CoreMedia.framework */,
+				A88EB4181C504008008DC5CF /* CoreVideo.framework */,
+				C91B09CC94CDA73374504379 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DF899BBA4BCF6B7E731117F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */,
+				381A166E8C10B1F505A87604 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A88EB3BF1C500876008DC5CF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3C01C50088D008DC5CF /* SearchViewController.h */,
+				A88EB3C11C50088D008DC5CF /* SearchViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		A88EB3C31C5009FF008DC5CF /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				A8A63DBD1C5005C30026E456 /* HomePageViewController.h */,
+				A8A63DBE1C5005C30026E456 /* HomePageViewController.m */,
+			);
+			name = HomePage;
+			sourceTree = "<group>";
+		};
+		A88EB3C41C500E2B008DC5CF /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3C71C500E97008DC5CF /* ResultsTableViewController.h */,
+				A88EB3C81C500E97008DC5CF /* ResultsTableViewController.m */,
+				A88EB3D11C501490008DC5CF /* Cell */,
+			);
+			name = Results;
+			sourceTree = "<group>";
+		};
+		A88EB3C51C500E3A008DC5CF /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */,
+				A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */,
+			);
+			name = Profil;
+			sourceTree = "<group>";
+		};
+		A88EB3C61C500E4A008DC5CF /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB4261C504056008DC5CF /* MangopayViewController.h */,
+				A88EB4271C504056008DC5CF /* MangopayViewController.m */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+		A88EB3CE1C5010F8008DC5CF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A8A63DC51C5005C30026E456 /* LaunchScreen.storyboard */,
+				A88EB3CD1C50108E008DC5CF /* hotel-Prefix.pch */,
+				A8A63DC81C5005C30026E456 /* Info.plist */,
+				A8A63DB71C5005C30026E456 /* Supporting Files */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		A88EB3CF1C501102008DC5CF /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				A8A63DC01C5005C30026E456 /* Main.storyboard */,
+				A8A63DC31C5005C30026E456 /* Assets.xcassets */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		A88EB3D11C501490008DC5CF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3D71C5015AA008DC5CF /* ResultCell.h */,
+				A88EB3D81C5015AA008DC5CF /* ResultCell.m */,
+				A88EB3D91C5015AA008DC5CF /* ResultCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		A88EB3DC1C5015D1008DC5CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3DD1C5015DB008DC5CF /* Hotel */,
+				A88EB4041C50395B008DC5CF /* UserProfil */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A88EB3DD1C5015DB008DC5CF /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3DE1C5015F0008DC5CF /* Hotel.h */,
+				A88EB3DF1C5015F0008DC5CF /* Hotel.m */,
+			);
+			name = Hotel;
+			sourceTree = "<group>";
+		};
+		A88EB3E21C5018CB008DC5CF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3E71C5034B3008DC5CF /* Data */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		A88EB3E71C5034B3008DC5CF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3EB1C503699008DC5CF /* Action */,
+				A88EB3F41C503709008DC5CF /* Management */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		A88EB3EB1C503699008DC5CF /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3FE1C50377A008DC5CF /* NetworkManagement.h */,
+				A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */,
+				A88EB3F01C5036E5008DC5CF /* Connection */,
+				A88EB3F11C5036EB008DC5CF /* Inscription */,
+				A88EB3F21C5036EF008DC5CF /* GetHotelsList */,
+			);
+			name = Action;
+			sourceTree = "<group>";
+		};
+		A88EB3F01C5036E5008DC5CF /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3F51C50374B008DC5CF /* ConnectionUser.h */,
+				A88EB3F61C50374B008DC5CF /* ConnectionUser.m */,
+			);
+			name = Connection;
+			sourceTree = "<group>";
+		};
+		A88EB3F11C5036EB008DC5CF /* Inscription */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3F81C503754008DC5CF /* InscriptionUser.h */,
+				A88EB3F91C503754008DC5CF /* InscriptionUser.m */,
+			);
+			name = Inscription;
+			sourceTree = "<group>";
+		};
+		A88EB3F21C5036EF008DC5CF /* GetHotelsList */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3FB1C503763008DC5CF /* GetHotelsListAction.h */,
+				A88EB3FC1C503763008DC5CF /* GetHotelsListAction.m */,
+			);
+			name = GetHotelsList;
+			sourceTree = "<group>";
+		};
+		A88EB3F31C503701008DC5CF /* ParseData */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3E31C501918008DC5CF /* ParsingData.h */,
+				A88EB3E41C501918008DC5CF /* ParsingData.m */,
+			);
+			name = ParseData;
+			sourceTree = "<group>";
+		};
+		A88EB3F41C503709008DC5CF /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3F31C503701008DC5CF /* ParseData */,
+			);
+			name = Management;
+			sourceTree = "<group>";
+		};
+		A88EB4041C50395B008DC5CF /* UserProfil */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB4011C503958008DC5CF /* UserProfil.h */,
+				A88EB4021C503958008DC5CF /* UserProfil.m */,
+			);
+			name = UserProfil;
+			sourceTree = "<group>";
+		};
+		A88EB4051C50396E008DC5CF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB3C31C5009FF008DC5CF /* HomePage */,
+				A8CF58C31C50076D002D227A /* Inscription */,
+				A88EB3C61C500E4A008DC5CF /* Payment */,
+				A88EB3C51C500E3A008DC5CF /* Profil */,
+				A88EB3C41C500E2B008DC5CF /* Results */,
+				A88EB3BF1C500876008DC5CF /* Search */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A88EB4061C503981008DC5CF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A8A63DBA1C5005C30026E456 /* AppDelegate.h */,
+				A8A63DBB1C5005C30026E456 /* AppDelegate.m */,
+				A88EB3E21C5018CB008DC5CF /* Utils */,
+				A88EB3DC1C5015D1008DC5CF /* Models */,
+				A88EB4051C50396E008DC5CF /* ViewControllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		A88EB4091C503EBF008DC5CF /* External */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB4291C504130008DC5CF /* libc++.dylib */,
+				A88EB40A1C503F60008DC5CF /* scanpay */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		A88EB40A1C503F60008DC5CF /* scanpay */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB40B1C503F60008DC5CF /* Customization_Tuto.txt */,
+				A88EB40C1C503F60008DC5CF /* include */,
+				A88EB4111C503F60008DC5CF /* libScanpay.a */,
+				A88EB4121C503F60008DC5CF /* opencv2.framework */,
+				A88EB4131C503F60008DC5CF /* V3.3.6 */,
+			);
+			path = scanpay;
+			sourceTree = "<group>";
+		};
+		A88EB40C1C503F60008DC5CF /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A88EB40D1C503F60008DC5CF /* ScanPayDelegate.h */,
+				A88EB40E1C503F60008DC5CF /* ScanPayViewController.h */,
+				A88EB40F1C503F60008DC5CF /* ScanPayViewController_Extras.h */,
+				A88EB4101C503F60008DC5CF /* SPCreditCard.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		A8A63DAB1C5005C30026E456 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +427,8 @@
 				A8A63DD01C5005C30026E456 /* hotelTests */,
 				A8A63DDB1C5005C30026E456 /* hotelUITests */,
 				A8A63DB51C5005C30026E456 /* Products */,
+				6DF899BBA4BCF6B7E731117F /* Pods */,
+				0E132D418700495F3A2D0CAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +445,10 @@
 		A8A63DB61C5005C30026E456 /* hotel */ = {
 			isa = PBXGroup;
 			children = (
-				A8A63DBA1C5005C30026E456 /* AppDelegate.h */,
-				A8A63DBB1C5005C30026E456 /* AppDelegate.m */,
-				A8A63DBD1C5005C30026E456 /* ViewController.h */,
-				A8A63DBE1C5005C30026E456 /* ViewController.m */,
-				A8A63DC01C5005C30026E456 /* Main.storyboard */,
-				A8A63DC31C5005C30026E456 /* Assets.xcassets */,
-				A8A63DC51C5005C30026E456 /* LaunchScreen.storyboard */,
-				A8A63DC81C5005C30026E456 /* Info.plist */,
-				A8A63DB71C5005C30026E456 /* Supporting Files */,
+				A88EB4091C503EBF008DC5CF /* External */,
+				A88EB4061C503981008DC5CF /* Classes */,
+				A88EB3CE1C5010F8008DC5CF /* Configuration */,
+				A88EB3CF1C501102008DC5CF /* Ressources */,
 			);
 			path = hotel;
 			sourceTree = "<group>";
@@ -140,6 +479,15 @@
 			path = hotelUITests;
 			sourceTree = "<group>";
 		};
+		A8CF58C31C50076D002D227A /* Inscription */ = {
+			isa = PBXGroup;
+			children = (
+				A8CF58C41C5007A2002D227A /* InscriptionViewController.h */,
+				A8CF58C51C5007A2002D227A /* InscriptionViewController.m */,
+			);
+			name = Inscription;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +495,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8A63DE11C5005C30026E456 /* Build configuration list for PBXNativeTarget "hotel" */;
 			buildPhases = (
+				4FCBBD66833208A20D9AB8C4 /* Check Pods Manifest.lock */,
 				A8A63DB01C5005C30026E456 /* Sources */,
 				A8A63DB11C5005C30026E456 /* Frameworks */,
 				A8A63DB21C5005C30026E456 /* Resources */,
+				E5375B9655E32C61E2BC532D /* Embed Pods Frameworks */,
+				BC7663D59676E052D56EAF6F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,7 +596,10 @@
 			files = (
 				A8A63DC71C5005C30026E456 /* LaunchScreen.storyboard in Resources */,
 				A8A63DC41C5005C30026E456 /* Assets.xcassets in Resources */,
+				A88EB3DB1C5015AA008DC5CF /* ResultCell.xib in Resources */,
 				A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */,
+				A88EB4171C503F60008DC5CF /* V3.3.6 in Resources */,
+				A88EB4141C503F60008DC5CF /* Customization_Tuto.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,14 +619,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4FCBBD66833208A20D9AB8C4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC7663D59676E052D56EAF6F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5375B9655E32C61E2BC532D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A8A63DB01C5005C30026E456 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8A63DBF1C5005C30026E456 /* ViewController.m in Sources */,
+				A88EB3E01C5015F0008DC5CF /* Hotel.m in Sources */,
+				A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */,
+				A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */,
+				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,
+				A88EB3C91C500E97008DC5CF /* ResultsTableViewController.m in Sources */,
+				A88EB3C21C50088D008DC5CF /* SearchViewController.m in Sources */,
+				A88EB3FD1C503763008DC5CF /* GetHotelsListAction.m in Sources */,
+				A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
+				A88EB3DA1C5015AA008DC5CF /* ResultCell.m in Sources */,
+				A88EB3FA1C503754008DC5CF /* InscriptionUser.m in Sources */,
+				A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */,
+				A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */,
+				A88EB3F71C50374B008DC5CF /* ConnectionUser.m in Sources */,
+				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,22 +826,46 @@
 		};
 		A8A63DE21C5005C30026E456 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hotel/scanpay",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "hotel/hotel-Prefix.pch";
 				INFOPLIST_FILE = hotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paulLavoine.hotel.hotel;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hotel/scanpay",
+					"$(PROJECT_DIR)/hotel",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulLavoine.hotel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		A8A63DE31C5005C30026E456 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 381A166E8C10B1F505A87604 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hotel/scanpay",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "hotel/hotel-Prefix.pch";
 				INFOPLIST_FILE = hotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.paulLavoine.hotel.hotel;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/hotel/scanpay",
+					"$(PROJECT_DIR)/hotel",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.paulLavoine.hotel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -498,6 +937,7 @@
 				A8A63DE31C5005C30026E456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8A63DE41C5005C30026E456 /* Build configuration list for PBXNativeTarget "hotelTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +946,7 @@
 				A8A63DE61C5005C30026E456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8A63DE71C5005C30026E456 /* Build configuration list for PBXNativeTarget "hotelUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +955,7 @@
 				A8A63DE91C5005C30026E456 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

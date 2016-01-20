@@ -1,27 +1,28 @@
 //
-//  ViewController.m
+//  ProfilViewController.m
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ProfilViewController.h"
 
-@interface ViewController ()
+@interface ProfilViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ProfilViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

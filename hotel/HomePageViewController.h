@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomePageViewController.h
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HomePageViewController : UIViewController
 
 
 @end
