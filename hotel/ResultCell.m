@@ -35,7 +35,7 @@
     // Initialization code
 }
 
-- (void)configureWithHotel:(Hotel *)hotel
+- (void)configureWithHotel:(Camping *)hotel
 {
     
 }

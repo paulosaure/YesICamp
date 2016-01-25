@@ -3,28 +3,136 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="zrC-U4-bq7">
             <objects>
-                <navigationController id="w2d-nE-JWf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationControllerID" id="w2d-nE-JWf" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tk0-8d-hrC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IgA-hs-c0e"/>
+                        <segue destination="Fdp-y9-CiJ" kind="relationship" relationship="rootViewController" id="21c-MA-UJn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFj-2H-AVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-587" y="431"/>
+            <point key="canvasLocation" x="-1846" y="395"/>
         </scene>
-        <!--Home Page View Controller-->
+        <!--Scroll Pages View Controller-->
+        <scene sceneID="Lpt-Oc-bjl">
+            <objects>
+                <viewController storyboardIdentifier="ScrollPagesViewControllerID" id="Fdp-y9-CiJ" customClass="ScrollPagesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3u-Zj-akP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jex-1n-QZU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jne-mY-36i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egD-pt-rJY">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZl-BP-LZn" customClass="ScrollPager" customModule="hotel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.97647064920000004" green="0.92941182850000004" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wn1-Ub-Flp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="indicatorSizeMatchesTitle" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorHeight">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.39999999999999991"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.14999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wn1-Ub-Flp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="wn1-Ub-Flp"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29U-jo-T9S" customClass="ScrollPager" customModule="hotel" customModuleProvider="target">
+                                <rect key="frame" x="65" y="68" width="471" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
+                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="indicatorHeight">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.93717447919999997" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="indicatorSizeMatchesTitle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="scrollView" destination="egD-pt-rJY" id="QnQ-wH-5Pm"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WZl-BP-LZn" secondAttribute="trailing" id="4m6-F0-irs"/>
+                            <constraint firstItem="Jex-1n-QZU" firstAttribute="top" secondItem="egD-pt-rJY" secondAttribute="bottom" id="9ud-DL-Ncr"/>
+                            <constraint firstItem="WZl-BP-LZn" firstAttribute="top" secondItem="Jne-mY-36i" secondAttribute="top" id="BZ5-qm-kjP"/>
+                            <constraint firstAttribute="trailing" secondItem="egD-pt-rJY" secondAttribute="trailing" id="Etn-9P-aS1"/>
+                            <constraint firstItem="egD-pt-rJY" firstAttribute="top" secondItem="y3u-Zj-akP" secondAttribute="bottom" id="G2O-Qe-oW6"/>
+                            <constraint firstItem="egD-pt-rJY" firstAttribute="leading" secondItem="Jne-mY-36i" secondAttribute="leading" id="K6m-se-rXW"/>
+                            <constraint firstItem="Jex-1n-QZU" firstAttribute="top" secondItem="WZl-BP-LZn" secondAttribute="bottom" id="euZ-Z4-GEX"/>
+                            <constraint firstItem="WZl-BP-LZn" firstAttribute="leading" secondItem="Jne-mY-36i" secondAttribute="leading" id="mhg-iK-rIb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3IU-1V-jAD"/>
+                    <connections>
+                        <outlet property="scrollPager" destination="29U-jo-T9S" id="e9L-CF-Zv1"/>
+                        <outlet property="secondScrollPager" destination="WZl-BP-LZn" id="1YU-l9-gfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVA-C4-JFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1157" y="395"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomePageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewControllerID" id="BYZ-38-t0r" customClass="HomePageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,6 +180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="YEp-7B-6JA"/>
                     <navigationItem key="navigationItem" id="Y71-QR-de9"/>
                     <connections>
                         <outlet property="passwordTextView" destination="lam-uI-n3G" id="tM0-B6-vOu"/>
@@ -80,9 +189,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="401"/>
+            <point key="canvasLocation" x="245" y="-19"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Item-->
         <scene sceneID="2MU-YU-EtY">
             <objects>
                 <viewController storyboardIdentifier="SearchViewControllerID" id="iBG-59-n7z" customClass="SearchViewController" sceneMemberID="viewController">
@@ -115,6 +224,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="b6u-X9-3TE"/>
                     <connections>
                         <outlet property="searchLabel" destination="UbX-DN-Pqg" id="Fp9-3x-x4X"/>
                         <outlet property="searchTextView" destination="SSS-f9-lxb" id="WSp-Cz-qzv"/>
@@ -123,12 +233,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hS1-NX-d5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="51"/>
+            <point key="canvasLocation" x="229" y="775"/>
         </scene>
         <!--Inscription View Controller-->
         <scene sceneID="f74-3u-A1W">
             <objects>
-                <viewController id="4aC-Re-cjo" customClass="InscriptionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InscriptionViewControllerID" id="4aC-Re-cjo" customClass="InscriptionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AiJ-aw-7BR"/>
                         <viewControllerLayoutGuide type="bottom" id="rPE-TY-ew8"/>
@@ -198,7 +308,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN9-FI-4yy">
                                 <rect key="frame" x="19" y="315" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -219,7 +329,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BX7-ZD-atu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="761"/>
+            <point key="canvasLocation" x="987" y="-19"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xji-t0-6gl">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarControllerID" id="7gz-zE-FMG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="JsZ-XY-QLW"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Gxj-P4-g8h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OmD-QK-fnu"/>
+                        <segue destination="iBG-59-n7z" kind="relationship" relationship="viewControllers" id="ahn-Sf-Rhf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2a-Gs-dE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-472" y="381"/>
+        </scene>
+        <!--Mangopay View Controller-->
+        <scene sceneID="eIR-dW-bQW">
+            <objects>
+                <viewController storyboardIdentifier="MangopayViewControllerID" id="D8P-F2-M1Y" customClass="MangopayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7UK-wt-agv"/>
+                        <viewControllerLayoutGuide type="bottom" id="QmD-tw-eie"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OuS-S9-YAl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7I-wB-LoU">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QmD-tw-eie" firstAttribute="top" secondItem="u7I-wB-LoU" secondAttribute="bottom" id="OUq-be-aiP"/>
+                            <constraint firstItem="u7I-wB-LoU" firstAttribute="leading" secondItem="OuS-S9-YAl" secondAttribute="leadingMargin" id="Q50-w4-37E"/>
+                            <constraint firstItem="u7I-wB-LoU" firstAttribute="top" secondItem="7UK-wt-agv" secondAttribute="bottom" id="VPc-sm-Hph"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u7I-wB-LoU" secondAttribute="trailing" id="ejb-AZ-beQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="paymentWebView" destination="u7I-wB-LoU" id="6Jj-p6-IMb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jo4-pl-yuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1695" y="1480"/>
         </scene>
         <!--Results Table View Controller-->
         <scene sceneID="kAU-mN-9hK">
@@ -237,7 +399,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsB-vu-LF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608" y="132"/>
+            <point key="canvasLocation" x="982" y="775"/>
         </scene>
         <!--Profil View Controller-->
         <scene sceneID="g6X-pI-a5O">
@@ -255,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3b-Ww-bng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1695" y="888"/>
+            <point key="canvasLocation" x="1695" y="780"/>
         </scene>
     </scenes>
 </document>

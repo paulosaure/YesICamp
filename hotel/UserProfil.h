@@ -6,8 +6,6 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface UserProfil : NSObject
 
 @property (nonatomic, strong) UILabel *lastName;

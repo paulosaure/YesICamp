@@ -1,13 +1,13 @@
 //
-//  Mangopay.h
+//  MangopayViewController.h
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface MangopayViewController : NSObject
+@interface MangopayViewController : UIViewController
 
 @end

@@ -31,8 +31,7 @@
 - (IBAction)startSearch:(id)sender
 {
     NSArray *results = [self sendRequestToServer];
-#warning TODO REMOVE =
-    if ([results count] >= 0)
+    if ([results count] > 0)
     {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
         ResultsTableViewController *resultViewController = (ResultsTableViewController *)[storyBoard instantiateViewControllerWithIdentifier:ResultViewControllerID];

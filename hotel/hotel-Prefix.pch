@@ -16,6 +16,8 @@
 
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import "NetworkManagement.h"
 
 #endif /* hotel_Prefix_pch */

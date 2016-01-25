@@ -6,13 +6,12 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "Hotel.h"
+#import "Camping.h"
 
 #define ProfilViewControllerID @"ProfilViewControllerID"
 
 @interface ProfilViewController : UIViewController
 
-@property (nonatomic, strong) Hotel* hotel;
+@property (nonatomic, strong) Camping* hotel;
 
 @end

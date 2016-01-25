@@ -6,10 +6,14 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "HomePageViewController.h"
 #import "SearchViewController.h"
+#import "ConnectionUser.h"
 
-@interface HomePageViewController ()
+#import "AFNetworking.h"
+
+@interface HomePageViewController () <AFURLResponseSerialization, AFURLRequestSerialization>
 
 @property (weak, nonatomic) IBOutlet UITextField *pseudoTextView;
 
@@ -49,14 +53,6 @@
                                         
                                         
                                     }];
-        //        UIAlertAction* noButton = [UIAlertAction
-        //                                   actionWithTitle:@"No, thanks"
-        //                                   style:UIAlertActionStyleDefault
-        //                                   handler:^(UIAlertAction * action)
-        //                                   {
-        //                                       //Handel no, thanks button
-        //
-        //                                   }];
         
         [alert addAction:yesButton];
         
@@ -64,12 +60,74 @@
     }
 }
 
-- (BOOL)connectionWithServer
+- (id)copyWithZone:(NSZone *)zone
+{
+    return  nil;
+}
+
+- (id)responseObjectForResponse:(NSURLResponse *)response
+                           data:(NSData *)data
+                          error:(NSError *__autoreleasing *)error
+{
+        return  nil;
+}
+
+- (NSURLRequest *)requestBySerializingRequest:(NSURLRequest *)request
+                               withParameters:(NSDictionary *)parameters
+                                        error:(NSError *__autoreleasing *)error
 {
     
+    return  nil;
+}
+
++ (BOOL)supportsSecureCoding {
     return YES;
 }
 
 
+- (BOOL)connectionWithServer
+{
+    NSString *urlString = @"http://edouardg.fr/vincent/connexion.php";
+    NSString *parameters = [NSString stringWithFormat:@"email=%@&pass=%@", @"email", @"pass"];
+
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer
+                                  serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    
+    
+    [manager GET:urlString
+      parameters:parameters
+        progress:nil
+         success:^(NSURLSessionDataTask *task, id responseObject)
+    {
+        NSLog(@"eee");
+    }
+         failure:^(NSURLSessionDataTask *task, NSError *error)
+    {
+        NSLog(@"Error 1 : %@\n\n\n\n", error);
+    }];
+    
+
+    
+//    NSDictionary *parameter = @{@"foo": @"bar", @"key": @"value"};
+//    [manager POST:urlString parameters:parameter progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+//        NSLog(@"Success: %@", responseObject);
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        NSLog(@"Error 2 : %@", error);
+//    }];
+    
+//
+//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
+//                                         initWithRequest:request];
+//    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"%@", responseObject);
+//    } failure:nil];
+//    [operation start];
+    
+    
+    return YES;
+}
 
 @end

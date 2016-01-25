@@ -6,7 +6,6 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #define ResultViewControllerID @"ResultViewControllerID"
 
 @interface ResultsTableViewController : UITableViewController
