@@ -19,5 +19,8 @@
 #import <UIKit/UIKit.h>
 
 #import "NetworkManagement.h"
+#import "LocationManager.h"
+
+#import "Camping.h"
 
 #endif /* hotel_Prefix_pch */

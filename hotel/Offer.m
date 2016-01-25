@@ -7,7 +7,6 @@
 //
 
 #import "Offer.h"
-#import "Camping.h"
 
 @interface Offer ()
 

@@ -13,6 +13,8 @@
 		A84C71781C56C49400598FE9 /* InformationCampingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71771C56C49400598FE9 /* InformationCampingCell.m */; };
 		A84C717A1C56C54A00598FE9 /* InformationCampingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84C71791C56C54A00598FE9 /* InformationCampingCell.xib */; };
 		A84C717E1C56C9A800598FE9 /* PageItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C717D1C56C9A800598FE9 /* PageItemController.m */; };
+		A84C71831C56E02400598FE9 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71821C56E02400598FE9 /* LocationManager.m */; };
+		A84C71891C56E7A000598FE9 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71881C56E7A000598FE9 /* CustomAnnotation.m */; };
 		A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */; };
 		A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */; };
 		A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* PromotionCell.m */; };
@@ -85,6 +87,10 @@
 		A84C71791C56C54A00598FE9 /* InformationCampingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationCampingCell.xib; sourceTree = "<group>"; };
 		A84C717C1C56C9A800598FE9 /* PageItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageItemController.h; sourceTree = "<group>"; };
 		A84C717D1C56C9A800598FE9 /* PageItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageItemController.m; sourceTree = "<group>"; };
+		A84C71811C56E02400598FE9 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		A84C71821C56E02400598FE9 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		A84C71871C56E7A000598FE9 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
+		A84C71881C56E7A000598FE9 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
 		A88EB3C71C500E97008DC5CF /* PromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionsViewController.h; sourceTree = "<group>"; };
 		A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionsViewController.m; sourceTree = "<group>"; };
 		A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
@@ -258,6 +264,24 @@
 			name = PageItem;
 			sourceTree = "<group>";
 		};
+		A84C71801C56DFFF00598FE9 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				A84C71811C56E02400598FE9 /* LocationManager.h */,
+				A84C71821C56E02400598FE9 /* LocationManager.m */,
+			);
+			name = LocationManager;
+			sourceTree = "<group>";
+		};
+		A84C71861C56E77000598FE9 /* MKAnnotations */ = {
+			isa = PBXGroup;
+			children = (
+				A84C71871C56E7A000598FE9 /* CustomAnnotation.h */,
+				A84C71881C56E7A000598FE9 /* CustomAnnotation.m */,
+			);
+			name = MKAnnotations;
+			sourceTree = "<group>";
+		};
 		A88EB3C31C5009FF008DC5CF /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +372,8 @@
 		A88EB3E21C5018CB008DC5CF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A84C71801C56DFFF00598FE9 /* LocationManager */,
+				A84C71861C56E77000598FE9 /* MKAnnotations */,
 				A84C717B1C56C99F00598FE9 /* PageItem */,
 				A84C716B1C56A83400598FE9 /* ViewPager */,
 				A88EB3E71C5034B3008DC5CF /* Data */,
@@ -817,9 +843,11 @@
 				A88EB3FA1C503754008DC5CF /* InscriptionUser.m in Sources */,
 				A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */,
 				A84C71711C56A83400598FE9 /* LPViewPagerController.m in Sources */,
+				A84C71831C56E02400598FE9 /* LocationManager.m in Sources */,
 				A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */,
 				A88EB3F71C50374B008DC5CF /* ConnectionUser.m in Sources */,
 				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,
+				A84C71891C56E7A000598FE9 /* CustomAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

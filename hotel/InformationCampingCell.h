@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Camping.h"
+
 #define INFORMATION_CELL_IDENTIFIER @"InformationCellID"
 
 @interface InformationCampingCell : UITableViewCell
