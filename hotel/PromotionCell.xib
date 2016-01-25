@@ -14,29 +14,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="361" height="108.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-yw-J8y">
-                        <rect key="frame" x="8" y="8" width="94" height="92.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-yw-J8y">
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="108.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-Oq-kKe">
-                        <rect key="frame" x="117" y="14" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xw6-uQ-EbC">
-                        <rect key="frame" x="117" y="44" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abG-GX-fQ8">
-                        <rect key="frame" x="117" y="73" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="fpm-yw-J8y" secondAttribute="bottom" id="2mD-Fx-tze"/>
+                    <constraint firstAttribute="trailing" secondItem="fpm-yw-J8y" secondAttribute="trailing" id="ROb-0j-Avv"/>
+                    <constraint firstItem="fpm-yw-J8y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="srf-Pc-Scg"/>
+                    <constraint firstItem="fpm-yw-J8y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ubP-c1-Tln"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imageView" destination="fpm-yw-J8y" id="fRf-eO-Eld"/>
+            </connections>
             <point key="canvasLocation" x="290.5" y="316.5"/>
         </tableViewCell>
     </objects>

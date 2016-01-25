@@ -12,6 +12,6 @@
 
 @interface ProfilViewController : UIViewController
 
-@property (nonatomic, strong) Camping* hotel;
+@property (nonatomic, strong) Camping* camping;
 
 @end

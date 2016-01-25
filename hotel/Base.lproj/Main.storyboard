@@ -260,6 +260,9 @@
                                             <constraint firstAttribute="width" constant="45" id="G96-2y-Cb9"/>
                                         </constraints>
                                         <state key="normal" title="B"/>
+                                        <connections>
+                                            <action selector="startSearch:" destination="lI2-n3-yc5" eventType="touchUpInside" id="ERd-Iv-eK2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,6 +293,11 @@
                             <constraint firstAttribute="trailing" secondItem="dfZ-Li-cNW" secondAttribute="trailing" id="yGE-sz-Jug"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchTextView" destination="GOO-eu-xLK" id="tW7-Lo-qzT"/>
+                        <outlet property="startSearchButton" destination="vhX-40-izB" id="xke-Jn-uxU"/>
+                        <outlet property="tableView" destination="J7E-Ca-oPl" id="eAY-Bj-mKB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pn-Xs-m4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,11 +348,72 @@
                     <view key="view" contentMode="scaleToFill" id="lOf-TM-PXw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-E3-C3d">
+                                <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CCs-yK-Fum"/>
+                                </constraints>
+                                <state key="normal" title="Réserver Maintenant"/>
+                                <connections>
+                                    <action selector="reserveCamping:" destination="ALr-Sm-13Y" eventType="touchUpInside" id="Vr9-w2-WR7"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-9F-Ubh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Txa-E3-C3d" firstAttribute="leading" secondItem="lOf-TM-PXw" secondAttribute="leading" id="0Oe-CU-O5Y"/>
+                            <constraint firstItem="oQe-9F-Ubh" firstAttribute="top" secondItem="lOf-TM-PXw" secondAttribute="top" id="AfX-kF-anV"/>
+                            <constraint firstItem="oQe-9F-Ubh" firstAttribute="leading" secondItem="lOf-TM-PXw" secondAttribute="leading" id="Aou-9p-eYo"/>
+                            <constraint firstItem="Txa-E3-C3d" firstAttribute="top" secondItem="oQe-9F-Ubh" secondAttribute="bottom" id="B5V-Jp-x2d"/>
+                            <constraint firstAttribute="trailing" secondItem="Txa-E3-C3d" secondAttribute="trailing" id="RhB-wh-oO5"/>
+                            <constraint firstAttribute="trailing" secondItem="oQe-9F-Ubh" secondAttribute="trailing" id="lGY-Aw-9M5"/>
+                            <constraint firstItem="ttg-7m-Zi0" firstAttribute="top" secondItem="Txa-E3-C3d" secondAttribute="bottom" id="oXW-cX-lEF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="reservationButton" destination="Txa-E3-C3d" id="8l7-aI-FKJ"/>
+                        <outlet property="tableView" destination="oQe-9F-Ubh" id="xEI-0O-MwM"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1065" y="704"/>
+        </scene>
+        <!--Page Item Controller-->
+        <scene sceneID="Kwj-qn-TuY">
+            <objects>
+                <viewController storyboardIdentifier="PageItemControllerID" id="QTv-Gx-YKC" customClass="PageItemController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I5d-qP-O0T"/>
+                        <viewControllerLayoutGuide type="bottom" id="H9d-xe-ZPE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ayn-qi-Vi0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QUm-hi-Lp6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H9d-xe-ZPE" firstAttribute="top" secondItem="QUm-hi-Lp6" secondAttribute="bottom" id="9XB-o4-hEV"/>
+                            <constraint firstItem="QUm-hi-Lp6" firstAttribute="top" secondItem="Ayn-qi-Vi0" secondAttribute="top" id="SwR-Vn-a5o"/>
+                            <constraint firstItem="QUm-hi-Lp6" firstAttribute="leading" secondItem="Ayn-qi-Vi0" secondAttribute="leading" id="W4i-zU-Is9"/>
+                            <constraint firstAttribute="trailing" secondItem="QUm-hi-Lp6" secondAttribute="trailing" id="g2l-y5-69t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="QUm-hi-Lp6" id="A6X-yJ-xst"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itp-tb-rFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773" y="676"/>
         </scene>
     </scenes>
 </document>

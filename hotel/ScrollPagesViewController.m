@@ -78,10 +78,7 @@
         self.pagingTitleView.font     = [UIFont systemFontOfSize:15];
         self.pagingTitleView.indicatorColor = [UIColor purpleColor];
         
-
         NSArray *imageArray           = @[@"profil", @"deal", @"compte"];
-        
-        
         NSArray *titleArray           = @[@"Title1", @"Title2", @"Title3"];
         CGRect ptRect                 = self.pagingTitleView.frame;
         ptRect.size.width             = self.view.frame.size.width;
@@ -96,14 +93,49 @@
 - (void)didSelectedTitleAtIndex:(NSUInteger)index
 {
     UIPageViewControllerNavigationDirection direction;
-    if (self.currentIndex == index) {
+    if (self.currentIndex == index)
         return;
-    }
-    if (index > self.currentIndex) {
+    
+    NSInteger valueDifference = index - self.currentIndex;
+    BOOL isNextViewController = (labs(valueDifference)) >= 2;
+    
+    if (index > self.currentIndex)
+    {
         direction = UIPageViewControllerNavigationDirectionForward;
-    } else {
-        direction = UIPageViewControllerNavigationDirectionReverse;
+        if (isNextViewController)
+        {
+            [self translateNextViewController:(self.currentIndex+1) direction:direction];
+        }
     }
+    else
+    {
+        direction = UIPageViewControllerNavigationDirectionReverse;
+        if (isNextViewController)
+        {
+            [self translateNextViewController:(self.currentIndex-1) direction:direction];
+        }
+    }
+    
+    [self translateViewController:index direction:direction];
+}
+
+- (void)translateNextViewController:(NSInteger)index direction:(UIPageViewControllerNavigationDirection)direction
+{
+    UIViewController *viewController = [self viewControllerAtIndex:index];
+    if (viewController) {
+        __weak typeof(self) weakself = self;
+        [self.pageViewController setViewControllers:@[viewController]
+                                          direction:direction
+                                           animated:YES
+                                         completion:^(BOOL finished) {
+                                             weakself.currentIndex = index;
+                                             [weakself didSelectedTitleAtIndex:index];
+                                         }];
+    }
+}
+
+- (void)translateViewController:(NSInteger)index direction:(UIPageViewControllerNavigationDirection)direction
+{
     UIViewController *viewController = [self viewControllerAtIndex:index];
     if (viewController) {
         __weak typeof(self) weakself = self;

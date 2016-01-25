@@ -11,7 +11,8 @@
 
 @interface PromotionCell ()
 
-@property (nonatomic, strong) IBOutlet UILabel *name;
+@property (nonatomic, weak) IBOutlet UIImageView *image;
+@property (nonatomic, weak) IBOutlet UILabel *name;
 
 @end
 
@@ -31,13 +32,9 @@
     return cellNib;
 }
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)configureWithHotel:(Camping *)hotel
+- (void)configureWithCamping:(Camping *)camping
 {
-    
+    self.imageView.image = [camping.images firstObject];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

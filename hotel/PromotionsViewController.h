@@ -10,6 +10,6 @@
 
 @interface PromotionsViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *hotels;
+@property (nonatomic, strong) NSArray *campings;
 
 @end

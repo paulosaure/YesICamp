@@ -13,6 +13,6 @@
 @interface PromotionCell : UITableViewCell
 
 + (UINib *)cellNib;
-- (void)configureWithHotel:(Camping *)hotel;
+- (void)configureWithCamping:(Camping *)camping;
 
 @end

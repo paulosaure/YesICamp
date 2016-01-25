@@ -10,14 +10,6 @@
 
 @interface Camping ()
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *address;
-@property (nonatomic, strong) NSString *city;
-@property (nonatomic, strong) NSNumber *phoneNumber;
-@property (nonatomic, strong) NSNumber *zipCode;
-@property (nonatomic, strong) NSNumber *longitude;
-@property (nonatomic, strong) NSNumber *latitude;
 
 @end
 

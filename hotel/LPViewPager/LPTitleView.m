@@ -120,7 +120,7 @@ static CGFloat kTitleMargin = 50;
 - (UIView *)pageIndicator
 {
     if (!_pageIndicator) {
-        _pageIndicator                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, INDICATOR_VIEW_HEIGHT)];
+        _pageIndicator = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, INDICATOR_VIEW_HEIGHT)];
     }
     _pageIndicator.backgroundColor = self.indicatorColor;
     return _pageIndicator;

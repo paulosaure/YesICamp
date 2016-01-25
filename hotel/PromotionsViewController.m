@@ -14,7 +14,6 @@
 @interface PromotionsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *searchLabel;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextView;
 @property (weak, nonatomic) IBOutlet UIButton *startSearchButton;
 
@@ -25,27 +24,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     [self.tableView registerNib:[PromotionCell cellNib] forCellReuseIdentifier:PROMO_CELL_IDENTIFIER];
 }
 
 #pragma mark - Table view data source
 
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.hotels count];
+    return [self.campings count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -54,7 +40,7 @@
     PromotionCell *cell = [tableView dequeueReusableCellWithIdentifier:PROMO_CELL_IDENTIFIER];
     
     // Configure celle
-    [cell configureWithHotel:self.hotels[indexPath.row]];
+    [cell configureWithCamping:self.campings[indexPath.row]];
 
     return cell;
 }
@@ -64,53 +50,60 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Get hotek
-    Camping *hotel = self.hotels[indexPath.row];
+    Camping *camping = self.campings[indexPath.row];
     
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
     ProfilViewController *profilViewController = (ProfilViewController *)[storyBoard instantiateViewControllerWithIdentifier:ProfilViewControllerID];
-    profilViewController.hotel = hotel;
+    profilViewController.camping = camping;
     
     [self.navigationController pushViewController:profilViewController animated:YES];
 }
 
-- (IBAction)startSearch:(id)sender
-{
-    NSArray *results = [self sendRequestToServer];
-    if ([results count] > 0)
-    {
-        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
-        PromotionsViewController *promotionViewController = (PromotionsViewController *)[storyBoard instantiateViewControllerWithIdentifier:PromotionsViewControllerID];
-        promotionViewController.hotels = results;
-        [self.navigationController pushViewController:promotionViewController animated:YES];
-    }
-    else
-    {
-        UIAlertController * alert=   [UIAlertController
-                                      alertControllerWithTitle:@"Error"
-                                      message:@"Problème technique"
-                                      preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* yesButton = [UIAlertAction
-                                    actionWithTitle:@"Ok"
-                                    style:UIAlertActionStyleDefault
-                                    handler:^(UIAlertAction * action)
-                                    {
-                                        //Handel your yes please button action here
-                                        
-                                        
-                                    }];
-        
-        [alert addAction:yesButton];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-    }
-}
+#pragma mark - Request
 
 - (NSArray *)sendRequestToServer
 {
     NSArray *results = [NSArray array];
     // [ParsingData sharedInstance]
     return results;
+}
+
+#pragma mark - Action
+
+- (IBAction)startSearch:(id)sender
+{
+    NSArray *results = [self sendRequestToServer];
+    if ([results count] > 0)
+    {
+        [self.tableView reloadData];
+    }
+    else
+    {
+        [self displayWarningMessage];
+    }
+}
+
+#pragma mark - Utils
+
+- (void)displayWarningMessage
+{
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Error"
+                                  message:@"Problème technique"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Ok"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    //Handel your yes please button action here
+                                    
+                                    
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
