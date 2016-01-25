@@ -1,5 +1,5 @@
 //
-//  ResultCell.h
+//  PromotionCell.h
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
@@ -8,9 +8,9 @@
 
 #import "Camping.h"
 
-#define RESULT_CELL_IDENTIFIER         @"ResultCellID"
+#define PROMO_CELL_IDENTIFIER         @"PromotionCellID"
 
-@interface ResultCell : UITableViewCell
+@interface PromotionCell : UITableViewCell
 
 + (UINib *)cellNib;
 - (void)configureWithHotel:(Camping *)hotel;

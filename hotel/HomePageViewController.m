@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "HomePageViewController.h"
-#import "SearchViewController.h"
 #import "ConnectionUser.h"
 
 #import "AFNetworking.h"
@@ -34,8 +33,8 @@
     if ([self connectionWithServer])
     {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
-        SearchViewController *searchViewController = (SearchViewController *)[storyBoard instantiateViewControllerWithIdentifier:SearchViewControllerID];
-        [self.navigationController pushViewController:searchViewController animated:YES];
+//        SearchViewController *searchViewController = (SearchViewController *)[storyBoard instantiateViewControllerWithIdentifier:SearchViewControllerID];
+//        [self.navigationController pushViewController:searchViewController animated:YES];
     }
     else
     {

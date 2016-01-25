@@ -1,22 +1,22 @@
 //
-//  ResultCell.m
+//  PromotionCell.m
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "ResultCell.h"
+#import "PromotionCell.h"
 
 
-@interface ResultCell ()
+@interface PromotionCell ()
 
 @property (nonatomic, strong) IBOutlet UILabel *name;
 
 @end
 
 
-@implementation ResultCell
+@implementation PromotionCell
 
 #pragma mark - Utils
 
@@ -25,7 +25,7 @@
     static UINib *cellNib;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        cellNib = [UINib nibWithNibName:@"ResultCell" bundle:nil];
+        cellNib = [UINib nibWithNibName:@"PromotionCell" bundle:nil];
     });
     
     return cellNib;

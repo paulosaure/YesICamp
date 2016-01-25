@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define HotDealViewControllerID @"HotDealViewControllerID"
+
 @interface HotDealViewController : UIViewController
 
 @end

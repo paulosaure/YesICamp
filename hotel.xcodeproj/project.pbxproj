@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A88EB3C21C50088D008DC5CF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C11C50088D008DC5CF /* SearchViewController.m */; };
-		A88EB3C91C500E97008DC5CF /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* ResultsTableViewController.m */; };
+		A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716D1C56A83400598FE9 /* LPTitleView.m */; };
+		A84C71711C56A83400598FE9 /* LPViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716F1C56A83400598FE9 /* LPViewPagerController.m */; };
+		A84C71731C56BC9500598FE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C71721C56BC9500598FE9 /* MapKit.framework */; };
+		A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */; };
 		A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */; };
-		A88EB3DA1C5015AA008DC5CF /* ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* ResultCell.m */; };
-		A88EB3DB1C5015AA008DC5CF /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88EB3D91C5015AA008DC5CF /* ResultCell.xib */; };
+		A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* PromotionCell.m */; };
+		A88EB3DB1C5015AA008DC5CF /* PromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88EB3D91C5015AA008DC5CF /* PromotionCell.xib */; };
 		A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3DF1C5015F0008DC5CF /* Camping.m */; };
 		A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3E41C501918008DC5CF /* ParsingData.m */; };
 		A88EB3F71C50374B008DC5CF /* ConnectionUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F61C50374B008DC5CF /* ConnectionUser.m */; };
@@ -46,7 +48,6 @@
 		A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */; };
 		A8F2FEF61C54D426007DF893 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEF51C54D426007DF893 /* InformationViewController.m */; };
 		A8F2FF091C557F01007DF893 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Offer.m */; };
-		A8F2FF181C5589DB007DF893 /* ScrollPager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF171C5589DB007DF893 /* ScrollPager.m */; };
 		A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF1B1C559A56007DF893 /* ScrollPagesViewController.m */; };
 		FC3E8C90B71CCA6AAEE87C2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C91B09CC94CDA73374504379 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -71,16 +72,19 @@
 /* Begin PBXFileReference section */
 		381A166E8C10B1F505A87604 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		A88EB3C01C50088D008DC5CF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		A88EB3C11C50088D008DC5CF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		A88EB3C71C500E97008DC5CF /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
-		A88EB3C81C500E97008DC5CF /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
+		A84C716C1C56A83400598FE9 /* LPTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPTitleView.h; sourceTree = "<group>"; };
+		A84C716D1C56A83400598FE9 /* LPTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPTitleView.m; sourceTree = "<group>"; };
+		A84C716E1C56A83400598FE9 /* LPViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPViewPagerController.h; sourceTree = "<group>"; };
+		A84C716F1C56A83400598FE9 /* LPViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPViewPagerController.m; sourceTree = "<group>"; };
+		A84C71721C56BC9500598FE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A88EB3C71C500E97008DC5CF /* PromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionsViewController.h; sourceTree = "<group>"; };
+		A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionsViewController.m; sourceTree = "<group>"; };
 		A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
 		A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilViewController.m; sourceTree = "<group>"; };
 		A88EB3CD1C50108E008DC5CF /* hotel-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hotel-Prefix.pch"; sourceTree = "<group>"; };
-		A88EB3D71C5015AA008DC5CF /* ResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultCell.h; sourceTree = "<group>"; };
-		A88EB3D81C5015AA008DC5CF /* ResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCell.m; sourceTree = "<group>"; };
-		A88EB3D91C5015AA008DC5CF /* ResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
+		A88EB3D71C5015AA008DC5CF /* PromotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionCell.h; sourceTree = "<group>"; };
+		A88EB3D81C5015AA008DC5CF /* PromotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionCell.m; sourceTree = "<group>"; };
+		A88EB3D91C5015AA008DC5CF /* PromotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromotionCell.xib; sourceTree = "<group>"; };
 		A88EB3DE1C5015F0008DC5CF /* Camping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camping.h; sourceTree = "<group>"; };
 		A88EB3DF1C5015F0008DC5CF /* Camping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camping.m; sourceTree = "<group>"; };
 		A88EB3E31C501918008DC5CF /* ParsingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParsingData.h; sourceTree = "<group>"; };
@@ -143,8 +147,6 @@
 		A8F2FF071C557F01007DF893 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		A8F2FF081C557F01007DF893 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		A8F2FF0B1C5585D1007DF893 /* hotel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hotel-Bridging-Header.h"; sourceTree = "<group>"; };
-		A8F2FF161C5589DB007DF893 /* ScrollPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPager.h; sourceTree = "<group>"; };
-		A8F2FF171C5589DB007DF893 /* ScrollPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPager.m; sourceTree = "<group>"; };
 		A8F2FF1A1C559A56007DF893 /* ScrollPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPagesViewController.h; sourceTree = "<group>"; };
 		A8F2FF1B1C559A56007DF893 /* ScrollPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPagesViewController.m; sourceTree = "<group>"; };
 		C91B09CC94CDA73374504379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84C71731C56BC9500598FE9 /* MapKit.framework in Frameworks */,
 				A8B023531C51585400C10AA7 /* libsqlite3.tbd in Frameworks */,
 				A8B0234F1C51579D00C10AA7 /* libc++.tbd in Frameworks */,
 				A88EB4251C50402D008DC5CF /* Security.framework in Frameworks */,
@@ -190,6 +193,7 @@
 		0E132D418700495F3A2D0CAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A84C71721C56BC9500598FE9 /* MapKit.framework */,
 				A8B023521C51585400C10AA7 /* libsqlite3.tbd */,
 				A8B023501C5157ED00C10AA7 /* libc++.1.tbd */,
 				A8B0234E1C51579D00C10AA7 /* libc++.tbd */,
@@ -215,13 +219,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A88EB3BF1C500876008DC5CF /* Search */ = {
+		A84C716B1C56A83400598FE9 /* LPViewPager */ = {
 			isa = PBXGroup;
 			children = (
-				A88EB3C01C50088D008DC5CF /* SearchViewController.h */,
-				A88EB3C11C50088D008DC5CF /* SearchViewController.m */,
+				A84C716C1C56A83400598FE9 /* LPTitleView.h */,
+				A84C716D1C56A83400598FE9 /* LPTitleView.m */,
+				A84C716E1C56A83400598FE9 /* LPViewPagerController.h */,
+				A84C716F1C56A83400598FE9 /* LPViewPagerController.m */,
 			);
-			name = Search;
+			path = LPViewPager;
 			sourceTree = "<group>";
 		};
 		A88EB3C31C5009FF008DC5CF /* HomePage */ = {
@@ -233,14 +239,14 @@
 			name = HomePage;
 			sourceTree = "<group>";
 		};
-		A88EB3C41C500E2B008DC5CF /* Results */ = {
+		A88EB3C41C500E2B008DC5CF /* ResultsHotel */ = {
 			isa = PBXGroup;
 			children = (
-				A88EB3C71C500E97008DC5CF /* ResultsTableViewController.h */,
-				A88EB3C81C500E97008DC5CF /* ResultsTableViewController.m */,
+				A88EB3C71C500E97008DC5CF /* PromotionsViewController.h */,
+				A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */,
 				A88EB3D11C501490008DC5CF /* Cell */,
 			);
-			name = Results;
+			name = ResultsHotel;
 			sourceTree = "<group>";
 		};
 		A88EB3C51C500E3A008DC5CF /* Profil */ = {
@@ -284,9 +290,9 @@
 		A88EB3D11C501490008DC5CF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A88EB3D71C5015AA008DC5CF /* ResultCell.h */,
-				A88EB3D81C5015AA008DC5CF /* ResultCell.m */,
-				A88EB3D91C5015AA008DC5CF /* ResultCell.xib */,
+				A88EB3D71C5015AA008DC5CF /* PromotionCell.h */,
+				A88EB3D81C5015AA008DC5CF /* PromotionCell.m */,
+				A88EB3D91C5015AA008DC5CF /* PromotionCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -313,7 +319,7 @@
 		A88EB3E21C5018CB008DC5CF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A8F2FF151C5589A9007DF893 /* ScrollPager */,
+				A84C716B1C56A83400598FE9 /* LPViewPager */,
 				A88EB3E71C5034B3008DC5CF /* Data */,
 			);
 			name = Utils;
@@ -403,8 +409,7 @@
 				A8CF58C31C50076D002D227A /* Inscription */,
 				A88EB3C61C500E4A008DC5CF /* Payment */,
 				A88EB3C51C500E3A008DC5CF /* Profil */,
-				A88EB3C41C500E2B008DC5CF /* Results */,
-				A88EB3BF1C500876008DC5CF /* Search */,
+				A88EB3C41C500E2B008DC5CF /* ResultsHotel */,
 				A8F2FF0E1C558624007DF893 /* ScrollPages */,
 			);
 			name = ViewControllers;
@@ -575,15 +580,6 @@
 			name = ScrollPages;
 			sourceTree = "<group>";
 		};
-		A8F2FF151C5589A9007DF893 /* ScrollPager */ = {
-			isa = PBXGroup;
-			children = (
-				A8F2FF161C5589DB007DF893 /* ScrollPager.h */,
-				A8F2FF171C5589DB007DF893 /* ScrollPager.m */,
-			);
-			name = ScrollPager;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -693,7 +689,7 @@
 			files = (
 				A8A63DC71C5005C30026E456 /* LaunchScreen.storyboard in Resources */,
 				A8A63DC41C5005C30026E456 /* Assets.xcassets in Resources */,
-				A88EB3DB1C5015AA008DC5CF /* ResultCell.xib in Resources */,
+				A88EB3DB1C5015AA008DC5CF /* PromotionCell.xib in Resources */,
 				A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */,
 				A88EB4171C503F60008DC5CF /* V3.3.6 in Resources */,
 				A88EB4141C503F60008DC5CF /* Customization_Tuto.txt in Resources */,
@@ -775,19 +771,19 @@
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,
-				A88EB3C91C500E97008DC5CF /* ResultsTableViewController.m in Sources */,
-				A88EB3C21C50088D008DC5CF /* SearchViewController.m in Sources */,
+				A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */,
 				A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */,
+				A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */,
 				A8F2FF091C557F01007DF893 /* Offer.m in Sources */,
 				A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */,
 				A88EB3FD1C503763008DC5CF /* GetHotelsListAction.m in Sources */,
 				A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
-				A8F2FF181C5589DB007DF893 /* ScrollPager.m in Sources */,
 				A8F2FEF61C54D426007DF893 /* InformationViewController.m in Sources */,
-				A88EB3DA1C5015AA008DC5CF /* ResultCell.m in Sources */,
+				A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */,
 				A88EB3FA1C503754008DC5CF /* InscriptionUser.m in Sources */,
 				A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */,
+				A84C71711C56A83400598FE9 /* LPViewPagerController.m in Sources */,
 				A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */,
 				A88EB3F71C50374B008DC5CF /* ConnectionUser.m in Sources */,
 				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,

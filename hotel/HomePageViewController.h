@@ -6,6 +6,8 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
+#define HomePageViewControllerID @"HomePageViewControllerID"
+
 @interface HomePageViewController : UIViewController
 
 

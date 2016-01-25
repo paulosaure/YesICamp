@@ -6,9 +6,9 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#define ResultViewControllerID @"ResultViewControllerID"
+#define PromotionsViewControllerID @"PromotionsViewControllerID"
 
-@interface ResultsTableViewController : UITableViewController
+@interface PromotionsViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *hotels;
 

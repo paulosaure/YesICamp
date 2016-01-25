@@ -8,7 +8,12 @@
 
 #import "HotDealViewController.h"
 
-@interface HotDealViewController ()
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+@interface HotDealViewController () <MKMapViewDelegate>
+
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end
 

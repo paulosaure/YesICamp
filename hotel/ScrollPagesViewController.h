@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScrollPagesViewController : UIViewController
+#import "LPViewPagerController.h"
+
+@interface ScrollPagesViewController : LPViewPagerController
 
 @end
