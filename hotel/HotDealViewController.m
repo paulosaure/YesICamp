@@ -11,11 +11,11 @@
 #import <MapKit/MapKit.h>
 #import "CustomAnnotation.h"
 #import "ProfilViewController.h"
+#import "AnnotationView.h"
 
 @interface HotDealViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
-@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -24,17 +24,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    CLLocation *userLocation = [[LocationManager sharedInstance] lastLocation];
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
     
     if (![[LocationManager sharedInstance] userDidRefuseLocationPermission])
     {
-        [self.locationManager startUpdatingLocation];
-//        [[LocationManager sharedInstance] updateLocation];
+        [[LocationManager sharedInstance] updateLocation];
         self.mapView.showsUserLocation = YES;
-        
     }
+    
+    //    NSMutableArray *arrLat=[[NSMutableArray alloc] initWithObjects:@"23.0333",@"24.0333",@"25.0333",@"26.0333" ,nil];
+    //    NSMutableArray *arrLong=[[NSMutableArray alloc] initWithObjects:@"72.6167",@"71.6167",@"70.6167",@"71.6167", nil];
+    //    NSMutableArray *arrTitle=[[NSMutableArray alloc] initWithObjects:@"Point1",@"Point2",@"Point3",@"Point4", nil];
+    
+
     
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
 }
@@ -43,16 +44,16 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.005;
-    span.longitudeDelta = 0.005;
-    CLLocationCoordinate2D location;
-    location.latitude = userLocation.coordinate.latitude;
-    location.longitude = userLocation.coordinate.longitude;
-    region.span = span;
-    region.center = location;
-    [mapView setRegion:region animated:YES];
+        MKCoordinateRegion region;
+        MKCoordinateSpan span;
+        span.latitudeDelta = 0.005;
+        span.longitudeDelta = 0.005;
+        CLLocationCoordinate2D location;
+        location.latitude = userLocation.coordinate.latitude;
+        location.longitude = userLocation.coordinate.longitude;
+        region.span = span;
+        region.center = location;
+        [mapView setRegion:region animated:YES];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -63,34 +64,20 @@
 }
 
 #pragma mark - MKAnnotation
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
+    MKAnnotationView *view = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:NSStringFromClass([CustomAnnotation class])];
     
-    //use whatever annotation class you used when creating the annotation
-    if ([annotation isKindOfClass:[CustomAnnotation class]])    {
-        static NSString * const identifier = @"MyCustomAnnotation";
-        
-        MKAnnotationView* annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-        
-        if (annotationView)
-        {
-            annotationView.annotation = annotation;
-        }
-        else
-        {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                          reuseIdentifier:identifier];
-        }
-        
-        annotationView.canShowCallout = NO;
-        annotationView.image = [UIImage imageNamed:@"your-image-here.png"];
-        
-        return annotationView;
+    if (!view)
+    {
+        view = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                            reuseIdentifier:NSStringFromClass([CustomAnnotation class])];
+        view.image = [UIImage imageNamed:@"marker"];
+        view.canShowCallout = YES;
+        view.centerOffset = CGPointMake(view.centerOffset.x, -view.frame.size.height/2);
     }
-    return nil;
+    
+    return view;
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
@@ -98,9 +85,14 @@
     [mapView deselectAnnotation:view.annotation animated:YES];
     
     ProfilViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:ProfilViewControllerID];
-//  controller.annotation = view.annotation; // it's useful to have property in your view controller for whatever data it needs to present the annotation's details
+    //  controller.annotation = view.annotation; // it's useful to have property in your view controller for whatever data it needs to present the annotation's details
     
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+#pragma mark - Action
+- (void)button:(id)sender
+{
+    NSLog(@"button");
+}
 @end

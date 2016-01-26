@@ -139,6 +139,11 @@
     return ![CLLocationManager locationServicesEnabled];
 }
 
+- (void)locationManagerSetDelegate:(id)delegate
+{
+    self.locationManager.delegate = delegate;
+}
+
 #pragma mark - Object lifecycle
 
 - (void)dealloc

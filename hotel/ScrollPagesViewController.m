@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.dataSource = self;
     self.delegate = self;
     
@@ -46,6 +47,7 @@
     
     [self reloadData];
 }
+
 
 #pragma mark - LPViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(LPViewPagerController *)viewPager

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GetOffersListAction.h"
 
 @interface AppDelegate ()
 
@@ -15,10 +16,11 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Try to fetch user location
     [[LocationManager sharedInstance] updateLocation];
+    [[GetOffersListAction action] requestServer];
     
     return YES;
 }

@@ -14,11 +14,22 @@
 
 @implementation CustomAnnotation
 
-- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate
+- (id)initWithDictionary:(NSDictionary <NSString *, id> *)dictionary {
+    
+    NSDictionary * coordinateDictionary = [dictionary objectForKey:@"coordinates"];
+    
+    return [self initWithCoordinates:CLLocationCoordinate2DMake([[coordinateDictionary objectForKey:@"latitude"] doubleValue], [[coordinateDictionary objectForKey:@"longitude"] doubleValue])
+                               title:[dictionary objectForKey:@"name"]
+                            subtitle:nil];
+}
+
+- (id)initWithCoordinates:(CLLocationCoordinate2D)location title:(NSString *)title subtitle:(NSString *)subtitle
 {
     if (self = [super init])
     {
-        self.coordinate = coordinate;
+        _coordinate = location;
+        _title = title;
+        _subtitle = subtitle;
     }
     
     return self;

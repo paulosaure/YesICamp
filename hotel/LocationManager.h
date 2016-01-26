@@ -50,6 +50,8 @@
  */
 - (void)resetAndStopLocationUpdates;
 
+- (void)locationManagerSetDelegate:(id)delegate;
+
 /**
  Max number of updates before stopping the location manager, Defaults is 5
  When set to 0, the location manager never stops

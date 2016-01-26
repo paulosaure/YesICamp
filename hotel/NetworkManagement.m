@@ -9,6 +9,12 @@
 #import "NetworkManagement.h"
 #import <AFURLSessionManager.h>
 
+@interface NetworkManagement () <NSURLSessionDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate>
+
+@property (nonatomic, strong) NSMutableDictionary *dictionary;
+@property (nonatomic, strong) NSURLSession *session;
+@end
+
 @implementation NetworkManagement
 
 
@@ -24,5 +30,81 @@
     
     return sharedInstance;
 }
+
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        self.dictionary = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+- (void)connectionWithServer:(NSString *)urlString action:(WebService)action
+{
+    // Init Request
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    request.HTTPMethod = @"GET";
+    
+    // Generate session
+    NSURLSessionConfiguration* config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"myUniqueAppID"];
+    _session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    
+    // Start Download Task
+    NSURLSessionDownloadTask* task = [_session downloadTaskWithRequest:request];
+    NSString *key = [NSString stringWithFormat:@"%ld", (long)task.taskIdentifier];
+    [self.dictionary setObject:@(action) forKey:key];
+    [task resume];
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+{
+    // Retrieve file at specific location
+    NSString *stringFromFileAtURL = [[NSString alloc]
+                                     initWithContentsOfURL:location
+                                     encoding:NSUTF8StringEncoding
+                                     error:nil];
+    
+    // Reconstruct key
+    NSString *key = [NSString stringWithFormat:@"%ld", (long)downloadTask.taskIdentifier];
+    
+    // Retrieve actionType
+    NSString *actionTypeNotification = [NSString stringWithFormat:@"%d", [[self.dictionary objectForKey:key] intValue]];
+    
+    // Notify action
+    [NOTIFICATION_CENTER postNotificationName:actionTypeNotification object:stringFromFileAtURL];
+    
+    // Clean dictionary
+    [self.dictionary removeObjectForKey:key];
+}
+
+-(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+//    CGFloat percentDone = (double)totalBytesWritten/(double)totalBytesExpectedToWrite;
+}
+
+// AFNETWORKING
+//- (void) getDataFrom:(NSString *)url
+//{
+//    __block id obj = nil;
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    manager.responseSerializer = [AFJSONResponseSerializer
+//                                  serializerWithReadingOptions:NSJSONReadingAllowFragments];
+//    
+//    [manager GET:url
+//      parameters:@""
+//        progress:nil
+//         success:^(NSURLSessionDataTask *task, id responseObject)
+//     {
+//         obj = responseObject;
+//         //         [[NSNotificationCenter defaultCenter] postNotificationName:dataNotification object:packet];
+//         
+//     }
+//         failure:^(NSURLSessionDataTask *task, NSError *error)
+//     {
+//         NSLog(@"Error 1 : %@\n\n\n\n", error);
+//     }];
+//}
 
 @end
