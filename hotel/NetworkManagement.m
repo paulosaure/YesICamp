@@ -40,6 +40,11 @@
     return self;
 }
 
+- (void)requestServer:(NSString *)url action:(WebService)action
+{
+    [self connectionWithServer:url action:action];
+}
+
 - (void)connectionWithServer:(NSString *)urlString action:(WebService)action
 {
     // Init Request
@@ -67,10 +72,10 @@
                                      error:nil];
     
     // Reconstruct key
-    NSString *key = [NSString stringWithFormat:@"%ld", (long)downloadTask.taskIdentifier];
+    NSString *key = [@(downloadTask.taskIdentifier) stringValue];
     
     // Retrieve actionType
-    NSString *actionTypeNotification = [NSString stringWithFormat:@"%d", [[self.dictionary objectForKey:key] intValue]];
+    NSString *actionTypeNotification = [[self.dictionary objectForKey:key] stringValue];
     
     // Notify action
     [NOTIFICATION_CENTER postNotificationName:actionTypeNotification object:stringFromFileAtURL];

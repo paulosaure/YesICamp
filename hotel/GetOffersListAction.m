@@ -26,14 +26,12 @@
 
 - (void)requestServer
 {
-    NSString *actionTypeNotification = [NSString stringWithFormat:@"%ld", (long)WebServiceGetOffersList];
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:actionTypeNotification object:nil];
-    [super connectionWithServer:ACTION_URL(OFFERS_URL) action:WebServiceGetOffersList];
-
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:[@(WebServiceGetOffersList) stringValue] object:nil];
+    [super requestServer:ACTION_URL(OFFERS_URL) action:WebServiceGetOffersList];
 }
 
 - (void)handleDownloadedData:(NSNotification *)notif
 {
-    NSLog(@"test");
+    NSLog(@"Success %@", notif.object);
 }
 @end

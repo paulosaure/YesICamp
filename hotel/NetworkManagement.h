@@ -19,6 +19,6 @@ typedef NS_ENUM(NSInteger, WebService)
 @interface NetworkManagement : NSObject
 
 + (instancetype)sharedInstance;
-- (void)connectionWithServer:(NSString *)urlString action:(WebService)action;
+- (void)requestServer:(NSString *)url action:(WebService)action;
 
 @end
