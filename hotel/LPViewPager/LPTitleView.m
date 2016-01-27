@@ -80,7 +80,7 @@ static CGFloat kTitleMargin = 50;
 {
     [super layoutSubviews];
     CGRect idRect            = self.pageIndicator.frame;
-    idRect.origin.y          = self.frame.size.height - 5;
+    idRect.origin.y          = self.frame.size.height - INDICATOR_VIEW_HEIGHT;
     idRect.size.width        = (self.frame.size.width - kTitleMargin * (self.titleArray.count - 1))/self.titleArray.count;
     self.pageIndicator.frame = idRect;
     [self.views enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
@@ -139,7 +139,7 @@ static CGFloat kTitleMargin = 50;
 {
     for (UILabel *textLabel in self.subviews) {
         if ([textLabel isKindOfClass:[UILabel class]]) {
-            textLabel.textColor = self.titleNormalColor ? : [UIColor colorWithWhite:0.675 alpha:1.000];
+            textLabel.textColor = self.titleNormalColor ? : [UIColor colorWithWhite:0 alpha:1.000];
             if (textLabel.tag == index) {
                 textLabel.textColor =  self.titleSelectedColor ? : [UIColor blackColor];
             }
@@ -158,7 +158,7 @@ static CGFloat kTitleMargin = 50;
 {
     for (UIImageView *imageView in self.subviews) {
         if ([imageView isKindOfClass:[UIImageView class]]) {
-            imageView.backgroundColor = self.titleNormalColor ? : [UIColor colorWithWhite:0.675 alpha:1.000];
+            imageView.backgroundColor = self.titleNormalColor ? : [UIColor colorWithWhite:0 alpha:1.000];
             if (imageView.tag == index) {
                 imageView.backgroundColor =  self.titleSelectedColor ? : [UIColor blackColor];
             }

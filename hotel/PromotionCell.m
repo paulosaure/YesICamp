@@ -11,8 +11,9 @@
 
 @interface PromotionCell ()
 
-@property (nonatomic, weak) IBOutlet UIImageView *image;
-@property (nonatomic, weak) IBOutlet UILabel *name;
+@property (nonatomic, weak) IBOutlet UIImageView *imageBackgroundView;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @end
 
@@ -34,7 +35,13 @@
 
 - (void)configureWithCamping:(Camping *)camping
 {
-    self.imageView.image = [camping.images firstObject];
+//    self.imageView.image = [camping.images firstObject];
+    self.nameLabel.text = @"Camping Cézanne";
+    self.nameLabel.textColor = [UIColor whiteColor];
+    
+    self.priceLabel.text = @"70€";
+    self.priceLabel.textColor = [UIColor whiteColor];
+    self.imageBackgroundView.image = [UIImage imageNamed:@"campingImage"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -14,6 +14,8 @@
 #import "PromotionsViewController.h"
 #import "InformationViewController.h"
 
+#define CONTENT_PICTO_HEIGHT 47
+
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
 
 @property (nonatomic, strong) HomePageViewController *homePageViewController;
@@ -41,13 +43,12 @@
     self.manualLoadData = YES;
     self.currentIndex = 0;
     self.navigationItem.titleView = self.pagingTitleView;
-    
-    self.myStoryboard = [UIStoryboard storyboardWithName:@"Main"
-                                                  bundle:nil];
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = NO;
+    self.myStoryboard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
     [self reloadData];
 }
-
 
 #pragma mark - LPViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(LPViewPagerController *)viewPager
@@ -76,7 +77,10 @@
 {
     if (!_pagingTitleView) {
         self.pagingTitleView          = [[LPTitleView alloc] init];
-        self.pagingTitleView.frame    = CGRectMake(0, 0, 0, 47);
+        
+        self.pagingTitleView.backgroundColor = [UIColor blackColor];
+
+        self.pagingTitleView.frame    = CGRectMake(0, 0, 0, CONTENT_PICTO_HEIGHT);
         self.pagingTitleView.font     = [UIFont systemFontOfSize:15];
         self.pagingTitleView.indicatorColor = [UIColor purpleColor];
         

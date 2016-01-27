@@ -10,18 +10,14 @@
 
 @interface InscriptionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *firstnameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastName;
-@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextView;
-
-@property (weak, nonatomic) IBOutlet UILabel *photoNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageProfileView;
 
 @property (weak, nonatomic) IBOutlet UIButton *choosePhotoButton;
-@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
+
 
 @property (nonatomic, strong) UIImage *image;
 
@@ -32,13 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // Do any additional setup after loading the view.
 }
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
     self.image = image;
+    self.imageProfileView.image = image;
 }
 
 - (IBAction)choosePhoto:(id)sender
@@ -54,6 +51,7 @@
 
 - (IBAction)startInscription:(id)sender
 {
+    
 }
 
 @end

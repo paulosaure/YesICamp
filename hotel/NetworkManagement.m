@@ -53,7 +53,7 @@
     request.HTTPMethod = @"GET";
     
     // Generate session
-    NSURLSessionConfiguration* config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"myUniqueAppID"];
+    NSURLSessionConfiguration* config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:SESSION_UNIQUE_IDENTIFIER];
     _session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     
     // Start Download Task

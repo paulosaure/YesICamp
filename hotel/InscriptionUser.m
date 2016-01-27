@@ -7,14 +7,30 @@
 //
 
 #import "InscriptionUser.h"
-#import "UserProfil.h"
-#import <AFHTTPSessionManager.h>
+
+#define INSCRIPTION_URL @""
 
 @implementation InscriptionUser
 
-- (void)inscriptionWithProfil:(UserProfil *)profil url:(NSString *)url
+#pragma mark - Constructor
+
++ (instancetype)action
 {
-    [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:url parameters:profil error:nil];
+    InscriptionUser *action = [[InscriptionUser alloc] init];
+    return action;
+}
+
+#pragma mark - Action
+
+- (void)requestServer
+{
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:[@(WebServiceInscription) stringValue] object:nil];
+    [super requestServer:ACTION_URL(INSCRIPTION_URL) action:WebServiceInscription];
+}
+
+- (void)handleDownloadedData:(NSNotification *)notif
+{
+    NSLog(@"Success %@", notif.object);
 }
 
 @end

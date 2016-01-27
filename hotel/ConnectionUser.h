@@ -8,6 +8,7 @@
 
 @interface ConnectionUser : NetworkManagement
 
-- (void)connectionWithIdentifiant:(NSString *)email password:(NSString *)password url:(NSString *)url;
++ (instancetype)action;
+- (void)requestServer;
 
 @end

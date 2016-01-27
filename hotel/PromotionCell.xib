@@ -17,16 +17,34 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-yw-J8y">
                         <rect key="frame" x="0.0" y="0.0" width="361" height="108.5"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybo-mW-9cU">
+                        <rect key="frame" x="5" y="83" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTE-lT-KiL">
+                        <rect key="frame" x="314" y="83" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="fpm-yw-J8y" secondAttribute="bottom" id="2mD-Fx-tze"/>
+                    <constraint firstAttribute="bottom" secondItem="BTE-lT-KiL" secondAttribute="bottom" constant="5" id="GXG-DW-mK0"/>
                     <constraint firstAttribute="trailing" secondItem="fpm-yw-J8y" secondAttribute="trailing" id="ROb-0j-Avv"/>
+                    <constraint firstAttribute="bottom" secondItem="ybo-mW-9cU" secondAttribute="bottom" constant="5" id="Vzv-5b-etS"/>
+                    <constraint firstAttribute="trailing" secondItem="BTE-lT-KiL" secondAttribute="trailing" constant="5" id="eLF-7h-Eta"/>
+                    <constraint firstItem="ybo-mW-9cU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="q5y-uG-7Dr"/>
                     <constraint firstItem="fpm-yw-J8y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="srf-Pc-Scg"/>
                     <constraint firstItem="fpm-yw-J8y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ubP-c1-Tln"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imageView" destination="fpm-yw-J8y" id="fRf-eO-Eld"/>
+                <outlet property="imageBackgroundView" destination="fpm-yw-J8y" id="up9-zW-lxt"/>
+                <outlet property="nameLabel" destination="ybo-mW-9cU" id="NAH-aY-f2m"/>
+                <outlet property="priceLabel" destination="BTE-lT-KiL" id="x7I-GK-zZH"/>
             </connections>
             <point key="canvasLocation" x="290.5" y="316.5"/>
         </tableViewCell>

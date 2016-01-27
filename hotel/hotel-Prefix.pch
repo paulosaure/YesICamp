@@ -32,8 +32,9 @@
 #endif
 
 // Network
-#define MAIN_URL            @"http://campingtonight.com/webservices/"
-#define ACTION_URL(path)     [NSString stringWithFormat:@"%@%@", MAIN_URL, path]
+#define SESSION_UNIQUE_IDENTIFIER   @"com.paulLavoine.hotel"
+#define MAIN_URL                    @"http://campingtonight.com/webservices/"
+#define ACTION_URL(path)            [NSString stringWithFormat:@"%@%@", MAIN_URL, path]
 
 // Import
 #import <Foundation/Foundation.h>

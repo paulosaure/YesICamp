@@ -8,4 +8,7 @@
 
 @interface GetCampingsListAction : NetworkManagement
 
++ (instancetype)action;
+- (void)requestServer;
+
 @end

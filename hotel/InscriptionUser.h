@@ -8,4 +8,7 @@
 
 @interface InscriptionUser : NetworkManagement
 
++ (instancetype)action;
+- (void)requestServer;
+
 @end

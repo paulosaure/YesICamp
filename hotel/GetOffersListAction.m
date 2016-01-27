@@ -10,8 +10,6 @@
 
 #define OFFERS_URL     @"get_all_offres.php"
 
-#define OFFERS_LIST_NOTIFICATION @"OFFERS_LIST_NOTIFICATION"
-
 @implementation GetOffersListAction
 
 #pragma mark - Constructor

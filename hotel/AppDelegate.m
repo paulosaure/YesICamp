@@ -20,7 +20,7 @@
 {
     // Try to fetch user location
     [[LocationManager sharedInstance] updateLocation];
-    [[GetOffersListAction action] requestServer];
+//    [[GetOffersListAction action] requestServer];
     
     return YES;
 }
