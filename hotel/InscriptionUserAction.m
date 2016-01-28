@@ -1,22 +1,22 @@
 //
-//  InscriptionUser.m
+//  InscriptionUserAction.m
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "InscriptionUser.h"
+#import "InscriptionUserAction.h"
 
 #define INSCRIPTION_URL @""
 
-@implementation InscriptionUser
+@implementation InscriptionUserAction
 
 #pragma mark - Constructor
 
 + (instancetype)action
 {
-    InscriptionUser *action = [[InscriptionUser alloc] init];
+    InscriptionUserAction *action = [[InscriptionUserAction alloc] init];
     return action;
 }
 

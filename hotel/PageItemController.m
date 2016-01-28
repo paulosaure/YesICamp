@@ -10,26 +10,36 @@
 
 @interface PageItemController ()
 
+// Data
+@property (nonatomic, strong) NSString *imageName;
+
+// IBOutlets
+@property (nonatomic, weak) IBOutlet UIImageView *contentImageView;
+
 @end
 
 @implementation PageItemController
-@synthesize itemIndex;
-@synthesize imageName;
-@synthesize contentImageView;
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    contentImageView.image = [UIImage imageNamed: imageName];
+    self.contentImageView.image = [UIImage imageNamed:self.imageName];
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
 }
 
 #pragma mark - Content
 
-- (void) setImageName: (NSString *) name
+- (void)configurePageWith:(NSString *)name index:(NSInteger)index
 {
-    imageName = name;
-    contentImageView.image = [UIImage imageNamed: imageName];
+    self.imageName = name;
+    self.itemIndex = index;
 }
+
 
 @end

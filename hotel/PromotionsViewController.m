@@ -53,11 +53,7 @@
     // Get hotek
     Camping *camping = self.campings[indexPath.row];
     
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
-    ProfilViewController *profilViewController = (ProfilViewController *)[storyBoard instantiateViewControllerWithIdentifier:ProfilViewControllerID];
-    profilViewController.camping = camping;
-    
-    [self.navigationController pushViewController:profilViewController animated:YES];
+    [NOTIFICATION_CENTER postNotificationName:ProfilNotificiation object:camping];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

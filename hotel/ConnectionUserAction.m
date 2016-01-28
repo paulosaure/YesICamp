@@ -5,17 +5,17 @@
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
-#import "ConnectionUser.h"
+#import "ConnectionUserAction.h"
 
 #define CONNECTION_URL @""
 
-@implementation ConnectionUser
+@implementation ConnectionUserAction
 
 #pragma mark - Constructor
 
 + (instancetype)action
 {
-    ConnectionUser *action = [[ConnectionUser alloc] init];
+    ConnectionUserAction *action = [[ConnectionUserAction alloc] init];
     return action;
 }
 

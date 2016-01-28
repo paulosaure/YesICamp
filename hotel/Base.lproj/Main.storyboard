@@ -63,7 +63,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4aC-Re-cjo" kind="show" id="O0p-Sx-UQn"/>
+                                    <action selector="pushInscriptionViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEm-2Y-S6Y"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mot de passe" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lam-uI-n3G">
@@ -193,7 +193,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YHz-Bj-lbq"/>
                                 </constraints>
-                                <state key="normal" title="Inscription"/>
+                                <state key="normal" title="Inscription">
+                                    <color key="titleColor" red="1" green="0.9654358073" blue="0.92381461460000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startInscription:" destination="4aC-Re-cjo" eventType="touchUpInside" id="wHT-5d-Hw1"/>
                                 </connections>
@@ -214,13 +216,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7s-WJ-6Su">
-                                <rect key="frame" x="20" y="291" width="97" height="30"/>
-                                <state key="normal" title="Choose photo"/>
-                                <connections>
-                                    <action selector="choosePhoto:" destination="4aC-Re-cjo" eventType="touchUpInside" id="Bj7-Ep-Lrw"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vl-dG-LRR">
                                 <rect key="frame" x="410" y="280" width="150" height="150"/>
                                 <constraints>
@@ -234,8 +229,17 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7s-WJ-6Su">
+                                <rect key="frame" x="20" y="291" width="97" height="30"/>
+                                <state key="normal" title="Choose photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choosePhoto:" destination="4aC-Re-cjo" eventType="touchUpInside" id="Bj7-Ep-Lrw"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AcZ-Do-oDQ" secondAttribute="trailing" constant="20" id="1PZ-EA-F2i"/>
                             <constraint firstItem="CxM-Yu-22J" firstAttribute="top" secondItem="EWL-vX-BYX" secondAttribute="bottom" constant="10" id="1as-bO-VNe"/>
@@ -322,9 +326,9 @@
                                     <constraint firstItem="vhX-40-izB" firstAttribute="top" secondItem="dfZ-Li-cNW" secondAttribute="top" constant="5" id="z5d-T9-Iy8"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J7E-Ca-oPl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J7E-Ca-oPl">
                                 <rect key="frame" x="0.0" y="45" width="600" height="555"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="lI2-n3-yc5" id="Erh-7y-pdA"/>
                                     <outlet property="delegate" destination="lI2-n3-yc5" id="Z9F-hh-rhh"/>
@@ -407,9 +411,13 @@
                                     <action selector="reserveCamping:" destination="ALr-Sm-13Y" eventType="touchUpInside" id="Vr9-w2-WR7"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-9F-Ubh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-9F-Ubh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ALr-Sm-13Y" id="XOS-hB-qgL"/>
+                                    <outlet property="delegate" destination="ALr-Sm-13Y" id="wST-3a-qHy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -457,7 +465,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentImageView" destination="QUm-hi-Lp6" id="A6X-yJ-xst"/>
+                        <outlet property="contentImageView" destination="QUm-hi-Lp6" id="nAz-l1-QY6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itp-tb-rFs" userLabel="First Responder" sceneMemberID="firstResponder"/>

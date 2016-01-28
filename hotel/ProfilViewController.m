@@ -24,6 +24,8 @@
 
 @implementation ProfilViewController
 
+#pragma mark - Initializer
+
 - (instancetype)initWithCamping:(Camping *)camping
 {
     if (self = [super init])
@@ -34,28 +36,48 @@
     return self;
 }
 
+#pragma mark - View lifeCycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    // Init view page controller
     self.pageViewController = [[UIPageViewController alloc] init];
     self.pageViewController.delegate = self;
     
+    // Configure view page controller
     [self createPageViewController];
     [self setupPageControl];
     
+    // Change height table header view
+    self.tableView.estimatedRowHeight = 65.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableHeaderView = self.pageViewController.view;
+    
+    // register Cell Nib
+    [self.tableView registerNib:[InformationCampingCell cellNib] forCellReuseIdentifier:INFORMATION_CELL_IDENTIFIER];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+}
+
+
+#pragma mark - Configuration
 
 - (void)createPageViewController
 {
-    self.contentImages = @[@"nature_pic_1.png",
-                      @"nature_pic_2.png",
-                      @"nature_pic_3.png",
-                      @"nature_pic_4.png"];
+    self.contentImages = @[@"campingImage",
+                           @"campingImage",
+                           @"campingImage",
+                           @"campingImage"];
     
-    UIPageViewController *pageController = [[UIPageViewController alloc] init];
+    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     pageController.dataSource = self;
+    pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 250);
     
     if([self.contentImages count])
     {
@@ -67,9 +89,6 @@
     }
     
     self.pageViewController = pageController;
-    [self addChildViewController: self.pageViewController];
-    [self.view addSubview: self.pageViewController.view];
-    [self.pageViewController didMoveToParentViewController: self];
 }
 
 - (void)setupPageControl
@@ -79,47 +98,20 @@
     [[UIPageControl appearance] setBackgroundColor: [UIColor darkGrayColor]];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 0;
-}
+#pragma mark - UIPageViewControllerDelegate
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(PageItemController *)viewController
 {
-    return [self.camping.informations count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Dequeue cell
-    InformationCampingCell *cell = [tableView dequeueReusableCellWithIdentifier:INFORMATION_CELL_IDENTIFIER];
-    
-    // Configure celle
-    [cell configureWithInformationsCamping:self.camping.informations[indexPath.row]];
-    
-    return cell;
-}
-
-- (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerBeforeViewController:(UIViewController *) viewController
-{
-    PageItemController *itemController = (PageItemController *) viewController;
-    
-    if (itemController.itemIndex > 0)
-    {
-        return [self itemControllerForIndex: itemController.itemIndex-1];
-    }
+    if (viewController.itemIndex > 0)
+        return [self itemControllerForIndex:viewController.itemIndex-1];
     
     return nil;
 }
 
-- (UIViewController *) pageViewController: (UIPageViewController *) pageViewController viewControllerAfterViewController:(UIViewController *) viewController
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(PageItemController *)viewController
 {
-    PageItemController *itemController = (PageItemController *) viewController;
-    
-    if (itemController.itemIndex+1 < [self.contentImages count])
-    {
-        return [self itemControllerForIndex: itemController.itemIndex+1];
-    }
+    if (viewController.itemIndex+1 < [self.contentImages count])
+        return [self itemControllerForIndex:viewController.itemIndex+1];
     
     return nil;
 }
@@ -128,9 +120,9 @@
 {
     if (itemIndex < [self.contentImages count])
     {
-        PageItemController *pageItemController = [self.storyboard instantiateViewControllerWithIdentifier: PageItemControllerID];
-        pageItemController.itemIndex = itemIndex;
-        pageItemController.imageName = self.contentImages[itemIndex];
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
+        PageItemController *pageItemController = (PageItemController *)[storyBoard instantiateViewControllerWithIdentifier: PageItemControllerID];
+        [pageItemController configurePageWith:self.contentImages[itemIndex] index:itemIndex];
         return pageItemController;
     }
     
@@ -149,8 +141,29 @@
     return 0;
 }
 
+#pragma mark - TableViewMethods Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;[self.camping.informations count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Dequeue cell
+    InformationCampingCell *cell = [tableView dequeueReusableCellWithIdentifier:INFORMATION_CELL_IDENTIFIER];
+    
+    // Configure cell
+    [cell configureWithInformationsCamping:self.camping.informations[indexPath.row]];
+    
+    return cell;
+}
+
+#pragma mark - Actions
+
 - (IBAction)reserveCamping:(id)sender
 {
+    
 }
 
 @end

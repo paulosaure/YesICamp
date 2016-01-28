@@ -7,14 +7,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InformationCellID" id="87w-Wf-fqE" customClass="InformationCampingCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InformationCellID" rowHeight="107" id="87w-Wf-fqE" customClass="InformationCampingCell">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="71.5"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="87w-Wf-fqE" id="4kU-I8-xjc">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="344" height="71"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayQ-1G-h06">
+                        <rect key="frame" x="10" y="10" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oue-6h-dX0">
+                        <rect key="frame" x="10" y="40" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eY-Yi-csT">
+                        <rect key="frame" x="20" y="70" width="304" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="MfN-yO-5dZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oue-6h-dX0" secondAttribute="bottom" constant="10" id="4gc-uo-bYu"/>
+                    <constraint firstItem="ayQ-1G-h06" firstAttribute="top" secondItem="4kU-I8-xjc" secondAttribute="top" constant="10" id="BwL-nc-rec"/>
+                    <constraint firstAttribute="bottom" secondItem="0eY-Yi-csT" secondAttribute="bottom" id="FWz-CN-d8h"/>
+                    <constraint firstAttribute="trailing" secondItem="0eY-Yi-csT" secondAttribute="trailing" constant="20" id="gmM-cb-ity"/>
+                    <constraint firstItem="oue-6h-dX0" firstAttribute="leading" secondItem="4kU-I8-xjc" secondAttribute="leading" constant="10" id="lbf-gu-oeu"/>
+                    <constraint firstItem="0eY-Yi-csT" firstAttribute="leading" secondItem="4kU-I8-xjc" secondAttribute="leading" constant="20" id="nzG-QL-0qT"/>
+                    <constraint firstItem="oue-6h-dX0" firstAttribute="top" secondItem="ayQ-1G-h06" secondAttribute="bottom" constant="10" id="oLg-YX-edc"/>
+                    <constraint firstItem="ayQ-1G-h06" firstAttribute="leading" secondItem="4kU-I8-xjc" secondAttribute="leading" constant="10" id="yuW-B9-OHz"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="255" y="167"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="oue-6h-dX0" id="KG0-xz-oa7"/>
+                <outlet property="titleLabel" destination="ayQ-1G-h06" id="Ngo-E1-HIW"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="167.75"/>
         </tableViewCell>
     </objects>
 </document>

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-@interface ConnectionUser : NetworkManagement
+@interface ConnectionUserAction : NetworkManagement
 
 + (instancetype)action;
 - (void)requestServer;

@@ -10,6 +10,9 @@
 
 @interface InformationCampingCell ()
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
 @end
 
 @implementation InformationCampingCell
@@ -29,6 +32,7 @@
 
 - (void)configureWithInformationsCamping:(Camping *)camping
 {
-    
+    self.titleLabel.text = @"Title";
+    self.descriptionLabel.text = @"Description";
 }
 @end

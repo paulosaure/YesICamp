@@ -6,6 +6,10 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
+#define InscriptionViewControllerID @"InscriptionViewControllerID"
+
+#define InscriptionNotificiation @"InscriptionNotificiation"
+
 @interface InscriptionViewController : UIViewController
 
 @end

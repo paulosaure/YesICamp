@@ -8,6 +8,8 @@
 
 #define ProfilViewControllerID @"ProfilViewControllerID"
 
+#define ProfilNotificiation @"ProfilNotificiation"
+
 @interface ProfilViewController : UIViewController
 
 @property (nonatomic, strong) Camping* camping;

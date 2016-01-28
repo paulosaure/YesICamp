@@ -11,11 +11,9 @@
 
 @interface PageItemController : UIViewController
 
-// Item controller information
-@property (nonatomic) NSUInteger itemIndex;
-@property (nonatomic, strong) NSString *imageName;
+- (void)configurePageWith:(NSString *)name index:(NSInteger)index;
 
-// IBOutlets
-@property (nonatomic, weak) IBOutlet UIImageView *contentImageView;
+// Data
+@property (nonatomic) NSUInteger itemIndex;
 
 @end

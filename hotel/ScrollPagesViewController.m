@@ -14,6 +14,9 @@
 #import "PromotionsViewController.h"
 #import "InformationViewController.h"
 
+#import "InscriptionViewController.h"
+#import "ProfilViewController.h"
+
 #define CONTENT_PICTO_HEIGHT 47
 
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
@@ -47,7 +50,18 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.translucent = NO;
     self.myStoryboard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
+    
+    [self configureNotification];
+    
     [self reloadData];
+}
+
+#pragma mark - Configurations
+
+- (void)configureNotification
+{
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionNotificiation object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:ProfilNotificiation object:nil];
 }
 
 #pragma mark - LPViewPagerDataSource
@@ -68,6 +82,7 @@
 }
 
 #pragma mark 🎈LPViewPagerDelegate
+
 - (void)viewPager:(LPViewPagerController *)viewPager didChangeTabToIndex:(NSUInteger)index
 {
     self.currentIndex = index;
@@ -153,6 +168,7 @@
 
 - (void)setCurrentIndex:(NSInteger)index
 {
+    // Don't remove _ with self.
     _currentIndex = index;
     [self.pagingTitleView adjustTitleViewAtIndex:index];
 }
@@ -203,6 +219,25 @@
         self.hotDealViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HotDealViewControllerID];
     }
     return self.hotDealViewController;
+}
+
+#pragma mark - Notifications
+
+- (void)pushInscriptionViewController
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
+    InscriptionViewController *inscriptionViewController = (InscriptionViewController *)[storyBoard instantiateViewControllerWithIdentifier:InscriptionViewControllerID];
+    [self.navigationController pushViewController:inscriptionViewController animated:YES];
+}
+
+- (void)pushProfilViewController:(NSNotification *)notification
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
+    ProfilViewController *profilViewController = (ProfilViewController *)[storyBoard instantiateViewControllerWithIdentifier:ProfilViewControllerID];
+    profilViewController.camping = notification.object;
+    [self.navigationController pushViewController:profilViewController animated:YES];
+
+    
 }
 
 @end
