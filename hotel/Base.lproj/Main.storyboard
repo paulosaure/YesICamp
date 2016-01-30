@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QeL-UK-PYX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QeL-UK-PYX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -93,7 +94,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ugk-RD-3xd"/>
                                 </constraints>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -138,22 +139,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nfn-8u-ikp">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="s9T-Ho-dFd"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="s9T-Ho-dFd"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="FE5-gx-oNJ" id="3di-05-r9D"/>
                                 </connections>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL8-Ue-goy">
+                                <rect key="frame" x="0.0" y="260" width="600" height="340"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FE5-gx-oNJ" id="sAN-yi-Zfv"/>
+                                    <outlet property="delegate" destination="FE5-gx-oNJ" id="8kV-Bc-wfS"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-YX-5tF">
+                                <rect key="frame" x="550" y="210" width="45" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.1005161125" blue="0.074922599270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CoQ-Eg-buJ"/>
+                                    <constraint firstAttribute="width" constant="45" id="kon-2U-42I"/>
+                                </constraints>
+                                <state key="normal" title="Localisation"/>
+                                <connections>
+                                    <action selector="centreMapViewOnUser:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="zdB-Xa-qSZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SZv-yj-ydv" firstAttribute="top" secondItem="nfn-8u-ikp" secondAttribute="bottom" id="0Ei-Sv-nA2"/>
+                            <constraint firstItem="tL8-Ue-goy" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" id="RoS-3L-X1c"/>
                             <constraint firstItem="nfn-8u-ikp" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" id="URs-8w-AaA"/>
                             <constraint firstItem="nfn-8u-ikp" firstAttribute="top" secondItem="Pei-Ts-JOh" secondAttribute="bottom" id="WBR-oM-wnT"/>
+                            <constraint firstItem="SZv-yj-ydv" firstAttribute="top" secondItem="tL8-Ue-goy" secondAttribute="bottom" id="dSM-kX-cqT"/>
+                            <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="nfn-8u-ikp" secondAttribute="bottom" id="daZ-c0-mq2"/>
+                            <constraint firstAttribute="trailing" secondItem="GCC-YX-5tF" secondAttribute="trailing" constant="5" id="epq-kI-hvR"/>
                             <constraint firstAttribute="trailing" secondItem="nfn-8u-ikp" secondAttribute="trailing" id="ou3-gt-9gG"/>
+                            <constraint firstItem="nfn-8u-ikp" firstAttribute="height" secondItem="1qM-h0-v4c" secondAttribute="height" multiplier="2:5" id="tcG-B0-Ird"/>
+                            <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="GCC-YX-5tF" secondAttribute="bottom" constant="5" id="v7G-C2-ttt"/>
+                            <constraint firstAttribute="trailing" secondItem="tL8-Ue-goy" secondAttribute="trailing" id="yLn-Vh-Wgb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0Ei-Sv-nA2"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="nfn-8u-ikp" id="wcw-3S-Dbw"/>
+                        <outlet property="tableView" destination="tL8-Ue-goy" id="zWA-sD-7Vg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzS-bs-jQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>

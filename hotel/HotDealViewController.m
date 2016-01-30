@@ -12,12 +12,18 @@
 #import "CustomAnnotation.h"
 #import "ProfilViewController.h"
 #import "AnnotationView.h"
+#import "HotDealCell.h"
 
 #define USER_LOCATION_WIDTH 20
 
-@interface HotDealViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface HotDealViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
+// Outlets
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+// Data
+@property (nonatomic, strong) NSArray *hotDeals;
 
 @end
 
@@ -34,6 +40,9 @@
     }
     
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+    
+    // register Cell Nib
+    [self.tableView registerNib:[HotDealCell cellNib] forCellReuseIdentifier:HOT_DEAL_CELL_ID];
 }
 
 #pragma mark - MKMapViewDelegate
@@ -49,7 +58,7 @@
     location.longitude = userLocation.coordinate.longitude;
     region.span = span;
     region.center = location;
-    [mapView setRegion:region animated:YES];
+    [self.mapView setRegion:region animated:YES];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -90,5 +99,31 @@
     
     [self.navigationController pushViewController:controller animated:YES];
 }
+
+#pragma mark - TableViewMethods Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;[self.hotDeals count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Dequeue cell
+    HotDealCell *cell = [tableView dequeueReusableCellWithIdentifier:HOT_DEAL_CELL_ID];
+    
+    // Configure cell
+    [cell configureWithInformationsHotDeal:self.hotDeals[indexPath.row]];
+    
+    return cell;
+}
+
+#pragma mark - Actions
+
+- (IBAction)centreMapViewOnUser:(id)sender
+{
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+}
+
 
 @end

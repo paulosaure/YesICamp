@@ -31,6 +31,10 @@
 
 - (IBAction)connection:(id)sender
 {
+    [[ConnectionUserAction action] requestServer];
+    
+    
+    
     //    if ([[NetworkManagement sharedInstance] connectionWithServer])
     //    {
     ////        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];

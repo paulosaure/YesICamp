@@ -15,6 +15,9 @@
 		A84C717E1C56C9A800598FE9 /* PageItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C717D1C56C9A800598FE9 /* PageItemController.m */; };
 		A84C71831C56E02400598FE9 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71821C56E02400598FE9 /* LocationManager.m */; };
 		A84C71891C56E7A000598FE9 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71881C56E7A000598FE9 /* CustomAnnotation.m */; };
+		A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2771C5CB8670006CAAA /* HotDealCell.m */; };
+		A870B27A1C5CB8670006CAAA /* HotDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A870B2781C5CB8670006CAAA /* HotDealCell.xib */; };
+		A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B27D1C5CB8C80006CAAA /* HotDeal.m */; };
 		A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */; };
 		A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */; };
 		A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* PromotionCell.m */; };
@@ -55,7 +58,7 @@
 		A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CF58C51C5007A2002D227A /* InscriptionViewController.m */; };
 		A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */; };
 		A8F2FEF61C54D426007DF893 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEF51C54D426007DF893 /* InformationViewController.m */; };
-		A8F2FF091C557F01007DF893 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Offer.m */; };
+		A8F2FF091C557F01007DF893 /* Promo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Promo.m */; };
 		A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF1B1C559A56007DF893 /* ScrollPagesViewController.m */; };
 		FC3E8C90B71CCA6AAEE87C2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C91B09CC94CDA73374504379 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -94,6 +97,11 @@
 		A84C71821C56E02400598FE9 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		A84C71871C56E7A000598FE9 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
 		A84C71881C56E7A000598FE9 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+		A870B2761C5CB8670006CAAA /* HotDealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDealCell.h; sourceTree = "<group>"; };
+		A870B2771C5CB8670006CAAA /* HotDealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDealCell.m; sourceTree = "<group>"; };
+		A870B2781C5CB8670006CAAA /* HotDealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotDealCell.xib; sourceTree = "<group>"; };
+		A870B27C1C5CB8C80006CAAA /* HotDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDeal.h; sourceTree = "<group>"; };
+		A870B27D1C5CB8C80006CAAA /* HotDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDeal.m; sourceTree = "<group>"; };
 		A88EB3C71C500E97008DC5CF /* PromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionsViewController.h; sourceTree = "<group>"; };
 		A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionsViewController.m; sourceTree = "<group>"; };
 		A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
@@ -167,8 +175,8 @@
 		A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDealViewController.m; sourceTree = "<group>"; };
 		A8F2FEF41C54D426007DF893 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		A8F2FEF51C54D426007DF893 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
-		A8F2FF071C557F01007DF893 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
-		A8F2FF081C557F01007DF893 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		A8F2FF071C557F01007DF893 /* Promo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Promo.h; sourceTree = "<group>"; };
+		A8F2FF081C557F01007DF893 /* Promo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Promo.m; sourceTree = "<group>"; };
 		A8F2FF0B1C5585D1007DF893 /* hotel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hotel-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8F2FF1A1C559A56007DF893 /* ScrollPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPagesViewController.h; sourceTree = "<group>"; };
 		A8F2FF1B1C559A56007DF893 /* ScrollPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPagesViewController.m; sourceTree = "<group>"; };
@@ -293,6 +301,25 @@
 			name = MKAnnotations;
 			sourceTree = "<group>";
 		};
+		A870B2751C5CB84A0006CAAA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A870B2761C5CB8670006CAAA /* HotDealCell.h */,
+				A870B2771C5CB8670006CAAA /* HotDealCell.m */,
+				A870B2781C5CB8670006CAAA /* HotDealCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		A870B27B1C5CB8910006CAAA /* HotDeal */ = {
+			isa = PBXGroup;
+			children = (
+				A870B27C1C5CB8C80006CAAA /* HotDeal.h */,
+				A870B27D1C5CB8C80006CAAA /* HotDeal.m */,
+			);
+			name = HotDeal;
+			sourceTree = "<group>";
+		};
 		A88EB3C31C5009FF008DC5CF /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,7 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				A88EB3DD1C5015DB008DC5CF /* Camping */,
-				A8F2FF061C557EAB007DF893 /* Offer */,
+				A870B27B1C5CB8910006CAAA /* HotDeal */,
+				A8F2FF061C557EAB007DF893 /* Promo */,
 				A88EB4041C50395B008DC5CF /* UserProfil */,
 			);
 			name = Models;
@@ -628,6 +656,7 @@
 			children = (
 				A8F2FEEB1C54D2BA007DF893 /* HotDealViewController.h */,
 				A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */,
+				A870B2751C5CB84A0006CAAA /* Cell */,
 				A89763C21C58028B0060BC5C /* marker */,
 			);
 			name = HotDeal;
@@ -649,13 +678,13 @@
 			name = TabBar;
 			sourceTree = "<group>";
 		};
-		A8F2FF061C557EAB007DF893 /* Offer */ = {
+		A8F2FF061C557EAB007DF893 /* Promo */ = {
 			isa = PBXGroup;
 			children = (
-				A8F2FF071C557F01007DF893 /* Offer.h */,
-				A8F2FF081C557F01007DF893 /* Offer.m */,
+				A8F2FF071C557F01007DF893 /* Promo.h */,
+				A8F2FF081C557F01007DF893 /* Promo.m */,
 			);
-			name = Offer;
+			name = Promo;
 			sourceTree = "<group>";
 		};
 		A8F2FF0E1C558624007DF893 /* ScrollPages */ = {
@@ -775,6 +804,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A63DC71C5005C30026E456 /* LaunchScreen.storyboard in Resources */,
+				A870B27A1C5CB8670006CAAA /* HotDealCell.xib in Resources */,
 				A8A63DC41C5005C30026E456 /* Assets.xcassets in Resources */,
 				A88EB3DB1C5015AA008DC5CF /* PromotionCell.xib in Resources */,
 				A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */,
@@ -858,12 +888,13 @@
 				A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */,
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
+				A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,
 				A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */,
 				A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */,
 				A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */,
 				A89763C51C5802BA0060BC5C /* marker.m in Sources */,
-				A8F2FF091C557F01007DF893 /* Offer.m in Sources */,
+				A8F2FF091C557F01007DF893 /* Promo.m in Sources */,
 				A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */,
 				A88EB3FD1C503763008DC5CF /* GetCampingsListAction.m in Sources */,
 				A84C71781C56C49400598FE9 /* InformationCampingCell.m in Sources */,
@@ -881,6 +912,7 @@
 				A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */,
 				A89763C91C580BA40060BC5C /* AnnotationView.m in Sources */,
 				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,
+				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
 				A84C71891C56E7A000598FE9 /* CustomAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1023,6 +1055,7 @@
 			baseConfigurationReference = 726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1054,6 +1087,7 @@
 			baseConfigurationReference = 381A166E8C10B1F505A87604 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

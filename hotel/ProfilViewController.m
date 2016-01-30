@@ -10,6 +10,8 @@
 #import "InformationCampingCell.h"
 #import "PageItemController.h"
 
+#define PAGE_CONTROLLER_HEIGHT 350
+
 @interface ProfilViewController () <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 // Outlets
@@ -77,7 +79,7 @@
     
     UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     pageController.dataSource = self;
-    pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 250);
+    pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), PAGE_CONTROLLER_HEIGHT);
     
     if([self.contentImages count])
     {
@@ -95,7 +97,7 @@
 {
     [[UIPageControl appearance] setPageIndicatorTintColor: [UIColor grayColor]];
     [[UIPageControl appearance] setCurrentPageIndicatorTintColor: [UIColor whiteColor]];
-    [[UIPageControl appearance] setBackgroundColor: [UIColor darkGrayColor]];
+    [[UIPageControl appearance] setBackgroundColor: [UIColor clearColor]];
 }
 
 #pragma mark - UIPageViewControllerDelegate

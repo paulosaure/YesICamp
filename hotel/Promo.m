@@ -1,14 +1,14 @@
 //
-//  Offer.m
+//  Promo.m
 //  hotel
 //
 //  Created by Paul Lavoine on 24/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "Offer.h"
+#import "Promo.h"
 
-@interface Offer ()
+@interface Promo ()
 
 @property (nonatomic, strong) Camping *camping;
 @property (nonatomic, strong) NSString *offerDescription;
@@ -23,6 +23,6 @@
 @end
 
 
-@implementation Offer
+@implementation Promo
 
 @end
