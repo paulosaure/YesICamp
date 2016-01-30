@@ -15,7 +15,6 @@
 
 @property (nonatomic, strong) NSMutableArray *views;
 @property (nonatomic, strong) UIView *pageIndicator;
-@property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic, strong) NSArray *imageArray;
 
 @end
@@ -41,37 +40,16 @@ static CGFloat kTitleMargin = 50;
     __weak typeof(self) weakself = self;
     [images enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
         if ([object isKindOfClass:[NSString class]]) {
-            UIImageView *imageView = [[UIImageView alloc] init];
+            CGFloat sizePicto = CONTENT_PICTO_VIEW_HEIGHT - INDICATOR_VIEW_HEIGHT - TRANSLATE_PICTO_TOP - 5;
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,sizePicto ,sizePicto)];
+            imageView.backgroundColor = [UIColor clearColor];
             imageView.image = [UIImage imageNamed:object];
             imageView.tag = idx;
             imageView.contentMode = UIViewContentModeScaleAspectFit;
-            imageView.userInteractionEnabled     = YES;
-            UITapGestureRecognizer *tapTextLabel = [[UITapGestureRecognizer alloc] initWithTarget:weakself action:@selector(didTapTextLabel:)];
-            [imageView addGestureRecognizer:tapTextLabel];
+            imageView.userInteractionEnabled = YES;
+            [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:weakself action:@selector(didTapTextLabel:)]];
             [weakself addSubview:imageView];
             [weakself.views addObject:imageView];
-        }
-    }];
-}
-
-- (void)addTitles:(NSArray *)titles
-{
-    self.titleArray = titles;
-    [self.views makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.views removeAllObjects];
-    __weak typeof(self) weakself = self;
-    [titles enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
-        if ([object isKindOfClass:[NSString class]]) {
-            UILabel *textLabel                   = [[UILabel alloc] init];
-            textLabel.text                       = object;
-            textLabel.tag                        = idx;
-            textLabel.textAlignment              = NSTextAlignmentCenter;
-            textLabel.font                       = self.font;
-            textLabel.userInteractionEnabled     = YES;
-            UITapGestureRecognizer *tapTextLabel = [[UITapGestureRecognizer alloc] initWithTarget:weakself action:@selector(didTapTextLabel:)];
-            [textLabel addGestureRecognizer:tapTextLabel];
-            [weakself addSubview:textLabel];
-            [weakself.views addObject:textLabel];
         }
     }];
 }
@@ -81,13 +59,12 @@ static CGFloat kTitleMargin = 50;
     [super layoutSubviews];
     CGRect idRect            = self.pageIndicator.frame;
     idRect.origin.y          = self.frame.size.height - INDICATOR_VIEW_HEIGHT;
-    idRect.size.width        = (self.frame.size.width - kTitleMargin * (self.titleArray.count - 1))/self.titleArray.count;
+    idRect.size.width        = (self.frame.size.width - kTitleMargin * (self.imageArray.count - 1))/self.imageArray.count;
     self.pageIndicator.frame = idRect;
     [self.views enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        [view sizeToFit];
         CGSize size       = view.frame.size;
         size.width        = self.frame.size.width;
-        CGFloat viewWidth = (size.width - kTitleMargin * (self.titleArray.count - 1))/self.titleArray.count;
+        CGFloat viewWidth = (size.width - kTitleMargin * (self.imageArray.count - 1))/self.imageArray.count;
         view.frame        = CGRectMake((viewWidth + kTitleMargin) * idx, TRANSLATE_PICTO_TOP, viewWidth, size.height);
     }];
 }
@@ -129,48 +106,29 @@ static CGFloat kTitleMargin = 50;
 - (void)updatePageIndicatorPosition:(CGFloat)xPosition
 {
     CGFloat screenWidth            = [[UIScreen mainScreen]bounds].size.width;
-    CGFloat pageIndicatorXPosition = (((xPosition - screenWidth)/screenWidth) * (self.frame.size.width - self.pageIndicator.frame.size.width))/(self.titleArray.count - 1);
+    CGFloat pageIndicatorXPosition = (((xPosition - screenWidth)/screenWidth) * (self.frame.size.width - self.pageIndicator.frame.size.width))/(self.imageArray.count - 1);
     CGRect idRect                  = self.pageIndicator.frame;
     idRect.origin.x                = pageIndicatorXPosition;
     self.pageIndicator.frame       = idRect;
 }
-
-- (void)adjustTitleViewAtIndex:(CGFloat)index
-{
-    for (UILabel *textLabel in self.subviews) {
-        if ([textLabel isKindOfClass:[UILabel class]]) {
-            textLabel.textColor = self.titleNormalColor ? : [UIColor colorWithWhite:0 alpha:1.000];
-            if (textLabel.tag == index) {
-                textLabel.textColor =  self.titleSelectedColor ? : [UIColor blackColor];
-            }
-        }
-    }
-    CGRect idRect = self.pageIndicator.frame;
-    if (index == 0) {
-        idRect.origin.x = 0;
-    } else if (index == self.titleArray.count - 1) {
-        idRect.origin.x = self.frame.size.width - self.pageIndicator.frame.size.width;
-    }
-    self.pageIndicator.frame = idRect;
-}
-
-- (void)adjustImageViewAtIndex:(CGFloat)index
-{
-    for (UIImageView *imageView in self.subviews) {
-        if ([imageView isKindOfClass:[UIImageView class]]) {
-            imageView.backgroundColor = self.titleNormalColor ? : [UIColor colorWithWhite:0 alpha:1.000];
-            if (imageView.tag == index) {
-                imageView.backgroundColor =  self.titleSelectedColor ? : [UIColor blackColor];
-            }
-        }
-    }
-    CGRect idRect = self.pageIndicator.frame;
-    if (index == 0) {
-        idRect.origin.x = 0;
-    } else if (index == self.titleArray.count - 1) {
-        idRect.origin.x = self.frame.size.width - self.pageIndicator.frame.size.width;
-    }
-    self.pageIndicator.frame = idRect;
-}
+//
+//- (void)adjustImageViewAtIndex:(CGFloat)index
+//{
+//    for (UIImageView *imageView in self.subviews) {
+//        if ([imageView isKindOfClass:[UIImageView class]]) {
+//            imageView.backgroundColor = self.titleNormalColor ? : [UIColor colorWithWhite:0 alpha:1.000];
+//            if (imageView.tag == index) {
+//                imageView.backgroundColor =  self.titleSelectedColor ? : [UIColor clearColor];
+//            }
+//        }
+//    }
+//    CGRect idRect = self.pageIndicator.frame;
+//    if (index == 0) {
+//        idRect.origin.x = 0;
+//    } else if (index == self.imageArray.count - 1) {
+//        idRect.origin.x = self.frame.size.width - self.pageIndicator.frame.size.width;
+//    }
+//    self.pageIndicator.frame = idRect;
+//}
 
 @end

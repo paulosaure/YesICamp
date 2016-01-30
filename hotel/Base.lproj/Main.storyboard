@@ -154,28 +154,41 @@
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL8-Ue-goy">
                                 <rect key="frame" x="0.0" y="260" width="600" height="340"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="FE5-gx-oNJ" id="sAN-yi-Zfv"/>
                                     <outlet property="delegate" destination="FE5-gx-oNJ" id="8kV-Bc-wfS"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-YX-5tF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-YX-5tF">
                                 <rect key="frame" x="550" y="210" width="45" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.1005161125" blue="0.074922599270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="CoQ-Eg-buJ"/>
                                     <constraint firstAttribute="width" constant="45" id="kon-2U-42I"/>
                                 </constraints>
-                                <state key="normal" title="Localisation"/>
+                                <state key="normal" image="localize"/>
                                 <connections>
                                     <action selector="centreMapViewOnUser:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="zdB-Xa-qSZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4G-dp-aEu">
+                                <rect key="frame" x="5" y="210" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="A32-8a-ug3"/>
+                                    <constraint firstAttribute="height" constant="45" id="l8G-oj-Xxi"/>
+                                </constraints>
+                                <state key="normal" image="extend"/>
+                                <connections>
+                                    <action selector="extendMap:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="Jfn-ma-pQu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SZv-yj-ydv" firstAttribute="top" secondItem="nfn-8u-ikp" secondAttribute="bottom" id="0Ei-Sv-nA2"/>
+                            <constraint firstItem="W4G-dp-aEu" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" constant="5" id="J3B-Xe-UO2"/>
+                            <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="W4G-dp-aEu" secondAttribute="bottom" constant="5" id="PAr-gc-ouX"/>
                             <constraint firstItem="tL8-Ue-goy" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" id="RoS-3L-X1c"/>
                             <constraint firstItem="nfn-8u-ikp" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" id="URs-8w-AaA"/>
                             <constraint firstItem="nfn-8u-ikp" firstAttribute="top" secondItem="Pei-Ts-JOh" secondAttribute="bottom" id="WBR-oM-wnT"/>
@@ -515,4 +528,8 @@
             <point key="canvasLocation" x="1773" y="676"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="extend" width="199" height="201"/>
+        <image name="localize" width="160" height="160"/>
+    </resources>
 </document>

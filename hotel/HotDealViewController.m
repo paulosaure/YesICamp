@@ -119,6 +119,9 @@
 }
 
 #pragma mark - Actions
+- (IBAction)extendMap:(id)sender
+{
+}
 
 - (IBAction)centreMapViewOnUser:(id)sender
 {

@@ -17,7 +17,7 @@
 #import "InscriptionViewController.h"
 #import "ProfilViewController.h"
 
-#define CONTENT_PICTO_HEIGHT 47
+
 
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
 
@@ -95,16 +95,14 @@
         
         self.pagingTitleView.backgroundColor = [UIColor blackColor];
 
-        self.pagingTitleView.frame    = CGRectMake(0, 0, 0, CONTENT_PICTO_HEIGHT);
+        self.pagingTitleView.frame    = CGRectMake(0, 0, 0, CONTENT_PICTO_VIEW_HEIGHT);
         self.pagingTitleView.font     = [UIFont systemFontOfSize:15];
         self.pagingTitleView.indicatorColor = [UIColor purpleColor];
         
-        NSArray *imageArray           = @[@"profil", @"deal", @"compte"];
-        NSArray *titleArray           = @[@"Title1", @"Title2", @"Title3"];
+        NSArray *imageArray           = @[@"account", @"discount", @"hotDeal"];
         CGRect ptRect                 = self.pagingTitleView.frame;
         ptRect.size.width             = self.view.frame.size.width;
         self.pagingTitleView.frame    = ptRect;
-        [self.pagingTitleView addTitles:titleArray];
         [self.pagingTitleView addImages:imageArray];
         self.pagingTitleView.delegate = self;
     }
@@ -170,7 +168,10 @@
 {
     // Don't remove _ with self.
     _currentIndex = index;
-    [self.pagingTitleView adjustTitleViewAtIndex:index];
+//    [self.pagingTitleView adjustImageViewAtIndex:index];
+    /*
+     Cette méthode permettait (car je l'ai supprimé) de modifier la couleur du texte des images, on peut aller la récupérer dans git. Pour nous elle permet a la limite de grossir les image donc à garder si jamais. Je vais la commenter plutot
+     */
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -236,8 +237,6 @@
     ProfilViewController *profilViewController = (ProfilViewController *)[storyBoard instantiateViewControllerWithIdentifier:ProfilViewControllerID];
     profilViewController.camping = notification.object;
     [self.navigationController pushViewController:profilViewController animated:YES];
-
-    
 }
 
 @end

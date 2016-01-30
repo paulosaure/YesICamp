@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define CONTENT_PICTO_VIEW_HEIGHT 47
+
 @protocol LPTitleViewDelegate <NSObject>
 
 @optional
@@ -23,9 +25,7 @@
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic, weak) id<LPTitleViewDelegate> delegate;
 
-- (void)addTitles:(NSArray *)titles;
 - (void)addImages:(NSArray *)images;
-- (void)adjustTitleViewAtIndex:(CGFloat)index;
 + (CGFloat)calcTitleWidth:(NSArray *)titleArr withFont:(UIFont *)titleFont;
 - (void)updatePageIndicatorPosition:(CGFloat)xPosition;
 
