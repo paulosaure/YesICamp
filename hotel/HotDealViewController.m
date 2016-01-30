@@ -21,6 +21,9 @@
 // Outlets
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *extendMapButton;
+@property (weak, nonatomic) IBOutlet UIButton *localizeUserButton;
 
 // Data
 @property (nonatomic, strong) NSArray *hotDeals;
@@ -43,6 +46,9 @@
     
     // register Cell Nib
     [self.tableView registerNib:[HotDealCell cellNib] forCellReuseIdentifier:HOT_DEAL_CELL_ID];
+    
+    [self.view bringSubviewToFront:self.extendMapButton];
+    [self.view bringSubviewToFront:self.localizeUserButton];
 }
 
 #pragma mark - MKMapViewDelegate
@@ -121,6 +127,14 @@
 #pragma mark - Actions
 - (IBAction)extendMap:(id)sender
 {
+    [self.view layoutIfNeeded];
+    
+    self.mapViewHeightConstraint.constant = self.view.frame.size.height;
+    [UIView animateWithDuration:5
+                     animations:^{
+                         [self.view layoutIfNeeded]; // Called on parent view
+                     }];
+
 }
 
 - (IBAction)centreMapViewOnUser:(id)sender

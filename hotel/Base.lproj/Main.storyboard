@@ -152,6 +152,17 @@
                                     <outlet property="delegate" destination="FE5-gx-oNJ" id="3di-05-r9D"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4G-dp-aEu">
+                                <rect key="frame" x="5" y="210" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="A32-8a-ug3"/>
+                                    <constraint firstAttribute="height" constant="45" id="l8G-oj-Xxi"/>
+                                </constraints>
+                                <state key="normal" image="extend"/>
+                                <connections>
+                                    <action selector="extendMap:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="Jfn-ma-pQu"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL8-Ue-goy">
                                 <rect key="frame" x="0.0" y="260" width="600" height="340"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -172,42 +183,28 @@
                                     <action selector="centreMapViewOnUser:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="zdB-Xa-qSZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4G-dp-aEu">
-                                <rect key="frame" x="5" y="210" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="A32-8a-ug3"/>
-                                    <constraint firstAttribute="height" constant="45" id="l8G-oj-Xxi"/>
-                                </constraints>
-                                <state key="normal" image="extend"/>
-                                <connections>
-                                    <action selector="extendMap:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="Jfn-ma-pQu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SZv-yj-ydv" firstAttribute="top" secondItem="nfn-8u-ikp" secondAttribute="bottom" id="0Ei-Sv-nA2"/>
-                            <constraint firstItem="W4G-dp-aEu" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" constant="5" id="J3B-Xe-UO2"/>
-                            <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="W4G-dp-aEu" secondAttribute="bottom" constant="5" id="PAr-gc-ouX"/>
+                            <constraint firstItem="W4G-dp-aEu" firstAttribute="bottom" secondItem="nfn-8u-ikp" secondAttribute="bottom" constant="-5" id="Klq-bX-Wek"/>
                             <constraint firstItem="tL8-Ue-goy" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" id="RoS-3L-X1c"/>
                             <constraint firstItem="nfn-8u-ikp" firstAttribute="leading" secondItem="1qM-h0-v4c" secondAttribute="leading" id="URs-8w-AaA"/>
                             <constraint firstItem="nfn-8u-ikp" firstAttribute="top" secondItem="Pei-Ts-JOh" secondAttribute="bottom" id="WBR-oM-wnT"/>
+                            <constraint firstItem="W4G-dp-aEu" firstAttribute="leading" secondItem="nfn-8u-ikp" secondAttribute="leading" constant="5" id="c4L-q9-gAM"/>
+                            <constraint firstItem="GCC-YX-5tF" firstAttribute="bottom" secondItem="nfn-8u-ikp" secondAttribute="bottom" constant="-5" id="dDQ-wG-Rfh"/>
                             <constraint firstItem="SZv-yj-ydv" firstAttribute="top" secondItem="tL8-Ue-goy" secondAttribute="bottom" id="dSM-kX-cqT"/>
                             <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="nfn-8u-ikp" secondAttribute="bottom" id="daZ-c0-mq2"/>
-                            <constraint firstAttribute="trailing" secondItem="GCC-YX-5tF" secondAttribute="trailing" constant="5" id="epq-kI-hvR"/>
+                            <constraint firstItem="GCC-YX-5tF" firstAttribute="trailing" secondItem="nfn-8u-ikp" secondAttribute="trailing" constant="-5" id="gJi-sR-o3S"/>
                             <constraint firstAttribute="trailing" secondItem="nfn-8u-ikp" secondAttribute="trailing" id="ou3-gt-9gG"/>
                             <constraint firstItem="nfn-8u-ikp" firstAttribute="height" secondItem="1qM-h0-v4c" secondAttribute="height" multiplier="2:5" id="tcG-B0-Ird"/>
-                            <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="GCC-YX-5tF" secondAttribute="bottom" constant="5" id="v7G-C2-ttt"/>
                             <constraint firstAttribute="trailing" secondItem="tL8-Ue-goy" secondAttribute="trailing" id="yLn-Vh-Wgb"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="0Ei-Sv-nA2"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="extendMapButton" destination="W4G-dp-aEu" id="1wl-Dh-7VQ"/>
+                        <outlet property="localizeUserButton" destination="GCC-YX-5tF" id="IGQ-xm-GTy"/>
                         <outlet property="mapView" destination="nfn-8u-ikp" id="wcw-3S-Dbw"/>
+                        <outlet property="mapViewHeightConstraint" destination="tcG-B0-Ird" id="lQQ-So-6Wc"/>
                         <outlet property="tableView" destination="tL8-Ue-goy" id="zWA-sD-7Vg"/>
                     </connections>
                 </viewController>
