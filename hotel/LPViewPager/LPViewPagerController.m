@@ -23,8 +23,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
+    if (self = [super initWithCoder:aDecoder])
+    {
         [self defaultSettings];
     }
     return self;
@@ -32,8 +32,8 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+    {
         [self defaultSettings];
     }
     return self;
@@ -43,10 +43,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!self.manualLoadData) {
+    if (!self.manualLoadData)
+    {
         [self reloadData];
     }
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+    {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
 }
@@ -81,10 +83,14 @@
     [_contents removeAllObjects];
     _tabCount       = [self.dataSource numberOfTabsForViewPager:self];
     _contents       = [NSMutableArray arrayWithCapacity:_tabCount];
-    for (int i = 0; i < _tabCount; i++) {
+    
+    for (int i = 0; i < _tabCount; i++)
+    {
         [_contents addObject:[NSNull null]];
     }
-    if (!_contentView) {
+    
+    if (!_contentView)
+    {
         _contentView                  = _pageViewController.view;
         _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _contentView.backgroundColor  = self.contentViewBackgroundColor;
@@ -93,7 +99,8 @@
     }
     // Set first viewController
     UIViewController *viewController = [self viewControllerAtIndex:self.showFromTabIndex];
-    if (viewController == nil) {
+    if (viewController == nil)
+    {
         viewController      = [[UIViewController alloc] init];
         viewController.view = [[UIView alloc] init];
     }
@@ -105,10 +112,11 @@
 
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index
 {
-    if (index >= _tabCount) {
+    if (index >= _tabCount)
         return nil;
-    }
-    if ([[_contents objectAtIndex:index] isEqual:[NSNull null]]) {
+
+    if ([[_contents objectAtIndex:index] isEqual:[NSNull null]])
+    {
         UIViewController *viewController;
         if ([self.dataSource respondsToSelector:@selector(viewPager:contentViewControllerForTabAtIndex:)]) {
             viewController = [self.dataSource viewPager:self contentViewControllerForTabAtIndex:index];
@@ -150,7 +158,8 @@
    previousViewControllers:(NSArray *)previousViewControllers
        transitionCompleted:(BOOL)completed
 {
-    if (completed) {
+    if (completed)
+    {
         self.currentIndex = [_contents indexOfObject:[pageViewController.viewControllers lastObject]];
     }
 }
@@ -158,27 +167,31 @@
 #pragma mark - UIScrollViewDelegate, Responding to Scrolling and Dragging
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.scrollingLocked) {
+    if (self.scrollingLocked)
         return;
-    }
+
     CGFloat screenWidth = [[UIScreen mainScreen]bounds].size.width;
-    if (self.currentIndex == 0 && scrollView.contentOffset.x < screenWidth && self.canLimitBounce) {
+    if (self.currentIndex == 0 && scrollView.contentOffset.x < screenWidth && self.canLimitBounce)
+    {
         scrollView.contentOffset = CGPointMake(screenWidth, scrollView.contentOffset.y);
-    } else if (self.currentIndex == (self.tabCount - 1) && scrollView.contentOffset.x > screenWidth && self.canLimitBounce) {
+    } else if (self.currentIndex == (self.tabCount - 1) && scrollView.contentOffset.x > screenWidth && self.canLimitBounce)
+    {
         scrollView.contentOffset = CGPointMake(screenWidth, scrollView.contentOffset.y);
     }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(setSubViewScrollStatus:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(setSubViewScrollStatus:)])
+    {
         [self.delegate setSubViewScrollStatus:NO];
     }
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(setSubViewScrollStatus:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(setSubViewScrollStatus:)])
+    {
         [self.delegate setSubViewScrollStatus:YES];
     }
 }

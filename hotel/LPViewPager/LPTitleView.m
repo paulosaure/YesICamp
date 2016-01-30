@@ -21,15 +21,28 @@
 
 @implementation LPTitleView
 
-static CGFloat kTitleMargin = 50;
-
 - (id)init
 {
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         self.views = [NSMutableArray array];
         [self addSubview:self.pageIndicator];
     }
     return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    CGRect idRect            = self.pageIndicator.frame;
+    idRect.origin.y          = self.frame.size.height - INDICATOR_VIEW_HEIGHT;
+    idRect.size.width        = self.frame.size.width / [self.imageArray count];
+    self.pageIndicator.frame = idRect;
+    
+    [self.views enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+        CGFloat viewWidth = self.frame.size.width/ [self.imageArray count];
+        view.frame        = CGRectMake(viewWidth * idx, TRANSLATE_PICTO_TOP, viewWidth, view.frame.size.height);
+    }];
 }
 
 - (void)addImages:(NSArray *)images
@@ -39,7 +52,8 @@ static CGFloat kTitleMargin = 50;
     [self.views removeAllObjects];
     __weak typeof(self) weakself = self;
     [images enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
-        if ([object isKindOfClass:[NSString class]]) {
+        if ([object isKindOfClass:[NSString class]])
+        {
             CGFloat sizePicto = CONTENT_PICTO_VIEW_HEIGHT - INDICATOR_VIEW_HEIGHT - TRANSLATE_PICTO_TOP - 5;
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,sizePicto ,sizePicto)];
             imageView.backgroundColor = [UIColor clearColor];
@@ -54,51 +68,21 @@ static CGFloat kTitleMargin = 50;
     }];
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    CGRect idRect            = self.pageIndicator.frame;
-    idRect.origin.y          = self.frame.size.height - INDICATOR_VIEW_HEIGHT;
-    idRect.size.width        = (self.frame.size.width - kTitleMargin * (self.imageArray.count - 1))/self.imageArray.count;
-    self.pageIndicator.frame = idRect;
-    [self.views enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        CGSize size       = view.frame.size;
-        size.width        = self.frame.size.width;
-        CGFloat viewWidth = (size.width - kTitleMargin * (self.imageArray.count - 1))/self.imageArray.count;
-        view.frame        = CGRectMake((viewWidth + kTitleMargin) * idx, TRANSLATE_PICTO_TOP, viewWidth, size.height);
-    }];
-}
-
 - (void)didTapTextLabel:(UITapGestureRecognizer *)gestureRecognizer
 {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedTitleAtIndex:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedTitleAtIndex:)])
+    {
         [self.delegate didSelectedTitleAtIndex:gestureRecognizer.view.tag];
     }
 }
 
-+ (CGFloat)calcTitleWidth:(NSArray *)titleArr withFont:(UIFont *)titleFont
-{
-    return [self getMaxTitleWidthFromArray:titleArr withFont:titleFont] * 3 + kTitleMargin * 2;
-}
-
-+ (CGFloat)getMaxTitleWidthFromArray:(NSArray *)titleArray withFont:(UIFont *)titleFont
-{
-    CGFloat maxWidth = 0;
-    for (int i = 0; i < titleArray.count; i++) {
-        NSString *titleString = [titleArray objectAtIndex:i];
-        CGFloat titleWidth    = [titleString sizeWithAttributes:@{NSFontAttributeName:titleFont}].width;
-        if (titleWidth > maxWidth) {
-            maxWidth = titleWidth;
-        }
-    }
-    return maxWidth;
-}
-
 - (UIView *)pageIndicator
 {
-    if (!_pageIndicator) {
+    if (!_pageIndicator)
+    {
         _pageIndicator = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, INDICATOR_VIEW_HEIGHT)];
     }
+    
     _pageIndicator.backgroundColor = self.indicatorColor;
     return _pageIndicator;
 }
@@ -130,5 +114,25 @@ static CGFloat kTitleMargin = 50;
 //    }
 //    self.pageIndicator.frame = idRect;
 //}
+
+//
+//+ (CGFloat)calcTitleWidth:(NSArray *)titleArr withFont:(UIFont *)titleFont
+//{
+//    return [self getMaxTitleWidthFromArray:titleArr withFont:titleFont] * 3 + kTitleMargin * 2;
+//}
+//
+//+ (CGFloat)getMaxTitleWidthFromArray:(NSArray *)titleArray withFont:(UIFont *)titleFont
+//{
+//    CGFloat maxWidth = 0;
+//    for (int i = 0; i < titleArray.count; i++) {
+//        NSString *titleString = [titleArray objectAtIndex:i];
+//        CGFloat titleWidth    = [titleString sizeWithAttributes:@{NSFontAttributeName:titleFont}].width;
+//        if (titleWidth > maxWidth) {
+//            maxWidth = titleWidth;
+//        }
+//    }
+//    return maxWidth;
+//}
+
 
 @end

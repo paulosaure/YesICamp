@@ -90,22 +90,18 @@
 
 - (LPTitleView *)pagingTitleView
 {
-    if (!_pagingTitleView) {
-        self.pagingTitleView          = [[LPTitleView alloc] init];
-        
-        self.pagingTitleView.backgroundColor = [UIColor blackColor];
-
-        self.pagingTitleView.frame    = CGRectMake(0, 0, 0, CONTENT_PICTO_VIEW_HEIGHT);
-        self.pagingTitleView.font     = [UIFont systemFontOfSize:15];
-        self.pagingTitleView.indicatorColor = [UIColor purpleColor];
+    if (!_pagingTitleView)
+    {
+        self.pagingTitleView                    = [[LPTitleView alloc] init];
+        self.pagingTitleView.backgroundColor    = [UIColor clearColor];
+        self.pagingTitleView.indicatorColor     = [UIColor purpleColor];
+        self.pagingTitleView.frame              = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CONTENT_PICTO_VIEW_HEIGHT);
         
         NSArray *imageArray           = @[@"account", @"discount", @"hotDeal"];
-        CGRect ptRect                 = self.pagingTitleView.frame;
-        ptRect.size.width             = self.view.frame.size.width;
-        self.pagingTitleView.frame    = ptRect;
-        [self.pagingTitleView addImages:imageArray];
         self.pagingTitleView.delegate = self;
+        [self.pagingTitleView addImages:imageArray];
     }
+    
     return _pagingTitleView;
 }
 
@@ -168,7 +164,7 @@
 {
     // Don't remove _ with self.
     _currentIndex = index;
-//    [self.pagingTitleView adjustImageViewAtIndex:index];
+    //    [self.pagingTitleView adjustImageViewAtIndex:index];
     /*
      Cette méthode permettait (car je l'ai supprimé) de modifier la couleur du texte des images, on peut aller la récupérer dans git. Pour nous elle permet a la limite de grossir les image donc à garder si jamais. Je vais la commenter plutot
      */
@@ -224,19 +220,27 @@
 
 #pragma mark - Notifications
 
+- (UIStoryboard *)mainStoryboard
+{
+    return [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
+}
+
 - (void)pushInscriptionViewController
 {
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
-    InscriptionViewController *inscriptionViewController = (InscriptionViewController *)[storyBoard instantiateViewControllerWithIdentifier:InscriptionViewControllerID];
-    [self.navigationController pushViewController:inscriptionViewController animated:YES];
+    InscriptionViewController *inscriptionViewController = (InscriptionViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:InscriptionViewControllerID];
+    [self pushViewController:inscriptionViewController];
 }
 
 - (void)pushProfilViewController:(NSNotification *)notification
 {
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
-    ProfilViewController *profilViewController = (ProfilViewController *)[storyBoard instantiateViewControllerWithIdentifier:ProfilViewControllerID];
+    ProfilViewController *profilViewController = (ProfilViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:ProfilViewControllerID];
     profilViewController.camping = notification.object;
-    [self.navigationController pushViewController:profilViewController animated:YES];
+    [self pushViewController:profilViewController];
+}
+
+- (void)pushViewController:(UIViewController *)view
+{
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 @end
