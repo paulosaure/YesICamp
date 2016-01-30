@@ -14,8 +14,8 @@
 #import "AnnotationView.h"
 #import "HotDealCell.h"
 
-#define USER_LOCATION_WIDTH 20
-
+#define USER_LOCATION_MARKER_WIDTH      20
+#define MINIMUM_MAP_VIEW_HEIGHT         250
 @interface HotDealViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 // Outlets
@@ -27,6 +27,7 @@
 
 // Data
 @property (nonatomic, strong) NSArray *hotDeals;
+@property (nonatomic, assign) BOOL isMapExtended;
 
 @end
 
@@ -87,7 +88,7 @@
         UIImage *image = [UIImage imageNamed:@"marker"];
         view.image = image;
         CGRect temp = view.frame;
-        temp.size =  CGSizeMake(USER_LOCATION_WIDTH, USER_LOCATION_WIDTH * image.size.height/image.size.width);
+        temp.size =  CGSizeMake(USER_LOCATION_MARKER_WIDTH, USER_LOCATION_MARKER_WIDTH * image.size.height/image.size.width);
         view.frame = temp;
         view.canShowCallout = YES;
         view.centerOffset = CGPointMake(view.centerOffset.x, -view.frame.size.height/2);
@@ -128,13 +129,19 @@
 - (IBAction)extendMap:(id)sender
 {
     [self.view layoutIfNeeded];
-    
-    self.mapViewHeightConstraint.constant = self.view.frame.size.height;
-    [UIView animateWithDuration:5
+    if (!self.isMapExtended)
+    {
+        self.mapViewHeightConstraint.constant = CGRectGetHeight(self.view.frame);
+    }
+    else
+    {
+        self.mapViewHeightConstraint.constant = MINIMUM_MAP_VIEW_HEIGHT;
+    }
+    self.isMapExtended = !self.isMapExtended;
+    [UIView animateWithDuration:0.5
                      animations:^{
                          [self.view layoutIfNeeded]; // Called on parent view
                      }];
-
 }
 
 - (IBAction)centreMapViewOnUser:(id)sender

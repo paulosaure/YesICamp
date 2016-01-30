@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -67,12 +66,11 @@
                                     <action selector="pushInscriptionViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEm-2Y-S6Y"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mot de passe" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lam-uI-n3G">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lam-uI-n3G">
                                 <rect key="frame" x="20" y="270" width="560" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="SRG-ho-TuT"/>
                                 </constraints>
-                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -89,12 +87,12 @@
                                     <action selector="connection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2S1-GC-zmq"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ry5-re-uB8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ry5-re-uB8">
                                 <rect key="frame" x="20" y="220" width="560" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ugk-RD-3xd"/>
                                 </constraints>
-                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -139,21 +137,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nfn-8u-ikp">
-                                <rect key="frame" x="0.0" y="20" width="600" height="240"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="s9T-Ho-dFd"/>
+                                    <constraint firstAttribute="height" constant="250" id="Ns0-IM-YHJ"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="s9T-Ho-dFd"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="FE5-gx-oNJ" id="3di-05-r9D"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4G-dp-aEu">
-                                <rect key="frame" x="5" y="210" width="45" height="45"/>
+                                <rect key="frame" x="5" y="220" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="A32-8a-ug3"/>
                                     <constraint firstAttribute="height" constant="45" id="l8G-oj-Xxi"/>
@@ -163,16 +156,16 @@
                                     <action selector="extendMap:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="Jfn-ma-pQu"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL8-Ue-goy">
-                                <rect key="frame" x="0.0" y="260" width="600" height="340"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL8-Ue-goy">
+                                <rect key="frame" x="0.0" y="270" width="600" height="330"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="FE5-gx-oNJ" id="sAN-yi-Zfv"/>
                                     <outlet property="delegate" destination="FE5-gx-oNJ" id="8kV-Bc-wfS"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-YX-5tF">
-                                <rect key="frame" x="550" y="210" width="45" height="45"/>
+                                <rect key="frame" x="550" y="220" width="45" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="CoQ-Eg-buJ"/>
@@ -196,7 +189,6 @@
                             <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="nfn-8u-ikp" secondAttribute="bottom" id="daZ-c0-mq2"/>
                             <constraint firstItem="GCC-YX-5tF" firstAttribute="trailing" secondItem="nfn-8u-ikp" secondAttribute="trailing" constant="-5" id="gJi-sR-o3S"/>
                             <constraint firstAttribute="trailing" secondItem="nfn-8u-ikp" secondAttribute="trailing" id="ou3-gt-9gG"/>
-                            <constraint firstItem="nfn-8u-ikp" firstAttribute="height" secondItem="1qM-h0-v4c" secondAttribute="height" multiplier="2:5" id="tcG-B0-Ird"/>
                             <constraint firstAttribute="trailing" secondItem="tL8-Ue-goy" secondAttribute="trailing" id="yLn-Vh-Wgb"/>
                         </constraints>
                     </view>
@@ -204,7 +196,7 @@
                         <outlet property="extendMapButton" destination="W4G-dp-aEu" id="1wl-Dh-7VQ"/>
                         <outlet property="localizeUserButton" destination="GCC-YX-5tF" id="IGQ-xm-GTy"/>
                         <outlet property="mapView" destination="nfn-8u-ikp" id="wcw-3S-Dbw"/>
-                        <outlet property="mapViewHeightConstraint" destination="tcG-B0-Ird" id="lQQ-So-6Wc"/>
+                        <outlet property="mapViewHeightConstraint" destination="Ns0-IM-YHJ" id="AZ1-J0-NBm"/>
                         <outlet property="tableView" destination="tL8-Ue-goy" id="zWA-sD-7Vg"/>
                     </connections>
                 </viewController>
@@ -224,7 +216,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Nom" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWL-vX-BYX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWL-vX-BYX">
                                 <rect key="frame" x="20" y="50" width="560" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="DTO-2O-Fl5"/>
@@ -232,7 +224,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Prénom" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CxM-Yu-22J">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prénom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CxM-Yu-22J">
                                 <rect key="frame" x="20" y="105" width="560" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="TbF-AU-t29"/>
@@ -252,15 +244,7 @@
                                     <action selector="startInscription:" destination="4aC-Re-cjo" eventType="touchUpInside" id="wHT-5d-Hw1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-Do-oDQ">
-                                <rect key="frame" x="20" y="160" width="560" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="9vU-J2-CJW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Mot de passe" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHO-Mx-pD1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sHO-Mx-pD1">
                                 <rect key="frame" x="20" y="215" width="560" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Kff-iS-x1l"/>
@@ -290,6 +274,14 @@
                                     <action selector="choosePhoto:" destination="4aC-Re-cjo" eventType="touchUpInside" id="Bj7-Ep-Lrw"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-Do-oDQ">
+                                <rect key="frame" x="20" y="160" width="560" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="9vU-J2-CJW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -348,19 +340,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfZ-Li-cNW" userLabel="SearchView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GOO-eu-xLK">
-                                        <rect key="frame" x="5" y="5" width="540" height="35"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination ou Catégorie" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GOO-eu-xLK">
+                                        <rect key="frame" x="5" y="5" width="555" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-40-izB">
-                                        <rect key="frame" x="550" y="5" width="45" height="35"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-40-izB">
+                                        <rect key="frame" x="565" y="5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="G96-2y-Cb9"/>
+                                            <constraint firstAttribute="width" constant="30" id="G96-2y-Cb9"/>
+                                            <constraint firstAttribute="height" constant="30" id="l4J-ww-gUD"/>
                                         </constraints>
-                                        <state key="normal" title="B"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="search"/>
                                         <connections>
                                             <action selector="startSearch:" destination="lI2-n3-yc5" eventType="touchUpInside" id="ERd-Iv-eK2"/>
                                         </connections>
@@ -373,13 +367,12 @@
                                     <constraint firstItem="GOO-eu-xLK" firstAttribute="top" secondItem="dfZ-Li-cNW" secondAttribute="top" constant="5" id="Ejd-lE-3vV"/>
                                     <constraint firstAttribute="trailing" secondItem="vhX-40-izB" secondAttribute="trailing" constant="5" id="IJo-Yy-gp3"/>
                                     <constraint firstItem="vhX-40-izB" firstAttribute="leading" secondItem="GOO-eu-xLK" secondAttribute="trailing" constant="5" id="dHb-dx-ahO"/>
-                                    <constraint firstAttribute="height" constant="45" id="e8X-hJ-jiy"/>
                                     <constraint firstAttribute="bottom" secondItem="vhX-40-izB" secondAttribute="bottom" constant="5" id="kx2-XB-jxL"/>
                                     <constraint firstItem="vhX-40-izB" firstAttribute="top" secondItem="dfZ-Li-cNW" secondAttribute="top" constant="5" id="z5d-T9-Iy8"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J7E-Ca-oPl">
-                                <rect key="frame" x="0.0" y="45" width="600" height="555"/>
+                                <rect key="frame" x="0.0" y="40" width="600" height="560"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="lI2-n3-yc5" id="Erh-7y-pdA"/>
@@ -453,6 +446,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-9F-Ubh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ALr-Sm-13Y" id="XOS-hB-qgL"/>
+                                    <outlet property="delegate" destination="ALr-Sm-13Y" id="wST-3a-qHy"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-E3-C3d">
                                 <rect key="frame" x="0.0" y="555" width="600" height="45"/>
                                 <constraints>
@@ -463,14 +464,6 @@
                                     <action selector="reserveCamping:" destination="ALr-Sm-13Y" eventType="touchUpInside" id="Vr9-w2-WR7"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-9F-Ubh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ALr-Sm-13Y" id="XOS-hB-qgL"/>
-                                    <outlet property="delegate" destination="ALr-Sm-13Y" id="wST-3a-qHy"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -528,5 +521,6 @@
     <resources>
         <image name="extend" width="199" height="201"/>
         <image name="localize" width="160" height="160"/>
+        <image name="search" width="175" height="175"/>
     </resources>
 </document>

@@ -11,7 +11,7 @@
 @interface HotDealCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -33,6 +33,6 @@
 - (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal
 {
     self.titleLabel.text = @"Title";
-    self.descriptionLabel.text = @"Description";
+    self.timeLabel.text = @"Description";
 }
 @end
