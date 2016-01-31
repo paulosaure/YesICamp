@@ -26,12 +26,17 @@
  * Localizer
  */
 
-// LOCALIZED_STRING should be previously declared to override default localization behaviour (eg: use of BBSLocalizer)
+// LOCALIZED_STRING
 #ifndef LOCALIZED_STRING
 #define LOCALIZED_STRING(s)     NSLocalizedString(s, nil)
 #endif
 
 //@"http://campingtonight.com/webservices/"
+
+// Code couleur
+#define TINT_COLOR      [UIColor whiteColor]
+#define GREEN_COLOR     [UIColor blackColor]//[UIColor colorWithRed:64.0f/255.0f green:200.0f/255.0f blue:244.0f/255.0f alpha:1.0f]
+#define BLUE_COLOR      [UIColor purpleColor]//[UIColor colorWithRed:116.0f/255.0f green:202.0f/255.0f blue:36.0f/255.0f alpha:1.0f]
 
 // Network
 #define SESSION_UNIQUE_IDENTIFIER   @"com.paulLavoine.hotel"

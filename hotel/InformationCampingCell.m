@@ -26,7 +26,7 @@
     dispatch_once(&onceToken, ^{
         cellNib = [UINib nibWithNibName:@"InformationCampingCell" bundle:nil];
     });
-    
+
     return cellNib;
 }
 

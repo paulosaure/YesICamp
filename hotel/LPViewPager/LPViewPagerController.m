@@ -51,6 +51,8 @@
     {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    
+    [self.contentView setBackgroundColor:[GREEN_COLOR colorWithAlphaComponent:0.9f]];
 }
 
 - (void)dealloc

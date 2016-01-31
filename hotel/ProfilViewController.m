@@ -59,12 +59,15 @@
     
     // register Cell Nib
     [self.tableView registerNib:[InformationCampingCell cellNib] forCellReuseIdentifier:INFORMATION_CELL_IDENTIFIER];
+    
+    [self configureUI];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)configureUI
 {
-    [super viewDidAppear:animated];
-    
+    [self.reservationButton setBackgroundColor:GREEN_COLOR];
+    self.view.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
 }
 
 
@@ -80,6 +83,7 @@
     UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     pageController.dataSource = self;
     pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), PAGE_CONTROLLER_HEIGHT);
+    pageController.view.backgroundColor = GREEN_COLOR;
     
     if([self.contentImages count])
     {
@@ -159,6 +163,13 @@
     [cell configureWithInformationsCamping:self.camping.informations[indexPath.row]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
 }
 
 #pragma mark - Actions

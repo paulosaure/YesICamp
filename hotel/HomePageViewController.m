@@ -32,10 +32,18 @@
 
 - (void)configureUI
 {
-    self.signUpButton.titleLabel.text = LOCALIZED_STRING(@"homePage.inscription.button");
-    self.connectionButton.titleLabel.text = LOCALIZED_STRING(@"homePage.connection.button");
     self.pseudoTextView.placeholder = LOCALIZED_STRING(@"homePage.email.placeholder");
     self.passwordTextView.placeholder = LOCALIZED_STRING(@"homePage.password.placeholder");
+    
+    [self.signUpButton setTitle:LOCALIZED_STRING(@"homePage.inscription.button") forState:UIControlStateNormal];
+    [self.connectionButton setTitle:LOCALIZED_STRING(@"homePage.connection.button") forState:UIControlStateNormal];
+    
+    self.signUpButton.backgroundColor = BLUE_COLOR;
+    self.connectionButton.backgroundColor = BLUE_COLOR;
+    [self.signUpButton setTitleColor:TINT_COLOR forState:UIControlStateNormal];
+    [self.connectionButton setTitleColor:TINT_COLOR forState:UIControlStateNormal];
+    
+    self.view.backgroundColor = [UIColor clearColor];
 }
 
 - (IBAction)connection:(id)sender

@@ -57,6 +57,7 @@
             CGFloat sizePicto = CONTENT_PICTO_VIEW_HEIGHT - INDICATOR_VIEW_HEIGHT - TRANSLATE_PICTO_TOP - 5;
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,sizePicto ,sizePicto)];
             imageView.backgroundColor = [UIColor clearColor];
+            imageView.tintColor = [UIColor whiteColor];
             imageView.image = [UIImage imageNamed:object];
             imageView.tag = idx;
             imageView.contentMode = UIViewContentModeScaleAspectFit;

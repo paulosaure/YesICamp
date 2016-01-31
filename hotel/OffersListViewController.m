@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextView;
 @property (weak, nonatomic) IBOutlet UIButton *startSearchButton;
+@property (weak, nonatomic) IBOutlet UIView *searchContentView;
 
 @end
 
@@ -27,6 +28,8 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[PromotionCell cellNib] forCellReuseIdentifier:PROMO_CELL_IDENTIFIER];
+    
+    [self configureUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -38,6 +41,8 @@
 - (void)configureUI
 {
     self.searchTextView.placeholder = LOCALIZED_STRING(@"offersList.search_text_view.placeholder");
+    self.startSearchButton.tintColor = BLUE_COLOR;
+    self.searchContentView.backgroundColor = GREEN_COLOR;
 }
 
 #pragma mark - Table view data source
@@ -71,6 +76,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 200.0f;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
 }
 
 #pragma mark - Request

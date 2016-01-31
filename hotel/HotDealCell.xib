@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="abK-u9-AzD" secondAttribute="bottom" constant="5" id="1Zt-5x-WwF"/>
                     <constraint firstItem="abK-u9-AzD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="5xB-QC-QUJ"/>
@@ -55,6 +55,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="timeLabel" destination="abK-u9-AzD" id="sTw-NC-OPR"/>
                 <outlet property="titleLabel" destination="kNt-FY-pcM" id="SDW-Io-AAf"/>

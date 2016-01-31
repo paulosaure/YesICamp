@@ -52,12 +52,22 @@
     
     // Add annotation
     [self configurePins];
+    [self configureUI];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self centerMapViewOnUserLocation];
+}
+
+- (void)configureUI
+{
+    self.extendMapButton.tintColor = BLUE_COLOR;
+    self.localizeUserButton.tintColor = BLUE_COLOR;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.alpha = 0.9f;
+    self.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void)configurePins
@@ -82,7 +92,7 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-//    NSLog(@"MapView didUpdateUserLocation");
+    //    NSLog(@"MapView didUpdateUserLocation");
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -141,13 +151,21 @@
     
     // Configure cell
     [cell configureWithInformationsHotDeal:self.hotDeals[indexPath.row]];
-    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+  willDisplayCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:[UIColor clearColor]];
 }
 
 #pragma mark - Actions
 - (IBAction)extendMap:(id)sender
 {
+    [UIColor colorWithRed:64.0f/255.0f green:200.0f/255.0f blue:244.0f/255.0f alpha:1.0f];
+    
     [self.view layoutIfNeeded];
     if (!self.isMapExtended)
     {
@@ -172,7 +190,7 @@
 #pragma mark - Utils
 - (void)centerMapViewOnUserLocation
 {
-    [self centerMapViewWithCoordinate:self.mapView.userLocation.location.coordinate];
+    [self centerMapViewWithCoordinate:[LocationManager sharedInstance].lastLocation.coordinate];
 }
 
 - (void)centerMapViewWithCoordinate:(CLLocationCoordinate2D)coordinate

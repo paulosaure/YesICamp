@@ -21,6 +21,7 @@
 
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageBackgroundView;
 @property (nonatomic, strong) HomePageViewController *homePageViewController;
 @property (nonatomic, strong) HotDealViewController *hotDealViewController;
 @property (nonatomic, strong) OffersListViewController *promotionsViewController;
@@ -38,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    
     self.dataSource = self;
     self.delegate = self;
     
@@ -46,14 +47,17 @@
     self.manualLoadData = YES;
     self.currentIndex = 0;
     self.navigationItem.titleView = self.pagingTitleView;
-    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.translucent = NO;
     self.myStoryboard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
     
     [self configureNotification];
-    
+    [self configureUI];
     [self reloadData];
+    
+    
+    UISwipeGestureRecognizer *Swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeRecognizer:)];
+    Swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:Swipe];
 }
 
 #pragma mark - Configurations
@@ -63,6 +67,15 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:ProfilNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealNotification object:nil];
+}
+
+- (void)configureUI
+{
+    self.view.backgroundColor = GREEN_COLOR;
+    self.navigationController.navigationBar.barTintColor = GREEN_COLOR;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.imageBackgroundView.image = [UIImage imageNamed:@"backgroundImage"];
+     [self.view insertSubview:self.imageBackgroundView atIndex:0];
 }
 
 #pragma mark - LPViewPagerDataSource
@@ -119,7 +132,7 @@
     {
         self.pagingTitleView                    = [[LPTitleView alloc] init];
         self.pagingTitleView.backgroundColor    = [UIColor clearColor];
-        self.pagingTitleView.indicatorColor     = [UIColor purpleColor];
+        self.pagingTitleView.indicatorColor     = BLUE_COLOR;
         self.pagingTitleView.frame              = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CONTENT_PICTO_VIEW_HEIGHT);
         
         NSArray *imageArray           = @[@"account", @"discount", @"hotDeal"];
@@ -263,6 +276,13 @@
 - (void)pushViewController:(UIViewController *)view
 {
     [self.navigationController pushViewController:view animated:YES];
+}
+
+#pragma mark - Utils
+
+- (void) SwipeRecognizer:(UISwipeGestureRecognizer *)sender
+{
+    [self.view endEditing:YES];
 }
 
 @end

@@ -13,3 +13,11 @@
 "homePage.password.placeholder" = "Password";
 
 "offersList.search_text_view.placeholder" = "Destination or category";
+
+"inscription.firstname.placeholder" = "Firstname";
+"inscription.lastname.placeholder" = "Lastname";
+"inscription.age.placeholder" = "Age";
+"inscription.email.placeholder" = "E-mail";
+"inscription.password.placeholder" = "Password";
+"inscription.select_picture.button" = "Choose a picture";
+"inscription.inscription.button" = "Sign Up";
