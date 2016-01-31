@@ -32,16 +32,32 @@
 
 - (void)configureUI
 {
-    self.pseudoTextView.placeholder = LOCALIZED_STRING(@"homePage.email.placeholder");
-    self.passwordTextView.placeholder = LOCALIZED_STRING(@"homePage.password.placeholder");
+    NSAttributedString *pseudoPlaceHolder = [[NSAttributedString alloc] initWithString:LOCALIZED_STRING(@"homePage.email.placeholder") attributes:@{NSForegroundColorAttributeName : BLUE_COLOR}];
+    self.pseudoTextView.attributedPlaceholder = pseudoPlaceHolder;
+    
+    NSAttributedString *passPlaceholder = [[NSAttributedString alloc] initWithString:LOCALIZED_STRING(@"homePage.password.placeholder") attributes:@{NSForegroundColorAttributeName : BLUE_COLOR}];
+    self.passwordTextView.attributedPlaceholder = passPlaceholder;
+    
+    
+    self.pseudoTextView.backgroundColor = [UIColor clearColor];
+    self.pseudoTextView.layer.borderColor = BLUE_COLOR.CGColor;
+    self.pseudoTextView.layer.borderWidth = 1.0f;
+    self.pseudoTextView.layer.cornerRadius = 5.0f;
+    
+    self.passwordTextView.backgroundColor = [UIColor clearColor];
+    self.passwordTextView.layer.borderColor = BLUE_COLOR.CGColor;
+    self.passwordTextView.layer.borderWidth = 1.0f;
+    self.passwordTextView.layer.cornerRadius = 5.0f;
+    
+    [self.connectionButton setTitle:LOCALIZED_STRING(@"homePage.connection.button") forState:UIControlStateNormal];
+    [self.connectionButton setTitleColor:TINT_COLOR forState:UIControlStateNormal];
+    self.connectionButton.backgroundColor = [BLUE_COLOR colorWithAlphaComponent:0.5f];
+    self.connectionButton.layer.cornerRadius = 5.0f;
     
     [self.signUpButton setTitle:LOCALIZED_STRING(@"homePage.inscription.button") forState:UIControlStateNormal];
-    [self.connectionButton setTitle:LOCALIZED_STRING(@"homePage.connection.button") forState:UIControlStateNormal];
-    
-    self.signUpButton.backgroundColor = BLUE_COLOR;
-    self.connectionButton.backgroundColor = BLUE_COLOR;
     [self.signUpButton setTitleColor:TINT_COLOR forState:UIControlStateNormal];
-    [self.connectionButton setTitleColor:TINT_COLOR forState:UIControlStateNormal];
+    self.signUpButton.backgroundColor = [BLUE_COLOR colorWithAlphaComponent:0.5f];
+    self.signUpButton.layer.cornerRadius = 5.0f;
     
     self.view.backgroundColor = [UIColor clearColor];
 }

@@ -71,10 +71,12 @@
 
 - (void)configureUI
 {
-    self.view.backgroundColor = GREEN_COLOR;
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = GREEN_COLOR;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.imageBackgroundView.image = [UIImage imageNamed:@"backgroundImage"];
+    [self.imageBackgroundView setTintColor:BLUE_COLOR];
+    self.imageBackgroundView.contentMode = UIViewContentModeScaleAspectFill;
      [self.view insertSubview:self.imageBackgroundView atIndex:0];
 }
 
