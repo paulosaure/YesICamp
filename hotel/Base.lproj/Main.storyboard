@@ -173,7 +173,7 @@
                                 </constraints>
                                 <state key="normal" image="localize"/>
                                 <connections>
-                                    <action selector="centreMapViewOnUser:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="zdB-Xa-qSZ"/>
+                                    <action selector="centreMapViewOnUserAction:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="hhY-ax-AjW"/>
                                 </connections>
                             </button>
                         </subviews>

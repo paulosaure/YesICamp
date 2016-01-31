@@ -62,6 +62,7 @@
 {
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:ProfilNotificiation object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealNotification object:nil];
 }
 
 #pragma mark - LPViewPagerDataSource
@@ -223,6 +224,13 @@
 - (UIStoryboard *)mainStoryboard
 {
     return [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
+}
+
+- (void)pushHotDealViewController:(NSNotification *)notification
+{
+    ProfilViewController *profilViewController = (ProfilViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:ProfilViewControllerID];
+    profilViewController.camping = notification.object;
+    [self pushViewController:profilViewController];
 }
 
 - (void)pushInscriptionViewController

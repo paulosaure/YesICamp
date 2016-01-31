@@ -28,12 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view.
+    self.imageProfileView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     self.image = image;
     self.imageProfileView.image = image;
 }

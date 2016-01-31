@@ -42,8 +42,6 @@
 		A88EB4251C50402D008DC5CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4241C50402D008DC5CF /* Security.framework */; };
 		A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4271C504056008DC5CF /* MangopayViewController.m */; };
 		A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB42D1C50434A008DC5CF /* SPWebViewFiller.m */; };
-		A89763C51C5802BA0060BC5C /* marker.m in Sources */ = {isa = PBXBuildFile; fileRef = A89763C41C5802BA0060BC5C /* marker.m */; };
-		A89763C91C580BA40060BC5C /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A89763C81C580BA40060BC5C /* AnnotationView.m */; };
 		A89763CE1C58163D0060BC5C /* GetOffersListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89763CD1C58163D0060BC5C /* GetOffersListAction.m */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
@@ -144,10 +142,6 @@
 		A88EB42C1C50434A008DC5CF /* SPWebViewFiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebViewFiller.h; sourceTree = "<group>"; };
 		A88EB42D1C50434A008DC5CF /* SPWebViewFiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebViewFiller.m; sourceTree = "<group>"; };
 		A88EB4321C515230008DC5CF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		A89763C31C5802BA0060BC5C /* marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = marker.h; sourceTree = "<group>"; };
-		A89763C41C5802BA0060BC5C /* marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = marker.m; sourceTree = "<group>"; };
-		A89763C71C580BA40060BC5C /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
-		A89763C81C580BA40060BC5C /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		A89763CC1C58163D0060BC5C /* GetOffersListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOffersListAction.h; sourceTree = "<group>"; };
 		A89763CD1C58163D0060BC5C /* GetOffersListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOffersListAction.m; sourceTree = "<group>"; };
 		A8A63DB41C5005C30026E456 /* hotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,8 +289,6 @@
 			children = (
 				A84C71871C56E7A000598FE9 /* CustomAnnotation.h */,
 				A84C71881C56E7A000598FE9 /* CustomAnnotation.m */,
-				A89763C71C580BA40060BC5C /* AnnotationView.h */,
-				A89763C81C580BA40060BC5C /* AnnotationView.m */,
 			);
 			name = MKAnnotations;
 			sourceTree = "<group>";
@@ -565,15 +557,6 @@
 			path = SPWebViewFiller;
 			sourceTree = "<group>";
 		};
-		A89763C21C58028B0060BC5C /* marker */ = {
-			isa = PBXGroup;
-			children = (
-				A89763C31C5802BA0060BC5C /* marker.h */,
-				A89763C41C5802BA0060BC5C /* marker.m */,
-			);
-			name = marker;
-			sourceTree = "<group>";
-		};
 		A89763CB1C5816180060BC5C /* GetCampingList */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,7 +569,7 @@
 		A8A63DAB1C5005C30026E456 = {
 			isa = PBXGroup;
 			children = (
-				A8A63DB61C5005C30026E456 /* hotel */,
+				A8A63DB61C5005C30026E456 /* Yes I Camp */,
 				A8A63DD01C5005C30026E456 /* hotelTests */,
 				A8A63DDB1C5005C30026E456 /* hotelUITests */,
 				A8A63DB51C5005C30026E456 /* Products */,
@@ -605,7 +588,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A8A63DB61C5005C30026E456 /* hotel */ = {
+		A8A63DB61C5005C30026E456 /* Yes I Camp */ = {
 			isa = PBXGroup;
 			children = (
 				A88EB4091C503EBF008DC5CF /* External */,
@@ -613,6 +596,7 @@
 				A88EB3CE1C5010F8008DC5CF /* Configuration */,
 				A88EB3CF1C501102008DC5CF /* Ressources */,
 			);
+			name = "Yes I Camp";
 			path = hotel;
 			sourceTree = "<group>";
 		};
@@ -657,7 +641,6 @@
 				A8F2FEEB1C54D2BA007DF893 /* HotDealViewController.h */,
 				A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */,
 				A870B2751C5CB84A0006CAAA /* Cell */,
-				A89763C21C58028B0060BC5C /* marker */,
 			);
 			name = HotDeal;
 			sourceTree = "<group>";
@@ -778,7 +761,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A8A63DAF1C5005C30026E456 /* Build configuration list for PBXProject "hotel" */;
+			buildConfigurationList = A8A63DAF1C5005C30026E456 /* Build configuration list for PBXProject "Yes I Camp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -893,7 +876,6 @@
 				A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */,
 				A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */,
 				A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */,
-				A89763C51C5802BA0060BC5C /* marker.m in Sources */,
 				A8F2FF091C557F01007DF893 /* Promo.m in Sources */,
 				A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */,
 				A88EB3FD1C503763008DC5CF /* GetCampingsListAction.m in Sources */,
@@ -910,7 +892,6 @@
 				A84C71831C56E02400598FE9 /* LocationManager.m in Sources */,
 				A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */,
 				A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */,
-				A89763C91C580BA40060BC5C /* AnnotationView.m in Sources */,
 				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,
 				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
 				A84C71891C56E7A000598FE9 /* CustomAnnotation.m in Sources */,
@@ -1164,7 +1145,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A8A63DAF1C5005C30026E456 /* Build configuration list for PBXProject "hotel" */ = {
+		A8A63DAF1C5005C30026E456 /* Build configuration list for PBXProject "Yes I Camp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A8A63DDF1C5005C30026E456 /* Debug */,
