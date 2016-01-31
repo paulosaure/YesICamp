@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QeL-UK-PYX">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -116,8 +115,10 @@
                     <tabBarItem key="tabBarItem" title="Item" id="YEp-7B-6JA"/>
                     <navigationItem key="navigationItem" id="Y71-QR-de9"/>
                     <connections>
+                        <outlet property="connectionButton" destination="wub-HX-tTt" id="Ob5-Rp-DWL"/>
                         <outlet property="passwordTextView" destination="lam-uI-n3G" id="tM0-B6-vOu"/>
                         <outlet property="pseudoTextView" destination="ry5-re-uB8" id="yaI-Ed-vWL"/>
+                        <outlet property="signUpButton" destination="JbV-pz-XSx" id="Kjy-IF-jXX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -173,7 +174,7 @@
                                 </constraints>
                                 <state key="normal" image="localize"/>
                                 <connections>
-                                    <action selector="centreMapViewOnUserAction:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="hhY-ax-AjW"/>
+                                    <action selector="centerMapViewOnUserAction:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="ZEC-60-QtK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -194,7 +195,7 @@
                     </view>
                     <connections>
                         <outlet property="extendMapButton" destination="W4G-dp-aEu" id="1wl-Dh-7VQ"/>
-                        <outlet property="localizeUserButton" destination="GCC-YX-5tF" id="IGQ-xm-GTy"/>
+                        <outlet property="localizeUserButton" destination="GCC-YX-5tF" id="7Ha-TE-baZ"/>
                         <outlet property="mapView" destination="nfn-8u-ikp" id="wcw-3S-Dbw"/>
                         <outlet property="mapViewHeightConstraint" destination="Ns0-IM-YHJ" id="AZ1-J0-NBm"/>
                         <outlet property="tableView" destination="tL8-Ue-goy" id="zWA-sD-7Vg"/>
@@ -327,10 +328,10 @@
             </objects>
             <point key="canvasLocation" x="357" y="30"/>
         </scene>
-        <!--Promotions View Controller-->
+        <!--Offers List View Controller-->
         <scene sceneID="6Kb-vp-EId">
             <objects>
-                <viewController storyboardIdentifier="PromotionsViewControllerID" id="lI2-n3-yc5" customClass="PromotionsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PromotionsViewControllerID" id="lI2-n3-yc5" customClass="OffersListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6HW-iS-j1U"/>
                         <viewControllerLayoutGuide type="bottom" id="8wT-b6-59n"/>

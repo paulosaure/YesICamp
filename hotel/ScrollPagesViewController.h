@@ -10,6 +10,12 @@
 
 #import "LPViewPagerController.h"
 
+typedef NS_ENUM(NSInteger, PageController) {
+    PageControllerAccount,
+    PageControllerPromo,
+    PageControllerHotDeal
+};
+
 @interface ScrollPagesViewController : LPViewPagerController
 
 @end

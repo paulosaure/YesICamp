@@ -1,0 +1,42 @@
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "AcZ-Do-oDQ"; */
+"AcZ-Do-oDQ.placeholder" = "E-mail";
+
+/* Class = "UIViewController"; title = "HomePage"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "HomePage";
+
+/* Class = "UITextField"; placeholder = "Prénom"; ObjectID = "CxM-Yu-22J"; */
+"CxM-Yu-22J.placeholder" = "Prénom";
+
+/* Class = "UITextField"; placeholder = "Nom"; ObjectID = "EWL-vX-BYX"; */
+"EWL-vX-BYX.placeholder" = "Nom";
+
+/* Class = "UITextField"; placeholder = "Destination ou Catégorie"; ObjectID = "GOO-eu-xLK"; */
+"GOO-eu-xLK.placeholder" = "Destination ou Catégorie";
+
+/* Class = "UIButton"; normalTitle = "Inscription"; ObjectID = "JE6-Be-mLB"; */
+"JE6-Be-mLB.normalTitle" = "Inscription";
+
+/* Class = "UIButton"; normalTitle = "Inscription"; ObjectID = "JbV-pz-XSx"; */
+"JbV-pz-XSx.normalTitle" = "Inscription";
+
+/* Class = "UIButton"; normalTitle = "Réserver Maintenant"; ObjectID = "Txa-E3-C3d"; */
+"Txa-E3-C3d.normalTitle" = "Réserver Maintenant";
+
+/* Class = "UIButton"; normalTitle = "Choose photo"; ObjectID = "X7s-WJ-6Su"; */
+"X7s-WJ-6Su.normalTitle" = "Choose photo";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "YEp-7B-6JA"; */
+"YEp-7B-6JA.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Mot de passe"; ObjectID = "lam-uI-n3G"; */
+"lam-uI-n3G.placeholder" = "Mot de passe";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "ry5-re-uB8"; */
+"ry5-re-uB8.placeholder" = "E-mail";
+
+/* Class = "UITextField"; placeholder = "Mot de passe"; ObjectID = "sHO-Mx-pD1"; */
+"sHO-Mx-pD1.placeholder" = "Mot de passe";
+
+/* Class = "UIButton"; normalTitle = "Connexion"; ObjectID = "wub-HX-tTt"; */
+"wub-HX-tTt.normalTitle" = "Connexion";

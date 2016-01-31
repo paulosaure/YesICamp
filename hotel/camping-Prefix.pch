@@ -1,5 +1,5 @@
 //
-//  hotel-Prefix.pch
+//  camping-Prefix.pch
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
@@ -31,10 +31,14 @@
 #define LOCALIZED_STRING(s)     NSLocalizedString(s, nil)
 #endif
 
+//@"http://campingtonight.com/webservices/"
+
 // Network
 #define SESSION_UNIQUE_IDENTIFIER   @"com.paulLavoine.hotel"
-#define MAIN_URL                    @"http://campingtonight.com/webservices/"
-#define ACTION_URL(path)            [NSString stringWithFormat:@"%@%@", MAIN_URL, path]
+#define MAIN_URL                    @"http://pacific-refuge-54058.herokuapp.com"
+#define API_URL                     @"/api"
+#define VERSION_URL                 @"/v1"
+#define ACTION_URL(path)            [NSString stringWithFormat:@"%@%@%@/%@", MAIN_URL, API_URL,VERSION_URL, path]
 
 // Import
 #import <Foundation/Foundation.h>
@@ -42,10 +46,7 @@
 
 #import "NetworkManagement.h"
 #import "LocationManager.h"
-
 #import "Camping.h"
-
-
 
 
 #endif /* hotel_Prefix_pch */

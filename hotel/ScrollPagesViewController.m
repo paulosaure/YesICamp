@@ -11,7 +11,7 @@
 
 #import "HomePageViewController.h"
 #import "HotDealViewController.h"
-#import "PromotionsViewController.h"
+#import "OffersListViewController.h"
 #import "InformationViewController.h"
 
 #import "InscriptionViewController.h"
@@ -23,7 +23,7 @@
 
 @property (nonatomic, strong) HomePageViewController *homePageViewController;
 @property (nonatomic, strong) HotDealViewController *hotDealViewController;
-@property (nonatomic, strong) PromotionsViewController *promotionsViewController;
+@property (nonatomic, strong) OffersListViewController *promotionsViewController;
 @property (nonatomic, strong) InformationViewController *informationViewController;
 
 @property (nonatomic, assign) NSInteger currentIndex;
@@ -73,13 +73,37 @@
 
 - (UIViewController *)viewPager:(LPViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index
 {
-    if (index == 0) {
-        return [self createVc1];
-    } else if (index == 1) {
-        return [self createVc2];
-    } else {
-        return [self createVc3];
+    UIViewController *viewController;
+    
+    switch (index)
+    {
+        case PageControllerPromo:
+            viewController = self.promotionsViewController;
+            if (!viewController)
+            {
+                viewController = [self.myStoryboard instantiateViewControllerWithIdentifier:PromotionsViewControllerID];
+            }
+            break;
+            
+        case PageControllerHotDeal:
+            viewController = self.hotDealViewController;
+            if (!viewController)
+            {
+                viewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HotDealViewControllerID];
+            }
+            break;
+            
+        case PageControllerAccount:
+        default:
+            viewController = self.homePageViewController;
+            if (!viewController)
+            {
+                viewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HomePageViewControllerID];
+            }
+            break;
     }
+
+    return viewController;
 }
 
 #pragma mark 🎈LPViewPagerDelegate
@@ -165,6 +189,23 @@
 {
     // Don't remove _ with self.
     _currentIndex = index;
+    
+    switch (index)
+    {
+        case PageControllerPromo:
+
+            break;
+            
+        case PageControllerHotDeal:
+            
+            break;
+            
+        case PageControllerAccount:
+        default:
+
+            break;
+    }
+    
     //    [self.pagingTitleView adjustImageViewAtIndex:index];
     /*
      Cette méthode permettait (car je l'ai supprimé) de modifier la couleur du texte des images, on peut aller la récupérer dans git. Pour nous elle permet a la limite de grossir les image donc à garder si jamais. Je vais la commenter plutot
@@ -190,33 +231,6 @@
             view.bounces = enabled;
         }
     }
-}
-
-#pragma mark - lazy load
-
-- (UIViewController *)createVc1
-{
-    if (!self.homePageViewController) {
-        
-        self.homePageViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HomePageViewControllerID];
-    }
-    return self.homePageViewController;
-}
-
-- (UIViewController *)createVc2
-{
-    if (!self.promotionsViewController) {
-        self.promotionsViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:PromotionsViewControllerID];
-    }
-    return self.promotionsViewController;
-}
-
-- (UIViewController *)createVc3
-{
-    if (!self.hotDealViewController) {
-        self.hotDealViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HotDealViewControllerID];
-    }
-    return self.hotDealViewController;
 }
 
 #pragma mark - Notifications

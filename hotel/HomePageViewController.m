@@ -15,8 +15,9 @@
 @interface HomePageViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *pseudoTextView;
-
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
+@property (weak, nonatomic) IBOutlet UIButton *connectionButton;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 
 @end
@@ -26,8 +27,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureUI];
 }
 
+- (void)configureUI
+{
+    self.signUpButton.titleLabel.text = LOCALIZED_STRING(@"homePage.inscription.button");
+    self.connectionButton.titleLabel.text = LOCALIZED_STRING(@"homePage.connection.button");
+    self.pseudoTextView.placeholder = LOCALIZED_STRING(@"homePage.email.placeholder");
+    self.passwordTextView.placeholder = LOCALIZED_STRING(@"homePage.password.placeholder");
+}
 
 - (IBAction)connection:(id)sender
 {

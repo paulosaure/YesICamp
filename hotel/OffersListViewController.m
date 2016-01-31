@@ -1,17 +1,18 @@
 //
-//  ResultsTableViewController.m
+//  OffersListViewController.m
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "PromotionsViewController.h"
+#import "OffersListViewController.h"
 #import "PromotionCell.h"
 #import "ProfilViewController.h"
 #import "ParsingData.h"
+#import "GetOffersListAction.h"
 
-@interface PromotionsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface OffersListViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextView;
@@ -19,13 +20,24 @@
 
 @end
 
-@implementation PromotionsViewController
+@implementation OffersListViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[PromotionCell cellNib] forCellReuseIdentifier:PROMO_CELL_IDENTIFIER];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[GetOffersListAction action] requestServer];
+}
+
+- (void)configureUI
+{
+    self.searchTextView.placeholder = LOCALIZED_STRING(@"offersList.search_text_view.placeholder");
 }
 
 #pragma mark - Table view data source

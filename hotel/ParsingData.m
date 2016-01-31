@@ -24,13 +24,13 @@
 }
 
 #pragma mark - Configure objects
-- (NSArray *)hotelsWithJson:(NSString *)path
+- (NSArray *)campingsWithJson:(NSString *)path
 {
-    NSArray *hotels = [NSArray array];
+    NSArray *campings = [NSArray array];
     
 // TODO
     
-    return  hotels;
+    return  campings;
 }
 
 #pragma mark - Extraction Json

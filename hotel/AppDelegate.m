@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "GetOffersListAction.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +19,6 @@
 {
     // Try to fetch user location
     [[LocationManager sharedInstance] updateLocation];
-//    [[GetOffersListAction action] requestServer];
     
     return YES;
 }

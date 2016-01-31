@@ -18,7 +18,8 @@
 		A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2771C5CB8670006CAAA /* HotDealCell.m */; };
 		A870B27A1C5CB8670006CAAA /* HotDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A870B2781C5CB8670006CAAA /* HotDealCell.xib */; };
 		A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B27D1C5CB8C80006CAAA /* HotDeal.m */; };
-		A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */; };
+		A870B2841C5E7CB70006CAAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A870B2861C5E7CB70006CAAA /* Localizable.strings */; };
+		A88EB3C91C500E97008DC5CF /* OffersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* OffersListViewController.m */; };
 		A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */; };
 		A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* PromotionCell.m */; };
 		A88EB3DB1C5015AA008DC5CF /* PromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88EB3D91C5015AA008DC5CF /* PromotionCell.xib */; };
@@ -100,11 +101,15 @@
 		A870B2781C5CB8670006CAAA /* HotDealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotDealCell.xib; sourceTree = "<group>"; };
 		A870B27C1C5CB8C80006CAAA /* HotDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDeal.h; sourceTree = "<group>"; };
 		A870B27D1C5CB8C80006CAAA /* HotDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDeal.m; sourceTree = "<group>"; };
-		A88EB3C71C500E97008DC5CF /* PromotionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionsViewController.h; sourceTree = "<group>"; };
-		A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionsViewController.m; sourceTree = "<group>"; };
+		A870B2821C5E7C960006CAAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A870B2831C5E7C960006CAAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		A870B2851C5E7CB70006CAAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A870B2871C5E7CBA0006CAAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A88EB3C71C500E97008DC5CF /* OffersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersListViewController.h; sourceTree = "<group>"; };
+		A88EB3C81C500E97008DC5CF /* OffersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersListViewController.m; sourceTree = "<group>"; };
 		A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
 		A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilViewController.m; sourceTree = "<group>"; };
-		A88EB3CD1C50108E008DC5CF /* hotel-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hotel-Prefix.pch"; sourceTree = "<group>"; };
+		A88EB3CD1C50108E008DC5CF /* camping-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "camping-Prefix.pch"; sourceTree = "<group>"; };
 		A88EB3D71C5015AA008DC5CF /* PromotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionCell.h; sourceTree = "<group>"; };
 		A88EB3D81C5015AA008DC5CF /* PromotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionCell.m; sourceTree = "<group>"; };
 		A88EB3D91C5015AA008DC5CF /* PromotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromotionCell.xib; sourceTree = "<group>"; };
@@ -321,14 +326,14 @@
 			name = HomePage;
 			sourceTree = "<group>";
 		};
-		A88EB3C41C500E2B008DC5CF /* PromotionsList */ = {
+		A88EB3C41C500E2B008DC5CF /* OffersList */ = {
 			isa = PBXGroup;
 			children = (
-				A88EB3C71C500E97008DC5CF /* PromotionsViewController.h */,
-				A88EB3C81C500E97008DC5CF /* PromotionsViewController.m */,
+				A88EB3C71C500E97008DC5CF /* OffersListViewController.h */,
+				A88EB3C81C500E97008DC5CF /* OffersListViewController.m */,
 				A88EB3D11C501490008DC5CF /* Cell */,
 			);
-			name = PromotionsList;
+			name = OffersList;
 			sourceTree = "<group>";
 		};
 		A88EB3C51C500E3A008DC5CF /* ProfilCamping */ = {
@@ -354,7 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				A8A63DC51C5005C30026E456 /* LaunchScreen.storyboard */,
-				A88EB3CD1C50108E008DC5CF /* hotel-Prefix.pch */,
+				A88EB3CD1C50108E008DC5CF /* camping-Prefix.pch */,
 				A8A63DC81C5005C30026E456 /* Info.plist */,
 				A8A63DB71C5005C30026E456 /* Supporting Files */,
 			);
@@ -366,6 +371,7 @@
 			children = (
 				A8A63DC01C5005C30026E456 /* Main.storyboard */,
 				A8A63DC31C5005C30026E456 /* Assets.xcassets */,
+				A870B2861C5E7CB70006CAAA /* Localizable.strings */,
 			);
 			name = Ressources;
 			sourceTree = "<group>";
@@ -497,7 +503,7 @@
 				A8CF58C31C50076D002D227A /* Inscription */,
 				A88EB3C61C500E4A008DC5CF /* Payment */,
 				A88EB3C51C500E3A008DC5CF /* ProfilCamping */,
-				A88EB3C41C500E2B008DC5CF /* PromotionsList */,
+				A88EB3C41C500E2B008DC5CF /* OffersList */,
 				A8F2FF0E1C558624007DF893 /* ScrollPages */,
 			);
 			name = ViewControllers;
@@ -768,6 +774,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = A8A63DAB1C5005C30026E456;
 			productRefGroup = A8A63DB51C5005C30026E456 /* Products */;
@@ -790,6 +797,7 @@
 				A870B27A1C5CB8670006CAAA /* HotDealCell.xib in Resources */,
 				A8A63DC41C5005C30026E456 /* Assets.xcassets in Resources */,
 				A88EB3DB1C5015AA008DC5CF /* PromotionCell.xib in Resources */,
+				A870B2841C5E7CB70006CAAA /* Localizable.strings in Resources */,
 				A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */,
 				A88EB4171C503F60008DC5CF /* V3.3.6 in Resources */,
 				A84C717A1C56C54A00598FE9 /* InformationCampingCell.xib in Resources */,
@@ -873,7 +881,7 @@
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
 				A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,
-				A88EB3C91C500E97008DC5CF /* PromotionsViewController.m in Sources */,
+				A88EB3C91C500E97008DC5CF /* OffersListViewController.m in Sources */,
 				A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */,
 				A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */,
 				A8F2FF091C557F01007DF893 /* Promo.m in Sources */,
@@ -930,10 +938,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A870B2861C5E7CB70006CAAA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A870B2851C5E7CB70006CAAA /* en */,
+				A870B2871C5E7CBA0006CAAA /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A8A63DC01C5005C30026E456 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A8A63DC11C5005C30026E456 /* Base */,
+				A870B2831C5E7C960006CAAA /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -942,6 +960,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A8A63DC61C5005C30026E456 /* Base */,
+				A870B2821C5E7C960006CAAA /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1046,7 +1065,7 @@
 					"$(PROJECT_DIR)/hotel/scanpay",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "hotel/hotel-Prefix.pch";
+				GCC_PREFIX_HEADER = "hotel/camping-Prefix.pch";
 				INFOPLIST_FILE = hotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1078,7 +1097,7 @@
 					"$(PROJECT_DIR)/hotel/scanpay",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "hotel/hotel-Prefix.pch";
+				GCC_PREFIX_HEADER = "hotel/camping-Prefix.pch";
 				INFOPLIST_FILE = hotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

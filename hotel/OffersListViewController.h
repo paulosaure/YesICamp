@@ -1,5 +1,5 @@
 //
-//  ResultsTableViewController.h
+//  OffersListViewController.h
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
@@ -8,7 +8,7 @@
 
 #define PromotionsViewControllerID @"PromotionsViewControllerID"
 
-@interface PromotionsViewController : UIViewController
+@interface OffersListViewController : UIViewController
 
 @property (nonatomic, strong) NSArray *campings;
 

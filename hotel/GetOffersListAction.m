@@ -8,7 +8,7 @@
 
 #import "GetOffersListAction.h"
 
-#define OFFERS_URL     @"get_all_offres.php"
+#define OFFERS_URL     @"offers"
 
 @implementation GetOffersListAction
 

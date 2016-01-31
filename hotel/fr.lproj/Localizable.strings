@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Yes I Camp
+
+  Created by Paul Lavoine on 31/01/2016.
+  Copyright © 2016 Paul Lavoine. All rights reserved.
+*/
+
+
+"homePage.inscription.button" = "Inscription";
+"homePage.connection.button" = "Connexion";
+"homePage.email.placeholder" = "E-mail";
+"homePage.password.placeholder" = "Mot de passe";
+
+"offersList.search_text_view.placeholder" = "Destination ou catégorie";

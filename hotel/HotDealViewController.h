@@ -13,4 +13,6 @@
 
 @interface HotDealViewController : UIViewController
 
+- (void)centerMapViewOnUserLocation;
+
 @end

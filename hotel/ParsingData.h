@@ -11,6 +11,6 @@
 @interface ParsingData : NSObject
 
 + (instancetype)sharedInstance;
-- (NSArray *)hotelsWithJson:(NSString *)path;
+- (NSArray *)campingsWithJson:(NSString *)path;
 
 @end

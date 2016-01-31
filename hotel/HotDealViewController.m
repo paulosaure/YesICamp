@@ -50,7 +50,14 @@
     [self.view bringSubviewToFront:self.extendMapButton];
     [self.view bringSubviewToFront:self.localizeUserButton];
     
+    // Add annotation
     [self configurePins];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self centerMapViewOnUserLocation];
 }
 
 - (void)configurePins
@@ -157,13 +164,18 @@
                      }];
 }
 
-- (IBAction)centreMapViewOnUserAction:(id)sender
+- (IBAction)centerMapViewOnUserAction:(id)sender
 {
-    [self centreMapViewWithCoordinate:self.mapView.userLocation.location.coordinate];
+    [self centerMapViewOnUserLocation];
 }
 
 #pragma mark - Utils
-- (void)centreMapViewWithCoordinate:(CLLocationCoordinate2D)coordinate
+- (void)centerMapViewOnUserLocation
+{
+    [self centerMapViewWithCoordinate:self.mapView.userLocation.location.coordinate];
+}
+
+- (void)centerMapViewWithCoordinate:(CLLocationCoordinate2D)coordinate
 {
     MKCoordinateRegion region;
     MKCoordinateSpan span;
