@@ -14,7 +14,6 @@
 @property (nonatomic, weak) IBOutlet UIImageView *imageBackgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-
 @end
 
 

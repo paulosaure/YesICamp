@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIView *separatorView;
 
 @end
 
@@ -34,5 +35,10 @@
 {
     self.titleLabel.text = @"Title";
     self.timeLabel.text = @"Description";
+}
+
+- (void)setSeparatorVisiblity:(BOOL)isLast
+{
+    self.separatorView.hidden = isLast;
 }
 @end

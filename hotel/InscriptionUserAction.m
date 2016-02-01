@@ -16,21 +16,20 @@
 
 + (instancetype)action
 {
-    InscriptionUserAction *action = [[InscriptionUserAction alloc] init];
+    InscriptionUserAction *action = [[InscriptionUserAction alloc] initWithUrl:ACTION_URL(INSCRIPTION_URL) service:WebServiceGetOffersList];
+    
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:[@(WebServiceGetOffersList) stringValue] object:nil];
+    
     return action;
 }
 
-#pragma mark - Action
+#pragma mark - Manage Answer
 
-- (void)requestServer
+- (void)handleDownloadedData:(NSString *)obj
 {
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:[@(WebServiceInscription) stringValue] object:nil];
-    [super requestServer:ACTION_URL(INSCRIPTION_URL) action:WebServiceInscription];
-}
-
-- (void)handleDownloadedData:(NSNotification *)notif
-{
-    NSLog(@"Success %@", notif.object);
+    [super handleDownloadedData:obj];
+    
+    NSLog(@"Success %@", obj);
 }
 
 @end

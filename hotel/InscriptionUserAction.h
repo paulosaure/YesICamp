@@ -6,9 +6,8 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-@interface InscriptionUserAction : NetworkManagement
+@interface InscriptionUserAction : HTTPAction
 
 + (instancetype)action;
-- (void)requestServer;
 
 @end

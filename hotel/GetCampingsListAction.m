@@ -15,23 +15,21 @@
 
 #pragma mark - Constructor
 
+
 + (instancetype)action
 {
-    GetCampingsListAction *action = [[GetCampingsListAction alloc] init];
+    GetCampingsListAction *action = [[GetCampingsListAction alloc] initWithUrl:ACTION_URL(CAMPINGS_URL) service:WebServiceGetOffersList];
+    
     return action;
 }
 
-#pragma mark - Action
+#pragma mark - Manage Answer
 
-- (void)requestServer
+- (void)handleDownloadedData:(NSString *)obj
 {
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:[@(WebServiceGetCampingsList) stringValue] object:nil];
-    [super requestServer:ACTION_URL(CAMPINGS_URL) action:WebServiceGetCampingsList];
-}
-
-- (void)handleDownloadedData:(NSNotification *)notif
-{
-    NSLog(@"Success %@", notif.object);
+    [super handleDownloadedData:obj];
+    
+    NSLog(@"Success %@", obj);
 }
 
 @end

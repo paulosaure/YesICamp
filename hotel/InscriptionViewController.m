@@ -56,7 +56,7 @@
     [self.choosePhotoButton setTitle:LOCALIZED_STRING(@"inscription.select_picture.button") forState:UIControlStateNormal];
     [self.inscriptionButton setTitle:LOCALIZED_STRING(@"inscription.inscription.button") forState:UIControlStateNormal];
     
-    self.view.backgroundColor = GREEN_COLOR;
+    self.view.backgroundColor = BLACK_COLOR;
 }
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo

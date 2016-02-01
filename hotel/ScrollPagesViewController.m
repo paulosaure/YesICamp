@@ -72,10 +72,10 @@
 - (void)configureUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = GREEN_COLOR;
+    self.navigationController.navigationBar.barTintColor = BLACK_COLOR;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.imageBackgroundView.image = [UIImage imageNamed:@"backgroundImage"];
-    [self.imageBackgroundView setTintColor:BLUE_COLOR];
+    [self.imageBackgroundView setTintColor:GREEN_COLOR];
     self.imageBackgroundView.contentMode = UIViewContentModeScaleAspectFill;
      [self.view insertSubview:self.imageBackgroundView atIndex:0];
 }
@@ -134,7 +134,7 @@
     {
         self.pagingTitleView                    = [[LPTitleView alloc] init];
         self.pagingTitleView.backgroundColor    = [UIColor clearColor];
-        self.pagingTitleView.indicatorColor     = BLUE_COLOR;
+        self.pagingTitleView.indicatorColor     = GREEN_COLOR;
         self.pagingTitleView.frame              = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CONTENT_PICTO_VIEW_HEIGHT);
         
         NSArray *imageArray           = @[@"account", @"discount", @"hotDeal"];

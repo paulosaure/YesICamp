@@ -151,6 +151,8 @@
     
     // Configure cell
     [cell configureWithInformationsHotDeal:self.hotDeals[indexPath.row]];
+    [cell setSeparatorVisiblity:(indexPath.row == ([self.hotDeals count] - 1))];
+    
     return cell;
 }
 

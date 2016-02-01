@@ -65,7 +65,7 @@
 
 - (void)configureUI
 {
-    [self.reservationButton setBackgroundColor:GREEN_COLOR];
+    [self.reservationButton setBackgroundColor:BLACK_COLOR];
     self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundColor = [UIColor clearColor];
 }
@@ -83,7 +83,7 @@
     UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     pageController.dataSource = self;
     pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), PAGE_CONTROLLER_HEIGHT);
-    pageController.view.backgroundColor = GREEN_COLOR;
+    pageController.view.backgroundColor = BLACK_COLOR;
     
     if([self.contentImages count])
     {

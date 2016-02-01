@@ -80,51 +80,63 @@
                                     <action selector="pushInscriptionViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IEm-2Y-S6Y"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lam-uI-n3G">
-                                <rect key="frame" x="20" y="270" width="560" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-S4-fUi">
+                                <rect key="frame" x="0.0" y="170" width="600" height="161"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lam-uI-n3G">
+                                        <rect key="frame" x="8" y="58" width="584" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="SRG-ho-TuT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wub-HX-tTt">
+                                        <rect key="frame" x="8" y="108" width="584" height="45"/>
+                                        <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="7b1-qH-wHK"/>
+                                        </constraints>
+                                        <state key="normal" title="Connexion">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="connection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2S1-GC-zmq"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ry5-re-uB8">
+                                        <rect key="frame" x="8" y="8" width="584" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ugk-RD-3xd"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="SRG-ho-TuT"/>
+                                    <constraint firstItem="lam-uI-n3G" firstAttribute="top" secondItem="ry5-re-uB8" secondAttribute="bottom" constant="5" id="20q-nH-Tkt"/>
+                                    <constraint firstItem="wub-HX-tTt" firstAttribute="leading" secondItem="VwJ-S4-fUi" secondAttribute="leading" constant="8" id="5Ky-oK-JLh"/>
+                                    <constraint firstItem="ry5-re-uB8" firstAttribute="leading" secondItem="VwJ-S4-fUi" secondAttribute="leading" constant="8" id="LRF-zJ-1ha"/>
+                                    <constraint firstItem="wub-HX-tTt" firstAttribute="top" secondItem="lam-uI-n3G" secondAttribute="bottom" constant="5" id="T2q-n5-8fQ"/>
+                                    <constraint firstItem="ry5-re-uB8" firstAttribute="top" secondItem="VwJ-S4-fUi" secondAttribute="top" constant="8" id="Udu-ql-pBR"/>
+                                    <constraint firstItem="lam-uI-n3G" firstAttribute="leading" secondItem="VwJ-S4-fUi" secondAttribute="leading" constant="8" id="XG3-v5-yrc"/>
+                                    <constraint firstAttribute="bottom" secondItem="wub-HX-tTt" secondAttribute="bottom" constant="8" id="Yde-nh-tT2"/>
+                                    <constraint firstAttribute="trailing" secondItem="lam-uI-n3G" secondAttribute="trailing" constant="8" id="ZSC-4H-n3j"/>
+                                    <constraint firstAttribute="trailing" secondItem="ry5-re-uB8" secondAttribute="trailing" constant="8" id="gDj-8H-aOH"/>
+                                    <constraint firstAttribute="trailing" secondItem="wub-HX-tTt" secondAttribute="trailing" constant="8" id="t69-Rd-46P"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wub-HX-tTt">
-                                <rect key="frame" x="20" y="330" width="560" height="45"/>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="7b1-qH-wHK"/>
-                                </constraints>
-                                <state key="normal" title="Connexion">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="connection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2S1-GC-zmq"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ry5-re-uB8">
-                                <rect key="frame" x="20" y="220" width="560" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="ugk-RD-3xd"/>
-                                </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wub-HX-tTt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="C9w-v5-jre"/>
+                            <constraint firstItem="VwJ-S4-fUi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="HVZ-1K-EoP"/>
                             <constraint firstItem="JbV-pz-XSx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="O8S-60-c7q"/>
-                            <constraint firstItem="wub-HX-tTt" firstAttribute="top" secondItem="lam-uI-n3G" secondAttribute="bottom" constant="15" id="Xim-xd-iQ6"/>
-                            <constraint firstAttribute="trailing" secondItem="lam-uI-n3G" secondAttribute="trailing" constant="20" id="ZVY-u2-ugD"/>
-                            <constraint firstItem="lam-uI-n3G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="aDK-Ho-ciH"/>
-                            <constraint firstAttribute="trailing" secondItem="wub-HX-tTt" secondAttribute="trailing" constant="20" id="f84-Nb-d2O"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JbV-pz-XSx" secondAttribute="bottom" constant="20" id="g8d-ko-2u1"/>
-                            <constraint firstItem="ry5-re-uB8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hUe-6Z-h0n"/>
-                            <constraint firstAttribute="trailing" secondItem="ry5-re-uB8" secondAttribute="trailing" constant="20" id="jAq-3n-rJR"/>
-                            <constraint firstItem="ry5-re-uB8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="tH7-ks-cCa"/>
+                            <constraint firstAttribute="trailing" secondItem="VwJ-S4-fUi" secondAttribute="trailing" id="pu0-vO-TCJ"/>
+                            <constraint firstItem="VwJ-S4-fUi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qph-Kn-5Nu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JbV-pz-XSx" secondAttribute="trailing" constant="50" id="uuJ-ra-2cw"/>
-                            <constraint firstItem="lam-uI-n3G" firstAttribute="top" secondItem="ry5-re-uB8" secondAttribute="bottom" constant="5" id="zo0-pm-Hoq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="YEp-7B-6JA"/>

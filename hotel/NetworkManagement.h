@@ -8,17 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, WebService)
-{
-    WebServiceGetOffersList = 0, // default
-    WebServiceGetCampingsList,
-    WebServiceConnection,
-    WebServiceInscription
-};
+
 
 @interface NetworkManagement : NSObject
 
 + (instancetype)sharedInstance;
-- (void)requestServer:(NSString *)url action:(WebService)action;
+- (void)addNewAction:(HTTPAction *)action;
 
 @end

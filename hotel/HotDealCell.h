@@ -15,5 +15,6 @@
 
 + (UINib *)cellNib;
 - (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal;
+- (void)setSeparatorVisiblity:(BOOL)isLast;
 
 @end

@@ -16,20 +16,18 @@
 
 + (instancetype)action
 {
-    GetOffersListAction *action = [[GetOffersListAction alloc] init];
+    GetOffersListAction *action = [[GetOffersListAction alloc] initWithUrl:ACTION_URL(OFFERS_URL) service:WebServiceGetOffersList];
+    
     return action;
 }
 
-#pragma mark - Action
+#pragma mark - Manage Answer
 
-- (void)requestServer
+- (void)handleDownloadedData:(NSString *)obj
 {
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:[@(WebServiceGetOffersList) stringValue] object:nil];
-    [super requestServer:ACTION_URL(OFFERS_URL) action:WebServiceGetOffersList];
+    [super handleDownloadedData:obj];
+    
+    NSLog(@"Success %@", obj);
 }
 
-- (void)handleDownloadedData:(NSNotification *)notif
-{
-    NSLog(@"Success %@", notif.object);
-}
 @end

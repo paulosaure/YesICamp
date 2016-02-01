@@ -35,14 +35,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[GetOffersListAction action] requestServer];
+    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
 }
 
 - (void)configureUI
 {
     self.searchTextView.placeholder = LOCALIZED_STRING(@"offersList.search_text_view.placeholder");
-    self.startSearchButton.tintColor = BLUE_COLOR;
-    self.searchContentView.backgroundColor = GREEN_COLOR;
+    self.startSearchButton.tintColor = GREEN_COLOR;
+    self.searchContentView.backgroundColor = BLACK_COLOR;
 }
 
 #pragma mark - Table view data source
