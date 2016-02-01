@@ -69,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbV-pz-XSx">
-                                <rect key="frame" x="70" y="535" width="460" height="45"/>
+                                <rect key="frame" x="120" y="535" width="360" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="rYH-OC-ERW"/>
                                 </constraints>
@@ -132,11 +132,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VwJ-S4-fUi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="HVZ-1K-EoP"/>
-                            <constraint firstItem="JbV-pz-XSx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="O8S-60-c7q"/>
+                            <constraint firstItem="JbV-pz-XSx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="O8S-60-c7q"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JbV-pz-XSx" secondAttribute="bottom" constant="20" id="g8d-ko-2u1"/>
                             <constraint firstAttribute="trailing" secondItem="VwJ-S4-fUi" secondAttribute="trailing" id="pu0-vO-TCJ"/>
                             <constraint firstItem="VwJ-S4-fUi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qph-Kn-5Nu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JbV-pz-XSx" secondAttribute="trailing" constant="50" id="uuJ-ra-2cw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JbV-pz-XSx" secondAttribute="trailing" constant="100" id="uuJ-ra-2cw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="YEp-7B-6JA"/>
@@ -266,7 +266,7 @@
                                     <constraint firstAttribute="height" constant="45" id="YHz-Bj-lbq"/>
                                 </constraints>
                                 <state key="normal" title="Inscription">
-                                    <color key="titleColor" red="1" green="0.9654358073" blue="0.92381461460000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="startInscription:" destination="4aC-Re-cjo" eventType="touchUpInside" id="wHT-5d-Hw1"/>

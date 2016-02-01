@@ -67,7 +67,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get hotek
+    // Get camping
     Camping *camping = self.campings[indexPath.row];
     
     [NOTIFICATION_CENTER postNotificationName:ProfilNotificiation object:camping];

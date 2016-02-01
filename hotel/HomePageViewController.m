@@ -29,6 +29,9 @@
 {
     [super viewDidLoad];
     [self configureUI];
+    
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
+    [self.view addGestureRecognizer:singleFingerTap];
 }
 
 - (void)configureUI
@@ -81,6 +84,13 @@
     [NOTIFICATION_CENTER postNotificationName:InscriptionNotificiation object:nil];
 }
 
+
+#pragma mark - Utils
+
+- (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
+{
+    [self.view endEditing:YES];
+}
 
 
 @end
