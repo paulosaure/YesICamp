@@ -26,7 +26,7 @@
 @property (nonatomic, weak) id<LPTitleViewDelegate> delegate;
 
 - (void)addImages:(NSArray *)images;
-//+ (CGFloat)calcTitleWidth:(NSArray *)titleArr withFont:(UIFont *)titleFont;
+- (void)adjustImageViewAtIndex:(CGFloat)index;
 - (void)updatePageIndicatorPosition:(CGFloat)xPosition;
 
 @end

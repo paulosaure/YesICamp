@@ -33,6 +33,7 @@
 - (void)configureWithInformationsCamping:(Camping *)camping
 {
     self.titleLabel.text = @"Title";
+    self.titleLabel.textColor = BLUE_COLOR;
     self.descriptionLabel.text = @"Description";
 }
 @end

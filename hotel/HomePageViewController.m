@@ -10,7 +10,8 @@
 #import "HomePageViewController.h"
 #import "ConnectionUserAction.h"
 #import "InscriptionViewController.h"
-
+#import "UITextField+Effects.h"
+#import "UIButton+Effects.h"
 
 @interface HomePageViewController ()
 
@@ -31,33 +32,11 @@
 }
 
 - (void)configureUI
-{
-    NSAttributedString *pseudoPlaceHolder = [[NSAttributedString alloc] initWithString:LOCALIZED_STRING(@"homePage.email.placeholder") attributes:@{NSForegroundColorAttributeName : GREEN_COLOR}];
-    self.pseudoTextView.attributedPlaceholder = pseudoPlaceHolder;
-    
-    NSAttributedString *passPlaceholder = [[NSAttributedString alloc] initWithString:LOCALIZED_STRING(@"homePage.password.placeholder") attributes:@{NSForegroundColorAttributeName : GREEN_COLOR}];
-    self.passwordTextView.attributedPlaceholder = passPlaceholder;
-    
-    
-    self.pseudoTextView.backgroundColor = [UIColor clearColor];
-    self.pseudoTextView.layer.borderColor = GREEN_COLOR.CGColor;
-    self.pseudoTextView.layer.borderWidth = 1.0f;
-    self.pseudoTextView.layer.cornerRadius = 5.0f;
-    
-    self.passwordTextView.backgroundColor = [UIColor clearColor];
-    self.passwordTextView.layer.borderColor = GREEN_COLOR.CGColor;
-    self.passwordTextView.layer.borderWidth = 1.0f;
-    self.passwordTextView.layer.cornerRadius = 5.0f;
-    
-    [self.connectionButton setTitle:LOCALIZED_STRING(@"homePage.connection.button") forState:UIControlStateNormal];
-    [self.connectionButton setTitleColor:TINT_COLOR forState:UIControlStateNormal];
-    self.connectionButton.backgroundColor = [GREEN_COLOR colorWithAlphaComponent:0.5f];
-    self.connectionButton.layer.cornerRadius = 5.0f;
-    
-    [self.signUpButton setTitle:LOCALIZED_STRING(@"homePage.inscription.button") forState:UIControlStateNormal];
-    [self.signUpButton setTitleColor:TINT_COLOR forState:UIControlStateNormal];
-    self.signUpButton.backgroundColor = [GREEN_COLOR colorWithAlphaComponent:0.5f];
-    self.signUpButton.layer.cornerRadius = 5.0f;
+{    
+    [self.pseudoTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.email.placeholder")];
+    [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.password.placeholder")];
+    [self.connectionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.connection.button")];
+    [self.signUpButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.inscription.button")];
     
     self.view.backgroundColor = [UIColor clearColor];
 }

@@ -14,6 +14,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *imageBackgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *gradientImageView;
 @end
 
 
@@ -32,6 +33,11 @@
     return cellNib;
 }
 
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+}
+
 - (void)configureWithCamping:(Camping *)camping
 {
 //    self.imageView.image = [camping.images firstObject];
@@ -41,6 +47,8 @@
     self.priceLabel.text = @"70€";
     self.priceLabel.textColor = [UIColor whiteColor];
     self.imageBackgroundView.image = [UIImage imageNamed:@"campingImage"];
+    
+    self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

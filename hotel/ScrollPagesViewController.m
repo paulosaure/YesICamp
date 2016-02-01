@@ -21,7 +21,10 @@
 
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
 
+// Outlets
 @property (weak, nonatomic) IBOutlet UIImageView *imageBackgroundView;
+
+// Data
 @property (nonatomic, strong) HomePageViewController *homePageViewController;
 @property (nonatomic, strong) HotDealViewController *hotDealViewController;
 @property (nonatomic, strong) OffersListViewController *promotionsViewController;
@@ -55,9 +58,12 @@
     [self reloadData];
     
     
-    UISwipeGestureRecognizer *Swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeRecognizer:)];
-    Swipe.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:Swipe];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipe];
+    
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
+    [self.view addGestureRecognizer:singleFingerTap];
 }
 
 #pragma mark - Configurations
@@ -78,6 +84,7 @@
     [self.imageBackgroundView setTintColor:GREEN_COLOR];
     self.imageBackgroundView.contentMode = UIViewContentModeScaleAspectFill;
      [self.view insertSubview:self.imageBackgroundView atIndex:0];
+        [self.navigationController.navigationBar setTintColor:GREEN_COLOR];
 }
 
 #pragma mark - LPViewPagerDataSource
@@ -221,7 +228,7 @@
             break;
     }
     
-    //    [self.pagingTitleView adjustImageViewAtIndex:index];
+    [self.pagingTitleView adjustImageViewAtIndex:index];
     /*
      Cette méthode permettait (car je l'ai supprimé) de modifier la couleur du texte des images, on peut aller la récupérer dans git. Pour nous elle permet a la limite de grossir les image donc à garder si jamais. Je vais la commenter plutot
      */
@@ -282,7 +289,7 @@
 
 #pragma mark - Utils
 
-- (void) SwipeRecognizer:(UISwipeGestureRecognizer *)sender
+- (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
 {
     [self.view endEditing:YES];
 }

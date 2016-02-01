@@ -34,6 +34,7 @@
 - (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal
 {
     self.titleLabel.text = @"Title";
+    self.titleLabel.textColor = BLUE_COLOR;
     self.timeLabel.text = @"Description";
 }
 

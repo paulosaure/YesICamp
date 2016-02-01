@@ -20,6 +20,8 @@
 		A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B27D1C5CB8C80006CAAA /* HotDeal.m */; };
 		A870B2841C5E7CB70006CAAA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A870B2861C5E7CB70006CAAA /* Localizable.strings */; };
 		A870B2911C5FFD330006CAAA /* HTTPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2901C5FFD330006CAAA /* HTTPAction.m */; };
+		A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2971C6006940006CAAA /* UITextField+Effects.m */; };
+		A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B29B1C6006EF0006CAAA /* UIButton+Effects.m */; };
 		A88EB3C91C500E97008DC5CF /* OffersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* OffersListViewController.m */; };
 		A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */; };
 		A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* PromotionCell.m */; };
@@ -108,6 +110,10 @@
 		A870B2871C5E7CBA0006CAAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A870B28F1C5FFD330006CAAA /* HTTPAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAction.h; sourceTree = "<group>"; };
 		A870B2901C5FFD330006CAAA /* HTTPAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAction.m; sourceTree = "<group>"; };
+		A870B2961C6006940006CAAA /* UITextField+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Effects.h"; sourceTree = "<group>"; };
+		A870B2971C6006940006CAAA /* UITextField+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Effects.m"; sourceTree = "<group>"; };
+		A870B29A1C6006EF0006CAAA /* UIButton+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Effects.h"; sourceTree = "<group>"; };
+		A870B29B1C6006EF0006CAAA /* UIButton+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Effects.m"; sourceTree = "<group>"; };
 		A88EB3C71C500E97008DC5CF /* OffersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersListViewController.h; sourceTree = "<group>"; };
 		A88EB3C81C500E97008DC5CF /* OffersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersListViewController.m; sourceTree = "<group>"; };
 		A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
@@ -320,6 +326,24 @@
 			name = HotDeal;
 			sourceTree = "<group>";
 		};
+		A870B2921C6005E80006CAAA /* UITextField+Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A870B2961C6006940006CAAA /* UITextField+Effects.h */,
+				A870B2971C6006940006CAAA /* UITextField+Effects.m */,
+			);
+			name = "UITextField+Effects";
+			sourceTree = "<group>";
+		};
+		A870B2991C6006D20006CAAA /* UIButton+Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A870B29A1C6006EF0006CAAA /* UIButton+Effects.h */,
+				A870B29B1C6006EF0006CAAA /* UIButton+Effects.m */,
+			);
+			name = "UIButton+Effects";
+			sourceTree = "<group>";
+		};
 		A88EB3C31C5009FF008DC5CF /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +441,8 @@
 				A84C717B1C56C99F00598FE9 /* PageItem */,
 				A84C716B1C56A83400598FE9 /* ViewPager */,
 				A88EB3E71C5034B3008DC5CF /* Data */,
+				A870B2921C6005E80006CAAA /* UITextField+Effects */,
+				A870B2991C6006D20006CAAA /* UIButton+Effects */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -881,6 +907,7 @@
 			files = (
 				A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */,
 				A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */,
+				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,
 				A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */,
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
@@ -896,6 +923,7 @@
 				A84C71781C56C49400598FE9 /* InformationCampingCell.m in Sources */,
 				A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
+				A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */,
 				A84C717E1C56C9A800598FE9 /* PageItemController.m in Sources */,
 				A8F2FEF61C54D426007DF893 /* InformationViewController.m in Sources */,
 				A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */,

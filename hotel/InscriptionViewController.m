@@ -7,6 +7,8 @@
 //
 
 #import "InscriptionViewController.h"
+#import "UITextField+Effects.h"
+#import "UIButton+Effects.h"
 
 @interface InscriptionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -31,9 +33,12 @@
 {
     [super viewDidLoad];
     
-    UISwipeGestureRecognizer *Swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeRecognizer:)];
-    Swipe.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:Swipe];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipe];
+    
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
+    [self.view addGestureRecognizer:singleFingerTap];
     
     // Configuration
     [self configureUI];
@@ -41,20 +46,19 @@
 
 - (void)configureUI
 {
-    self.imageProfileView.contentMode = UIViewContentModeScaleAspectFit;
-    self.imageProfileView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.imageProfileView.layer.borderWidth = 1.0f;
+    self.imageProfileView.contentMode = UIViewContentModeScaleAspectFit;
     self.choosePhotoButton.titleLabel.numberOfLines = 0;
     self.choosePhotoButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
-    self.firstNameTextView.placeholder = LOCALIZED_STRING(@"inscription.firstname.placeholder");
-    self.lastNameTextView.placeholder = LOCALIZED_STRING(@"inscription.lastname.placeholder");
-    self.emailTextView.placeholder = LOCALIZED_STRING(@"inscription.email.placeholder");
-    self.passwordTextView.placeholder = LOCALIZED_STRING(@"inscription.password.placeholder");
-    self.ageTextView.placeholder = LOCALIZED_STRING(@"inscription.age.placeholder");
+     [self.firstNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.firstname.placeholder")];
+     [self.lastNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
+     [self.emailTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.email.placeholder")];
+     [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.password.placeholder")];
+     [self.ageTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.age.placeholder")];
     
-    [self.choosePhotoButton setTitle:LOCALIZED_STRING(@"inscription.select_picture.button") forState:UIControlStateNormal];
-    [self.inscriptionButton setTitle:LOCALIZED_STRING(@"inscription.inscription.button") forState:UIControlStateNormal];
+    [self.choosePhotoButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"inscription.select_picture.button")];
+    [self.inscriptionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"inscription.inscription.button")];
     
     self.view.backgroundColor = BLACK_COLOR;
 }
@@ -64,9 +68,10 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     self.image = image;
     self.imageProfileView.image = image;
+    self.imageProfileView.layer.borderColor = GREEN_COLOR.CGColor;
 }
 
-- (void) SwipeRecognizer:(UISwipeGestureRecognizer *)sender
+- (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
 {
     [self.view endEditing:YES];
 }

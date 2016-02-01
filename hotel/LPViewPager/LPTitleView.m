@@ -96,25 +96,14 @@
     idRect.origin.x                = pageIndicatorXPosition;
     self.pageIndicator.frame       = idRect;
 }
-//
-//- (void)adjustImageViewAtIndex:(CGFloat)index
-//{
-//    for (UIImageView *imageView in self.subviews) {
-//        if ([imageView isKindOfClass:[UIImageView class]]) {
-//            imageView.backgroundColor = self.titleNormalColor ? : [UIColor colorWithWhite:0 alpha:1.000];
-//            if (imageView.tag == index) {
-//                imageView.backgroundColor =  self.titleSelectedColor ? : [UIColor clearColor];
-//            }
-//        }
-//    }
-//    CGRect idRect = self.pageIndicator.frame;
-//    if (index == 0) {
-//        idRect.origin.x = 0;
-//    } else if (index == self.imageArray.count - 1) {
-//        idRect.origin.x = self.frame.size.width - self.pageIndicator.frame.size.width;
-//    }
-//    self.pageIndicator.frame = idRect;
-//}
+
+- (void)adjustImageViewAtIndex:(CGFloat)index
+{
+    for (UIImageView *imageView in self.subviews)
+    {
+        imageView.tintColor = (imageView.tag == index) ? GREEN_COLOR : [UIColor whiteColor];
+    }
+}
 
 //
 //+ (CGFloat)calcTitleWidth:(NSArray *)titleArr withFont:(UIFont *)titleFont

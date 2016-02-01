@@ -8,7 +8,7 @@
 
 
 "homePage.inscription.button" = "Sign up";
-"homePage.connection.button" = "Connection";
+"homePage.connection.button" = "Log In";
 "homePage.email.placeholder" = "E-mail";
 "homePage.password.placeholder" = "Password";
 
