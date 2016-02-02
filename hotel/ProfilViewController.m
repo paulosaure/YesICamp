@@ -26,18 +26,6 @@
 
 @implementation ProfilViewController
 
-#pragma mark - Initializer
-
-- (instancetype)initWithCamping:(Camping *)camping
-{
-    if (self = [super init])
-    {
-        self.camping = camping;
-    }
-    
-    return self;
-}
-
 #pragma mark - View lifeCycle
 
 - (void)viewDidLoad
@@ -151,7 +139,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;[self.camping.informations count];
+    return 3;//[self.offer.information count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,7 +148,7 @@
     InformationCampingCell *cell = [tableView dequeueReusableCellWithIdentifier:INFORMATION_CELL_IDENTIFIER];
     
     // Configure cell
-    [cell configureWithInformationsCamping:self.camping.informations[indexPath.row]];
+//    [cell configureWithInformationsCamping:self.offer[indexPath.row]];
     
     return cell;
 }

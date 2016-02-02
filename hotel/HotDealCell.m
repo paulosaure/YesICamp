@@ -10,9 +10,16 @@
 
 @interface HotDealCell ()
 
+// Outlet
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIView *separatorView;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+
+// Data
+@property (weak) NSTimer *repeatingTimer;
+@property (nonatomic, assign) CGFloat currMinute;
+@property (nonatomic, assign) CGFloat currSeconds;
 
 @end
 
@@ -31,11 +38,57 @@
     return cellNib;
 }
 
-- (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal
+- (void)prepareForReuse
 {
-    self.titleLabel.text = @"Title";
+    [super prepareForReuse];
+}
+
+- (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal lastRequest:(NSDate *)lastRequest
+{
+    self.titleLabel.text = @"Camping Azurea";
     self.titleLabel.textColor = BLUE_COLOR;
-    self.timeLabel.text = @"Description";
+    self.priceLabel.text = @"70€";
+    
+    NSLog(@"test date : %@", [hotDeal remainingTimeWithRequestDate]);
+    
+    
+    self.currMinute=3;
+    self.currSeconds=00;
+    
+    // Cancel a preexisting timer.
+    [self.repeatingTimer invalidate];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                      target:self
+                                                    selector:@selector(targetMethod:)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    self.repeatingTimer = timer;
+}
+
+- (void)targetMethod:(NSTimer*)theTimer
+{
+    if((self.currMinute > 0 || self.currSeconds >= 0) && self.currMinute >=0)
+    {
+        if (self.currSeconds==0)
+        {
+            self.currMinute-=1;
+            self.currSeconds=59;
+        }
+        else if (self.currSeconds>0)
+        {
+            self.currSeconds-=1;
+        }
+        if (self.currMinute>-1)
+        {
+            NSString *timeString = [NSString stringWithFormat:@"%lu%@%02lu",(unsigned long)self.currMinute,@":",(unsigned long)self.currSeconds];
+            self.timerLabel.text = timeString;
+        }
+    }
+    else
+    {
+        [self.repeatingTimer invalidate];
+    }
 }
 
 - (void)setSeparatorVisiblity:(BOOL)isLast

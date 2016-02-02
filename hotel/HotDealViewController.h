@@ -10,6 +10,7 @@
 
 #define HotDealViewControllerID @"HotDealViewControllerID"
 #define HotDealNotification @"HotDealNotification"
+#define HotsDealsNotification @"HotsDealsNotification"
 
 @interface HotDealViewController : UIViewController
 

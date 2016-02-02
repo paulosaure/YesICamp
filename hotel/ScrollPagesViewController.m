@@ -262,7 +262,7 @@
 - (void)pushHotDealViewController:(NSNotification *)notification
 {
     ProfilViewController *profilViewController = (ProfilViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:ProfilViewControllerID];
-    profilViewController.camping = notification.object;
+    profilViewController.offer = notification.object;
     [self pushViewController:profilViewController];
 }
 
@@ -275,7 +275,7 @@
 - (void)pushProfilViewController:(NSNotification *)notification
 {
     ProfilViewController *profilViewController = (ProfilViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:ProfilViewControllerID];
-    profilViewController.camping = notification.object;
+    profilViewController.offer = notification.object;
     [self pushViewController:profilViewController];
 }
 

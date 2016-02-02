@@ -22,6 +22,7 @@
 		A870B2911C5FFD330006CAAA /* HTTPAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2901C5FFD330006CAAA /* HTTPAction.m */; };
 		A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2971C6006940006CAAA /* UITextField+Effects.m */; };
 		A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B29B1C6006EF0006CAAA /* UIButton+Effects.m */; };
+		A870B2A21C616C610006CAAA /* GetHotsDealsListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2A11C616C610006CAAA /* GetHotsDealsListAction.m */; };
 		A88EB3C91C500E97008DC5CF /* OffersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3C81C500E97008DC5CF /* OffersListViewController.m */; };
 		A88EB3CC1C500EAE008DC5CF /* ProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3CB1C500EAE008DC5CF /* ProfilViewController.m */; };
 		A88EB3DA1C5015AA008DC5CF /* PromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3D81C5015AA008DC5CF /* PromotionCell.m */; };
@@ -60,7 +61,7 @@
 		A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CF58C51C5007A2002D227A /* InscriptionViewController.m */; };
 		A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */; };
 		A8F2FEF61C54D426007DF893 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEF51C54D426007DF893 /* InformationViewController.m */; };
-		A8F2FF091C557F01007DF893 /* Promo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Promo.m */; };
+		A8F2FF091C557F01007DF893 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Offer.m */; };
 		A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF1B1C559A56007DF893 /* ScrollPagesViewController.m */; };
 		FC3E8C90B71CCA6AAEE87C2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C91B09CC94CDA73374504379 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,8 @@
 		A870B2971C6006940006CAAA /* UITextField+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Effects.m"; sourceTree = "<group>"; };
 		A870B29A1C6006EF0006CAAA /* UIButton+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Effects.h"; sourceTree = "<group>"; };
 		A870B29B1C6006EF0006CAAA /* UIButton+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Effects.m"; sourceTree = "<group>"; };
+		A870B2A01C616C610006CAAA /* GetHotsDealsListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetHotsDealsListAction.h; sourceTree = "<group>"; };
+		A870B2A11C616C610006CAAA /* GetHotsDealsListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetHotsDealsListAction.m; sourceTree = "<group>"; };
 		A88EB3C71C500E97008DC5CF /* OffersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersListViewController.h; sourceTree = "<group>"; };
 		A88EB3C81C500E97008DC5CF /* OffersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersListViewController.m; sourceTree = "<group>"; };
 		A88EB3CA1C500EAE008DC5CF /* ProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilViewController.h; sourceTree = "<group>"; };
@@ -183,8 +186,8 @@
 		A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDealViewController.m; sourceTree = "<group>"; };
 		A8F2FEF41C54D426007DF893 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		A8F2FEF51C54D426007DF893 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
-		A8F2FF071C557F01007DF893 /* Promo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Promo.h; sourceTree = "<group>"; };
-		A8F2FF081C557F01007DF893 /* Promo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Promo.m; sourceTree = "<group>"; };
+		A8F2FF071C557F01007DF893 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		A8F2FF081C557F01007DF893 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		A8F2FF0B1C5585D1007DF893 /* hotel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hotel-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8F2FF1A1C559A56007DF893 /* ScrollPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPagesViewController.h; sourceTree = "<group>"; };
 		A8F2FF1B1C559A56007DF893 /* ScrollPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPagesViewController.m; sourceTree = "<group>"; };
@@ -344,6 +347,15 @@
 			name = "UIButton+Effects";
 			sourceTree = "<group>";
 		};
+		A870B29F1C616C3B0006CAAA /* GetHotsDealsList */ = {
+			isa = PBXGroup;
+			children = (
+				A870B2A01C616C610006CAAA /* GetHotsDealsListAction.h */,
+				A870B2A11C616C610006CAAA /* GetHotsDealsListAction.m */,
+			);
+			name = GetHotsDealsList;
+			sourceTree = "<group>";
+		};
 		A88EB3C31C5009FF008DC5CF /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,7 +430,7 @@
 			children = (
 				A88EB3DD1C5015DB008DC5CF /* Camping */,
 				A870B27B1C5CB8910006CAAA /* HotDeal */,
-				A8F2FF061C557EAB007DF893 /* Promo */,
+				A8F2FF061C557EAB007DF893 /* Offer */,
 				A88EB4041C50395B008DC5CF /* UserProfil */,
 			);
 			name = Models;
@@ -436,13 +448,13 @@
 		A88EB3E21C5018CB008DC5CF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A88EB3E71C5034B3008DC5CF /* Data */,
 				A84C71801C56DFFF00598FE9 /* LocationManager */,
 				A84C71861C56E77000598FE9 /* MKAnnotations */,
 				A84C717B1C56C99F00598FE9 /* PageItem */,
-				A84C716B1C56A83400598FE9 /* ViewPager */,
-				A88EB3E71C5034B3008DC5CF /* Data */,
 				A870B2921C6005E80006CAAA /* UITextField+Effects */,
 				A870B2991C6006D20006CAAA /* UIButton+Effects */,
+				A84C716B1C56A83400598FE9 /* ViewPager */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -466,6 +478,7 @@
 				A88EB3F01C5036E5008DC5CF /* Connection */,
 				A88EB3F11C5036EB008DC5CF /* Inscription */,
 				A89763CB1C5816180060BC5C /* GetCampingList */,
+				A870B29F1C616C3B0006CAAA /* GetHotsDealsList */,
 				A88EB3F21C5036EF008DC5CF /* GetOffersList */,
 			);
 			name = Action;
@@ -698,13 +711,13 @@
 			name = TabBar;
 			sourceTree = "<group>";
 		};
-		A8F2FF061C557EAB007DF893 /* Promo */ = {
+		A8F2FF061C557EAB007DF893 /* Offer */ = {
 			isa = PBXGroup;
 			children = (
-				A8F2FF071C557F01007DF893 /* Promo.h */,
-				A8F2FF081C557F01007DF893 /* Promo.m */,
+				A8F2FF071C557F01007DF893 /* Offer.h */,
+				A8F2FF081C557F01007DF893 /* Offer.m */,
 			);
-			name = Promo;
+			name = Offer;
 			sourceTree = "<group>";
 		};
 		A8F2FF0E1C558624007DF893 /* ScrollPages */ = {
@@ -906,6 +919,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */,
+				A870B2A21C616C610006CAAA /* GetHotsDealsListAction.m in Sources */,
 				A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */,
 				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,
 				A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */,
@@ -917,7 +931,7 @@
 				A88EB3C91C500E97008DC5CF /* OffersListViewController.m in Sources */,
 				A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */,
 				A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */,
-				A8F2FF091C557F01007DF893 /* Promo.m in Sources */,
+				A8F2FF091C557F01007DF893 /* Offer.m in Sources */,
 				A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */,
 				A88EB3FD1C503763008DC5CF /* GetCampingsListAction.m in Sources */,
 				A84C71781C56C49400598FE9 /* InformationCampingCell.m in Sources */,

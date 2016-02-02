@@ -14,7 +14,7 @@
 {
     [self setTitle:text forState:UIControlStateNormal];
     [self setTitleColor:TINT_COLOR forState:UIControlStateNormal];
-    self.backgroundColor = [color colorWithAlphaComponent:0.5f];
+    self.backgroundColor = [color colorWithAlphaComponent:0.8f];
     self.layer.cornerRadius = 5.0f;
 }
 

@@ -10,4 +10,6 @@
 
 @interface HotDeal : NSObject
 
+- (NSDate *)remainingTimeWithRequestDate;
+
 @end

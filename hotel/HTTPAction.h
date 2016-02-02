@@ -12,6 +12,7 @@ typedef NS_ENUM(NSInteger, WebService)
 {
     WebServiceGetOffersList = 0, // default
     WebServiceGetCampingsList,
+    WebServiceGetHotsDealsList,
     WebServiceConnection,
     WebServiceInscription
 };

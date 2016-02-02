@@ -48,7 +48,7 @@
 {
     self.imageProfileView.layer.borderWidth = 1.0f;
     self.imageProfileView.contentMode = UIViewContentModeScaleAspectFit;
-    self.choosePhotoButton.titleLabel.numberOfLines = 0;
+    self.choosePhotoButton.titleLabel.numberOfLines = 2;
     self.choosePhotoButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
      [self.firstNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.firstname.placeholder")];

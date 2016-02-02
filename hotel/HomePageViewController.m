@@ -15,11 +15,11 @@
 
 @interface HomePageViewController ()
 
+// Outlets
 @property (weak, nonatomic) IBOutlet UITextField *pseudoTextView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
 @property (weak, nonatomic) IBOutlet UIButton *connectionButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-
 
 @end
 
@@ -46,9 +46,6 @@
 
 - (IBAction)connection:(id)sender
 {
-
-    
-    
     
     //    if ([[NetworkManagement sharedInstance] connectionWithServer])
     //    {

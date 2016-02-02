@@ -14,7 +14,7 @@
 @interface HotDealCell : UITableViewCell
 
 + (UINib *)cellNib;
-- (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal;
+- (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal lastRequest:(NSDate *)lastRequest;
 - (void)setSeparatorVisiblity:(BOOL)isLast;
 
 @end

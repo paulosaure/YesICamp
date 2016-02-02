@@ -27,6 +27,7 @@
 // Data
 @property (nonatomic, strong) NSArray *hotDeals;
 @property (nonatomic, assign) BOOL isMapExtended;
+@property (nonatomic, strong) NSDate *lastRequestDate;
 
 @end
 
@@ -53,6 +54,8 @@
     // Add annotation
     [self configurePins];
     [self configureUI];
+    
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleHotsDealsList:) name:HotsDealsNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -150,7 +153,7 @@
     HotDealCell *cell = [tableView dequeueReusableCellWithIdentifier:HOT_DEAL_CELL_ID];
     
     // Configure cell
-    [cell configureWithInformationsHotDeal:self.hotDeals[indexPath.row]];
+    [cell configureWithInformationsHotDeal:self.hotDeals[indexPath.row] lastRequest:self.lastRequestDate];
     [cell setSeparatorVisiblity:(indexPath.row == ([self.hotDeals count] - 1))];
     
     return cell;
@@ -188,6 +191,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self centerMapViewOnUserLocation];
 }
+
+#pragma mark - Notification
+
+- (void)handleHotsDealsList:(NSNotification *)notif
+{
+    
+}
+
 
 #pragma mark - Utils
 - (void)centerMapViewOnUserLocation

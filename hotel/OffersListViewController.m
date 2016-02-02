@@ -14,10 +14,15 @@
 
 @interface OffersListViewController () <UITableViewDelegate, UITableViewDataSource>
 
+
+// Outlets
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextView;
 @property (weak, nonatomic) IBOutlet UIButton *startSearchButton;
 @property (weak, nonatomic) IBOutlet UIView *searchContentView;
+
+// Data
+@property (nonatomic, strong) NSArray *offersList;
 
 @end
 
@@ -26,10 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerNib:[PromotionCell cellNib] forCellReuseIdentifier:PROMO_CELL_IDENTIFIER];
-    
     [self configureUI];
+    
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,13 +47,17 @@
     self.searchTextView.placeholder = LOCALIZED_STRING(@"offersList.search_text_view.placeholder");
     self.startSearchButton.tintColor = GREEN_COLOR;
     self.searchContentView.backgroundColor = BLACK_COLOR;
+    
+    // Configure table View
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.tableView registerNib:[PromotionCell cellNib] forCellReuseIdentifier:PROMO_CELL_IDENTIFIER];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;//[self.campings count];
+    return [self.offersList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,7 +66,7 @@
     PromotionCell *cell = [tableView dequeueReusableCellWithIdentifier:PROMO_CELL_IDENTIFIER];
     
     // Configure celle
-    [cell configureWithCamping:self.campings[indexPath.row]];
+    [cell configureWithCamping:self.offersList[indexPath.row]];
 
     return cell;
 }
@@ -68,9 +76,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Get camping
-    Camping *camping = self.campings[indexPath.row];
+    Offer *offer = self.offersList[indexPath.row];
     
-    [NOTIFICATION_CENTER postNotificationName:ProfilNotificiation object:camping];
+    [NOTIFICATION_CENTER postNotificationName:ProfilNotificiation object:offer];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,6 +113,13 @@
     {
         [self displayWarningMessage];
     }
+}
+
+#pragma mark - Notification
+- (void)handleOffersList:(NSNotification *)notif
+{
+    self.offersList = notif.object;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Utils

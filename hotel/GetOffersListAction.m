@@ -7,6 +7,7 @@
 //
 
 #import "GetOffersListAction.h"
+#import "Offer.h"
 
 #define OFFERS_URL     @"offers"
 
@@ -26,8 +27,16 @@
 - (void)handleDownloadedData:(NSString *)obj
 {
     [super handleDownloadedData:obj];
+    NSMutableArray *offers = [NSMutableArray array];
+    NSData *data = [obj dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *offersJson = (NSArray *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
-    NSLog(@"Success %@", obj);
+    for (NSDictionary *offerJson in offersJson)
+    {
+        [offers addObject:[[Offer alloc] initWithDictionnary:offerJson]];
+    }
+    
+    [NOTIFICATION_CENTER postNotificationName:OffersListNotification object:offers];
 }
 
 @end

@@ -10,6 +10,4 @@
 
 @interface OffersListViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *campings;
-
 @end
