@@ -1,18 +1,18 @@
 //
-//  ProfilViewController.m
+//  OfferDetail.m
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "ProfilViewController.h"
+#import "OfferDetail.h"
 #import "InformationCampingCell.h"
 #import "PageItemController.h"
 
 #define PAGE_CONTROLLER_HEIGHT 350
 
-@interface ProfilViewController () <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface OfferDetail () <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
 // Outlets
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation ProfilViewController
+@implementation OfferDetail
 
 #pragma mark - View lifeCycle
 

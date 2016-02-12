@@ -46,11 +46,26 @@
 - (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal lastRequest:(NSDate *)lastRequest
 {
     self.titleLabel.text = @"Camping Azurea";
-    self.titleLabel.textColor = BLUE_COLOR;
+    self.titleLabel.textColor = [UIColor whiteColor];
     self.priceLabel.text = @"70€";
-    
+
+//    [self startTimer:hotDeal];
+}
+
+- (void)setSeparatorVisiblity:(BOOL)isLast
+{
+    self.separatorView.hidden = isLast;
+}
+
+
+
+
+ /*
+  * Cette partie n'est pas utilisé. Elle servait pour les timer des hotDeals
+  */
+- (void)startTimer:(HotDeal *)hotDeal
+{
     NSLog(@"test date : %@", [hotDeal remainingTimeWithRequestDate]);
-    
     
     self.currMinute=3;
     self.currSeconds=00;
@@ -91,8 +106,4 @@
     }
 }
 
-- (void)setSeparatorVisiblity:(BOOL)isLast
-{
-    self.separatorView.hidden = isLast;
-}
 @end

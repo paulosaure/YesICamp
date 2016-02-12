@@ -1,15 +1,15 @@
 //
-//  PromotionCell.m
+//  OfferCell.m
 //  hotel
 //
 //  Created by Paul Lavoine on 20/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "PromotionCell.h"
+#import "OfferCell.h"
 
 
-@interface PromotionCell ()
+@interface OfferCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageBackgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
@@ -18,7 +18,7 @@
 @end
 
 
-@implementation PromotionCell
+@implementation OfferCell
 
 #pragma mark - Utils
 
@@ -27,7 +27,7 @@
     static UINib *cellNib;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        cellNib = [UINib nibWithNibName:@"PromotionCell" bundle:nil];
+        cellNib = [UINib nibWithNibName:@"OfferCell" bundle:nil];
     });
     
     return cellNib;
@@ -38,17 +38,17 @@
     [super prepareForReuse];
 }
 
-- (void)configureWithCamping:(Camping *)camping
+- (void)configureWithCamping:(Offer *)offer
 {
-//    self.imageView.image = [camping.images firstObject];
-    self.nameLabel.text = @"Camping Cézanne";
+    self.nameLabel.text = offer.title;
     self.nameLabel.textColor = [UIColor whiteColor];
     
-    self.priceLabel.text = @"70€";
+    self.priceLabel.text = [NSString stringWithFormat:@"%@€", offer.price];
     self.priceLabel.textColor = [UIColor whiteColor];
     self.imageBackgroundView.image = [UIImage imageNamed:@"campingImage"];
     
     self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
+    self.gradientImageView.tintColor = GREEN_COLOR;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

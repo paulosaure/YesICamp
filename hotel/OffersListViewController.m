@@ -7,8 +7,8 @@
 //
 
 #import "OffersListViewController.h"
-#import "PromotionCell.h"
-#import "ProfilViewController.h"
+#import "OfferCell.h"
+#import "OfferDetail.h"
 #import "ParsingData.h"
 #import "GetOffersListAction.h"
 
@@ -47,10 +47,14 @@
     self.searchTextView.placeholder = LOCALIZED_STRING(@"offersList.search_text_view.placeholder");
     self.startSearchButton.tintColor = GREEN_COLOR;
     self.searchContentView.backgroundColor = BLACK_COLOR;
+    self.view.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    [self.searchTextView setValue:GREEN_COLOR forKeyPath:@"_placeholderLabel.textColor"];
     
     // Configure table View
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerNib:[PromotionCell cellNib] forCellReuseIdentifier:PROMO_CELL_IDENTIFIER];
+    [self.tableView registerNib:[OfferCell cellNib] forCellReuseIdentifier:OFFER_CELL_IDENTIFIER];
 }
 
 #pragma mark - Table view data source
@@ -63,7 +67,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue cell
-    PromotionCell *cell = [tableView dequeueReusableCellWithIdentifier:PROMO_CELL_IDENTIFIER];
+    OfferCell *cell = [tableView dequeueReusableCellWithIdentifier:OFFER_CELL_IDENTIFIER];
     
     // Configure celle
     [cell configureWithCamping:self.offersList[indexPath.row]];
@@ -78,7 +82,7 @@
     // Get camping
     Offer *offer = self.offersList[indexPath.row];
     
-    [NOTIFICATION_CENTER postNotificationName:ProfilNotificiation object:offer];
+    [NOTIFICATION_CENTER postNotificationName:OfferDetailNotificiation object:offer];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

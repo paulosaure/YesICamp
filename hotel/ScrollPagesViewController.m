@@ -15,7 +15,7 @@
 #import "InformationViewController.h"
 
 #import "InscriptionViewController.h"
-#import "ProfilViewController.h"
+#import "OfferDetail.h"
 
 
 
@@ -68,20 +68,20 @@
 - (void)configureNotification
 {
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionNotificiation object:nil];
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:ProfilNotificiation object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:OfferDetailNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealNotification object:nil];
 }
 
 - (void)configureUI
 {
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = BLACK_COLOR;
+//    self.navigationController.navigationBar.barTintColor = BLACK_COLOR;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.imageBackgroundView.image = [UIImage imageNamed:@"backgroundImage"];
     [self.imageBackgroundView setTintColor:GREEN_COLOR];
     self.imageBackgroundView.contentMode = UIViewContentModeScaleAspectFill;
      [self.view insertSubview:self.imageBackgroundView atIndex:0];
-        [self.navigationController.navigationBar setTintColor:GREEN_COLOR];
+//        [self.navigationController.navigationBar setTintColor:GREEN_COLOR];
 }
 
 #pragma mark - LPViewPagerDataSource
@@ -261,7 +261,7 @@
 
 - (void)pushHotDealViewController:(NSNotification *)notification
 {
-    ProfilViewController *profilViewController = (ProfilViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:ProfilViewControllerID];
+    OfferDetail *profilViewController = (OfferDetail *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:OfferDetailViewControllerID];
     profilViewController.offer = notification.object;
     [self pushViewController:profilViewController];
 }
@@ -274,7 +274,7 @@
 
 - (void)pushProfilViewController:(NSNotification *)notification
 {
-    ProfilViewController *profilViewController = (ProfilViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:ProfilViewControllerID];
+    OfferDetail *profilViewController = (OfferDetail *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:OfferDetailViewControllerID];
     profilViewController.offer = notification.object;
     [self pushViewController:profilViewController];
 }

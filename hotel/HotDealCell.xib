@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -33,17 +33,10 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuP-Na-mgx">
-                        <rect key="frame" x="221" y="5" width="42" height="49.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="abK-u9-AzD" secondAttribute="bottom" constant="5" id="1Zt-5x-WwF"/>
-                    <constraint firstItem="YuP-Na-mgx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4fW-NF-Yeg"/>
                     <constraint firstItem="abK-u9-AzD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="5xB-QC-QUJ"/>
                     <constraint firstAttribute="bottom" secondItem="yO7-uT-r5G" secondAttribute="bottom" id="FSV-pN-Zw9"/>
                     <constraint firstAttribute="bottom" secondItem="kNt-FY-pcM" secondAttribute="bottom" constant="5" id="GFJ-XS-1zK"/>
@@ -52,8 +45,6 @@
                     <constraint firstAttribute="trailing" secondItem="abK-u9-AzD" secondAttribute="trailing" constant="5" id="WLn-Kg-IJO"/>
                     <constraint firstItem="yO7-uT-r5G" firstAttribute="top" secondItem="kNt-FY-pcM" secondAttribute="bottom" constant="5" id="aWP-i5-aPt"/>
                     <constraint firstAttribute="trailing" secondItem="yO7-uT-r5G" secondAttribute="trailing" constant="20" id="cjJ-3Q-fdb"/>
-                    <constraint firstItem="abK-u9-AzD" firstAttribute="leading" secondItem="YuP-Na-mgx" secondAttribute="trailing" constant="30" id="fJU-uO-8f1"/>
-                    <constraint firstItem="yO7-uT-r5G" firstAttribute="top" secondItem="YuP-Na-mgx" secondAttribute="bottom" constant="5" id="hsr-8f-puo"/>
                     <constraint firstItem="kNt-FY-pcM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="mhi-bb-7U6"/>
                     <constraint firstItem="yO7-uT-r5G" firstAttribute="top" secondItem="abK-u9-AzD" secondAttribute="bottom" constant="5" id="vk8-XH-TjO"/>
                 </constraints>
@@ -68,7 +59,6 @@
             <connections>
                 <outlet property="priceLabel" destination="abK-u9-AzD" id="Q6T-Kl-GBo"/>
                 <outlet property="separatorView" destination="yO7-uT-r5G" id="2dD-Pa-LIe"/>
-                <outlet property="timerLabel" destination="YuP-Na-mgx" id="7xv-wO-GE8"/>
                 <outlet property="titleLabel" destination="kNt-FY-pcM" id="SDW-Io-AAf"/>
             </connections>
             <point key="canvasLocation" x="477" y="381.5"/>

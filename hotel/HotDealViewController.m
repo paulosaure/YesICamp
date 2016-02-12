@@ -10,7 +10,7 @@
 
 #import <MapKit/MapKit.h>
 #import "CustomAnnotation.h"
-#import "ProfilViewController.h"
+#import "OfferDetail.h"
 #import "HotDealCell.h"
 
 #define USER_LOCATION_MARKER_WIDTH      20
@@ -66,8 +66,8 @@
 
 - (void)configureUI
 {
-    self.extendMapButton.tintColor = BLUE_COLOR;
-    self.localizeUserButton.tintColor = BLUE_COLOR;
+    self.extendMapButton.tintColor = GREEN_COLOR;
+    self.localizeUserButton.tintColor = GREEN_COLOR;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.alpha = 0.9f;
     self.view.backgroundColor = [UIColor clearColor];

@@ -36,12 +36,13 @@
 // Code couleur
 #define TINT_COLOR      [UIColor whiteColor]
 #define BLACK_COLOR     [UIColor blackColor]
-#define GREEN_COLOR     [UIColor colorWithRed:161.0f/255.0f green:204.0f/255.0f blue:88.0f/255.0f alpha:1.0f]
+#define GREEN_COLOR     [UIColor colorWithRed:82.0f/255.0f green:34.0f/255.0f blue:144.0f/255.0f alpha:1.0f]
 #define BLUE_COLOR      [UIColor colorWithRed:63.0f/255.0f green:201.0f/255.0f blue:213.0f/255.0f alpha:1.0f]
 
 // Network
 #define SESSION_UNIQUE_IDENTIFIER   @"com.paulLavoine.hotel"
-#define MAIN_URL                    @"http://pacific-refuge-54058.herokuapp.com"
+#define MAIN_URL                    @"http://yesicamp.duperre.work" 
+// @"http://pacific-refuge-54058.herokuapp.com"
 #define API_URL                     @"/api"
 #define VERSION_URL                 @"/v1"
 #define ACTION_URL(path)            [NSString stringWithFormat:@"%@%@%@/%@", MAIN_URL, API_URL,VERSION_URL, path]
