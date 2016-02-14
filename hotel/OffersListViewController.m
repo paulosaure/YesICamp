@@ -12,8 +12,6 @@
 #import "ParsingData.h"
 #import "GetOffersListAction.h"
 
-#define CELL_HEIGHT_RATIO 2/5
-
 @interface OffersListViewController () <UITableViewDelegate, UITableViewDataSource>
 
 
@@ -90,7 +88,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CELL_HEIGHT_RATIO * self.tableView.frame.size.height;
+    return (2*self.tableView.frame.size.height) / 5;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
