@@ -49,6 +49,7 @@
     self.currentIndex = 0;
     self.navigationItem.titleView = self.pagingTitleView;
     self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     self.myStoryboard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
     
     [self configureNotification];

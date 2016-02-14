@@ -9,12 +9,11 @@
 #import "HotDealViewController.h"
 
 #import <MapKit/MapKit.h>
-#import "CustomAnnotation.h"
+#import "CustomMKAnnotationView.h"
 #import "OfferDetail.h"
 #import "HotDealCell.h"
 #import "GetHotsDealsListAction.h"
 
-#define USER_LOCATION_MARKER_WIDTH      20
 #define MINIMUM_MAP_VIEW_HEIGHT         250
 #define LOCATION_DISPLAYED              15
 
@@ -82,13 +81,14 @@
 {
     for (int i = 0; i < [self.campings count]; i++)
     {
+        Camping *camping = self.campings[i];
         CLLocationCoordinate2D location;
-        location.latitude = [((Camping *)self.campings[i]).latitude doubleValue];
-        location.longitude = [((Camping *)self.campings[i]).longitude doubleValue];
+        location.latitude = [camping.latitude doubleValue];
+        location.longitude = [camping.longitude doubleValue];
         
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
         [annotation setCoordinate:location];
-        [annotation setTitle:@"Title"]; //You can set the subtitle too
+        [annotation setTitle:[NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"hotdeal.price_unity.label")]];
         [self.mapView addAnnotation:annotation];
     }
 }
@@ -111,25 +111,23 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-    MKAnnotationView *view = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:NSStringFromClass([CustomAnnotation class])];
-    
-    if (!view)
+    if (![annotation isKindOfClass:[MKUserLocation class]])
     {
-        view = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                            reuseIdentifier:NSStringFromClass([CustomAnnotation class])];
-        UIImage *image = [UIImage imageNamed:@"marker"];
-        view.image = image;
-        CGRect temp = view.frame;
-        temp.size =  CGSizeMake(USER_LOCATION_MARKER_WIDTH, USER_LOCATION_MARKER_WIDTH * image.size.height/image.size.width);
-        view.frame = temp;
-        view.canShowCallout = YES;
-        view.centerOffset = CGPointMake(view.centerOffset.x, -view.frame.size.height/2);
+        CustomMKAnnotationView *annotationView = (CustomMKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:NSStringFromClass([CustomMKAnnotationView class])];
+        
+        if (!annotationView)
+        {
+            NSString *price = annotation.title;
+            annotationView = [[CustomMKAnnotationView alloc] initWithAnnotation:annotation
+                                                                reuseIdentifier:NSStringFromClass([CustomMKAnnotationView class]) priceLabel:price];
+            annotationView.canShowCallout = YES;
+            annotationView.centerOffset = CGPointMake(annotationView.centerOffset.x, -annotationView.frame.size.height/2);
+        }
+        
+        return annotationView;
     }
     
-    return view;
+    return nil;
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)annotation

@@ -41,4 +41,30 @@
     return constructedOffers;
 }
 
+- (CGFloat)minPriceWithCamping
+{
+    CGFloat minPrice = [((Offer *)[self.offers firstObject]).price floatValue];
+    for (Offer *offer in self.offers)
+    {
+        if ([offer.price floatValue] <= minPrice)
+        {
+            minPrice = [offer.price floatValue];
+        }
+    }
+    return minPrice;
+}
+
+- (CGFloat)maxPriceWithCamping
+{
+    CGFloat maxPrice = [((Offer *)[self.offers firstObject]).price floatValue];
+    for (Offer *offer in self.offers)
+    {
+        if ([offer.price floatValue] >= maxPrice)
+        {
+            maxPrice = [offer.price floatValue];
+        }
+    }
+    return maxPrice;
+}
+
 @end

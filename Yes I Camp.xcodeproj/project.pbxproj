@@ -14,7 +14,7 @@
 		A84C717A1C56C54A00598FE9 /* OfferDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A84C71791C56C54A00598FE9 /* OfferDetailCell.xib */; };
 		A84C717E1C56C9A800598FE9 /* PageItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C717D1C56C9A800598FE9 /* PageItemController.m */; };
 		A84C71831C56E02400598FE9 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71821C56E02400598FE9 /* LocationManager.m */; };
-		A84C71891C56E7A000598FE9 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71881C56E7A000598FE9 /* CustomAnnotation.m */; };
+		A84C71891C56E7A000598FE9 /* CustomMKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C71881C56E7A000598FE9 /* CustomMKAnnotationView.m */; };
 		A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B2771C5CB8670006CAAA /* HotDealCell.m */; };
 		A870B27A1C5CB8670006CAAA /* HotDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A870B2781C5CB8670006CAAA /* HotDealCell.xib */; };
 		A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = A870B27D1C5CB8C80006CAAA /* HotDeal.m */; };
@@ -58,6 +58,7 @@
 		A8A63DDD1C5005C30026E456 /* hotelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DDC1C5005C30026E456 /* hotelUITests.m */; };
 		A8B0234F1C51579D00C10AA7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0234E1C51579D00C10AA7 /* libc++.tbd */; };
 		A8B023531C51585400C10AA7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B023521C51585400C10AA7 /* libsqlite3.tbd */; };
+		A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */; };
 		A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CF58C51C5007A2002D227A /* InscriptionViewController.m */; };
 		A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */; };
 		A8F2FF091C557F01007DF893 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Offer.m */; };
@@ -100,8 +101,8 @@
 		A84C717D1C56C9A800598FE9 /* PageItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageItemController.m; sourceTree = "<group>"; };
 		A84C71811C56E02400598FE9 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		A84C71821C56E02400598FE9 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
-		A84C71871C56E7A000598FE9 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotation.h; sourceTree = "<group>"; };
-		A84C71881C56E7A000598FE9 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotation.m; sourceTree = "<group>"; };
+		A84C71871C56E7A000598FE9 /* CustomMKAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMKAnnotationView.h; sourceTree = "<group>"; };
+		A84C71881C56E7A000598FE9 /* CustomMKAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotationView.m; sourceTree = "<group>"; };
 		A870B2761C5CB8670006CAAA /* HotDealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDealCell.h; sourceTree = "<group>"; };
 		A870B2771C5CB8670006CAAA /* HotDealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDealCell.m; sourceTree = "<group>"; };
 		A870B2781C5CB8670006CAAA /* HotDealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotDealCell.xib; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		A8B0234E1C51579D00C10AA7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A8B023501C5157ED00C10AA7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		A8B023521C51585400C10AA7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomMKAnnotationView.xib; sourceTree = "<group>"; };
 		A8CF58C41C5007A2002D227A /* InscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InscriptionViewController.h; sourceTree = "<group>"; };
 		A8CF58C51C5007A2002D227A /* InscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InscriptionViewController.m; sourceTree = "<group>"; };
 		A8F2FEEB1C54D2BA007DF893 /* HotDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDealViewController.h; sourceTree = "<group>"; };
@@ -310,8 +312,9 @@
 		A84C71861C56E77000598FE9 /* MKAnnotations */ = {
 			isa = PBXGroup;
 			children = (
-				A84C71871C56E7A000598FE9 /* CustomAnnotation.h */,
-				A84C71881C56E7A000598FE9 /* CustomAnnotation.m */,
+				A84C71871C56E7A000598FE9 /* CustomMKAnnotationView.h */,
+				A84C71881C56E7A000598FE9 /* CustomMKAnnotationView.m */,
+				A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */,
 			);
 			name = MKAnnotations;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				A88EB4171C503F60008DC5CF /* V3.3.6 in Resources */,
 				A84C717A1C56C54A00598FE9 /* OfferDetailCell.xib in Resources */,
 				A88EB4141C503F60008DC5CF /* Customization_Tuto.txt in Resources */,
+				A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,7 +974,7 @@
 				A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */,
 				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,
 				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
-				A84C71891C56E7A000598FE9 /* CustomAnnotation.m in Sources */,
+				A84C71891C56E7A000598FE9 /* CustomMKAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

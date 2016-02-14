@@ -21,6 +21,9 @@ typedef NS_ENUM(NSUInteger, Category) {
 
 - (instancetype)initWithDictionnary:(NSDictionary *)dic;
 
+- (CGFloat)minPriceWithCamping;
+- (CGFloat)maxPriceWithCamping;
+
 // HotDeal information
 @property (nonatomic, strong) NSNumber *uid;
 @property (nonatomic, strong) NSString *title;

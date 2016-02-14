@@ -47,7 +47,7 @@
 {
     self.titleLabel.text = camping.title;
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [self minPriceWithCamping:camping], [self maxPriceWithCamping:camping], LOCALIZED_STRING(@"hotdeal.price_unity.label")];
+    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"hotdeal.price_unity.label")];
 
 //    [self startTimer:hotDeal];
 }
@@ -55,32 +55,6 @@
 - (void)setSeparatorVisiblity:(BOOL)isLast
 {
     self.separatorView.hidden = isLast;
-}
-
-- (CGFloat)minPriceWithCamping:(Camping *)camping
-{
-    CGFloat minPrice = [((Offer *)[camping.offers firstObject]).price floatValue];
-    for (Offer *offer in camping.offers)
-    {
-        if ([offer.price floatValue] <= minPrice)
-        {
-            minPrice = [offer.price floatValue];
-        }
-    }
-    return minPrice;
-}
-
-- (CGFloat)maxPriceWithCamping:(Camping *)camping
-{
-    CGFloat maxPrice = [((Offer *)[camping.offers firstObject]).price floatValue];
-    for (Offer *offer in camping.offers)
-    {
-        if ([offer.price floatValue] >= maxPrice)
-        {
-            maxPrice = [offer.price floatValue];
-        }
-    }
-    return maxPrice;
 }
 
  /*
