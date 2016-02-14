@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OfferImage.h"
+
 #define PageItemControllerID @"PageItemControllerID"
 
 @interface PageItemController : UIViewController
 
-- (void)configurePageWith:(NSString *)name index:(NSInteger)index;
+- (void)configurePageWith:(OfferImage *)image index:(NSInteger)index;
 
 // Data
 @property (nonatomic) NSUInteger itemIndex;

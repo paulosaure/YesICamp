@@ -14,5 +14,6 @@
 
 + (UINib *)cellNib;
 - (void)configureWithInformationsOffer:(NSDictionary *)offerDetailInformation;
+- (void)setSeparatorVisiblity:(BOOL)isLast;
 
 @end

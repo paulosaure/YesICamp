@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIView *separatorView;
 
 @end
 
@@ -34,7 +35,13 @@
 - (void)configureWithInformationsOffer:(NSDictionary *)offerDetailInformation
 {
     self.titleLabel.text = [[offerDetailInformation allKeys] firstObject];
-    self.titleLabel.textColor = BLUE_COLOR;
+    self.titleLabel.textColor = GREEN_COLOR;
     self.descriptionLabel.text = [[offerDetailInformation allValues] firstObject];
 }
+
+- (void)setSeparatorVisiblity:(BOOL)isLast
+{
+    self.separatorView.hidden = isLast;
+}
+
 @end

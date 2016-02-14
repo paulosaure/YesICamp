@@ -22,7 +22,6 @@
 
 // Data
 @property (nonatomic, strong) UIPageViewController *pageViewController;
-@property (nonatomic, strong) NSArray *contentImages;
 @property (nonatomic, strong) NSMutableArray *contentData;
 
 @end
@@ -67,6 +66,8 @@
     [self.reservationButton setBackgroundColor:BLACK_COLOR];
     self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundColor = [UIColor clearColor];
+    [self.reservationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.reservationButton.backgroundColor = GREEN_COLOR;
 }
 
 
@@ -74,17 +75,12 @@
 
 - (void)createPageViewController
 {
-    self.contentImages = @[@"campingImage",
-                           @"campingImage",
-                           @"campingImage",
-                           @"campingImage"];
-    
     UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     pageController.dataSource = self;
     pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), PAGE_CONTROLLER_HEIGHT);
     pageController.view.backgroundColor = BLACK_COLOR;
     
-    if([self.contentImages count])
+    if([self.offer.images count])
     {
         NSArray *startingViewControllers = @[[self itemControllerForIndex: 0]];
         [pageController setViewControllers: startingViewControllers
@@ -115,7 +111,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(PageItemController *)viewController
 {
-    if (viewController.itemIndex+1 < [self.contentImages count])
+    if (viewController.itemIndex+1 < [self.offer.images count])
         return [self itemControllerForIndex:viewController.itemIndex+1];
     
     return nil;
@@ -123,11 +119,11 @@
 
 - (PageItemController *) itemControllerForIndex: (NSUInteger) itemIndex
 {
-    if (itemIndex < [self.contentImages count])
+    if (itemIndex < [self.offer.images count])
     {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
         PageItemController *pageItemController = (PageItemController *)[storyBoard instantiateViewControllerWithIdentifier: PageItemControllerID];
-        [pageItemController configurePageWith:self.contentImages[itemIndex] index:itemIndex];
+        [pageItemController configurePageWith:self.offer.images[itemIndex] index:itemIndex];
         return pageItemController;
     }
     
@@ -138,7 +134,7 @@
 
 - (NSInteger) presentationCountForPageViewController: (UIPageViewController *) pageViewController
 {
-    return [self.contentImages count];
+    return [self.offer.images count];
 }
 
 - (NSInteger) presentationIndexForPageViewController: (UIPageViewController *) pageViewController
@@ -160,6 +156,7 @@
     
     // Configure cell
     [cell configureWithInformationsOffer:self.offer.mainTextInfos[indexPath.row]];
+    [cell setSeparatorVisiblity:(indexPath.row == ([self.offer.mainTextInfos count] - 1))];
     
     return cell;
 }
