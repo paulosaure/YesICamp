@@ -19,14 +19,22 @@ typedef NS_ENUM(NSUInteger, Category) {
 
 @interface Camping : NSObject
 
+- (instancetype)initWithDictionnary:(NSDictionary *)dic;
+
+// HotDeal information
+@property (nonatomic, strong) NSNumber *uid;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSNumber *longitude;
+@property (nonatomic, strong) NSNumber *latitude;
+@property (nonatomic, strong) NSArray *offers;
+
+// Personnal informations
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSNumber *phoneNumber;
 @property (nonatomic, strong) NSNumber *zipCode;
-@property (nonatomic, strong) NSNumber *longitude;
-@property (nonatomic, strong) NSNumber *latitude;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *informations;
 

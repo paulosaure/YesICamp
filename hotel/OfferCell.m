@@ -7,7 +7,7 @@
 //
 
 #import "OfferCell.h"
-
+#import "OfferImage.h"
 
 @interface OfferCell ()
 
@@ -36,6 +36,9 @@
 - (void)prepareForReuse
 {
     [super prepareForReuse];
+    self.imageBackgroundView.image = nil;
+    self.nameLabel.text = nil;
+    self.priceLabel.text = nil;
 }
 
 - (void)configureWithCamping:(Offer *)offer
@@ -45,10 +48,18 @@
     
     self.priceLabel.text = [NSString stringWithFormat:@"%@€", offer.price];
     self.priceLabel.textColor = [UIColor whiteColor];
-    self.imageBackgroundView.image = [UIImage imageNamed:@"campingImage"];
     
     self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
     self.gradientImageView.tintColor = GREEN_COLOR;
+    
+    OfferImage *offerImage = [offer.images firstObject];
+    if (!offerImage.image)
+    {
+        NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, offerImage.imageUrl];
+        offerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+    }
+    
+    self.imageBackgroundView.image = offerImage.image;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

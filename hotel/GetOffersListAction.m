@@ -22,6 +22,14 @@
     return action;
 }
 
++ (instancetype)actionWithCity:(NSString *)city
+{
+    NSString *urlSuffix = [NSString stringWithFormat:@"%@%@",OFFERS_URL, city];
+    GetOffersListAction *action = [[GetOffersListAction alloc] initWithUrl:ACTION_URL(urlSuffix) service:WebServiceGetOffersList];
+    
+    return action;
+}
+
 #pragma mark - Manage Answer
 
 - (void)handleDownloadedData:(NSString *)obj

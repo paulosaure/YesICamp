@@ -185,7 +185,7 @@
                                     <action selector="extendMap:" destination="FE5-gx-oNJ" eventType="touchUpInside" id="Jfn-ma-pQu"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL8-Ue-goy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL8-Ue-goy">
                                 <rect key="frame" x="0.0" y="270" width="600" height="330"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -458,7 +458,7 @@
         <!--Mangopay View Controller-->
         <scene sceneID="eIR-dW-bQW">
             <objects>
-                <viewController storyboardIdentifier="MangopayViewControllerID" id="D8P-F2-M1Y" customClass="MangopayViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MangoPayViewControllerID" id="D8P-F2-M1Y" customClass="MangopayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7UK-wt-agv"/>
                         <viewControllerLayoutGuide type="bottom" id="QmD-tw-eie"/>

@@ -14,7 +14,8 @@ typedef NS_ENUM(NSInteger, WebService)
     WebServiceGetCampingsList,
     WebServiceGetHotsDealsList,
     WebServiceConnection,
-    WebServiceInscription
+    WebServiceInscription,
+    WebServiceFetOfferDetail
 };
 
 @interface HTTPAction : NSObject

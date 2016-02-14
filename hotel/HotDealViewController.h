@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define HotDealViewControllerID @"HotDealViewControllerID"
-#define HotDealNotification @"HotDealNotification"
-#define HotsDealsNotification @"HotsDealsNotification"
+#define HotDealSelectedNotification @"HotDealSelectedNotification"
 
 @interface HotDealViewController : UIViewController
 

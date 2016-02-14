@@ -21,3 +21,7 @@
 "inscription.password.placeholder"  = "Mot de passe";
 "inscription.select_picture.button" = "Sélectionner une photo";
 "inscription.inscription.button"    = "Inscription";
+
+"hotdeal.price_from.label"          = "de";
+"hotdeal.price_to.label"            = "à";
+"hotdeal.price_unity.label"         = "€";

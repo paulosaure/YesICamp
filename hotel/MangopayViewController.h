@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define MangoPayNotification @"MangoPayNotification"
+#define MangoPayViewControllerID @"MangoPayViewControllerID"
+
 @interface MangopayViewController : UIViewController
 
 @end

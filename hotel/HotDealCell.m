@@ -43,11 +43,11 @@
     [super prepareForReuse];
 }
 
-- (void)configureWithInformationsHotDeal:(HotDeal *)hotDeal lastRequest:(NSDate *)lastRequest
+- (void)configureWithInformationsHotDeal:(Camping *)camping lastRequest:(NSDate *)lastRequest
 {
-    self.titleLabel.text = @"Camping Azurea";
+    self.titleLabel.text = camping.title;
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.priceLabel.text = @"70€";
+    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [self minPriceWithCamping:camping], [self maxPriceWithCamping:camping], LOCALIZED_STRING(@"hotdeal.price_unity.label")];
 
 //    [self startTimer:hotDeal];
 }
@@ -57,18 +57,43 @@
     self.separatorView.hidden = isLast;
 }
 
+- (CGFloat)minPriceWithCamping:(Camping *)camping
+{
+    CGFloat minPrice = [((Offer *)[camping.offers firstObject]).price floatValue];
+    for (Offer *offer in camping.offers)
+    {
+        if ([offer.price floatValue] <= minPrice)
+        {
+            minPrice = [offer.price floatValue];
+        }
+    }
+    return minPrice;
+}
 
-
+- (CGFloat)maxPriceWithCamping:(Camping *)camping
+{
+    CGFloat maxPrice = [((Offer *)[camping.offers firstObject]).price floatValue];
+    for (Offer *offer in camping.offers)
+    {
+        if ([offer.price floatValue] >= maxPrice)
+        {
+            maxPrice = [offer.price floatValue];
+        }
+    }
+    return maxPrice;
+}
 
  /*
-  * Cette partie n'est pas utilisé. Elle servait pour les timer des hotDeals
+  *
+  * Cette partie n'est pas utilisé pour le moment. Elle servait pour les timer des hotDeals
+  *
   */
 - (void)startTimer:(HotDeal *)hotDeal
 {
     NSLog(@"test date : %@", [hotDeal remainingTimeWithRequestDate]);
     
-    self.currMinute=3;
-    self.currSeconds=00;
+    self.currMinute = 3;
+    self.currSeconds = 00;
     
     // Cancel a preexisting timer.
     [self.repeatingTimer invalidate];

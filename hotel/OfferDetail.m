@@ -7,8 +7,10 @@
 //
 
 #import "OfferDetail.h"
-#import "InformationCampingCell.h"
+#import "OfferDetailCell.h"
 #import "PageItemController.h"
+#import "MangopayViewController.h"
+#import "GetOfferDetailAction.h"
 
 #define PAGE_CONTROLLER_HEIGHT 350
 
@@ -21,6 +23,7 @@
 // Data
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic, strong) NSArray *contentImages;
+@property (nonatomic, strong) NSMutableArray *contentData;
 
 @end
 
@@ -31,6 +34,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOfferDetail:) name:OfferDetailNotificiation object:nil];
+    
+    [[NetworkManagement sharedInstance] addNewAction:[GetOfferDetailAction action:[self.offer.uid stringValue]]];
+    
+    
+    // Init data for tableView
+    self.contentData = [NSMutableArray array];
     
     // Init view page controller
     self.pageViewController = [[UIPageViewController alloc] init];
@@ -46,7 +57,7 @@
     self.tableView.tableHeaderView = self.pageViewController.view;
     
     // register Cell Nib
-    [self.tableView registerNib:[InformationCampingCell cellNib] forCellReuseIdentifier:INFORMATION_CELL_IDENTIFIER];
+    [self.tableView registerNib:[OfferDetailCell cellNib] forCellReuseIdentifier:OFFER_DETAIL_CELL_IDENTIFIER];
     
     [self configureUI];
 }
@@ -139,16 +150,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;//[self.offer.information count];
+    return [self.offer.mainTextInfos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue cell
-    InformationCampingCell *cell = [tableView dequeueReusableCellWithIdentifier:INFORMATION_CELL_IDENTIFIER];
+    OfferDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:OFFER_DETAIL_CELL_IDENTIFIER];
     
     // Configure cell
-//    [cell configureWithInformationsCamping:self.offer[indexPath.row]];
+    [cell configureWithInformationsOffer:self.offer.mainTextInfos[indexPath.row]];
     
     return cell;
 }
@@ -160,11 +171,19 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [cell setBackgroundColor:[UIColor clearColor]];
 }
 
+#pragma mark - Notification
+
+- (void)handleOfferDetail:(NSNotification *)notif
+{
+    self.offer = notif.object;
+    [self.tableView reloadData];
+}
+
 #pragma mark - Actions
 
 - (IBAction)reserveCamping:(id)sender
 {
-    
+    [NOTIFICATION_CENTER postNotificationName:MangoPayNotification object:nil];
 }
 
 @end

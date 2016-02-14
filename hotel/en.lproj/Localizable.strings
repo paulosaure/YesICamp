@@ -21,3 +21,8 @@
 "inscription.password.placeholder" = "Password";
 "inscription.select_picture.button" = "Choose a picture";
 "inscription.inscription.button" = "Sign Up";
+
+
+"hotdeal.price_from.label"          = "from";
+"hotdeal.price_to.label"            = "to";
+"hotdeal.price_unity.label"         = "$";

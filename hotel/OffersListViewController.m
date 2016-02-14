@@ -12,6 +12,8 @@
 #import "ParsingData.h"
 #import "GetOffersListAction.h"
 
+#define CELL_HEIGHT_RATIO 2/5
+
 @interface OffersListViewController () <UITableViewDelegate, UITableViewDataSource>
 
 
@@ -34,12 +36,14 @@
     [self configureUI];
     
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListNotification object:nil];
+    
+    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
+    [super viewDidAppear:animated];
+    
 }
 
 - (void)configureUI
@@ -81,13 +85,12 @@
 {
     // Get camping
     Offer *offer = self.offersList[indexPath.row];
-    
     [NOTIFICATION_CENTER postNotificationName:OfferDetailNotificiation object:offer];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200.0f;
+    return CELL_HEIGHT_RATIO * self.tableView.frame.size.height;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -95,28 +98,11 @@
     [self.view endEditing:YES];
 }
 
-#pragma mark - Request
-
-- (NSArray *)sendRequestToServer
-{
-    NSArray *results = [NSArray array];
-    // [ParsingData sharedInstance]
-    return results;
-}
-
 #pragma mark - Action
 
 - (IBAction)startSearch:(id)sender
 {
-    NSArray *results = [self sendRequestToServer];
-    if ([results count] > 0)
-    {
-        [self.tableView reloadData];
-    }
-    else
-    {
-        [self displayWarningMessage];
-    }
+    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCity:self.searchTextView.text]];
 }
 
 #pragma mark - Notification

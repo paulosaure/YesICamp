@@ -10,7 +10,7 @@
 #import "ScanPayViewController.h"
 #import "SPWebViewFiller/SPWebViewFiller.h"
 
-@interface MangopayViewController ()
+@interface MangopayViewController () <ScanPayDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *paymentWebView;
 
@@ -22,11 +22,31 @@
 {
     [super viewDidLoad];
     
+    ScanPayViewController *scan = [[ScanPayViewController alloc]initWithDelegate:self appToken:@"PUT_YOUR_TOKEN_HERE"
+                                   ];
+    [self presentViewController:scan animated:YES completion:nil];
+    
+    
     SPWebViewFiller *filler = [[SPWebViewFiller alloc] initWithWebview:self.paymentWebView];
     [filler addFieldWithId:@"Id of the field" andValue:@"Value_to_put_into_field"];
     [filler addFieldWithId:@"Id of the field" andValue:@"Value_to_put_into_field"];
     
-    [self.paymentWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"url"]]];
+//    [self.paymentWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"url"]]];
+}
+
+- (void)scanPayViewController:(ScanPayViewController *)scanPayViewController failedToScanWithError:(NSError *)error
+{
+    
+}
+
+- (void)scanCancelledByUser:(ScanPayViewController *)scanPayViewController
+{
+    
+}
+
+- (void)scanPayViewController:(ScanPayViewController *)scanPayViewController didScanCard:(SPCreditCard *)card
+{
+    
 }
 
 - (void)payment

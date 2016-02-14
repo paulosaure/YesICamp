@@ -12,4 +12,6 @@
 
 + (instancetype)action;
 
++ (instancetype)actionWithCity:(NSString *)city;
+
 @end

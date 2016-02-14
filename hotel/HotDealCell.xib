@@ -27,16 +27,15 @@
                             <constraint firstAttribute="height" constant="1" id="20r-N8-WHc"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNt-FY-pcM">
-                        <rect key="frame" x="5" y="5" width="57.5" height="49.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNt-FY-pcM">
+                        <rect key="frame" x="5" y="5" width="283" height="49.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="abK-u9-AzD" secondAttribute="bottom" constant="5" id="1Zt-5x-WwF"/>
                     <constraint firstItem="abK-u9-AzD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="5xB-QC-QUJ"/>
                     <constraint firstAttribute="bottom" secondItem="yO7-uT-r5G" secondAttribute="bottom" id="FSV-pN-Zw9"/>
                     <constraint firstAttribute="bottom" secondItem="kNt-FY-pcM" secondAttribute="bottom" constant="5" id="GFJ-XS-1zK"/>
@@ -45,13 +44,13 @@
                     <constraint firstAttribute="trailing" secondItem="abK-u9-AzD" secondAttribute="trailing" constant="5" id="WLn-Kg-IJO"/>
                     <constraint firstItem="yO7-uT-r5G" firstAttribute="top" secondItem="kNt-FY-pcM" secondAttribute="bottom" constant="5" id="aWP-i5-aPt"/>
                     <constraint firstAttribute="trailing" secondItem="yO7-uT-r5G" secondAttribute="trailing" constant="20" id="cjJ-3Q-fdb"/>
+                    <constraint firstItem="abK-u9-AzD" firstAttribute="leading" secondItem="kNt-FY-pcM" secondAttribute="trailing" constant="5" id="emN-Et-wjZ"/>
                     <constraint firstItem="kNt-FY-pcM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="mhi-bb-7U6"/>
                     <constraint firstItem="yO7-uT-r5G" firstAttribute="top" secondItem="abK-u9-AzD" secondAttribute="bottom" constant="5" id="vk8-XH-TjO"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="GFJ-XS-1zK"/>
-                        <exclude reference="1Zt-5x-WwF"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -61,7 +60,7 @@
                 <outlet property="separatorView" destination="yO7-uT-r5G" id="2dD-Pa-LIe"/>
                 <outlet property="titleLabel" destination="kNt-FY-pcM" id="SDW-Io-AAf"/>
             </connections>
-            <point key="canvasLocation" x="477" y="381.5"/>
+            <point key="canvasLocation" x="584" y="393.5"/>
         </tableViewCell>
     </objects>
 </document>

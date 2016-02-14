@@ -12,9 +12,12 @@
 #import "CustomAnnotation.h"
 #import "OfferDetail.h"
 #import "HotDealCell.h"
+#import "GetHotsDealsListAction.h"
 
 #define USER_LOCATION_MARKER_WIDTH      20
 #define MINIMUM_MAP_VIEW_HEIGHT         250
+#define LOCATION_DISPLAYED              15
+
 @interface HotDealViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 // Outlets
@@ -25,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *localizeUserButton;
 
 // Data
-@property (nonatomic, strong) NSArray *hotDeals;
+@property (nonatomic, strong) NSArray *campings;
 @property (nonatomic, assign) BOOL isMapExtended;
 @property (nonatomic, strong) NSDate *lastRequestDate;
 
@@ -54,14 +57,16 @@
     // Add annotation
     [self configurePins];
     [self configureUI];
-    
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleHotsDealsList:) name:HotsDealsNotification object:nil];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
     [self centerMapViewOnUserLocation];
+    
+    // Add observer for html request
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleHotsDealsList:) name:HotsDealsListNotification object:nil];
+    
+    // Creation Param HTML request
+    ParamRequestHotDeal *param = [[ParamRequestHotDeal alloc] initParamWithLongitude:@([LocationManager sharedInstance].lastLocation.coordinate.longitude) latitude:@([LocationManager sharedInstance].lastLocation.coordinate.latitude) locationDisplay:@(LOCATION_DISPLAYED)];
+    
+    // Start request action
+    [[NetworkManagement sharedInstance] addNewAction:[GetHotsDealsListAction action:param]];
 }
 
 - (void)configureUI
@@ -75,14 +80,11 @@
 
 - (void)configurePins
 {
-    NSArray *arrayLat = @[@46.40756396630067, @46.27863122156088, @44.86365630540611, @43.58834891179793, @43.644025847699496, @43.65793702655821, @43.702629705871814];
-    NSArray *arrayLon = @[@1.3367271423339844, @2.7539634704589844, @(-0.5529212951660156), @1.5125083923339844, @3.8855552673339844, @6.929175853729248, @7.257392406463623];
-    
-    for (int i = 0; i < [arrayLat count]; i++)
+    for (int i = 0; i < [self.campings count]; i++)
     {
         CLLocationCoordinate2D location;
-        location.latitude = [arrayLat[i] doubleValue];
-        location.longitude = [arrayLon[i] doubleValue];
+        location.latitude = [((Camping *)self.campings[i]).latitude doubleValue];
+        location.longitude = [((Camping *)self.campings[i]).longitude doubleValue];
         
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
         [annotation setCoordinate:location];
@@ -137,14 +139,14 @@
     
     [mapView deselectAnnotation:annotation.annotation animated:YES];
     
-    [NOTIFICATION_CENTER postNotificationName:HotDealNotification object:nil];
+    [NOTIFICATION_CENTER postNotificationName:HotDealSelectedNotification object:nil];
 }
 
 #pragma mark - TableViewMethods Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;[self.hotDeals count];
+    return [self.campings count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,17 +155,22 @@
     HotDealCell *cell = [tableView dequeueReusableCellWithIdentifier:HOT_DEAL_CELL_ID];
     
     // Configure cell
-    [cell configureWithInformationsHotDeal:self.hotDeals[indexPath.row] lastRequest:self.lastRequestDate];
-    [cell setSeparatorVisiblity:(indexPath.row == ([self.hotDeals count] - 1))];
+    [cell configureWithInformationsHotDeal:self.campings[indexPath.row] lastRequest:self.lastRequestDate];
+    [cell setSeparatorVisiblity:(indexPath.row == ([self.campings count] - 1))];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView
-  willDisplayCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [cell setBackgroundColor:[UIColor clearColor]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Camping *camping = [self.campings objectAtIndex:indexPath.row];
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([camping.latitude floatValue], [camping.longitude floatValue]);
+    [self centerMapViewWithCoordinate:location];
 }
 
 #pragma mark - Actions
@@ -196,7 +203,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)handleHotsDealsList:(NSNotification *)notif
 {
-    
+    self.campings = notif.object;
+    [self configurePins];
+    [self.mapView reloadInputViews];
+    [self.tableView reloadData];
 }
 
 

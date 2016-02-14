@@ -12,11 +12,10 @@
 #import "HomePageViewController.h"
 #import "HotDealViewController.h"
 #import "OffersListViewController.h"
-#import "InformationViewController.h"
 
 #import "InscriptionViewController.h"
 #import "OfferDetail.h"
-
+#import "MangopayViewController.h"
 
 
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
@@ -28,7 +27,6 @@
 @property (nonatomic, strong) HomePageViewController *homePageViewController;
 @property (nonatomic, strong) HotDealViewController *hotDealViewController;
 @property (nonatomic, strong) OffersListViewController *promotionsViewController;
-@property (nonatomic, strong) InformationViewController *informationViewController;
 
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) LPTitleView *pagingTitleView;
@@ -69,7 +67,8 @@
 {
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:OfferDetailNotificiation object:nil];
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealSelectedNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushMangoPayViewController:) name:MangoPayNotification object:nil];
 }
 
 - (void)configureUI
@@ -277,6 +276,12 @@
     OfferDetail *profilViewController = (OfferDetail *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:OfferDetailViewControllerID];
     profilViewController.offer = notification.object;
     [self pushViewController:profilViewController];
+}
+
+- (void)pushMangoPayViewController:(NSNotification *)notification
+{
+    MangopayViewController *mangoPayViewController = (MangopayViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:MangoPayViewControllerID];
+    [self pushViewController:mangoPayViewController];
 }
 
 - (void)pushViewController:(UIViewController *)view

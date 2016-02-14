@@ -8,28 +8,39 @@
 
 #import "GetHotsDealsListAction.h"
 
-#define HOTS_DEALS_URL     @"hot_deals"
+#define HOTS_DEALS_URL     @"search/offers"
 
 @implementation GetHotsDealsListAction
 
 #pragma mark - Constructor
 
-+ (instancetype)action
++ (instancetype)action:(ParamRequestHotDeal *)params
 {
-    GetHotsDealsListAction *action = [[GetHotsDealsListAction alloc] initWithUrl:ACTION_URL(HOTS_DEALS_URL) service:WebServiceGetHotsDealsList];
+    NSString *urlSuffix = [NSString stringWithFormat:@"%@/latitude/%@/longitude/%@/count/%@", HOTS_DEALS_URL, params.latitude, params.longitude, params.locationDisplay];
+    
+    
+    GetHotsDealsListAction *action = [[GetHotsDealsListAction alloc] initWithUrl:ACTION_URL(urlSuffix) service:WebServiceGetHotsDealsList];
     
     return action;
 }
-
+                                                                          
 #pragma mark - Manage Answer
 
 - (void)handleDownloadedData:(NSString *)obj
 {
     [super handleDownloadedData:obj];
     
-    NSLog(@"Success %@", obj);
+    NSMutableArray *offers = [NSMutableArray array];
+    NSData *data = [obj dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *offersJson = (NSArray *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
-    [NOTIFICATION_CENTER postNotificationName:HotsDealsListNotification object:obj];
+    for (NSDictionary *offerJson in offersJson)
+    {
+        [offers addObject:[[Camping alloc] initWithDictionnary:offerJson]];
+    }
+
+    
+    [NOTIFICATION_CENTER postNotificationName:HotsDealsListNotification object:offers];
 }
 
 @end

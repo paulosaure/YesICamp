@@ -1,21 +1,22 @@
 //
-//  InformationCampingCell.m
+//  OfferDetailCell.m
 //  hotel
 //
 //  Created by Paul Lavoine on 25/01/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "InformationCampingCell.h"
+#import "OfferDetailCell.h"
+#import "Offer.h"
 
-@interface InformationCampingCell ()
+@interface OfferDetailCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
-@implementation InformationCampingCell
+@implementation OfferDetailCell
 
 #pragma mark - Utils
 
@@ -24,16 +25,16 @@
     static UINib *cellNib;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        cellNib = [UINib nibWithNibName:@"InformationCampingCell" bundle:nil];
+        cellNib = [UINib nibWithNibName:@"OfferDetailCell" bundle:nil];
     });
 
     return cellNib;
 }
 
-- (void)configureWithInformationsCamping:(Camping *)camping
+- (void)configureWithInformationsOffer:(NSDictionary *)offerDetailInformation
 {
-    self.titleLabel.text = @"Title";
+    self.titleLabel.text = [[offerDetailInformation allKeys] firstObject];
     self.titleLabel.textColor = BLUE_COLOR;
-    self.descriptionLabel.text = @"Description";
+    self.descriptionLabel.text = [[offerDetailInformation allValues] firstObject];
 }
 @end

@@ -26,6 +26,7 @@
 {
     [super viewDidLoad];
     self.contentImageView.image = [UIImage imageNamed:self.imageName];
+    self.contentImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)awakeFromNib
