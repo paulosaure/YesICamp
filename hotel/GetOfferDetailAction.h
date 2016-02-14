@@ -6,7 +6,7 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#define OfferDetailtNotification @"OfferDetailtNotification"
+#define OfferDetailNotification @"OfferDetailNotification"
 
 @interface GetOfferDetailAction : HTTPAction
 

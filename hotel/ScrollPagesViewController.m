@@ -66,7 +66,7 @@
 - (void)configureNotification
 {
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionNotificiation object:nil];
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:OfferDetailNotificiation object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:PushOfferDetailViewNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealSelectedNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushMangoPayViewController:) name:MangoPayNotification object:nil];
 }

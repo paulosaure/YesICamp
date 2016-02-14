@@ -8,8 +8,6 @@
 
 #define OfferDetailViewControllerID @"OfferDetailViewControllerID"
 
-#define OfferDetailNotificiation @"OfferDetailNotificiation"
-
 @interface OfferDetail : UIViewController
 
 @property (nonatomic, strong) Offer *offer;

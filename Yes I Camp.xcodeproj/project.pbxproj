@@ -455,7 +455,6 @@
 		A88EB3E21C5018CB008DC5CF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A88EB3E71C5034B3008DC5CF /* Data */,
 				A84C71801C56DFFF00598FE9 /* LocationManager */,
 				A84C71861C56E77000598FE9 /* MKAnnotations */,
 				A84C717B1C56C99F00598FE9 /* PageItem */,
@@ -564,6 +563,7 @@
 			children = (
 				A8A63DBA1C5005C30026E456 /* AppDelegate.h */,
 				A8A63DBB1C5005C30026E456 /* AppDelegate.m */,
+				A88EB3E71C5034B3008DC5CF /* Data */,
 				A88EB3E21C5018CB008DC5CF /* Utils */,
 				A88EB3DC1C5015D1008DC5CF /* Models */,
 				A88EB4051C50396E008DC5CF /* ViewControllers */,

@@ -7,6 +7,7 @@
 //
 
 #define PromotionsViewControllerID @"PromotionsViewControllerID"
+#define PushOfferDetailViewNotificiation @"PushOfferDetailViewNotificiation"
 
 @interface OffersListViewController : UIViewController
 

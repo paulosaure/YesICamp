@@ -34,7 +34,7 @@
     
     Offer *offerReceive = [[Offer alloc] initWithDictionnary:offerJson];
     
-    [NOTIFICATION_CENTER postNotificationName:OfferDetailtNotification object:offerReceive];
+    [NOTIFICATION_CENTER postNotificationName:OfferDetailNotification object:offerReceive];
 }
 
 @end

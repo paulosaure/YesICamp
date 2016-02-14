@@ -83,7 +83,7 @@
 {
     // Get camping
     Offer *offer = self.offersList[indexPath.row];
-    [NOTIFICATION_CENTER postNotificationName:OfferDetailNotificiation object:offer];
+    [NOTIFICATION_CENTER postNotificationName:PushOfferDetailViewNotificiation object:offer];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
