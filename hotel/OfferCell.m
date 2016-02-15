@@ -15,6 +15,15 @@
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *gradientImageView;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *contentStar;
+@property (weak, nonatomic) IBOutlet UIImageView *firstStar;
+@property (weak, nonatomic) IBOutlet UIImageView *secondStar;
+@property (weak, nonatomic) IBOutlet UIImageView *thirdStar;
+@property (weak, nonatomic) IBOutlet UIImageView *fourthStar;
+@property (weak, nonatomic) IBOutlet UIImageView *fiveStar;
+
 @end
 
 
@@ -47,10 +56,16 @@
     self.nameLabel.textColor = [UIColor whiteColor];
     
     self.priceLabel.text = [NSString stringWithFormat:@"%@€", offer.price];
-    self.priceLabel.textColor = [UIColor whiteColor];
+    self.priceLabel.textColor = [UIColor greenColor];
     
     self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
     self.gradientImageView.tintColor = GREEN_COLOR;
+    
+    self.categoryLabel.text = [@"fun" uppercaseString];
+    self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
+    
+    self.contentStar.backgroundColor = [UIColor clearColor];
+    [self configureStars:3];
     
     OfferImage *offerImage = [offer.images firstObject];
     if (!offerImage.image)
@@ -60,6 +75,17 @@
     }
     
     self.imageBackgroundView.image = offerImage.image;
+}
+
+- (void)configureStars:(NSInteger)starNumber
+{
+    NSArray *stars = @[self.firstStar, self.secondStar, self.thirdStar, self.fourthStar, self.fiveStar];
+    for (int i = 0; i < starNumber; i++)
+    {
+        UIImageView *star = (UIImageView *)stars[i];
+        star.tintColor = [UIColor yellowColor];
+        star.image = [UIImage imageNamed:@"star"];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

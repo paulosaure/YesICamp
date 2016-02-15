@@ -26,3 +26,6 @@
 "hotdeal.price_from.label"          = "from";
 "hotdeal.price_to.label"            = "to";
 "hotdeal.price_unity.label"         = "$";
+
+"offerDetail.price.work"            = "price";
+"offerDetail.reservation.button"    = "Book";

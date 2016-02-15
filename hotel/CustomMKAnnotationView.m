@@ -20,7 +20,7 @@
 
 @implementation CustomMKAnnotationView
 
-- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel
+- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel color:(UIColor *)color
 {
     NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"CustomMKAnnotationView"
                                                       owner:self
@@ -29,6 +29,8 @@
     CustomMKAnnotationView *mainView = (CustomMKAnnotationView *)[nibViews objectAtIndex:0];
     mainView.priceLabel.text = priceLabel;
     mainView.frame = CGRectMake(0, 0, USER_LOCATION_MARKER_WIDTH + [self widthPrice:priceLabel] + MARGE, USER_LOCATION_MARKER_WIDTH);
+    mainView.backgroundColor = color;
+    
     [self addSubview:mainView];
 }
 

@@ -57,15 +57,20 @@
     
     // register Cell Nib
     [self.tableView registerNib:[OfferDetailCell cellNib] forCellReuseIdentifier:OFFER_DETAIL_CELL_IDENTIFIER];
-    
+
     [self configureUI];
 }
 
 - (void)configureUI
 {
-    [self.reservationButton setBackgroundColor:BLACK_COLOR];
     self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    
+    NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@",[LOCALIZED_STRING(@"offerDetail.reservation.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"hotdeal.price_unity.label")];
+    self.reservationButton.titleLabel.font = [UIFont systemFontOfSize:15.0f weight:UIFontWeightBold];
+    [self.reservationButton setTitle:titleButton forState:UIControlStateNormal];
+    [self.reservationButton setBackgroundColor:BLACK_COLOR];
     [self.reservationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.reservationButton.backgroundColor = GREEN_COLOR;
 }
@@ -146,7 +151,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.offer.mainTextInfos count];
+    return [self.contentData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -155,8 +160,8 @@
     OfferDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:OFFER_DETAIL_CELL_IDENTIFIER];
     
     // Configure cell
-    [cell configureWithInformationsOffer:self.offer.mainTextInfos[indexPath.row]];
-    [cell setSeparatorVisiblity:(indexPath.row == ([self.offer.mainTextInfos count] - 1))];
+    [cell configureWithInformationsOffer:self.contentData[indexPath.row]];
+    [cell setSeparatorVisiblity:(indexPath.row == ([self.contentData count] - 1))];
     
     return cell;
 }
@@ -171,6 +176,7 @@
 - (void)handleOfferDetail:(NSNotification *)notif
 {
     self.offer = notif.object;
+    [self constructDataArray];
     [self.tableView reloadData];
 }
 
@@ -181,4 +187,11 @@
     [NOTIFICATION_CENTER postNotificationName:MangoPayNotification object:nil];
 }
 
+#pragma mark - Utils
+- (void)constructDataArray
+{
+    self.contentData = [NSMutableArray arrayWithArray:self.offer.mainTextInfos];
+    
+    // Allows to add some additionnal information
+}
 @end

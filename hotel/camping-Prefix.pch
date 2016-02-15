@@ -54,6 +54,7 @@
 #import "HTTPAction.h"
 #import "NetworkManagement.h"
 #import "LocationManager.h"
+#import "GlobalConfiguration.h"
 #import "Camping.h"
 #import "Offer.h"
 

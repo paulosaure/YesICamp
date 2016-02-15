@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, Category) {
-    CategoryFun,
-    CategoryCharme,
-    CategoryLuxe,
-    CategoryBasic,
-    CategoryGlamping,
-    CategoryPitchTent
+typedef NS_ENUM(NSUInteger, CampingCategory) {
+    CampingCategoryFun,
+    CampingCategoryCharme,
+    CampingCategoryLuxe,
+    CampingCategoryBasic,
+    CampingCategoryConfort
 };
 
 @interface Camping : NSObject

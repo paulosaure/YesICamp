@@ -31,6 +31,9 @@
 @property (nonatomic, assign) BOOL isMapExtended;
 @property (nonatomic, strong) NSDate *lastRequestDate;
 
+@property (nonatomic, assign) NSInteger cpt;
+@property (nonatomic, strong) NSArray *color;
+
 @end
 
 @implementation HotDealViewController
@@ -38,6 +41,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.cpt = 0;
+    self.color = @[[UIColor redColor], [UIColor blueColor], [UIColor yellowColor], [UIColor greenColor], [UIColor grayColor] ];
+    
+    
     
     if (![[LocationManager sharedInstance] userDidRefuseLocationPermission])
     {
@@ -125,8 +132,8 @@
             annotationView.centerOffset = CGPointMake(annotationView.centerOffset.x, -annotationView.frame.size.height/2);
         }
         
-        [annotationView configureAnnotationWithPriceLavel:price];
-        
+        [annotationView configureAnnotationWithPriceLavel:price color:self.color[self.cpt]];
+        self.cpt++;
         return annotationView;
     }
     

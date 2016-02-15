@@ -34,7 +34,7 @@
 
 - (void)configureWithInformationsOffer:(NSDictionary *)offerDetailInformation
 {
-    self.titleLabel.text = [[offerDetailInformation allKeys] firstObject];
+    self.titleLabel.text = [[[offerDetailInformation allKeys] firstObject] uppercaseString];
     self.titleLabel.textColor = GREEN_COLOR;
     self.descriptionLabel.text = [[offerDetailInformation allValues] firstObject];
 }

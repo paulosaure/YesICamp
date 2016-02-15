@@ -25,3 +25,6 @@
 "hotdeal.price_from.label"          = "de";
 "hotdeal.price_to.label"            = "à";
 "hotdeal.price_unity.label"         = "€";
+
+"offerDetail.price.work" = "prix";
+"offerDetail.reservation.button"    = "Réserver";

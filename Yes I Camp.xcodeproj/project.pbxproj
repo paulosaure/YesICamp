@@ -59,6 +59,7 @@
 		A8B0234F1C51579D00C10AA7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0234E1C51579D00C10AA7 /* libc++.tbd */; };
 		A8B023531C51585400C10AA7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B023521C51585400C10AA7 /* libsqlite3.tbd */; };
 		A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */; };
+		A8C22D1E1C728C5C0012147C /* GlobalConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C22D1D1C728C5C0012147C /* GlobalConfiguration.m */; };
 		A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CF58C51C5007A2002D227A /* InscriptionViewController.m */; };
 		A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */; };
 		A8F2FF091C557F01007DF893 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Offer.m */; };
@@ -184,6 +185,8 @@
 		A8B023501C5157ED00C10AA7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		A8B023521C51585400C10AA7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomMKAnnotationView.xib; sourceTree = "<group>"; };
+		A8C22D1C1C728C5C0012147C /* GlobalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalConfiguration.h; sourceTree = "<group>"; };
+		A8C22D1D1C728C5C0012147C /* GlobalConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalConfiguration.m; sourceTree = "<group>"; };
 		A8CF58C41C5007A2002D227A /* InscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InscriptionViewController.h; sourceTree = "<group>"; };
 		A8CF58C51C5007A2002D227A /* InscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InscriptionViewController.m; sourceTree = "<group>"; };
 		A8F2FEEB1C54D2BA007DF893 /* HotDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDealViewController.h; sourceTree = "<group>"; };
@@ -458,6 +461,7 @@
 		A88EB3E21C5018CB008DC5CF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A8C22D1B1C728C2E0012147C /* GlobalConfiguration */,
 				A84C71801C56DFFF00598FE9 /* LocationManager */,
 				A84C71861C56E77000598FE9 /* MKAnnotations */,
 				A84C717B1C56C99F00598FE9 /* PageItem */,
@@ -683,6 +687,15 @@
 				A8A63DDE1C5005C30026E456 /* Info.plist */,
 			);
 			path = hotelUITests;
+			sourceTree = "<group>";
+		};
+		A8C22D1B1C728C2E0012147C /* GlobalConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				A8C22D1C1C728C5C0012147C /* GlobalConfiguration.h */,
+				A8C22D1D1C728C5C0012147C /* GlobalConfiguration.m */,
+			);
+			name = GlobalConfiguration;
 			sourceTree = "<group>";
 		};
 		A8CF58C31C50076D002D227A /* Inscription */ = {
@@ -949,6 +962,7 @@
 				A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */,
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
+				A8C22D1E1C728C5C0012147C /* GlobalConfiguration.m in Sources */,
 				A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,
 				A870B2911C5FFD330006CAAA /* HTTPAction.m in Sources */,
