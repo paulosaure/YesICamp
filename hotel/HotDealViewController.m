@@ -113,16 +113,19 @@
 {
     if (![annotation isKindOfClass:[MKUserLocation class]])
     {
-        CustomMKAnnotationView *annotationView = (CustomMKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:NSStringFromClass([CustomMKAnnotationView class])];
+        CustomMKAnnotationView *annotationView = (CustomMKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:CustomMKAnnotationID];
+        NSString *price = annotation.title;
         
         if (!annotationView)
         {
-            NSString *price = annotation.title;
+            
             annotationView = [[CustomMKAnnotationView alloc] initWithAnnotation:annotation
-                                                                reuseIdentifier:NSStringFromClass([CustomMKAnnotationView class]) priceLabel:price];
+                                                                reuseIdentifier:CustomMKAnnotationID];
             annotationView.canShowCallout = YES;
             annotationView.centerOffset = CGPointMake(annotationView.centerOffset.x, -annotationView.frame.size.height/2);
         }
+        
+        [annotationView configureAnnotationWithPriceLavel:price];
         
         return annotationView;
     }

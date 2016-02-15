@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+#define CustomMKAnnotationID @"CustomMKAnnotationID"
 
 @interface CustomMKAnnotationView : MKAnnotationView
 
-- (instancetype)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)identifier priceLabel:(NSString *)priceLabel;
+- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel;
 
 @end

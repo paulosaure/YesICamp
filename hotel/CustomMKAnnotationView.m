@@ -9,6 +9,7 @@
 #import "CustomMKAnnotationView.h"
 
 #define USER_LOCATION_MARKER_WIDTH      25
+#define MARGE 10
 
 @interface CustomMKAnnotationView ()
 
@@ -19,21 +20,16 @@
 
 @implementation CustomMKAnnotationView
 
-- (instancetype)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)identifier priceLabel:(NSString *)priceLabel
+- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel
 {
-    if (self = [super initWithAnnotation:annotation reuseIdentifier:identifier])
-    {
-        NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"CustomMKAnnotationView"
-                                                          owner:self
-                                                        options:nil];
-        
-        CustomMKAnnotationView *mainView = (CustomMKAnnotationView *)[nibViews objectAtIndex:0];
-        mainView.priceLabel.text = priceLabel;
-        mainView.frame = CGRectMake(0, 0, USER_LOCATION_MARKER_WIDTH + [self widthPrice:priceLabel] + 10, USER_LOCATION_MARKER_WIDTH);
-        [self addSubview:mainView];
-    }
+    NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"CustomMKAnnotationView"
+                                                      owner:self
+                                                    options:nil];
     
-    return self;
+    CustomMKAnnotationView *mainView = (CustomMKAnnotationView *)[nibViews objectAtIndex:0];
+    mainView.priceLabel.text = priceLabel;
+    mainView.frame = CGRectMake(0, 0, USER_LOCATION_MARKER_WIDTH + [self widthPrice:priceLabel] + MARGE, USER_LOCATION_MARKER_WIDTH);
+    [self addSubview:mainView];
 }
 
 - (NSInteger)widthPrice:(NSString *)price
