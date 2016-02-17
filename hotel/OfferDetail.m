@@ -30,6 +30,15 @@
 
 #pragma mark - View lifeCycle
 
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -63,8 +72,8 @@
 
 - (void)configureUI
 {
-    self.view.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor blackColor];
     
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@",[LOCALIZED_STRING(@"offerDetail.reservation.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"hotdeal.price_unity.label")];
