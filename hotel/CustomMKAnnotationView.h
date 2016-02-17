@@ -10,9 +10,12 @@
 #import <MapKit/MapKit.h>
 
 #define CustomMKAnnotationID @"CustomMKAnnotationID"
+#define USER_LOCATION_MARKER_WIDTH      25
+#define MARGE 10
 
 @interface CustomMKAnnotationView : MKAnnotationView
 
-- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel;
+- (void)configureAnnotation;
++ (NSInteger)widthPrice:(NSString *)price;
 
 @end

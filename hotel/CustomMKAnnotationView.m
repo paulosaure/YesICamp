@@ -8,9 +8,6 @@
 
 #import "CustomMKAnnotationView.h"
 
-#define USER_LOCATION_MARKER_WIDTH      25
-#define MARGE 10
-
 @interface CustomMKAnnotationView ()
 
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
@@ -20,25 +17,19 @@
 
 @implementation CustomMKAnnotationView
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
-
-- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel
+- (void)configureAnnotation
 {
     NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"CustomMKAnnotationView"
                                                       owner:self
                                                     options:nil];
     
     CustomMKAnnotationView *mainView = (CustomMKAnnotationView *)[nibViews firstObject];
-    mainView.priceLabel.text = priceLabel;
-    mainView.frame = CGRectMake(0, 0, USER_LOCATION_MARKER_WIDTH + [self widthPrice:priceLabel] + MARGE, USER_LOCATION_MARKER_WIDTH);
-
+    mainView.priceLabel.text = self.annotation.title;
+    mainView.frame = self.frame;
     [self addSubview:mainView];
 }
 
-- (NSInteger)widthPrice:(NSString *)price
++ (NSInteger)widthPrice:(NSString *)price
 {
     CGSize maximumSize = CGSizeMake(300, USER_LOCATION_MARKER_WIDTH);
     CGRect boxLabel = [price boundingRectWithSize:maximumSize

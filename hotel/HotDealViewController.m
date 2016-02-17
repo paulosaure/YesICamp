@@ -45,6 +45,7 @@
         self.mapView.showsUserLocation = YES;
     }
     
+    self.mapView.delegate = self;
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
     // register Cell Nib
@@ -111,17 +112,21 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
 {
+    
     if (![annotation isKindOfClass:[MKUserLocation class]])
     {
         CustomMKAnnotationView *annotationView = (CustomMKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:CustomMKAnnotationID];
-        NSString *price = annotation.title;
 
         if (!annotationView)
         {
             annotationView = [[CustomMKAnnotationView alloc] initWithAnnotation:annotation
                                                                 reuseIdentifier:CustomMKAnnotationID];
-            annotationView.centerOffset = CGPointMake(annotationView.centerOffset.x, -annotationView.frame.size.height/2);
-            [annotationView configureAnnotationWithPriceLavel:price];
+
+            annotationView.centerOffset = CGPointMake(USER_LOCATION_MARKER_WIDTH/2, -annotationView.frame.size.height);
+            annotationView.annotation = annotation;
+            annotationView.canShowCallout = NO;
+             annotationView.frame = CGRectMake(0, 0, USER_LOCATION_MARKER_WIDTH + [CustomMKAnnotationView widthPrice:annotation.title] + MARGE, USER_LOCATION_MARKER_WIDTH);
+            [annotationView configureAnnotation];
         }
 
         return annotationView;

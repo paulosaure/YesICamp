@@ -52,6 +52,8 @@
 
 - (void)configureWithCamping:(Offer *)offer
 {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     self.nameLabel.text = offer.title;
     self.nameLabel.textColor = [UIColor whiteColor];
     
