@@ -52,7 +52,7 @@
     self.view.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundColor = [UIColor clearColor];
     
-    [self.searchTextView setValue:GREEN_COLOR forKeyPath:@"_placeholderLabel.textColor"];
+    [self.searchTextView setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     
     // Configure table View
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

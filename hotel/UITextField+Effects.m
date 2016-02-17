@@ -12,7 +12,7 @@
 
 - (void)addTransparentColorEffect:(UIColor *)color placeholder:(NSString *)placeholder
 {
-    NSAttributedString *passPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSForegroundColorAttributeName : color}];
+    NSAttributedString *passPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.attributedPlaceholder = passPlaceholder;
     
     self.backgroundColor = [UIColor clearColor];

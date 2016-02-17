@@ -13,6 +13,6 @@
 
 @interface CustomMKAnnotationView : MKAnnotationView
 
-- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel color:(UIColor *)color;
+- (void)configureAnnotationWithPriceLavel:(NSString *)priceLabel;
 
 @end

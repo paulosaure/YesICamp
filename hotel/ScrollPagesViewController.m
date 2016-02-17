@@ -141,7 +141,7 @@
         self.pagingTitleView.indicatorColor     = GREEN_COLOR;
         self.pagingTitleView.frame              = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CONTENT_PICTO_VIEW_HEIGHT);
         
-        NSArray *imageArray           = @[@"account", @"discount", @"hotDeal"];
+        NSArray *imageArray           = @[@"account", @"discount", @"localization"];
         self.pagingTitleView.delegate = self;
         [self.pagingTitleView addImages:imageArray];
     }
