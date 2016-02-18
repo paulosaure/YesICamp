@@ -11,7 +11,8 @@
 #import "OfferDetail.h"
 #import "ParsingData.h"
 #import "GetOffersListAction.h"
-#import "GetOffersWithCampingAction.h"
+
+#define NUMBER_OFFERS_WITH_SEARCH       10
 
 @interface OffersListViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -102,7 +103,14 @@
 
 - (IBAction)startSearch:(id)sender
 {
-    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCity:self.searchTextView.text]];
+    if ([self.searchTextView.text isEqual:@""])
+    {
+        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
+    }
+    else
+    {
+        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCity:self.searchTextView.text count:NUMBER_OFFERS_WITH_SEARCH]];
+    }
 }
 
 #pragma mark - Notification

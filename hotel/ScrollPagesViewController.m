@@ -16,6 +16,7 @@
 #import "InscriptionViewController.h"
 #import "OfferDetail.h"
 #import "MangopayViewController.h"
+#import "CalendarPickerViewController.h"
 
 
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
@@ -70,6 +71,7 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:PushOfferDetailViewNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealSelectedNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushMangoPayViewController:) name:MangoPayNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushCalendarPickerViewController:) name:CalendarPickerNotification object:nil];
 }
 
 - (void)configureUI
@@ -284,6 +286,13 @@
 {
     MangopayViewController *mangoPayViewController = (MangopayViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:MangoPayViewControllerID];
     [self pushViewController:mangoPayViewController];
+}
+
+- (void)pushCalendarPickerViewController:(NSNotification *)notication
+{
+    CalendarPickerViewController *calendarPickerViewController = (CalendarPickerViewController *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:CalendarPickerID];
+    calendarPickerViewController.offer = notication.object;
+    [self pushViewController:calendarPickerViewController];
 }
 
 - (void)pushViewController:(UIViewController *)view

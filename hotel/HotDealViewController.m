@@ -12,10 +12,10 @@
 #import "CustomMKAnnotationView.h"
 #import "OfferDetail.h"
 #import "HotDealCell.h"
-#import "GetOffersWithCampingAction.h"
 #import "GetHotsDealsListAction.h"
 #import "ScrollPagesViewController.h"
 #import "CustomMKAnnotation.h"
+#import "GetOffersListAction.h"
 
 #define MINIMUM_MAP_VIEW_HEIGHT         250
 #define LOCATION_DISPLAYED              15
@@ -146,7 +146,7 @@
     [mapView deselectAnnotation:annotation.annotation animated:YES];
     [self.parent didSelectedTitleAtIndex:PageControllerPromo];
     // Start request action
-    [[NetworkManagement sharedInstance] addNewAction:[GetOffersWithCampingAction actionWithCampingId:annotation.annotation.title]];
+    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCampingId:((CustomMKAnnotation *)annotation.annotation).campingId]];
 }
 
 #pragma mark - TableViewMethods Delegate

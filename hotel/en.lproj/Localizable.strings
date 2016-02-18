@@ -29,3 +29,5 @@
 
 "offerDetail.price.work"            = "price";
 "offerDetail.reservation.button"    = "Book";
+
+"calendarPicker.pay.button"    = "Pay";

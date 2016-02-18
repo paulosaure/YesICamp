@@ -9,8 +9,9 @@
 #import "OfferDetail.h"
 #import "OfferDetailCell.h"
 #import "PageItemController.h"
-#import "MangopayViewController.h"
+#import "CalendarPickerViewController.h"
 #import "GetOfferDetailAction.h"
+#import "UIButton+Effects.h"
 
 #define PAGE_CONTROLLER_HEIGHT 350
 
@@ -75,13 +76,8 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.tableView.backgroundColor = [UIColor blackColor];
     
-    
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@",[LOCALIZED_STRING(@"offerDetail.reservation.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"hotdeal.price_unity.label")];
-    self.reservationButton.titleLabel.font = [UIFont systemFontOfSize:15.0f weight:UIFontWeightBold];
-    [self.reservationButton setTitle:titleButton forState:UIControlStateNormal];
-    [self.reservationButton setBackgroundColor:BLACK_COLOR];
-    [self.reservationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.reservationButton.backgroundColor = GREEN_COLOR;
+    [self.reservationButton addEffectbelowBookButton:titleButton];
 }
 
 
@@ -193,7 +189,7 @@
 
 - (IBAction)reserveCamping:(id)sender
 {
-    [NOTIFICATION_CENTER postNotificationName:MangoPayNotification object:nil];
+    [NOTIFICATION_CENTER postNotificationName:CalendarPickerNotification object:self.offer];
 }
 
 #pragma mark - Utils

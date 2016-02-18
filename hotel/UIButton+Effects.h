@@ -11,5 +11,6 @@
 @interface UIButton (Effects)
 
 - (void)addColorEffect:(UIColor *)color text:(NSString *)text;
+- (void)addEffectbelowBookButton:(NSString *)labelButton;
 
 @end

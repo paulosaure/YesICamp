@@ -18,4 +18,13 @@
     self.layer.cornerRadius = 5.0f;
 }
 
+- (void)addEffectbelowBookButton:(NSString *)labelButton
+{
+    self.titleLabel.font = [UIFont systemFontOfSize:15.0f weight:UIFontWeightBold];
+    [self setTitle:labelButton forState:UIControlStateNormal];
+    [self setBackgroundColor:BLACK_COLOR];
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.backgroundColor = GREEN_COLOR;
+}
+
 @end
