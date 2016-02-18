@@ -31,7 +31,7 @@
 {
     self.view.backgroundColor = BLACK_COLOR;
     
-    NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@",[LOCALIZED_STRING(@"calendarPicker.pay.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"hotdeal.price_unity.label")];
+    NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@",[LOCALIZED_STRING(@"calendarPicker.pay.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"global.price_unity.label")];
     [self.bookDateButton addEffectbelowBookButton:titleButton];
 }
 

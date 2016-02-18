@@ -13,9 +13,11 @@
 #define USER_LOCATION_MARKER_WIDTH      25
 #define MARGE 10
 
+@class CustomMKAnnotation;
+
 @interface CustomMKAnnotationView : MKAnnotationView
 
-- (void)configureAnnotation;
+- (void)configureAnnotationWith:(CustomMKAnnotation *)annotation;
 + (NSInteger)widthPrice:(NSString *)price;
 
 @end

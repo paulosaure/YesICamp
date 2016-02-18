@@ -6,6 +6,7 @@
   Copyright © 2016 Paul Lavoine. All rights reserved.
 */
 
+"global.price_unity.label"         = "€";
 
 "homePage.inscription.button"   = "Inscription";
 "homePage.connection.button"    = "Connexion";
@@ -24,7 +25,6 @@
 
 "hotdeal.price_from.label"          = "de";
 "hotdeal.price_to.label"            = "à";
-"hotdeal.price_unity.label"         = "€";
 
 "offerDetail.price.work" = "prix";
 "offerDetail.reservation.button"    = "Réserver";

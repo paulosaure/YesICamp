@@ -18,16 +18,26 @@
 
 @implementation CustomMKAnnotationView
 
-- (void)configureAnnotation
+- (void)configureAnnotationWith:(CustomMKAnnotation *)annotation
 {
+    self.annotation = annotation;
+    
     NSArray* nibViews = [[NSBundle mainBundle] loadNibNamed:@"CustomMKAnnotationView"
                                                       owner:self
                                                     options:nil];
     
     CustomMKAnnotationView *mainView = (CustomMKAnnotationView *)[nibViews firstObject];
-    mainView.priceLabel.text = ((CustomMKAnnotation *) self.annotation).price;
+    mainView.priceLabel.text = annotation.price;
     mainView.frame = self.frame;
-    [self addSubview:mainView];
+    
+    if ([self.subviews count] == 1)
+    {
+        [((CustomMKAnnotationView *)self.subviews[0]) configureAnnotationWith:annotation];
+    }
+    else
+    {
+        [self addSubview:mainView];
+    }
 }
 
 + (NSInteger)widthPrice:(NSString *)price

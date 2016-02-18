@@ -90,7 +90,7 @@
         location.latitude = [camping.latitude doubleValue];
         location.longitude = [camping.longitude doubleValue];
         
-        NSString *price = [NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"hotdeal.price_unity.label")];
+        NSString *price = [NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"global.price_unity.label")];
 
         CustomMKAnnotation *annotation = [[CustomMKAnnotation alloc] initWithTitle:camping.title price:price campingId:[camping.uid stringValue] location:location];
 
@@ -114,22 +114,20 @@
 
 #pragma mark - MKAnnotation
 
-- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(CustomMKAnnotation *)annotation
 {
     
-    if (![annotation isKindOfClass:[MKUserLocation class]])
+    if ([annotation isKindOfClass:[CustomMKAnnotation class]])
     {
-        CustomMKAnnotation *myLocation = (CustomMKAnnotation *)annotation;
-        
         CustomMKAnnotationView *annotationView = (CustomMKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:CustomMKAnnotationID];
-        
-        if (!annotationView)
+
+        if (annotationView == nil)
         {
-            annotationView = myLocation.annotationView;
+            annotationView = annotation.annotationView;
         }
         else
         {
-            annotationView.annotation = annotation;
+            [annotationView configureAnnotationWith:annotation];
         }
 
         return annotationView;

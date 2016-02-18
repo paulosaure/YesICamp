@@ -36,7 +36,7 @@
     annotationView.centerOffset = CGPointMake(USER_LOCATION_MARKER_WIDTH/2, -annotationView.frame.size.height);
     annotationView.canShowCallout = NO;
     annotationView.frame = CGRectMake(0, 0, USER_LOCATION_MARKER_WIDTH + [CustomMKAnnotationView widthPrice:self.price] + MARGE, USER_LOCATION_MARKER_WIDTH);
-    [annotationView configureAnnotation];
+    [annotationView configureAnnotationWith:self];
     
     return annotationView;
 }

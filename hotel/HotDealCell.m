@@ -48,7 +48,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.titleLabel.text = camping.title;
     self.titleLabel.textColor = [UIColor whiteColor];
-    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"hotdeal.price_unity.label")];
+    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"global.price_unity.label")];
 
 //    [self startTimer:hotDeal];
 }
