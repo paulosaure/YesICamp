@@ -9,6 +9,10 @@
 "global.price_unity.label"         = "$";
 
 
+"homePage.error.title" = "Error";
+"homePage.error.fielsEmpty" = "Please fill out all fields completely.";
+"homePage.error.validationButton" = "OK";
+
 "homePage.inscription.button" = "Sign up";
 "homePage.connection.button" = "Log In";
 "homePage.email.placeholder" = "E-mail";

@@ -24,6 +24,7 @@
 
 
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSArray *fields;
 
 @end
 
@@ -39,6 +40,8 @@
     
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
     [self.view addGestureRecognizer:singleFingerTap];
+    
+    self.fields = @[self.firstNameTextView, self.lastNameTextView, self.emailTextView, self.passwordTextView, self.ageTextView];
     
     // Configuration
     [self configureUI];
@@ -91,7 +94,20 @@
 
 - (IBAction)startInscription:(id)sender
 {
+    BOOL allFielsComplete = YES;
+    for (UITextField *field in self.fields)
+    {
+        if ([field.text isEqualToString:@""])
+        {
+            allFielsComplete = NO;
+            [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:nil];
+        }
+    }
     
+    if (allFielsComplete)
+    {
+        NSLog(@"start inscription");
+    }
 }
 
 @end

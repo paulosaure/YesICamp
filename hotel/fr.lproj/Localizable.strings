@@ -8,6 +8,10 @@
 
 "global.price_unity.label"         = "€";
 
+"homePage.error.title" = "Erreur";
+"homePage.error.fielsEmpty" = "Veuillez remplir tous les champs.";
+"homePage.error.validationButton" = "OK";
+
 "homePage.inscription.button"   = "Inscription";
 "homePage.connection.button"    = "Connexion";
 "homePage.email.placeholder"    = "E-mail";

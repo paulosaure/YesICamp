@@ -72,6 +72,7 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealSelectedNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushMangoPayViewController:) name:MangoPayNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushCalendarPickerViewController:) name:CalendarPickerNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushAlertEmptyFields:) name:EmptyFieldsNotification object:nil];
 }
 
 - (void)configureUI
@@ -298,6 +299,25 @@
 - (void)pushViewController:(UIViewController *)view
 {
     [self.navigationController pushViewController:view animated:YES];
+}
+
+- (void)pushAlertEmptyFields:(NSNotification *)notification
+{
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:LOCALIZED_STRING(@"homePage.error.title")
+                                  message:LOCALIZED_STRING(@"homePage.error.fielsEmpty")
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:LOCALIZED_STRING(@"homePage.error.validationButton")
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    //Handel your yes please button action here
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Utils

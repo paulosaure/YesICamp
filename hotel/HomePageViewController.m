@@ -46,34 +46,16 @@
 
 - (IBAction)connection:(id)sender
 {
-    
+    if ([self.pseudoTextView.text isEqualToString:@""] || [self.passwordTextView.text isEqualToString:@""])
+    {
+        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:nil];
+    }
+    else
+    {
+        NSLog(@"Connexion ...");
+    }
     //    if ([[NetworkManagement sharedInstance] connectionWithServer])
-    //    {
-    ////        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
-    ////        SearchViewController *searchViewController = (SearchViewController *)[storyBoard instantiateViewControllerWithIdentifier:SearchViewControllerID];
-    ////        [self.navigationController pushViewController:searchViewController animated:YES];
-    //    }
-    //    else
-    //    {
-    //        UIAlertController * alert=   [UIAlertController
-    //                                      alertControllerWithTitle:@"Error"
-    //                                      message:@"Problème technique"
-    //                                      preferredStyle:UIAlertControllerStyleAlert];
-    //
-    //        UIAlertAction* yesButton = [UIAlertAction
-    //                                    actionWithTitle:@"Ok"
-    //                                    style:UIAlertActionStyleDefault
-    //                                    handler:^(UIAlertAction * action)
-    //                                    {
-    //                                        //Handel your yes please button action here
-    //
-    //
-    //                                    }];
-    //
-    //        [alert addAction:yesButton];
-    //
-    //        [self presentViewController:alert animated:YES completion:nil];
-    //    }
+
 }
 
 - (IBAction)pushInscriptionViewController:(id)sender

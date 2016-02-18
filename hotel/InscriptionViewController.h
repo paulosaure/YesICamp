@@ -9,6 +9,7 @@
 #define InscriptionViewControllerID @"InscriptionViewControllerID"
 
 #define InscriptionNotificiation @"InscriptionNotificiation"
+#define EmptyFieldsNotification @"EmptyFieldsNotification"
 
 @interface InscriptionViewController : UIViewController
 
