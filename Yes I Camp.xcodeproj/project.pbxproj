@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A81979561C763C3900B2A177 /* GetOffersWithCampingAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979551C763C3900B2A177 /* GetOffersWithCampingAction.m */; };
+		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
 		A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716D1C56A83400598FE9 /* LPTitleView.m */; };
 		A84C71711C56A83400598FE9 /* LPViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716F1C56A83400598FE9 /* LPViewPagerController.m */; };
 		A84C71731C56BC9500598FE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C71721C56BC9500598FE9 /* MapKit.framework */; };
@@ -90,6 +92,10 @@
 /* Begin PBXFileReference section */
 		381A166E8C10B1F505A87604 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A81979541C763C3900B2A177 /* GetOffersWithCampingAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOffersWithCampingAction.h; sourceTree = "<group>"; };
+		A81979551C763C3900B2A177 /* GetOffersWithCampingAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOffersWithCampingAction.m; sourceTree = "<group>"; };
+		A81979581C763F5800B2A177 /* CustomMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMKAnnotation.h; sourceTree = "<group>"; };
+		A81979591C763F5800B2A177 /* CustomMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotation.m; sourceTree = "<group>"; };
 		A84C716C1C56A83400598FE9 /* LPTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPTitleView.h; sourceTree = "<group>"; };
 		A84C716D1C56A83400598FE9 /* LPTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPTitleView.m; sourceTree = "<group>"; };
 		A84C716E1C56A83400598FE9 /* LPViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPViewPagerController.h; sourceTree = "<group>"; };
@@ -272,6 +278,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A81979531C763C1C00B2A177 /* GetOffersWithCamping */ = {
+			isa = PBXGroup;
+			children = (
+				A81979541C763C3900B2A177 /* GetOffersWithCampingAction.h */,
+				A81979551C763C3900B2A177 /* GetOffersWithCampingAction.m */,
+			);
+			name = GetOffersWithCamping;
+			sourceTree = "<group>";
+		};
+		A81979571C763F3A00B2A177 /* MKAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				A81979581C763F5800B2A177 /* CustomMKAnnotation.h */,
+				A81979591C763F5800B2A177 /* CustomMKAnnotation.m */,
+			);
+			name = MKAnnotation;
+			sourceTree = "<group>";
+		};
 		A84C716B1C56A83400598FE9 /* ViewPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,14 +336,14 @@
 			name = LocationManager;
 			sourceTree = "<group>";
 		};
-		A84C71861C56E77000598FE9 /* MKAnnotations */ = {
+		A84C71861C56E77000598FE9 /* MKAnnotationView */ = {
 			isa = PBXGroup;
 			children = (
 				A84C71871C56E7A000598FE9 /* CustomMKAnnotationView.h */,
 				A84C71881C56E7A000598FE9 /* CustomMKAnnotationView.m */,
 				A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */,
 			);
-			name = MKAnnotations;
+			name = MKAnnotationView;
 			sourceTree = "<group>";
 		};
 		A870B2751C5CB84A0006CAAA /* Cell */ = {
@@ -463,7 +487,8 @@
 			children = (
 				A8C22D1B1C728C2E0012147C /* GlobalConfiguration */,
 				A84C71801C56DFFF00598FE9 /* LocationManager */,
-				A84C71861C56E77000598FE9 /* MKAnnotations */,
+				A81979571C763F3A00B2A177 /* MKAnnotation */,
+				A84C71861C56E77000598FE9 /* MKAnnotationView */,
 				A84C717B1C56C99F00598FE9 /* PageItem */,
 				A870B2921C6005E80006CAAA /* UITextField+Effects */,
 				A870B2991C6006D20006CAAA /* UIButton+Effects */,
@@ -494,6 +519,7 @@
 				A870B29F1C616C3B0006CAAA /* GetHotsDealsList */,
 				A8FEC7351C6F9111003B8A2C /* GetOfferDetail */,
 				A88EB3F21C5036EF008DC5CF /* GetOffersList */,
+				A81979531C763C1C00B2A177 /* GetOffersWithCamping */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -956,12 +982,14 @@
 				A8FEC7381C6F912D003B8A2C /* GetOfferDetailAction.m in Sources */,
 				A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */,
 				A870B2A21C616C610006CAAA /* GetHotsDealsListAction.m in Sources */,
+				A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */,
 				A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */,
 				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,
 				A8FEC7461C6FA4EB003B8A2C /* ParamRequestHotDeal.m in Sources */,
 				A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */,
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
+				A81979561C763C3900B2A177 /* GetOffersWithCampingAction.m in Sources */,
 				A8C22D1E1C728C5C0012147C /* GlobalConfiguration.m in Sources */,
 				A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,

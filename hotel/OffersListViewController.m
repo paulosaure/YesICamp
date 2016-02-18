@@ -11,6 +11,7 @@
 #import "OfferDetail.h"
 #import "ParsingData.h"
 #import "GetOffersListAction.h"
+#import "GetOffersWithCampingAction.h"
 
 @interface OffersListViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -33,6 +34,7 @@
     [super viewDidLoad];
     [self configureUI];
     
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListWithCampingNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListNotification object:nil];
     
     [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];

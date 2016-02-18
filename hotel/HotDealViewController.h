@@ -11,8 +11,12 @@
 #define HotDealViewControllerID @"HotDealViewControllerID"
 #define HotDealSelectedNotification @"HotDealSelectedNotification"
 
+@class ScrollPagesViewController;
+
 @interface HotDealViewController : UIViewController
 
 - (void)centerMapViewOnUserLocation;
+
+@property (nonatomic, strong) ScrollPagesViewController *parent;
 
 @end

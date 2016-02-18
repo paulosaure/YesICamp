@@ -7,10 +7,11 @@
 //
 
 #import "CustomMKAnnotationView.h"
+#import "CustomMKAnnotation.h"
 
 @interface CustomMKAnnotationView ()
 
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
@@ -24,7 +25,7 @@
                                                     options:nil];
     
     CustomMKAnnotationView *mainView = (CustomMKAnnotationView *)[nibViews firstObject];
-    mainView.priceLabel.text = self.annotation.title;
+    mainView.priceLabel.text = ((CustomMKAnnotation *) self.annotation).price;
     mainView.frame = self.frame;
     [self addSubview:mainView];
 }

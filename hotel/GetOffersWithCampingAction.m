@@ -1,31 +1,26 @@
 //
-//  GetCampingsList.m
-//  hotel
+//  GetOffersWithCampingAction.m
+//  Yes I Camp
 //
-//  Created by Paul Lavoine on 26/01/2016.
+//  Created by Paul Lavoine on 18/02/2016.
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
+
+#import "GetOffersWithCampingAction.h"
 
 #import "GetOffersListAction.h"
 #import "Offer.h"
 
 #define OFFERS_URL     @"offers"
 
-@implementation GetOffersListAction
+@implementation GetOffersWithCampingAction
 
 #pragma mark - Constructor
 
-+ (instancetype)action
++ (instancetype)actionWithCampingId:(NSString *)campingId
 {
-    GetOffersListAction *action = [[GetOffersListAction alloc] initWithUrl:ACTION_URL(OFFERS_URL) service:WebServiceGetOffersList];
-    
-    return action;
-}
-
-+ (instancetype)actionWithCity:(NSString *)city
-{
-    NSString *urlSuffix = [NSString stringWithFormat:@"%@/%@",OFFERS_URL, city];
-    GetOffersListAction *action = [[GetOffersListAction alloc] initWithUrl:ACTION_URL(urlSuffix) service:WebServiceGetOffersList];
+    NSString *urlSuffix = [NSString stringWithFormat:@"%@/%@",OFFERS_URL, campingId];
+    GetOffersWithCampingAction *action = [[GetOffersWithCampingAction alloc] initWithUrl:ACTION_URL(urlSuffix) service:WebServiceGetOffersList];
     
     return action;
 }
@@ -44,7 +39,7 @@
         [offers addObject:[[Offer alloc] initWithDictionnary:offerJson]];
     }
     
-    [NOTIFICATION_CENTER postNotificationName:OffersListNotification object:offers];
+    [NOTIFICATION_CENTER postNotificationName:OffersListWithCampingNotification object:offers];
 }
 
 @end

@@ -12,7 +12,10 @@
 #import "CustomMKAnnotationView.h"
 #import "OfferDetail.h"
 #import "HotDealCell.h"
+#import "GetOffersWithCampingAction.h"
 #import "GetHotsDealsListAction.h"
+#import "ScrollPagesViewController.h"
+#import "CustomMKAnnotation.h"
 
 #define MINIMUM_MAP_VIEW_HEIGHT         250
 #define LOCATION_DISPLAYED              15
@@ -87,9 +90,10 @@
         location.latitude = [camping.latitude doubleValue];
         location.longitude = [camping.longitude doubleValue];
         
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-        [annotation setCoordinate:location];
-        [annotation setTitle:[NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"hotdeal.price_unity.label")]];
+        NSString *price = [NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"hotdeal.price_unity.label")];
+
+        CustomMKAnnotation *annotation = [[CustomMKAnnotation alloc] initWithTitle:camping.title price:price campingId:[camping.uid stringValue] location:location];
+
         [self.mapView addAnnotation:annotation];
     }
 }
@@ -115,18 +119,17 @@
     
     if (![annotation isKindOfClass:[MKUserLocation class]])
     {
+        CustomMKAnnotation *myLocation = (CustomMKAnnotation *)annotation;
+        
         CustomMKAnnotationView *annotationView = (CustomMKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:CustomMKAnnotationID];
-
+        
         if (!annotationView)
         {
-            annotationView = [[CustomMKAnnotationView alloc] initWithAnnotation:annotation
-                                                                reuseIdentifier:CustomMKAnnotationID];
-
-            annotationView.centerOffset = CGPointMake(USER_LOCATION_MARKER_WIDTH/2, -annotationView.frame.size.height);
+            annotationView = myLocation.annotationView;
+        }
+        else
+        {
             annotationView.annotation = annotation;
-            annotationView.canShowCallout = NO;
-             annotationView.frame = CGRectMake(0, 0, USER_LOCATION_MARKER_WIDTH + [CustomMKAnnotationView widthPrice:annotation.title] + MARGE, USER_LOCATION_MARKER_WIDTH);
-            [annotationView configureAnnotation];
         }
 
         return annotationView;
@@ -135,14 +138,15 @@
     return nil;
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)annotation
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(CustomMKAnnotationView *)annotation
 {
     if([annotation.annotation isKindOfClass:[MKUserLocation class]])
         return;
-    
+
     [mapView deselectAnnotation:annotation.annotation animated:YES];
-    
-    [NOTIFICATION_CENTER postNotificationName:HotDealSelectedNotification object:nil];
+    [self.parent didSelectedTitleAtIndex:PageControllerPromo];
+    // Start request action
+    [[NetworkManagement sharedInstance] addNewAction:[GetOffersWithCampingAction actionWithCampingId:annotation.annotation.title]];
 }
 
 #pragma mark - TableViewMethods Delegate

@@ -109,6 +109,7 @@
             if (!viewController)
             {
                 viewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HotDealViewControllerID];
+                ((HotDealViewController *)viewController).parent = self;
             }
             break;
             
