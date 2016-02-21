@@ -52,22 +52,13 @@
 
 - (void)configureWithCamping:(Offer *)offer
 {
-    self.backgroundColor = [UIColor clearColor];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self globalConfiguration];
     
     self.nameLabel.text = offer.title;
-    self.nameLabel.textColor = [UIColor whiteColor];
-    
     self.priceLabel.text = [NSString stringWithFormat:@"%@€", offer.price];
-    self.priceLabel.textColor = [UIColor greenColor];
-    
-    self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
-    self.gradientImageView.tintColor = GREEN_COLOR;
-    
     self.categoryLabel.text = [@"fun" uppercaseString];
     self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
-    
-    self.contentStar.backgroundColor = [UIColor clearColor];
+
     [self configureStars:3];
     
     OfferImage *offerImage = [offer.images firstObject];
@@ -78,6 +69,46 @@
     }
     
     self.imageBackgroundView.image = offerImage.image;
+}
+
+- (void)configureWithInformationsHotDeal:(Camping *)camping
+{
+    [self globalConfiguration];
+    
+    self.nameLabel.text = camping.title;
+    self.nameLabel.textColor = [UIColor whiteColor];
+    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"global.price_unity.label")];
+    
+    self.categoryLabel.text = [@"fun" uppercaseString];
+    self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
+    
+    [self configureStars:3];
+    
+    OfferImage *offerImage = [((Offer *)[camping.offers firstObject]).images firstObject];
+    if (!offerImage.image)
+    {
+        NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, offerImage.imageUrl];
+        offerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+    }
+    
+    self.imageBackgroundView.image = offerImage.image;
+
+}
+
+- (void)globalConfiguration
+{
+    
+    self.backgroundColor = [UIColor clearColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    self.nameLabel.textColor = [UIColor whiteColor];
+    self.priceLabel.textColor = [UIColor greenColor];
+    
+    self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
+    self.gradientImageView.tintColor = GREEN_COLOR;
+    
+    self.contentStar.backgroundColor = [UIColor clearColor];
+    
 }
 
 - (void)configureStars:(NSInteger)starNumber

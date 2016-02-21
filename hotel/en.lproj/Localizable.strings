@@ -9,25 +9,24 @@
 "global.price_unity.label"         = "$";
 
 
-"homePage.error.title" = "Error";
-"homePage.error.fielsEmpty" = "Please fill out all fields completely.";
-"homePage.error.validationButton" = "OK";
+"homePage.error.title"              = "Error";
+"homePage.error.fielsEmpty"         = "Please fill out all fields completely.";
+"homePage.error.validationButton"   = "OK";
 
-"homePage.inscription.button" = "Sign up";
-"homePage.connection.button" = "Log In";
-"homePage.email.placeholder" = "E-mail";
-"homePage.password.placeholder" = "Password";
+"homePage.inscription.button"       = "Sign up";
+"homePage.connection.button"        = "Log In";
+"homePage.email.placeholder"        = "E-mail *";
+"homePage.password.placeholder"     = "Password *";
 
-"offersList.search_text_view.placeholder" = "Destination or category";
+"offersList.search_text_view.placeholder"   = "Destination";
 
-"inscription.firstname.placeholder" = "Firstname";
-"inscription.lastname.placeholder" = "Lastname";
-"inscription.age.placeholder" = "Age";
-"inscription.email.placeholder" = "E-mail";
-"inscription.password.placeholder" = "Password";
-"inscription.select_picture.button" = "Choose a picture";
-"inscription.inscription.button" = "Sign Up";
-
+"inscription.firstname.placeholder"         = "Firstname *";
+"inscription.lastname.placeholder"          = "Lastname *";
+"inscription.age.placeholder"               = "Age *";
+"inscription.email.placeholder"             = "E-mail *";
+"inscription.password.placeholder"          = "Password *";
+"inscription.select_picture.button"         = "Choose a picture";
+"inscription.inscription.button"            = "Sign Up";
 
 "hotdeal.price_from.label"          = "from";
 "hotdeal.price_to.label"            = "to";
@@ -35,4 +34,6 @@
 "offerDetail.price.work"            = "price";
 "offerDetail.reservation.button"    = "Book";
 
-"calendarPicker.pay.button"    = "Pay";
+"calendarPicker.pay.button"         = "Pay";
+"calendarPicker.from_date.label"    = "From";
+"calendarPicker.to_date.label"      = "to";

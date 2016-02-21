@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */; };
+		A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */; };
 		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
 		A819795E1C76553600B2A177 /* CalendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A819795D1C76553600B2A177 /* CalendarPickerViewController.m */; };
 		A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716D1C56A83400598FE9 /* LPTitleView.m */; };
@@ -92,6 +94,10 @@
 /* Begin PBXFileReference section */
 		381A166E8C10B1F505A87604 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A80624D11C79A5E900ABF9EC /* UILabel+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Effects.h"; sourceTree = "<group>"; };
+		A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Effects.m"; sourceTree = "<group>"; };
+		A80624D41C79A7E200ABF9EC /* LabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelWithPadding.h; sourceTree = "<group>"; };
+		A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelWithPadding.m; sourceTree = "<group>"; };
 		A81979581C763F5800B2A177 /* CustomMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMKAnnotation.h; sourceTree = "<group>"; };
 		A81979591C763F5800B2A177 /* CustomMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotation.m; sourceTree = "<group>"; };
 		A819795C1C76553600B2A177 /* CalendarPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPickerViewController.h; sourceTree = "<group>"; };
@@ -276,6 +282,24 @@
 				381A166E8C10B1F505A87604 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A80624D71C79A7E700ABF9EC /* UILabel+Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A80624D11C79A5E900ABF9EC /* UILabel+Effects.h */,
+				A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */,
+			);
+			name = "UILabel+Effects";
+			sourceTree = "<group>";
+		};
+		A80624D81C79AB6500ABF9EC /* LabelWithPadding */ = {
+			isa = PBXGroup;
+			children = (
+				A80624D41C79A7E200ABF9EC /* LabelWithPadding.h */,
+				A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */,
+			);
+			name = LabelWithPadding;
 			sourceTree = "<group>";
 		};
 		A81979571C763F3A00B2A177 /* MKAnnotation */ = {
@@ -486,12 +510,14 @@
 			isa = PBXGroup;
 			children = (
 				A8C22D1B1C728C2E0012147C /* GlobalConfiguration */,
+				A80624D81C79AB6500ABF9EC /* LabelWithPadding */,
 				A84C71801C56DFFF00598FE9 /* LocationManager */,
 				A81979571C763F3A00B2A177 /* MKAnnotation */,
 				A84C71861C56E77000598FE9 /* MKAnnotationView */,
 				A84C717B1C56C99F00598FE9 /* PageItem */,
-				A870B2921C6005E80006CAAA /* UITextField+Effects */,
+				A80624D71C79A7E700ABF9EC /* UILabel+Effects */,
 				A870B2991C6006D20006CAAA /* UIButton+Effects */,
+				A870B2921C6005E80006CAAA /* UITextField+Effects */,
 				A84C716B1C56A83400598FE9 /* ViewPager */,
 			);
 			name = Utils;
@@ -1003,8 +1029,10 @@
 				A84C71781C56C49400598FE9 /* OfferDetailCell.m in Sources */,
 				A88EB3CC1C500EAE008DC5CF /* OfferDetail.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
+				A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */,
 				A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */,
 				A84C717E1C56C9A800598FE9 /* PageItemController.m in Sources */,
+				A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */,
 				A88EB3DA1C5015AA008DC5CF /* OfferCell.m in Sources */,
 				A88EB3FA1C503754008DC5CF /* InscriptionUserAction.m in Sources */,
 				A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */,

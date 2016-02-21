@@ -12,5 +12,6 @@
 
 + (UINib *)cellNib;
 - (void)configureWithCamping:(Offer *)offer;
+- (void)configureWithInformationsHotDeal:(Camping *)camping;
 
 @end

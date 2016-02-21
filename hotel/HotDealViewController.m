@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "CustomMKAnnotationView.h"
 #import "OfferDetail.h"
-#import "HotDealCell.h"
+#import "OfferCell.h"
 #import "GetHotsDealsListAction.h"
 #import "ScrollPagesViewController.h"
 #import "CustomMKAnnotation.h"
@@ -52,7 +52,7 @@
     [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
     // register Cell Nib
-    [self.tableView registerNib:[HotDealCell cellNib] forCellReuseIdentifier:HOT_DEAL_CELL_ID];
+    [self.tableView registerNib:[OfferCell cellNib] forCellReuseIdentifier:OFFER_CELL_IDENTIFIER];
     
     [self.view bringSubviewToFront:self.extendMapButton];
     [self.view bringSubviewToFront:self.localizeUserButton];
@@ -157,11 +157,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue cell
-    HotDealCell *cell = [tableView dequeueReusableCellWithIdentifier:HOT_DEAL_CELL_ID];
+    OfferCell *cell = [tableView dequeueReusableCellWithIdentifier:OFFER_CELL_IDENTIFIER];
     
     // Configure cell
-    [cell configureWithInformationsHotDeal:self.campings[indexPath.row] lastRequest:self.lastRequestDate];
-    [cell setSeparatorVisiblity:(indexPath.row == ([self.campings count] - 1))];
+    [cell configureWithInformationsHotDeal:self.campings[indexPath.row]];
     
     return cell;
 }

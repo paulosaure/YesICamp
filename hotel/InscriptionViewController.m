@@ -53,6 +53,11 @@
     self.imageProfileView.contentMode = UIViewContentModeScaleAspectFit;
     self.choosePhotoButton.titleLabel.numberOfLines = 2;
     self.choosePhotoButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+
+    // Warning : Customer didn't want photo
+    self.choosePhotoButton.hidden = YES;
+    self.imageProfileView.hidden = YES;
+    
     
      [self.firstNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.firstname.placeholder")];
      [self.lastNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
@@ -101,6 +106,7 @@
         {
             allFielsComplete = NO;
             [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:nil];
+            break;
         }
     }
     

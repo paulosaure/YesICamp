@@ -14,16 +14,16 @@
 
 "homePage.inscription.button"   = "Inscription";
 "homePage.connection.button"    = "Connexion";
-"homePage.email.placeholder"    = "E-mail";
-"homePage.password.placeholder" = "Mot de passe";
+"homePage.email.placeholder"    = "E-mail *";
+"homePage.password.placeholder" = "Mot de passe *";
 
-"offersList.search_text_view.placeholder" = "Destination ou catégorie";
+"offersList.search_text_view.placeholder" = "Destination";
 
-"inscription.firstname.placeholder" = "Prénom";
-"inscription.lastname.placeholder"  = "Nom";
-"inscription.age.placeholder"       = "Age";
-"inscription.email.placeholder"     = "E-mail";
-"inscription.password.placeholder"  = "Mot de passe";
+"inscription.firstname.placeholder" = "Prénom *";
+"inscription.lastname.placeholder"  = "Nom *";
+"inscription.age.placeholder"       = "Age *";
+"inscription.email.placeholder"     = "E-mail *";
+"inscription.password.placeholder"  = "Mot de passe *";
 "inscription.select_picture.button" = "Sélectionner une photo";
 "inscription.inscription.button"    = "Inscription";
 
@@ -34,3 +34,5 @@
 "offerDetail.reservation.button"    = "Réserver";
 
 "calendarPicker.pay.button"    = "Payer";
+"calendarPicker.from_date.label"    = "Du";
+"calendarPicker.to_date.label"      = "au";

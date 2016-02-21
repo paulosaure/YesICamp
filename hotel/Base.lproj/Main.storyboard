@@ -263,22 +263,58 @@
                                     <action selector="bookDateAction:" destination="gLm-hv-bei" eventType="touchUpInside" id="srr-Gh-8U0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQw-1e-7CV" customClass="LabelWithPadding">
+                                <rect key="frame" x="47" y="370.5" width="320" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYV-YC-ere">
+                                <rect key="frame" x="186" y="330" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umj-Ue-QCs">
+                                <rect key="frame" x="186" y="370" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eeeeeeeee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nur-F5-dZ4" customClass="LabelWithPadding">
+                                <rect key="frame" x="47" y="330" width="320" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2bc-wE-AWf" firstAttribute="top" secondItem="24P-aM-h32" secondAttribute="bottom" constant="200" id="1WH-Zd-ayG"/>
                             <constraint firstItem="24P-aM-h32" firstAttribute="top" secondItem="kSK-Dw-q9h" secondAttribute="top" id="3qm-9X-1HX"/>
                             <constraint firstItem="24P-aM-h32" firstAttribute="leading" secondItem="kSK-Dw-q9h" secondAttribute="leading" id="8Gk-ON-7wG"/>
+                            <constraint firstItem="umj-Ue-QCs" firstAttribute="centerX" secondItem="24P-aM-h32" secondAttribute="centerX" id="9Bt-de-y3d"/>
                             <constraint firstItem="24P-aM-h32" firstAttribute="centerX" secondItem="kSK-Dw-q9h" secondAttribute="centerX" id="Bsi-zr-1tC"/>
+                            <constraint firstItem="hQw-1e-7CV" firstAttribute="centerX" secondItem="kSK-Dw-q9h" secondAttribute="centerX" id="Cop-Ay-8he"/>
                             <constraint firstAttribute="trailing" secondItem="24P-aM-h32" secondAttribute="trailing" id="E77-KP-NdN"/>
+                            <constraint firstItem="nur-F5-dZ4" firstAttribute="width" secondItem="24P-aM-h32" secondAttribute="width" id="GDA-dF-nGI"/>
+                            <constraint firstItem="nur-F5-dZ4" firstAttribute="top" secondItem="24P-aM-h32" secondAttribute="bottom" constant="20" id="OKT-Vi-XsV"/>
+                            <constraint firstItem="lYV-YC-ere" firstAttribute="centerX" secondItem="24P-aM-h32" secondAttribute="centerX" id="Rg9-YM-aOC"/>
+                            <constraint firstItem="hQw-1e-7CV" firstAttribute="width" secondItem="24P-aM-h32" secondAttribute="width" id="VjV-qZ-qxJ"/>
                             <constraint firstAttribute="trailing" secondItem="Ceh-G2-dMG" secondAttribute="trailing" id="Wfz-vV-hTV"/>
                             <constraint firstItem="Ceh-G2-dMG" firstAttribute="leading" secondItem="kSK-Dw-q9h" secondAttribute="leading" id="bFY-Mo-sL5"/>
+                            <constraint firstItem="nur-F5-dZ4" firstAttribute="centerX" secondItem="kSK-Dw-q9h" secondAttribute="centerX" id="lkd-nc-Byw"/>
                             <constraint firstItem="2bc-wE-AWf" firstAttribute="top" secondItem="Ceh-G2-dMG" secondAttribute="bottom" id="mic-Ye-AZi"/>
+                            <constraint firstItem="hQw-1e-7CV" firstAttribute="top" secondItem="nur-F5-dZ4" secondAttribute="bottom" constant="20" id="oZV-cn-bFI"/>
+                            <constraint firstItem="umj-Ue-QCs" firstAttribute="centerY" secondItem="hQw-1e-7CV" secondAttribute="centerY" id="ojx-9t-8Le"/>
+                            <constraint firstItem="lYV-YC-ere" firstAttribute="centerY" secondItem="nur-F5-dZ4" secondAttribute="centerY" id="qSU-DG-SRb"/>
+                            <constraint firstItem="hQw-1e-7CV" firstAttribute="width" secondItem="nur-F5-dZ4" secondAttribute="width" id="xgN-ds-skn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="8Gk-ON-7wG"/>
                                 <exclude reference="E77-KP-NdN"/>
+                                <exclude reference="xgN-ds-skn"/>
                                 <exclude reference="1WH-Zd-ayG"/>
                             </mask>
                         </variation>
@@ -287,6 +323,10 @@
                     <connections>
                         <outlet property="bookDateButton" destination="Ceh-G2-dMG" id="Xfm-Zg-WJK"/>
                         <outlet property="calendarView" destination="24P-aM-h32" id="Lxj-uj-css"/>
+                        <outlet property="fromDateLabel" destination="lYV-YC-ere" id="0jK-jv-9qy"/>
+                        <outlet property="fromWordLabel" destination="nur-F5-dZ4" id="Hbu-tK-qcf"/>
+                        <outlet property="toDateLabel" destination="umj-Ue-QCs" id="OdE-gA-WiY"/>
+                        <outlet property="toWordLabel" destination="hQw-1e-7CV" id="msj-QB-6wD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIG-yI-JUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
