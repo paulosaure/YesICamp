@@ -10,6 +10,7 @@
 		A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */; };
 		A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */; };
 		A80624E61C7A09B200ABF9EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E51C7A09B200ABF9EC /* User.m */; };
+		A80624EA1C7A182F00ABF9EC /* MakeReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E91C7A182F00ABF9EC /* MakeReservationAction.m */; };
 		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
 		A819795E1C76553600B2A177 /* CalendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A819795D1C76553600B2A177 /* CalendarPickerViewController.m */; };
 		A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716D1C56A83400598FE9 /* LPTitleView.m */; };
@@ -36,7 +37,6 @@
 		A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3E41C501918008DC5CF /* ParsingData.m */; };
 		A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F61C50374B008DC5CF /* ConnectionUserAction.m */; };
 		A88EB3FA1C503754008DC5CF /* InscriptionUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F91C503754008DC5CF /* InscriptionUserAction.m */; };
-		A88EB3FD1C503763008DC5CF /* GetCampingsListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3FC1C503763008DC5CF /* GetCampingsListAction.m */; };
 		A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */; };
 		A88EB4031C503958008DC5CF /* UserProfil.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4021C503958008DC5CF /* UserProfil.m */; };
 		A88EB4141C503F60008DC5CF /* Customization_Tuto.txt in Resources */ = {isa = PBXBuildFile; fileRef = A88EB40B1C503F60008DC5CF /* Customization_Tuto.txt */; };
@@ -101,6 +101,8 @@
 		A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelWithPadding.m; sourceTree = "<group>"; };
 		A80624E41C7A09B200ABF9EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A80624E51C7A09B200ABF9EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		A80624E81C7A182F00ABF9EC /* MakeReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeReservationAction.h; sourceTree = "<group>"; };
+		A80624E91C7A182F00ABF9EC /* MakeReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeReservationAction.m; sourceTree = "<group>"; };
 		A81979581C763F5800B2A177 /* CustomMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMKAnnotation.h; sourceTree = "<group>"; };
 		A81979591C763F5800B2A177 /* CustomMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotation.m; sourceTree = "<group>"; };
 		A819795C1C76553600B2A177 /* CalendarPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPickerViewController.h; sourceTree = "<group>"; };
@@ -152,8 +154,6 @@
 		A88EB3F61C50374B008DC5CF /* ConnectionUserAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionUserAction.m; sourceTree = "<group>"; };
 		A88EB3F81C503754008DC5CF /* InscriptionUserAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InscriptionUserAction.h; sourceTree = "<group>"; };
 		A88EB3F91C503754008DC5CF /* InscriptionUserAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InscriptionUserAction.m; sourceTree = "<group>"; };
-		A88EB3FB1C503763008DC5CF /* GetCampingsListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetCampingsListAction.h; sourceTree = "<group>"; };
-		A88EB3FC1C503763008DC5CF /* GetCampingsListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetCampingsListAction.m; sourceTree = "<group>"; };
 		A88EB3FE1C50377A008DC5CF /* NetworkManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManagement.h; sourceTree = "<group>"; };
 		A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManagement.m; sourceTree = "<group>"; };
 		A88EB4011C503958008DC5CF /* UserProfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfil.h; sourceTree = "<group>"; };
@@ -312,6 +312,15 @@
 				A80624E51C7A09B200ABF9EC /* User.m */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		A80624E71C7A181000ABF9EC /* MakeReservation */ = {
+			isa = PBXGroup;
+			children = (
+				A80624E81C7A182F00ABF9EC /* MakeReservationAction.h */,
+				A80624E91C7A182F00ABF9EC /* MakeReservationAction.m */,
+			);
+			name = MakeReservation;
 			sourceTree = "<group>";
 		};
 		A81979571C763F3A00B2A177 /* MKAnnotation */ = {
@@ -554,10 +563,10 @@
 				A870B2901C5FFD330006CAAA /* HTTPAction.m */,
 				A88EB3F01C5036E5008DC5CF /* Connection */,
 				A88EB3F11C5036EB008DC5CF /* Inscription */,
-				A89763CB1C5816180060BC5C /* GetCampingList */,
 				A870B29F1C616C3B0006CAAA /* GetHotsDealsList */,
 				A8FEC7351C6F9111003B8A2C /* GetOfferDetail */,
 				A88EB3F21C5036EF008DC5CF /* GetOffersList */,
+				A80624E71C7A181000ABF9EC /* MakeReservation */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -683,15 +692,6 @@
 				A88EB42D1C50434A008DC5CF /* SPWebViewFiller.m */,
 			);
 			path = SPWebViewFiller;
-			sourceTree = "<group>";
-		};
-		A89763CB1C5816180060BC5C /* GetCampingList */ = {
-			isa = PBXGroup;
-			children = (
-				A88EB3FB1C503763008DC5CF /* GetCampingsListAction.h */,
-				A88EB3FC1C503763008DC5CF /* GetCampingsListAction.m */,
-			);
-			name = GetCampingList;
 			sourceTree = "<group>";
 		};
 		A8A63DAB1C5005C30026E456 = {
@@ -1039,7 +1039,6 @@
 				A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */,
 				A8F2FF091C557F01007DF893 /* Offer.m in Sources */,
 				A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */,
-				A88EB3FD1C503763008DC5CF /* GetCampingsListAction.m in Sources */,
 				A84C71781C56C49400598FE9 /* OfferDetailCell.m in Sources */,
 				A88EB3CC1C500EAE008DC5CF /* OfferDetail.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
@@ -1058,6 +1057,7 @@
 				A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */,
 				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,
 				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
+				A80624EA1C7A182F00ABF9EC /* MakeReservationAction.m in Sources */,
 				A84C71891C56E7A000598FE9 /* CustomMKAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

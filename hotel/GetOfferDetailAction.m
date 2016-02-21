@@ -19,7 +19,7 @@
 + (instancetype)action:(NSString *)uid
 {
     NSString *urlSuffix = [NSString stringWithFormat:@"%@%@",OFFER_URL, uid];
-    GetOfferDetailAction *action = [[GetOfferDetailAction alloc] initWithUrl:ACTION_URL(urlSuffix) service:WebServiceFetOfferDetail];
+    GetOfferDetailAction *action = [[GetOfferDetailAction alloc] initWithUrl:ACTION_URL(urlSuffix) service:WebServiceGetOfferDetail];
     
     return action;
 }

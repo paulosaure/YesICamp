@@ -16,7 +16,7 @@
 + (instancetype)action:(NSString *)userName password:(NSString *)password
 {
     NSString *postParam = [NSString stringWithFormat:@"Username=%@&Password=%@",userName,password];
-    ConnectionUserAction *action = [[ConnectionUserAction alloc] initWithUrl:ACTION_URL(CONNECTION_URL) service:WebServiceGetOffersList param:postParam];
+    ConnectionUserAction *action = [[ConnectionUserAction alloc] initWithUrl:ACTION_URL(CONNECTION_URL) service:WebServiceConnection param:postParam];
     
     return action;
 }
