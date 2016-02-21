@@ -11,7 +11,7 @@
 @interface User : NSObject
 
 + (instancetype)sharedInstance;
-- (void)didConnectionSucceded:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email password:(NSString *)password age:(NSString *)age;
+- (void)didConnectionSucceded:(NSDictionary *)account uid:(NSString *)uid tokenId:(NSString *)token client:(NSString *)client;
 
 @property (nonatomic, assign) BOOL isConnected;
 

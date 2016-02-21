@@ -15,7 +15,7 @@
 
 + (instancetype)action:(NSString *)userName password:(NSString *)password
 {
-    NSString *postParam = [NSString stringWithFormat:@"Username=%@&Password=%@",userName,password];
+    NSString *postParam = [NSString stringWithFormat:@"email=%@&password=%@",userName,password];
     ConnectionUserAction *action = [[ConnectionUserAction alloc] initWithUrl:ACTION_URL(CONNECTION_URL) service:WebServiceConnection param:postParam];
     
     return action;
@@ -37,7 +37,9 @@
     }
     else
     {
-        [[User sharedInstance] didConnectionSucceded:@"" lastName:@"" email:@"" password:@"" age:@""];
+        [[User sharedInstance] didConnectionSucceded:body uid:[header.allHeaderFields objectForKey:@"uid"]
+                                             tokenId:[header.allHeaderFields objectForKey:@"access-token"]
+                                              client:[header.allHeaderFields objectForKey:@"client"]];
     }
     
     [NOTIFICATION_CENTER postNotificationName:ConnectionReponseNotification object:response];

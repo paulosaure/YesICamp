@@ -10,6 +10,8 @@
 
 @interface User ()
 
+@property (nonatomic, strong) NSString *uid;
+@property (nonatomic, strong) NSString *client;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *email;
@@ -34,13 +36,13 @@
     return sharedInstance;
 }
 
-- (void)didConnectionSucceded:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email password:(NSString *)password age:(NSString *)age
+- (void)didConnectionSucceded:(NSDictionary *)account uid:(NSString *)uid tokenId:(NSString *)token client:(NSString *)client
 {
-    self.firstName = firstName;
-    self.lastName = lastName;
-    self.email = email;
-    self.password = password;
-    self.age = age;
+    self.firstName = [account objectForKey:@"firstName"];
+    self.lastName = [account objectForKey:@"lastName"];
+    self.email = [account objectForKey:@"email"];
+    self.age = [account objectForKey:@"age"];
+    self.tokenId = token;
     
     self.isConnected = YES;
 }

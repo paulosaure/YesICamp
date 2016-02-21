@@ -44,7 +44,7 @@
     [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.password.placeholder")];
     [self.connectionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.connection.button")];
     [self.signUpButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.inscription.button")];
-    
+    self.passwordTextView.secureTextEntry = YES;
     self.view.backgroundColor = [UIColor clearColor];
 }
 

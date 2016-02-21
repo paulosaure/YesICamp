@@ -58,7 +58,8 @@
     self.imageProfileView.contentMode = UIViewContentModeScaleAspectFit;
     self.choosePhotoButton.titleLabel.numberOfLines = 2;
     self.choosePhotoButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-
+    self.passwordTextView.secureTextEntry = YES;
+    
     // Warning : Customer didn't want photo
     self.choosePhotoButton.hidden = YES;
     self.imageProfileView.hidden = YES;
