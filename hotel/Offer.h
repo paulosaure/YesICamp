@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSNumber *uid;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSNumber *oldPrice;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSNumber *percent;
 @property (nonatomic, strong) NSDate *begin;

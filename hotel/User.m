@@ -38,10 +38,10 @@
 
 - (void)didConnectionSucceded:(NSDictionary *)account uid:(NSString *)uid tokenId:(NSString *)token client:(NSString *)client
 {
-    self.firstName = [account objectForKey:@"firstName"];
-    self.lastName = [account objectForKey:@"lastName"];
-    self.email = [account objectForKey:@"email"];
-    self.age = [account objectForKey:@"age"];
+    self.firstName = [account objectForKeyOrNil:@"firstname"];
+    self.lastName = [account objectForKeyOrNil:@"lastname"];
+    self.email = [account objectForKeyOrNil:@"email"];
+    self.age = [account objectForKeyOrNil:@"age"];
     self.tokenId = token;
     
     self.isConnected = YES;

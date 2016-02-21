@@ -90,7 +90,7 @@
         location.latitude = [camping.latitude doubleValue];
         location.longitude = [camping.longitude doubleValue];
         
-        NSString *price = [NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"global.price_unity.label")];
+        NSString *price = [NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"globals.unity")];
 
         CustomMKAnnotation *annotation = [[CustomMKAnnotation alloc] initWithTitle:camping.title price:price campingId:[camping.uid stringValue] location:location];
 

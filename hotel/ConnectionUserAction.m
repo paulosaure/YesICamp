@@ -28,7 +28,8 @@
     [super handleDownloadedData:obj];
     
     NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
-    NSDictionary *body = [obj objectForKey:RESPONSE_BODY];
+    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *body = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     NSString *response = @"";
     
     if (header.statusCode != 200)
@@ -37,7 +38,9 @@
     }
     else
     {
-        [[User sharedInstance] didConnectionSucceded:body uid:[header.allHeaderFields objectForKey:@"uid"]
+        NSDictionary *data = [body objectForKeyOrNil:@"data"];
+        [[User sharedInstance] didConnectionSucceded: data
+                                                 uid:[header.allHeaderFields objectForKey:@"uid"]
                                              tokenId:[header.allHeaderFields objectForKey:@"access-token"]
                                               client:[header.allHeaderFields objectForKey:@"client"]];
     }

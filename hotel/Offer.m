@@ -20,20 +20,21 @@
 {
     if (self = [super init])
     {
-        self.uid = [dic objectForKey:@"id"];
-        self.title = [dic objectForKey:@"title"];
-        self.price = [dic objectForKey:@"price"];
-        self.percent = [dic objectForKey:@"percent"];
-        self.begin = [dic objectForKey:@"begin"];
-        self.end = [dic objectForKey:@"end"];
-        self.productID = [dic objectForKey:@"product_id"];
-        self.campingID = [dic objectForKey:@"camping_id"];
-        self.creation = [dic objectForKey:@"created_at"];
-        self.update = [dic objectForKey:@"updated_at"];
-        self.places =  [dic objectForKey:@"places"];
-        self.active = [dic objectForKey:@"active"];
-        self.mainTextInfos = [self constructMainTextInfos:[dic objectForKey:@"main_text_infos"]];
-        self.images = [self constructOfferImages:[dic objectForKey:@"pictures"]];
+        self.uid = [dic objectForKeyOrNil:@"id"];
+        self.title = [dic objectForKeyOrNil:@"title"];
+        self.oldPrice = [dic objectForKeyOrNil:@"real_price"];
+        self.price = [dic objectForKeyOrNil:@"price"];
+        self.percent = [dic objectForKeyOrNil:@"percent"];
+        self.begin = [dic objectForKeyOrNil:@"begin"];
+        self.end = [dic objectForKeyOrNil:@"end"];
+        self.productID = [dic objectForKeyOrNil:@"product_id"];
+        self.campingID = [dic objectForKeyOrNil:@"camping_id"];
+        self.creation = [dic objectForKeyOrNil:@"created_at"];
+        self.update = [dic objectForKeyOrNil:@"updated_at"];
+        self.places =  [dic objectForKeyOrNil:@"places"];
+        self.active = [dic objectForKeyOrNil:@"active"];
+        self.mainTextInfos = [self constructMainTextInfos:[dic objectForKeyOrNil:@"main_text_infos"]];
+        self.images = [self constructOfferImages:[dic objectForKeyOrNil:@"pictures"]];
     }
     
     return self;
@@ -57,8 +58,8 @@
     for (NSDictionary *image in arrayJson)
     {
         OfferImage *offerImage = [[OfferImage alloc] init];
-        offerImage.uid = [image objectForKey:@"id"];
-        offerImage.imageUrl = [image objectForKey:@"url"];
+        offerImage.uid = [image objectForKeyOrNil:@"id"];
+        offerImage.imageUrl = [image objectForKeyOrNil:@"url"];
         [images addObject:offerImage];
     }
     

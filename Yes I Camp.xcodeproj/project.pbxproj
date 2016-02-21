@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */; };
-		A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */; };
+		A80624D61C79A7E200ABF9EC /* DateLabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */; };
 		A80624E61C7A09B200ABF9EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E51C7A09B200ABF9EC /* User.m */; };
 		A80624EA1C7A182F00ABF9EC /* MakeReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E91C7A182F00ABF9EC /* MakeReservationAction.m */; };
 		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
@@ -39,10 +39,6 @@
 		A88EB3FA1C503754008DC5CF /* InscriptionUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F91C503754008DC5CF /* InscriptionUserAction.m */; };
 		A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */; };
 		A88EB4031C503958008DC5CF /* UserProfil.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4021C503958008DC5CF /* UserProfil.m */; };
-		A88EB4141C503F60008DC5CF /* Customization_Tuto.txt in Resources */ = {isa = PBXBuildFile; fileRef = A88EB40B1C503F60008DC5CF /* Customization_Tuto.txt */; };
-		A88EB4151C503F60008DC5CF /* libScanpay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4111C503F60008DC5CF /* libScanpay.a */; };
-		A88EB4161C503F60008DC5CF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4121C503F60008DC5CF /* opencv2.framework */; };
-		A88EB4171C503F60008DC5CF /* V3.3.6 in Resources */ = {isa = PBXBuildFile; fileRef = A88EB4131C503F60008DC5CF /* V3.3.6 */; };
 		A88EB4191C504008008DC5CF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4181C504008008DC5CF /* CoreVideo.framework */; };
 		A88EB41B1C50400F008DC5CF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB41A1C50400F008DC5CF /* CoreMedia.framework */; };
 		A88EB41D1C504015008DC5CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB41C1C504015008DC5CF /* AVFoundation.framework */; };
@@ -50,8 +46,7 @@
 		A88EB4211C504020008DC5CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4201C504020008DC5CF /* AudioToolbox.framework */; };
 		A88EB4231C504026008DC5CF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4221C504026008DC5CF /* AssetsLibrary.framework */; };
 		A88EB4251C50402D008DC5CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4241C50402D008DC5CF /* Security.framework */; };
-		A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4271C504056008DC5CF /* MangopayViewController.m */; };
-		A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB42D1C50434A008DC5CF /* SPWebViewFiller.m */; };
+		A88EB4281C504056008DC5CF /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4271C504056008DC5CF /* ScanViewController.m */; };
 		A89763CE1C58163D0060BC5C /* GetOffersListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89763CD1C58163D0060BC5C /* GetOffersListAction.m */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
@@ -72,6 +67,8 @@
 		A8FEC7381C6F912D003B8A2C /* GetOfferDetailAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEC7371C6F912D003B8A2C /* GetOfferDetailAction.m */; };
 		A8FEC73C1C6F9863003B8A2C /* OfferImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEC73B1C6F9863003B8A2C /* OfferImage.m */; };
 		A8FEC7461C6FA4EB003B8A2C /* ParamRequestHotDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FEC7451C6FA4EB003B8A2C /* ParamRequestHotDeal.m */; };
+		A8FECAD41C7A46DD00BA4656 /* CategoryLabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FECAD31C7A46DD00BA4656 /* CategoryLabelWithPadding.m */; };
+		A8FECAD91C7A526100BA4656 /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FECAD81C7A526100BA4656 /* NSDictionary+Additions.m */; };
 		FC3E8C90B71CCA6AAEE87C2C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C91B09CC94CDA73374504379 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -97,8 +94,8 @@
 		726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A80624D11C79A5E900ABF9EC /* UILabel+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Effects.h"; sourceTree = "<group>"; };
 		A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Effects.m"; sourceTree = "<group>"; };
-		A80624D41C79A7E200ABF9EC /* LabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelWithPadding.h; sourceTree = "<group>"; };
-		A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelWithPadding.m; sourceTree = "<group>"; };
+		A80624D41C79A7E200ABF9EC /* DateLabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateLabelWithPadding.h; sourceTree = "<group>"; };
+		A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateLabelWithPadding.m; sourceTree = "<group>"; };
 		A80624E41C7A09B200ABF9EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A80624E51C7A09B200ABF9EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A80624E81C7A182F00ABF9EC /* MakeReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeReservationAction.h; sourceTree = "<group>"; };
@@ -158,14 +155,6 @@
 		A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManagement.m; sourceTree = "<group>"; };
 		A88EB4011C503958008DC5CF /* UserProfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfil.h; sourceTree = "<group>"; };
 		A88EB4021C503958008DC5CF /* UserProfil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfil.m; sourceTree = "<group>"; };
-		A88EB40B1C503F60008DC5CF /* Customization_Tuto.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Customization_Tuto.txt; sourceTree = "<group>"; };
-		A88EB40D1C503F60008DC5CF /* ScanPayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanPayDelegate.h; sourceTree = "<group>"; };
-		A88EB40E1C503F60008DC5CF /* ScanPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanPayViewController.h; sourceTree = "<group>"; };
-		A88EB40F1C503F60008DC5CF /* ScanPayViewController_Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanPayViewController_Extras.h; sourceTree = "<group>"; };
-		A88EB4101C503F60008DC5CF /* SPCreditCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCreditCard.h; sourceTree = "<group>"; };
-		A88EB4111C503F60008DC5CF /* libScanpay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libScanpay.a; sourceTree = "<group>"; };
-		A88EB4121C503F60008DC5CF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		A88EB4131C503F60008DC5CF /* V3.3.6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = V3.3.6; sourceTree = "<group>"; };
 		A88EB4181C504008008DC5CF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		A88EB41A1C50400F008DC5CF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A88EB41C1C504015008DC5CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -173,10 +162,8 @@
 		A88EB4201C504020008DC5CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A88EB4221C504026008DC5CF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A88EB4241C50402D008DC5CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A88EB4261C504056008DC5CF /* MangopayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MangopayViewController.h; sourceTree = "<group>"; };
-		A88EB4271C504056008DC5CF /* MangopayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MangopayViewController.m; sourceTree = "<group>"; };
-		A88EB42C1C50434A008DC5CF /* SPWebViewFiller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebViewFiller.h; sourceTree = "<group>"; };
-		A88EB42D1C50434A008DC5CF /* SPWebViewFiller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebViewFiller.m; sourceTree = "<group>"; };
+		A88EB4261C504056008DC5CF /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		A88EB4271C504056008DC5CF /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		A88EB4321C515230008DC5CF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A89763CC1C58163D0060BC5C /* GetOffersListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOffersListAction.h; sourceTree = "<group>"; };
 		A89763CD1C58163D0060BC5C /* GetOffersListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOffersListAction.m; sourceTree = "<group>"; };
@@ -217,6 +204,10 @@
 		A8FEC73B1C6F9863003B8A2C /* OfferImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferImage.m; sourceTree = "<group>"; };
 		A8FEC7441C6FA4EB003B8A2C /* ParamRequestHotDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamRequestHotDeal.h; sourceTree = "<group>"; };
 		A8FEC7451C6FA4EB003B8A2C /* ParamRequestHotDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParamRequestHotDeal.m; sourceTree = "<group>"; };
+		A8FECAD21C7A46DD00BA4656 /* CategoryLabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryLabelWithPadding.h; sourceTree = "<group>"; };
+		A8FECAD31C7A46DD00BA4656 /* CategoryLabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryLabelWithPadding.m; sourceTree = "<group>"; };
+		A8FECAD71C7A526100BA4656 /* NSDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Additions.h"; sourceTree = "<group>"; };
+		A8FECAD81C7A526100BA4656 /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
 		C91B09CC94CDA73374504379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -235,9 +226,7 @@
 				A88EB41D1C504015008DC5CF /* AVFoundation.framework in Frameworks */,
 				A88EB41B1C50400F008DC5CF /* CoreMedia.framework in Frameworks */,
 				A88EB4191C504008008DC5CF /* CoreVideo.framework in Frameworks */,
-				A88EB4161C503F60008DC5CF /* opencv2.framework in Frameworks */,
 				FC3E8C90B71CCA6AAEE87C2C /* libPods.a in Frameworks */,
-				A88EB4151C503F60008DC5CF /* libScanpay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,13 +285,13 @@
 			name = "UILabel+Effects";
 			sourceTree = "<group>";
 		};
-		A80624D81C79AB6500ABF9EC /* LabelWithPadding */ = {
+		A80624D81C79AB6500ABF9EC /* DateLabelWithPadding */ = {
 			isa = PBXGroup;
 			children = (
-				A80624D41C79A7E200ABF9EC /* LabelWithPadding.h */,
-				A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */,
+				A80624D41C79A7E200ABF9EC /* DateLabelWithPadding.h */,
+				A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */,
 			);
-			name = LabelWithPadding;
+			name = DateLabelWithPadding;
 			sourceTree = "<group>";
 		};
 		A80624E31C7A09A300ABF9EC /* User */ = {
@@ -470,8 +459,8 @@
 		A88EB3C61C500E4A008DC5CF /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				A88EB4261C504056008DC5CF /* MangopayViewController.h */,
-				A88EB4271C504056008DC5CF /* MangopayViewController.m */,
+				A88EB4261C504056008DC5CF /* ScanViewController.h */,
+				A88EB4271C504056008DC5CF /* ScanViewController.m */,
 			);
 			name = Payment;
 			sourceTree = "<group>";
@@ -531,11 +520,13 @@
 		A88EB3E21C5018CB008DC5CF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A8FECAD11C7A46A700BA4656 /* CategoryLabelWithPadding */,
+				A80624D81C79AB6500ABF9EC /* DateLabelWithPadding */,
 				A8C22D1B1C728C2E0012147C /* GlobalConfiguration */,
-				A80624D81C79AB6500ABF9EC /* LabelWithPadding */,
 				A84C71801C56DFFF00598FE9 /* LocationManager */,
 				A81979571C763F3A00B2A177 /* MKAnnotation */,
 				A84C71861C56E77000598FE9 /* MKAnnotationView */,
+				A8FECAD61C7A523F00BA4656 /* NSDictionary+Additions */,
 				A84C717B1C56C99F00598FE9 /* PageItem */,
 				A80624D71C79A7E700ABF9EC /* UILabel+Effects */,
 				A870B2991C6006D20006CAAA /* UIButton+Effects */,
@@ -655,43 +646,9 @@
 		A88EB4091C503EBF008DC5CF /* External */ = {
 			isa = PBXGroup;
 			children = (
-				A88EB40A1C503F60008DC5CF /* scanpay */,
-				A88EB42B1C50434A008DC5CF /* SPWebViewFiller */,
 				A8F2FF0B1C5585D1007DF893 /* hotel-Bridging-Header.h */,
 			);
 			name = External;
-			sourceTree = "<group>";
-		};
-		A88EB40A1C503F60008DC5CF /* scanpay */ = {
-			isa = PBXGroup;
-			children = (
-				A88EB40B1C503F60008DC5CF /* Customization_Tuto.txt */,
-				A88EB40C1C503F60008DC5CF /* include */,
-				A88EB4111C503F60008DC5CF /* libScanpay.a */,
-				A88EB4121C503F60008DC5CF /* opencv2.framework */,
-				A88EB4131C503F60008DC5CF /* V3.3.6 */,
-			);
-			path = scanpay;
-			sourceTree = "<group>";
-		};
-		A88EB40C1C503F60008DC5CF /* include */ = {
-			isa = PBXGroup;
-			children = (
-				A88EB40D1C503F60008DC5CF /* ScanPayDelegate.h */,
-				A88EB40E1C503F60008DC5CF /* ScanPayViewController.h */,
-				A88EB40F1C503F60008DC5CF /* ScanPayViewController_Extras.h */,
-				A88EB4101C503F60008DC5CF /* SPCreditCard.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		A88EB42B1C50434A008DC5CF /* SPWebViewFiller */ = {
-			isa = PBXGroup;
-			children = (
-				A88EB42C1C50434A008DC5CF /* SPWebViewFiller.h */,
-				A88EB42D1C50434A008DC5CF /* SPWebViewFiller.m */,
-			);
-			path = SPWebViewFiller;
 			sourceTree = "<group>";
 		};
 		A8A63DAB1C5005C30026E456 = {
@@ -828,6 +785,24 @@
 			name = ParamRequestHotDeal;
 			sourceTree = "<group>";
 		};
+		A8FECAD11C7A46A700BA4656 /* CategoryLabelWithPadding */ = {
+			isa = PBXGroup;
+			children = (
+				A8FECAD21C7A46DD00BA4656 /* CategoryLabelWithPadding.h */,
+				A8FECAD31C7A46DD00BA4656 /* CategoryLabelWithPadding.m */,
+			);
+			name = CategoryLabelWithPadding;
+			sourceTree = "<group>";
+		};
+		A8FECAD61C7A523F00BA4656 /* NSDictionary+Additions */ = {
+			isa = PBXGroup;
+			children = (
+				A8FECAD71C7A526100BA4656 /* NSDictionary+Additions.h */,
+				A8FECAD81C7A526100BA4656 /* NSDictionary+Additions.m */,
+			);
+			name = "NSDictionary+Additions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -942,9 +917,7 @@
 				A88EB3DB1C5015AA008DC5CF /* OfferCell.xib in Resources */,
 				A870B2841C5E7CB70006CAAA /* Localizable.strings in Resources */,
 				A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */,
-				A88EB4171C503F60008DC5CF /* V3.3.6 in Resources */,
 				A84C717A1C56C54A00598FE9 /* OfferDetailCell.xib in Resources */,
-				A88EB4141C503F60008DC5CF /* Customization_Tuto.txt in Resources */,
 				A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1023,12 +996,13 @@
 				A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */,
 				A870B2A21C616C610006CAAA /* GetHotsDealsListAction.m in Sources */,
 				A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */,
-				A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */,
+				A88EB4281C504056008DC5CF /* ScanViewController.m in Sources */,
 				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,
 				A8FEC7461C6FA4EB003B8A2C /* ParamRequestHotDeal.m in Sources */,
 				A80624E61C7A09B200ABF9EC /* User.m in Sources */,
 				A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */,
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
+				A8FECAD91C7A526100BA4656 /* NSDictionary+Additions.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
 				A8C22D1E1C728C5C0012147C /* GlobalConfiguration.m in Sources */,
 				A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */,
@@ -1038,11 +1012,11 @@
 				A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */,
 				A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */,
 				A8F2FF091C557F01007DF893 /* Offer.m in Sources */,
-				A88EB42E1C50434A008DC5CF /* SPWebViewFiller.m in Sources */,
+				A8FECAD41C7A46DD00BA4656 /* CategoryLabelWithPadding.m in Sources */,
 				A84C71781C56C49400598FE9 /* OfferDetailCell.m in Sources */,
 				A88EB3CC1C500EAE008DC5CF /* OfferDetail.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
-				A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */,
+				A80624D61C79A7E200ABF9EC /* DateLabelWithPadding.m in Sources */,
 				A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */,
 				A84C717E1C56C9A800598FE9 /* PageItemController.m in Sources */,
 				A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */,

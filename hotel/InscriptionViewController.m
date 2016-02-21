@@ -142,9 +142,16 @@
         if ([field.text isEqualToString:@""])
         {
             allFielsComplete = NO;
-            [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:nil];
+            [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:LOCALIZED_STRING(@"homePage.error.fielsEmpty")];
             break;
         }
+    }
+    
+    // Minimum 8 caratères
+    if (self.passwordTextView.text.length < 8)
+    {
+        allFielsComplete = NO;
+        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:LOCALIZED_STRING(@"homePage.password_short.error")];
     }
     
     if (allFielsComplete)

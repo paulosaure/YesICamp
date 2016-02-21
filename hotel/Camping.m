@@ -19,11 +19,11 @@
 {
     if (self = [super init])
     {
-        self.uid = [dic objectForKey:@"camping_id"];
-        self.title = [dic objectForKey:@"camping_title"];
-        self.longitude = [dic objectForKey:@"longitude"];
-        self.latitude = [dic objectForKey:@"latitude"];
-        self.offers = [self constructOffers:[dic objectForKey:@"offers"]];
+        self.uid = [dic objectForKeyOrNil:@"camping_id"];
+        self.title = [dic objectForKeyOrNil:@"camping_title"];
+        self.longitude = [dic objectForKeyOrNil:@"longitude"];
+        self.latitude = [dic objectForKeyOrNil:@"latitude"];
+        self.offers = [self constructOffers:[dic objectForKeyOrNil:@"offers"]];
     }
     
     return self;

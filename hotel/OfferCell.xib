@@ -34,7 +34,7 @@
                         <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rac-cu-iBB">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rac-cu-iBB" customClass="CategoryLabelWithPadding">
                         <rect key="frame" x="5" y="81" width="33" height="14.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -138,7 +138,7 @@
                 <outlet property="gradientImageView" destination="Z3X-ak-eMh" id="ypg-JN-JeP"/>
                 <outlet property="imageBackgroundView" destination="fpm-yw-J8y" id="up9-zW-lxt"/>
                 <outlet property="nameLabel" destination="ybo-mW-9cU" id="NAH-aY-f2m"/>
-                <outlet property="percentageLabel" destination="hKI-bf-9tF" id="kON-lM-wYk"/>
+                <outlet property="oldPriceLabel" destination="hKI-bf-9tF" id="ffG-5V-ayK"/>
                 <outlet property="priceLabel" destination="BTE-lT-KiL" id="x7I-GK-zZH"/>
                 <outlet property="secondStar" destination="FKD-xU-2ZS" id="t8R-23-EgO"/>
                 <outlet property="thirdStar" destination="zSn-rK-Ld0" id="WHn-00-aFH"/>

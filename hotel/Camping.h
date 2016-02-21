@@ -13,7 +13,9 @@ typedef NS_ENUM(NSUInteger, CampingCategory) {
     CampingCategoryCharme,
     CampingCategoryLuxe,
     CampingCategoryBasic,
-    CampingCategoryConfort
+    CampingCategoryGlamping,
+    CampingCategoryCalme,
+    CampingCategoryEmpty
 };
 
 @interface Camping : NSObject

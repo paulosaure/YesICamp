@@ -89,7 +89,7 @@
 {
     if ([self.pseudoTextView.text isEqualToString:@""] || [self.passwordTextView.text isEqualToString:@""])
     {
-        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:nil];
+        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:LOCALIZED_STRING(@"homePage.error.fielsEmpty")];
     }
     else
     {

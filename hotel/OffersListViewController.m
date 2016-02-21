@@ -92,7 +92,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
     [label setFont:[UIFont boldSystemFontOfSize:15]];
     label.textColor = [UIColor whiteColor];
-    NSString *string = [LOCALIZED_STRING(@"offersList.header_section.title") uppercaseString];
+    NSString *string = [[NSString stringWithFormat:@"%@ : %@",LOCALIZED_STRING(@"offersList.header_section.title"), self.searchTextView.text] uppercaseString];
 
     [label setText:string];
     [view addSubview:label];

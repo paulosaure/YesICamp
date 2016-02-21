@@ -6,13 +6,14 @@
   Copyright © 2016 Paul Lavoine. All rights reserved.
 */
 
-"global.price_unity.label"         = "€";
+"globals.unity"                     = "€";
 "globals.yes"                       = "Oui";
 "globals.no"                        = "Non";
 "globals.ok"                        = "Ok";
 "globals.error" = "Erreur";
 
-"homePage.error.fielsEmpty" = "Veuillez remplir tous les champs.";
+"homePage.error.fielsEmpty"         = "Veuillez remplir tous les champs.";
+"homePage.password_short.error"     = "Mot de passe trop court.\n(Min 8 caractères)";
 
 "homePage.inscription.button"   = "Inscription";
 "homePage.connection.button"    = "Connexion";
@@ -40,6 +41,7 @@
 "offerDetail.price.work" = "prix";
 "offerDetail.reservation.button"    = "Réserver";
 
-"calendarPicker.pay.button"    = "Payer";
+"calendarPicker.pay.button"         = "Payer";
 "calendarPicker.from_date.label"    = "Du";
 "calendarPicker.to_date.label"      = "au";
+"calendarPicker.select_date.title"  = "Sélectionnez la période voulue";

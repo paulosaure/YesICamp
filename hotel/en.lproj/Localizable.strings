@@ -6,13 +6,14 @@
   Copyright © 2016 Paul Lavoine. All rights reserved.
 */
 
-"global.price_unity.label"          = "$";
+"globals.unity"                     = "$";
 "globals.yes"                       = "Yes";
 "globals.no"                        = "No";
 "globals.ok"                        = "Ok";
 "globals.error"                     = "Error";
 
 "homePage.error.fielsEmpty"         = "Please fill out all fields completely.";
+"homePage.password_short.error"     = "Password is too short.\n(Min 8 characters)";
 
 "homePage.inscription.button"       = "Sign up";
 "homePage.connection.button"        = "Log In";
@@ -43,3 +44,4 @@
 "calendarPicker.pay.button"         = "Pay";
 "calendarPicker.from_date.label"    = "From";
 "calendarPicker.to_date.label"      = "to";
+"calendarPicker.select_date.title"  = "Select the relevant period";

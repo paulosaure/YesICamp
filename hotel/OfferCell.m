@@ -8,15 +8,16 @@
 
 #import "OfferCell.h"
 #import "OfferImage.h"
+#import "CategoryLabelWithPadding.h"
 
 @interface OfferCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageBackgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *oldPriceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *gradientImageView;
-@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet CategoryLabelWithPadding *categoryLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *contentStar;
 @property (weak, nonatomic) IBOutlet UIImageView *firstStar;
@@ -59,11 +60,15 @@
     self.nameLabel.text = offer.title;
     
     // Percentage
-    self.percentageLabel.textColor = [UIColor redColor];
-    self.percentageLabel.text = [NSString stringWithFormat:@"-%@%%",[offer.percent stringValue]];
+    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@",offer.oldPrice, LOCALIZED_STRING(@"globals.unity")]];
+    [attributeString addAttribute:NSStrikethroughStyleAttributeName
+                            value:@2
+                            range:NSMakeRange(0, [attributeString length])];
+    self.oldPriceLabel.textColor = [UIColor redColor];
+    self.oldPriceLabel.attributedText = attributeString;
     
     // Price
-    self.priceLabel.text = [NSString stringWithFormat:@"%@€", offer.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"%@%@", offer.price, LOCALIZED_STRING(@"globals.unity")];
     
     // Category
     self.categoryLabel.text = [@"fun" uppercaseString];
@@ -97,10 +102,10 @@
     self.nameLabel.textColor = [UIColor whiteColor];
     
     // Percentage
-    self.percentageLabel.hidden = YES;
+    self.oldPriceLabel.hidden = YES;
     
     // Price
-    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"global.price_unity.label")];
+    self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"globals.unity")];
     
     // Category
     self.categoryLabel.text = [@"fun" uppercaseString];
@@ -138,6 +143,7 @@
     self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
     self.gradientImageView.tintColor = BLACK_COLOR;
     
+    self.contentStar.hidden = YES;
     self.contentStar.backgroundColor = [UIColor clearColor];
     
 }
