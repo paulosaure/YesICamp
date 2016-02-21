@@ -7,15 +7,19 @@
 */
 
 "global.price_unity.label"         = "€";
+"globals.yes"                       = "Oui";
+"globals.no"                        = "Non";
+"globals.ok"                        = "Ok";
+"globals.error" = "Erreur";
 
-"homePage.error.title" = "Erreur";
 "homePage.error.fielsEmpty" = "Veuillez remplir tous les champs.";
-"homePage.error.validationButton" = "OK";
 
 "homePage.inscription.button"   = "Inscription";
 "homePage.connection.button"    = "Connexion";
 "homePage.email.placeholder"    = "E-mail *";
 "homePage.password.placeholder" = "Mot de passe *";
+"connection.connection_success.message" = "Connexion réussie";
+"connection.connection_failed.message" = "Identifiant ou mot de passe incorrect";
 
 "offersList.search_text_view.placeholder"   = "Destination";
 "offersList.header_section.title"           = "Offres";
@@ -27,6 +31,7 @@
 "inscription.password.placeholder"  = "Mot de passe *";
 "inscription.select_picture.button" = "Sélectionner une photo";
 "inscription.inscription.button"    = "Inscription";
+"inscription.registration_success.message"  = "Inscription réussie";
 
 "hotdeal.price_from.label"          = "de";
 "hotdeal.price_to.label"            = "à";

@@ -20,10 +20,12 @@ typedef NS_ENUM(NSInteger, WebService)
 
 @interface HTTPAction : NSObject
 
+- (instancetype)initWithUrl:(NSString *)url service:(WebService)service param:(NSString *)param;
 - (instancetype)initWithUrl:(NSString *)url service:(WebService)service;
-- (void)handleDownloadedData:(NSString *)obj;
+- (void)handleDownloadedData:(NSDictionary *)obj;
 
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, assign) WebService service;
+@property (nonatomic ,strong) NSString *param;
 
 @end

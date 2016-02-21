@@ -8,28 +8,35 @@
 
 #import "InscriptionUserAction.h"
 
-#define INSCRIPTION_URL @""
+#define INSCRIPTION_URL @"auth"
 
 @implementation InscriptionUserAction
 
 #pragma mark - Constructor
 
-+ (instancetype)action
++ (instancetype)action:(NSString *)firstName lastName:(NSString *)lastName email:(NSString *)email password:(NSString *)password age:(NSString *)age
 {
-    InscriptionUserAction *action = [[InscriptionUserAction alloc] initWithUrl:ACTION_URL(INSCRIPTION_URL) service:WebServiceGetOffersList];
-    
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDownloadedData:) name:[@(WebServiceGetOffersList) stringValue] object:nil];
-    
+    NSString *postParam = [NSString stringWithFormat:@"firstName=%@&lastName=%@&email=%@&password=%@&age=%@",firstName, lastName, email, password, age];
+    InscriptionUserAction *action = [[InscriptionUserAction alloc] initWithUrl:ACTION_URL(INSCRIPTION_URL) service:WebServiceGetOffersList param:postParam];
     return action;
 }
 
 #pragma mark - Manage Answer
 
-- (void)handleDownloadedData:(NSString *)obj
+- (void)handleDownloadedData:(NSDictionary *)obj
 {
     [super handleDownloadedData:obj];
     
-    NSLog(@"Success %@", obj);
+    NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
+    NSDictionary *body = [obj objectForKey:RESPONSE_BODY];
+    NSString *response = @"";
+    
+    if (header.statusCode != 200)
+    {
+        response = LOCALIZED_STRING(@"globals.error");
+    }
+    
+    [NOTIFICATION_CENTER postNotificationName:InscriptionReponseNotification object:response];
 }
 
 @end

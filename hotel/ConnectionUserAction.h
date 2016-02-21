@@ -6,8 +6,10 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
+#define ConnectionReponseNotification @"ConnectionReponseNotification"
+
 @interface ConnectionUserAction : HTTPAction
 
-+ (instancetype)action;
++ (instancetype)action:(NSString *)userName password:(NSString *)password;
 
 @end

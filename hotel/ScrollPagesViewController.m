@@ -9,7 +9,7 @@
 #import "ScrollPagesViewController.h"
 #import "LPTitleView.h"
 
-#import "HomePageViewController.h"
+#import "ConnectionViewController.h"
 #import "HotDealViewController.h"
 #import "OffersListViewController.h"
 
@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageBackgroundView;
 
 // Data
-@property (nonatomic, strong) HomePageViewController *homePageViewController;
+@property (nonatomic, strong) ConnectionViewController *homePageViewController;
 @property (nonatomic, strong) HotDealViewController *hotDealViewController;
 @property (nonatomic, strong) OffersListViewController *promotionsViewController;
 
@@ -67,7 +67,7 @@
 
 - (void)configureNotification
 {
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionNotificiation object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionViewNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:PushOfferDetailViewNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealSelectedNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushMangoPayViewController:) name:MangoPayNotification object:nil];
@@ -304,12 +304,12 @@
 - (void)pushAlertEmptyFields:(NSNotification *)notification
 {
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:LOCALIZED_STRING(@"homePage.error.title")
+                                  alertControllerWithTitle:LOCALIZED_STRING(@"globals.error")
                                   message:LOCALIZED_STRING(@"homePage.error.fielsEmpty")
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:LOCALIZED_STRING(@"homePage.error.validationButton")
+                                actionWithTitle:LOCALIZED_STRING(@"globals.ok")
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {

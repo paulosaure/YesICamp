@@ -7,6 +7,7 @@
 //
 
 #import "InscriptionViewController.h"
+#import "InscriptionUserAction.h"
 #import "UITextField+Effects.h"
 #import "UIButton+Effects.h"
 
@@ -30,6 +31,8 @@
 
 @implementation InscriptionViewController
 
+#pragma mark - View lifeCycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,6 +49,8 @@
     // Configuration
     [self configureUI];
 }
+
+#pragma mark - Configuration
 
 - (void)configureUI
 {
@@ -71,6 +76,8 @@
     self.view.backgroundColor = BLACK_COLOR;
 }
 
+#pragma mark - UIImagePickerControllerDelegate
+
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -79,9 +86,38 @@
     self.imageProfileView.layer.borderColor = GREEN_COLOR.CGColor;
 }
 
-- (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
+#pragma mark - Notifications
+
+- (void)handleInscriptionResponse:(NSNotification *)notification
 {
-    [self.view endEditing:YES];
+    NSString *response = notification.object;
+    NSString *title = @"";
+    NSString *message;
+    if ([response isEqualToString:@""])
+    {
+        message = LOCALIZED_STRING(@"inscription.registration_success.message");
+    }
+    else
+    {
+        title = LOCALIZED_STRING(@"globals.error");
+        message = response;
+    }
+        
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:title
+                                  message:message
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:LOCALIZED_STRING(@"globals.ok")
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                    [self.navigationController popViewControllerAnimated:YES];
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Actions
@@ -112,8 +148,22 @@
     
     if (allFielsComplete)
     {
+        [NOTIFICATION_CENTER addObserver:self selector:@selector(handleInscriptionResponse:) name:InscriptionReponseNotification object:nil];
+        [[NetworkManagement sharedInstance] addNewAction:[InscriptionUserAction action:self.firstNameTextView.text
+                                                                              lastName:self.lastNameTextView.text
+                                                                                 email:self.emailTextView.text
+                                                                              password:self.passwordTextView.text
+                                                                                   age:self.ageTextView.text]
+                                                  method:POST_METHOD];
         NSLog(@"start inscription");
     }
+}
+
+#pragma mark - Utils
+
+- (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
+{
+    [self.view endEditing:YES];
 }
 
 @end

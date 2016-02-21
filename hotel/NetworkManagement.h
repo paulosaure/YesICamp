@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#define GET_METHOD @"GET"
+#define POST_METHOD @"POST"
 
+#define RESPONSE_HEADER     @"header"
+#define RESPONSE_BODY       @"body"
 
 @interface NetworkManagement : NSObject
 
 + (instancetype)sharedInstance;
 - (void)addNewAction:(HTTPAction *)action;
+- (void)addNewAction:(HTTPAction *)action method:(NSString *)method;
 
 @end

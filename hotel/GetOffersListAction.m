@@ -43,11 +43,12 @@
 
 #pragma mark - Manage Answer
 
-- (void)handleDownloadedData:(NSString *)obj
+- (void)handleDownloadedData:(NSDictionary *)obj
 {
     [super handleDownloadedData:obj];
+    
     NSMutableArray *offers = [NSMutableArray array];
-    NSData *data = [obj dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *offersJson = (NSArray *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
     for (NSDictionary *offer in offersJson)

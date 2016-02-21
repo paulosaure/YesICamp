@@ -10,6 +10,18 @@
 
 @implementation HTTPAction
 
+- (instancetype)initWithUrl:(NSString *)url service:(WebService)service param:(NSString *)param
+{
+    if (self = [super init])
+    {
+        self.url = url;
+        self.service = service;
+        self.param = param;
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithUrl:(NSString *)url service:(WebService)service
 {
     if (self = [super init])
@@ -22,7 +34,7 @@
 }
 
 
-- (void)handleDownloadedData:(NSString *)obj
+- (void)handleDownloadedData:(NSDictionary *)obj
 {
     
 }

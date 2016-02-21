@@ -6,17 +6,20 @@
   Copyright © 2016 Paul Lavoine. All rights reserved.
 */
 
-"global.price_unity.label"         = "$";
+"global.price_unity.label"          = "$";
+"globals.yes"                       = "Yes";
+"globals.no"                        = "No";
+"globals.ok"                        = "Ok";
+"globals.error"                     = "Error";
 
-
-"homePage.error.title"              = "Error";
 "homePage.error.fielsEmpty"         = "Please fill out all fields completely.";
-"homePage.error.validationButton"   = "OK";
 
 "homePage.inscription.button"       = "Sign up";
 "homePage.connection.button"        = "Log In";
 "homePage.email.placeholder"        = "E-mail *";
 "homePage.password.placeholder"     = "Password *";
+"connection.connection_success.message" = "Successful connection";
+"connection.connection_failed.message" = "Wrong ID or Password";
 
 "offersList.search_text_view.placeholder"   = "Destination";
 "offersList.header_section.title"           = "Offers";
@@ -28,6 +31,7 @@
 "inscription.password.placeholder"          = "Password *";
 "inscription.select_picture.button"         = "Choose a picture";
 "inscription.inscription.button"            = "Sign Up";
+"inscription.registration_success.message"  = "Successful registration";
 
 "hotdeal.price_from.label"          = "from";
 "hotdeal.price_to.label"            = "to";

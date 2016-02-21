@@ -9,6 +9,8 @@
 #import "NetworkManagement.h"
 #import <AFURLSessionManager.h>
 
+#define DEFAULT_METHOD      GET_METHOD
+
 @interface NetworkManagement () <NSURLSessionDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *dictionary;
@@ -43,15 +45,25 @@
 
 - (void)addNewAction:(HTTPAction *)action
 {
-    [self connectionWithServer:action];
+    [self connectionWithServer:action method:DEFAULT_METHOD];
 }
 
-- (void)connectionWithServer:(HTTPAction *)action
+- (void)addNewAction:(HTTPAction *)action method:(NSString *)method
+{
+    [self connectionWithServer:action method:method];
+}
+
+- (void)connectionWithServer:(HTTPAction *)action method:(NSString *)method
 {
     // Init Request
     NSURL *url = [NSURL URLWithString:action.url];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    request.HTTPMethod = @"GET";
+    request.HTTPMethod = method;
+    
+    if ([method isEqualToString:POST_METHOD])
+    {
+        [self configurePostRequest:request postParam:action.param];
+    }
     
     // Generate session
     if (!self.config)
@@ -71,6 +83,19 @@
     [task resume];
 }
 
+- (void)configurePostRequest:(NSMutableURLRequest *)request postParam:(NSString *)postParam
+{
+    NSData *postData = [postParam dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+    
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+}
+
+
+#pragma mark - NSURLSessionTaskDelegate
+
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
     // Retrieve file at specific location
@@ -84,15 +109,37 @@
     
     // Retrieve actionType
     HTTPAction *action = [self.dictionary objectForKey:key];
-//    NSString *actionTypeNotification = [action stringValue];
+ 
+    NSDictionary *response = @{
+                              RESPONSE_HEADER : downloadTask.response,
+                              RESPONSE_BODY : stringFromFileAtURL
+                              };
     
     // Notify action
-    [action handleDownloadedData:stringFromFileAtURL];
-//    [NOTIFICATION_CENTER postNotificationName:actionTypeNotification object:stringFromFileAtURL];
+    [action handleDownloadedData:response];
     
     // Clean dictionary
     [self.dictionary removeObjectForKey:key];
 }
+
+// This method is used to receive the data which we get using post method.
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData*)data
+{
+    NSLog(@"NetworkManagement : didReceiveData");
+}
+
+// This method receives the error report in case of connection is not made to server.
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"NetworkManagement : didFailWithError");
+}
+
+// This method is used to process the data after connection has made successfully.
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"NetworkManagement : connection");
+}
+
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
 {

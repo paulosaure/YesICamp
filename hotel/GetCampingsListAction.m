@@ -25,7 +25,7 @@
 
 #pragma mark - Manage Answer
 
-- (void)handleDownloadedData:(NSString *)obj
+- (void)handleDownloadedData:(NSDictionary *)obj
 {
     [super handleDownloadedData:obj];
     

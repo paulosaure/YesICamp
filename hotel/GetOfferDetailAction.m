@@ -26,10 +26,11 @@
 
 #pragma mark - Manage Answer
 
-- (void)handleDownloadedData:(NSString *)obj
+- (void)handleDownloadedData:(NSDictionary *)obj
 {
     [super handleDownloadedData:obj];
-    NSData *data = [obj dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *offerJson = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
     Offer *offerReceive = [[Offer alloc] initWithDictionnary:offerJson];

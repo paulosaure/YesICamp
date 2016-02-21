@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */; };
 		A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */; };
+		A80624E61C7A09B200ABF9EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E51C7A09B200ABF9EC /* User.m */; };
 		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
 		A819795E1C76553600B2A177 /* CalendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A819795D1C76553600B2A177 /* CalendarPickerViewController.m */; };
 		A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716D1C56A83400598FE9 /* LPTitleView.m */; };
@@ -54,7 +55,7 @@
 		A89763CE1C58163D0060BC5C /* GetOffersListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89763CD1C58163D0060BC5C /* GetOffersListAction.m */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
-		A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBE1C5005C30026E456 /* HomePageViewController.m */; };
+		A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBE1C5005C30026E456 /* ConnectionViewController.m */; };
 		A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC01C5005C30026E456 /* Main.storyboard */; };
 		A8A63DC41C5005C30026E456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC31C5005C30026E456 /* Assets.xcassets */; };
 		A8A63DC71C5005C30026E456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC51C5005C30026E456 /* LaunchScreen.storyboard */; };
@@ -98,6 +99,8 @@
 		A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Effects.m"; sourceTree = "<group>"; };
 		A80624D41C79A7E200ABF9EC /* LabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelWithPadding.h; sourceTree = "<group>"; };
 		A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelWithPadding.m; sourceTree = "<group>"; };
+		A80624E41C7A09B200ABF9EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A80624E51C7A09B200ABF9EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A81979581C763F5800B2A177 /* CustomMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMKAnnotation.h; sourceTree = "<group>"; };
 		A81979591C763F5800B2A177 /* CustomMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotation.m; sourceTree = "<group>"; };
 		A819795C1C76553600B2A177 /* CalendarPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPickerViewController.h; sourceTree = "<group>"; };
@@ -181,8 +184,8 @@
 		A8A63DB81C5005C30026E456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8A63DBA1C5005C30026E456 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A8A63DBB1C5005C30026E456 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A8A63DBD1C5005C30026E456 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
-		A8A63DBE1C5005C30026E456 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		A8A63DBD1C5005C30026E456 /* ConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
+		A8A63DBE1C5005C30026E456 /* ConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
 		A8A63DC11C5005C30026E456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8A63DC31C5005C30026E456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8A63DC61C5005C30026E456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -300,6 +303,15 @@
 				A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */,
 			);
 			name = LabelWithPadding;
+			sourceTree = "<group>";
+		};
+		A80624E31C7A09A300ABF9EC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A80624E41C7A09B200ABF9EC /* User.h */,
+				A80624E51C7A09B200ABF9EC /* User.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		A81979571C763F3A00B2A177 /* MKAnnotation */ = {
@@ -420,8 +432,8 @@
 		A88EB3C31C5009FF008DC5CF /* Connexion */ = {
 			isa = PBXGroup;
 			children = (
-				A8A63DBD1C5005C30026E456 /* HomePageViewController.h */,
-				A8A63DBE1C5005C30026E456 /* HomePageViewController.m */,
+				A8A63DBD1C5005C30026E456 /* ConnectionViewController.h */,
+				A8A63DBE1C5005C30026E456 /* ConnectionViewController.m */,
 			);
 			name = Connexion;
 			sourceTree = "<group>";
@@ -489,6 +501,7 @@
 		A88EB3DC1C5015D1008DC5CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A80624E31C7A09A300ABF9EC /* User */,
 				A88EB3DD1C5015DB008DC5CF /* Camping */,
 				A870B27B1C5CB8910006CAAA /* HotDeal */,
 				A8F2FF061C557EAB007DF893 /* Offer */,
@@ -1013,7 +1026,8 @@
 				A88EB4281C504056008DC5CF /* MangopayViewController.m in Sources */,
 				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,
 				A8FEC7461C6FA4EB003B8A2C /* ParamRequestHotDeal.m in Sources */,
-				A8A63DBF1C5005C30026E456 /* HomePageViewController.m in Sources */,
+				A80624E61C7A09B200ABF9EC /* User.m in Sources */,
+				A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */,
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
 				A8C22D1E1C728C5C0012147C /* GlobalConfiguration.m in Sources */,
