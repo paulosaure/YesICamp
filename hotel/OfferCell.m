@@ -136,7 +136,7 @@
     self.priceLabel.textColor = [UIColor greenColor];
     
     self.gradientImageView.image = [UIImage imageNamed:@"gradient"];
-    self.gradientImageView.tintColor = GREEN_COLOR;
+    self.gradientImageView.tintColor = BLACK_COLOR;
     
     self.contentStar.backgroundColor = [UIColor clearColor];
     

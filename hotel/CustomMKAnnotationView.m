@@ -28,6 +28,7 @@
     
     CustomMKAnnotationView *mainView = (CustomMKAnnotationView *)[nibViews firstObject];
     mainView.priceLabel.text = annotation.price;
+    mainView.imageView.tintColor = GREEN_COLOR;
     mainView.frame = self.frame;
     
     if ([self.subviews count] == 1)

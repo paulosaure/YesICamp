@@ -41,7 +41,7 @@
 // Code couleur
 #define TINT_COLOR      [UIColor whiteColor]
 #define BLACK_COLOR     [UIColor blackColor]
-#define GREEN_COLOR     [UIColor colorWithRed:82.0f/255.0f green:34.0f/255.0f blue:144.0f/255.0f alpha:1.0f]
+#define GREEN_COLOR     [UIColor colorWithRed:150.0f/255.0f green:193.0f/255.0f blue:31.0f/255.0f alpha:1.0f]
 #define BLUE_COLOR      [UIColor colorWithRed:63.0f/255.0f green:201.0f/255.0f blue:213.0f/255.0f alpha:1.0f]
 
 // Network
