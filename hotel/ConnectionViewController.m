@@ -16,10 +16,13 @@
 @interface ConnectionViewController ()
 
 // Outlets
+@property (weak, nonatomic) IBOutlet UIView *contentConnectionView;
 @property (weak, nonatomic) IBOutlet UITextField *pseudoTextView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
 @property (weak, nonatomic) IBOutlet UIButton *connectionButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+
+@property (weak, nonatomic) IBOutlet UIView *contentConnectedUserView;
 
 @end
 
@@ -36,7 +39,7 @@
 }
 
 - (void)configureUI
-{    
+{
     [self.pseudoTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.email.placeholder")];
     [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.password.placeholder")];
     [self.connectionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.connection.button")];
@@ -104,12 +107,14 @@
 
 
 #pragma mark - Utils
+
 - (void)userIsConnect
 {
     if (![User sharedInstance].isConnected)
         return;
     
-    // TODO
+    self.contentConnectionView.hidden = YES;
+    self.signUpButton.hidden = YES;
 }
 
 - (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
