@@ -17,7 +17,8 @@
 "homePage.email.placeholder"    = "E-mail *";
 "homePage.password.placeholder" = "Mot de passe *";
 
-"offersList.search_text_view.placeholder" = "Destination";
+"offersList.search_text_view.placeholder"   = "Destination";
+"offersList.header_section.title"           = "Offres";
 
 "inscription.firstname.placeholder" = "Prénom *";
 "inscription.lastname.placeholder"  = "Nom *";
@@ -29,6 +30,7 @@
 
 "hotdeal.price_from.label"          = "de";
 "hotdeal.price_to.label"            = "à";
+"hotdeal.header_section.title"      = "Campings";
 
 "offerDetail.price.work" = "prix";
 "offerDetail.reservation.button"    = "Réserver";

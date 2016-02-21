@@ -19,6 +19,7 @@
 "homePage.password.placeholder"     = "Password *";
 
 "offersList.search_text_view.placeholder"   = "Destination";
+"offersList.header_section.title"           = "Offers";
 
 "inscription.firstname.placeholder"         = "Firstname *";
 "inscription.lastname.placeholder"          = "Lastname *";
@@ -30,6 +31,7 @@
 
 "hotdeal.price_from.label"          = "from";
 "hotdeal.price_to.label"            = "to";
+"hotdeal.header_section.title"      = "Campings";
 
 "offerDetail.price.work"            = "price";
 "offerDetail.reservation.button"    = "Book";

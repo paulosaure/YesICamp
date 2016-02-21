@@ -154,6 +154,11 @@
     return [self.campings count];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue cell
@@ -175,6 +180,26 @@
     Camping *camping = [self.campings objectAtIndex:indexPath.row];
     CLLocationCoordinate2D location = CLLocationCoordinate2DMake([camping.latitude floatValue], [camping.longitude floatValue]);
     [self centerMapViewWithCoordinate:location];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return (2*self.tableView.frame.size.height) / 5;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont boldSystemFontOfSize:15]];
+    label.textColor = [UIColor whiteColor];
+    NSString *string = [LOCALIZED_STRING(@"hotdeal.header_section.title") uppercaseString];
+    
+    [label setText:string];
+    [view addSubview:label];
+    [view setBackgroundColor:GREEN_COLOR];
+    return view;
 }
 
 #pragma mark - Actions

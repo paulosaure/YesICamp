@@ -37,6 +37,8 @@ typedef NS_ENUM(NSUInteger, CampingCategory) {
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSNumber *phoneNumber;
 @property (nonatomic, strong) NSNumber *zipCode;
+@property (nonatomic, strong) NSString *imageCoverUrl;
+@property (nonatomic, strong) UIImage *imageCover;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *informations;
 

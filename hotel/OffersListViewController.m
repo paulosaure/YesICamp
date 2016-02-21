@@ -69,6 +69,11 @@
     return [self.offersList count];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Dequeue cell
@@ -78,6 +83,21 @@
     [cell configureWithCamping:self.offersList[indexPath.row]];
 
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont boldSystemFontOfSize:15]];
+    label.textColor = [UIColor whiteColor];
+    NSString *string = [LOCALIZED_STRING(@"offersList.header_section.title") uppercaseString];
+
+    [label setText:string];
+    [view addSubview:label];
+    [view setBackgroundColor:GREEN_COLOR];
+    return view;
 }
 
 #pragma mark - UITableViewDelegate methods

@@ -14,6 +14,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *imageBackgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *gradientImageView;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 
@@ -54,18 +55,34 @@
 {
     [self globalConfiguration];
     
+    // Name
     self.nameLabel.text = offer.title;
+    
+    // Percentage
+    self.percentageLabel.textColor = [UIColor redColor];
+    self.percentageLabel.text = [NSString stringWithFormat:@"-%@%%",[offer.percent stringValue]];
+    
+    // Price
     self.priceLabel.text = [NSString stringWithFormat:@"%@€", offer.price];
+    
+    // Category
     self.categoryLabel.text = [@"fun" uppercaseString];
     self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
-
+    
     [self configureStars:3];
     
     OfferImage *offerImage = [offer.images firstObject];
     if (!offerImage.image)
     {
-        NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, offerImage.imageUrl];
-        offerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+        if (!offerImage.imageUrl)
+        {
+            offerImage.image = [UIImage imageNamed:@"no-photo"];
+        }
+        else
+        {
+            NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, offerImage.imageUrl];
+            offerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+        }
     }
     
     self.imageBackgroundView.image = offerImage.image;
@@ -75,24 +92,38 @@
 {
     [self globalConfiguration];
     
+    // Name
     self.nameLabel.text = camping.title;
     self.nameLabel.textColor = [UIColor whiteColor];
+    
+    // Percentage
+    self.percentageLabel.hidden = YES;
+    
+    // Price
     self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"global.price_unity.label")];
     
+    // Category
     self.categoryLabel.text = [@"fun" uppercaseString];
     self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
     
     [self configureStars:3];
     
-    OfferImage *offerImage = [((Offer *)[camping.offers firstObject]).images firstObject];
-    if (!offerImage.image)
+    UIImage *imageCover;
+    if (!camping.imageCover)
     {
-        NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, offerImage.imageUrl];
-        offerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+        if ([camping.images count] == 0)
+        {
+            imageCover = [UIImage imageNamed:@"no-photo"];
+        }
+        else
+        {
+            NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, camping.imageCoverUrl];
+            camping.imageCover = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+            imageCover = camping.imageCover;
+        }
     }
     
-    self.imageBackgroundView.image = offerImage.image;
-
+    self.imageBackgroundView.image = imageCover;
 }
 
 - (void)globalConfiguration
@@ -124,7 +155,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
