@@ -21,6 +21,7 @@
 "homePage.password.placeholder"     = "Password *";
 "connection.connection_success.message" = "Successful connection";
 "connection.connection_failed.message" = "Wrong ID or Password";
+"connection.header_section.title"   = "Reservations";
 
 "offersList.search_text_view.placeholder"   = "Destination";
 "offersList.header_section.title"           = "Offers";

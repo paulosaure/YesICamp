@@ -12,8 +12,9 @@
 #import "InscriptionViewController.h"
 #import "UITextField+Effects.h"
 #import "UIButton+Effects.h"
+#import "ReservationCell.h"
 
-@interface ConnectionViewController ()
+@interface ConnectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UIView *contentConnectionView;
@@ -22,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *connectionButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
-@property (weak, nonatomic) IBOutlet UIView *contentConnectedUserView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -33,6 +34,13 @@
 {
     [super viewDidLoad];
     [self configureUI];
+    [self userIsConnect:YES];
+    
+    // Configure table View
+    self.tableView.delegate = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerNib:[ReservationCell cellNib] forCellReuseIdentifier:RESERVATION_CELL_IDENTIFIER];
     
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
     [self.view addGestureRecognizer:singleFingerTap];
@@ -45,8 +53,58 @@
     [self.connectionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.connection.button")];
     [self.signUpButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.inscription.button")];
     self.passwordTextView.secureTextEntry = YES;
+    self.tableView.hidden = YES;
     self.view.backgroundColor = [UIColor clearColor];
+    
+
+    self.tableView.backgroundColor = [UIColor clearColor];
 }
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;//[[User sharedInstance].reservations count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Dequeue cell
+    ReservationCell *cell = [tableView dequeueReusableCellWithIdentifier:RESERVATION_CELL_IDENTIFIER];
+    
+    // Configure celle
+    [cell configureWithReservation:[User sharedInstance].reservations[indexPath.row] isLast:(indexPath.row + 1 == [[User sharedInstance].reservations count])];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 300;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont boldSystemFontOfSize:15]];
+    label.textColor = [UIColor whiteColor];
+    NSString *string = [[NSString stringWithFormat:@"%@",LOCALIZED_STRING(@"connection.header_section.title")] uppercaseString];
+    
+    [label setText:string];
+    [view addSubview:label];
+    [view setBackgroundColor:GREEN_COLOR];
+    return view;
+}
+
+#pragma mark - UITableViewDelegate
+
 
 #pragma mark - Notification
 
@@ -76,7 +134,7 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {
-                                    [self userIsConnect];
+                                    [self userIsConnect:[User sharedInstance].isConnected];
                                 }];
     
     [alert addAction:yesButton];
@@ -108,13 +166,11 @@
 
 #pragma mark - Utils
 
-- (void)userIsConnect
+- (void)userIsConnect:(BOOL)isConnected
 {
-    if (![User sharedInstance].isConnected)
-        return;
-    
-    self.contentConnectionView.hidden = YES;
-    self.signUpButton.hidden = YES;
+    self.contentConnectionView.hidden = isConnected;
+    self.signUpButton.hidden = isConnected;
+    self.tableView.hidden = !isConnected;
 }
 
 - (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender

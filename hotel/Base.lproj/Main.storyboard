@@ -130,14 +130,26 @@
                                     <constraint firstAttribute="trailing" secondItem="wub-HX-tTt" secondAttribute="trailing" constant="8" id="t69-Rd-46P"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZuF-Gu-PeT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="y7r-RT-LgJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="XsH-Zu-LiT"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JbV-pz-XSx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="O8S-60-c7q"/>
+                            <constraint firstItem="ZuF-Gu-PeT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bJ6-R4-ulc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JbV-pz-XSx" secondAttribute="bottom" constant="20" id="g8d-ko-2u1"/>
+                            <constraint firstItem="ZuF-Gu-PeT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gQj-d0-9E5"/>
+                            <constraint firstAttribute="trailing" secondItem="ZuF-Gu-PeT" secondAttribute="trailing" id="hHW-NF-LUa"/>
                             <constraint firstAttribute="trailing" secondItem="VwJ-S4-fUi" secondAttribute="trailing" id="pu0-vO-TCJ"/>
                             <constraint firstItem="VwJ-S4-fUi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qph-Kn-5Nu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JbV-pz-XSx" secondAttribute="trailing" constant="100" id="uuJ-ra-2cw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZuF-Gu-PeT" secondAttribute="bottom" id="wy8-A6-r9V"/>
                             <constraint firstItem="VwJ-S4-fUi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x0h-Or-qDc"/>
                         </constraints>
                     </view>
@@ -149,6 +161,7 @@
                         <outlet property="passwordTextView" destination="lam-uI-n3G" id="tM0-B6-vOu"/>
                         <outlet property="pseudoTextView" destination="ry5-re-uB8" id="yaI-Ed-vWL"/>
                         <outlet property="signUpButton" destination="JbV-pz-XSx" id="Kjy-IF-jXX"/>
+                        <outlet property="tableView" destination="ZuF-Gu-PeT" id="D94-S9-Xbh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -587,24 +600,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pn-Xs-m4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="399" y="674"/>
-        </scene>
-        <!--Scan View Controller-->
-        <scene sceneID="eIR-dW-bQW">
-            <objects>
-                <viewController storyboardIdentifier="ScanViewControllerID" id="D8P-F2-M1Y" customClass="ScanViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7UK-wt-agv"/>
-                        <viewControllerLayoutGuide type="bottom" id="QmD-tw-eie"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OuS-S9-YAl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jo4-pl-yuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1695" y="1480"/>
         </scene>
         <!--Offer Detail-->
         <scene sceneID="g6X-pI-a5O">

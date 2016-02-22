@@ -11,7 +11,6 @@
 #import "UIButton+Effects.h"
 #import "UILabel+Effects.h"
 #import "DateLabelWithPadding.h"
-#import "ScanViewController.h"
 #import <CardIO.h>
 
 @interface CalendarPickerViewController () <DSLCalendarViewDelegate, CardIOPaymentViewControllerDelegate>

@@ -63,6 +63,7 @@
 #import "Camping.h"
 #import "Offer.h"
 #import "User.h"
+#import "Reservation.h"
 #import "NSDictionary+Additions.h"
 
 #endif /* hotel_Prefix_pch */

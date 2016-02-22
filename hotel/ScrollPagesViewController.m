@@ -15,7 +15,6 @@
 
 #import "InscriptionViewController.h"
 #import "OfferDetail.h"
-#import "ScanViewController.h"
 #import "CalendarPickerViewController.h"
 
 
@@ -70,7 +69,6 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushInscriptionViewController) name:InscriptionViewNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:PushOfferDetailViewNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealSelectedNotification object:nil];
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushMangoPayViewController:) name:ScanNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushCalendarPickerViewController:) name:CalendarPickerNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushAlertEmptyFields:) name:EmptyFieldsNotification object:nil];
 }
@@ -281,12 +279,6 @@
     OfferDetail *profilViewController = (OfferDetail *)[[self mainStoryboard] instantiateViewControllerWithIdentifier:OfferDetailViewControllerID];
     profilViewController.offer = notification.object;
     [self pushViewController:profilViewController];
-}
-
-- (void)pushMangoPayViewController:(NSNotification *)notification
-{
-//    ScanViewController *scanViewController = [[ScanViewController alloc] initWithPaymentDelegate:self];
-//    [self presentViewController:scanViewController animated:YES completion:^(void){}];
 }
 
 - (void)pushCalendarPickerViewController:(NSNotification *)notication

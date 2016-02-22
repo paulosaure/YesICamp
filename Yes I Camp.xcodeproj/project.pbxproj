@@ -38,7 +38,6 @@
 		A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F61C50374B008DC5CF /* ConnectionUserAction.m */; };
 		A88EB3FA1C503754008DC5CF /* InscriptionUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3F91C503754008DC5CF /* InscriptionUserAction.m */; };
 		A88EB4001C50377A008DC5CF /* NetworkManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */; };
-		A88EB4031C503958008DC5CF /* UserProfil.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4021C503958008DC5CF /* UserProfil.m */; };
 		A88EB4191C504008008DC5CF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4181C504008008DC5CF /* CoreVideo.framework */; };
 		A88EB41B1C50400F008DC5CF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB41A1C50400F008DC5CF /* CoreMedia.framework */; };
 		A88EB41D1C504015008DC5CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB41C1C504015008DC5CF /* AVFoundation.framework */; };
@@ -46,7 +45,6 @@
 		A88EB4211C504020008DC5CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4201C504020008DC5CF /* AudioToolbox.framework */; };
 		A88EB4231C504026008DC5CF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4221C504026008DC5CF /* AssetsLibrary.framework */; };
 		A88EB4251C50402D008DC5CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4241C50402D008DC5CF /* Security.framework */; };
-		A88EB4281C504056008DC5CF /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A88EB4271C504056008DC5CF /* ScanViewController.m */; };
 		A89763CE1C58163D0060BC5C /* GetOffersListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89763CD1C58163D0060BC5C /* GetOffersListAction.m */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
@@ -56,6 +54,9 @@
 		A8A63DC71C5005C30026E456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC51C5005C30026E456 /* LaunchScreen.storyboard */; };
 		A8A63DD21C5005C30026E456 /* hotelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DD11C5005C30026E456 /* hotelTests.m */; };
 		A8A63DDD1C5005C30026E456 /* hotelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DDC1C5005C30026E456 /* hotelUITests.m */; };
+		A8AB35851C7A808C0018C186 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35841C7A808C0018C186 /* Reservation.m */; };
+		A8AB35891C7A82B60018C186 /* ReservationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35881C7A82B60018C186 /* ReservationCell.m */; };
+		A8AB358B1C7A82FD0018C186 /* ReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */; };
 		A8B0234F1C51579D00C10AA7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0234E1C51579D00C10AA7 /* libc++.tbd */; };
 		A8B023531C51585400C10AA7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B023521C51585400C10AA7 /* libsqlite3.tbd */; };
 		A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */; };
@@ -153,8 +154,6 @@
 		A88EB3F91C503754008DC5CF /* InscriptionUserAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InscriptionUserAction.m; sourceTree = "<group>"; };
 		A88EB3FE1C50377A008DC5CF /* NetworkManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManagement.h; sourceTree = "<group>"; };
 		A88EB3FF1C50377A008DC5CF /* NetworkManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManagement.m; sourceTree = "<group>"; };
-		A88EB4011C503958008DC5CF /* UserProfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfil.h; sourceTree = "<group>"; };
-		A88EB4021C503958008DC5CF /* UserProfil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfil.m; sourceTree = "<group>"; };
 		A88EB4181C504008008DC5CF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		A88EB41A1C50400F008DC5CF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A88EB41C1C504015008DC5CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -162,8 +161,6 @@
 		A88EB4201C504020008DC5CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A88EB4221C504026008DC5CF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A88EB4241C50402D008DC5CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A88EB4261C504056008DC5CF /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
-		A88EB4271C504056008DC5CF /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		A88EB4321C515230008DC5CF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A89763CC1C58163D0060BC5C /* GetOffersListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOffersListAction.h; sourceTree = "<group>"; };
 		A89763CD1C58163D0060BC5C /* GetOffersListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOffersListAction.m; sourceTree = "<group>"; };
@@ -183,6 +180,11 @@
 		A8A63DD81C5005C30026E456 /* hotelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A63DDC1C5005C30026E456 /* hotelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hotelUITests.m; sourceTree = "<group>"; };
 		A8A63DDE1C5005C30026E456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8AB35831C7A808C0018C186 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
+		A8AB35841C7A808C0018C186 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
+		A8AB35871C7A82B60018C186 /* ReservationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationCell.h; sourceTree = "<group>"; };
+		A8AB35881C7A82B60018C186 /* ReservationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationCell.m; sourceTree = "<group>"; };
+		A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationCell.xib; sourceTree = "<group>"; };
 		A8B0234E1C51579D00C10AA7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A8B023501C5157ED00C10AA7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		A8B023521C51585400C10AA7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -432,6 +434,7 @@
 			children = (
 				A8A63DBD1C5005C30026E456 /* ConnectionViewController.h */,
 				A8A63DBE1C5005C30026E456 /* ConnectionViewController.m */,
+				A8AB35861C7A82980018C186 /* ReservationCell */,
 			);
 			name = Connexion;
 			sourceTree = "<group>";
@@ -454,15 +457,6 @@
 				A84C71751C56C47A00598FE9 /* Cell */,
 			);
 			name = OfferDetail;
-			sourceTree = "<group>";
-		};
-		A88EB3C61C500E4A008DC5CF /* Payment */ = {
-			isa = PBXGroup;
-			children = (
-				A88EB4261C504056008DC5CF /* ScanViewController.h */,
-				A88EB4271C504056008DC5CF /* ScanViewController.m */,
-			);
-			name = Payment;
 			sourceTree = "<group>";
 		};
 		A88EB3CE1C5010F8008DC5CF /* Configuration */ = {
@@ -499,11 +493,11 @@
 		A88EB3DC1C5015D1008DC5CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A80624E31C7A09A300ABF9EC /* User */,
 				A88EB3DD1C5015DB008DC5CF /* Camping */,
 				A870B27B1C5CB8910006CAAA /* HotDeal */,
 				A8F2FF061C557EAB007DF893 /* Offer */,
-				A88EB4041C50395B008DC5CF /* UserProfil */,
+				A8AB35821C7A804C0018C186 /* Reservation */,
+				A80624E31C7A09A300ABF9EC /* User */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -606,15 +600,6 @@
 			name = Management;
 			sourceTree = "<group>";
 		};
-		A88EB4041C50395B008DC5CF /* UserProfil */ = {
-			isa = PBXGroup;
-			children = (
-				A88EB4011C503958008DC5CF /* UserProfil.h */,
-				A88EB4021C503958008DC5CF /* UserProfil.m */,
-			);
-			name = UserProfil;
-			sourceTree = "<group>";
-		};
 		A88EB4051C50396E008DC5CF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,7 +607,6 @@
 				A88EB3C31C5009FF008DC5CF /* Connexion */,
 				A8F2FEEA1C54D295007DF893 /* HotDeal */,
 				A8CF58C31C50076D002D227A /* Inscription */,
-				A88EB3C61C500E4A008DC5CF /* Payment */,
 				A88EB3C51C500E3A008DC5CF /* OfferDetail */,
 				A88EB3C41C500E2B008DC5CF /* OffersList */,
 				A8F2FF0E1C558624007DF893 /* ScrollPages */,
@@ -709,6 +693,25 @@
 				A8A63DDE1C5005C30026E456 /* Info.plist */,
 			);
 			path = hotelUITests;
+			sourceTree = "<group>";
+		};
+		A8AB35821C7A804C0018C186 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				A8AB35831C7A808C0018C186 /* Reservation.h */,
+				A8AB35841C7A808C0018C186 /* Reservation.m */,
+			);
+			name = Reservation;
+			sourceTree = "<group>";
+		};
+		A8AB35861C7A82980018C186 /* ReservationCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8AB35871C7A82B60018C186 /* ReservationCell.h */,
+				A8AB35881C7A82B60018C186 /* ReservationCell.m */,
+				A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */,
+			);
+			name = ReservationCell;
 			sourceTree = "<group>";
 		};
 		A8C22D1B1C728C2E0012147C /* GlobalConfiguration */ = {
@@ -917,6 +920,7 @@
 				A88EB3DB1C5015AA008DC5CF /* OfferCell.xib in Resources */,
 				A870B2841C5E7CB70006CAAA /* Localizable.strings in Resources */,
 				A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */,
+				A8AB358B1C7A82FD0018C186 /* ReservationCell.xib in Resources */,
 				A84C717A1C56C54A00598FE9 /* OfferDetailCell.xib in Resources */,
 				A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */,
 			);
@@ -996,11 +1000,12 @@
 				A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */,
 				A870B2A21C616C610006CAAA /* GetHotsDealsListAction.m in Sources */,
 				A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */,
-				A88EB4281C504056008DC5CF /* ScanViewController.m in Sources */,
 				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,
 				A8FEC7461C6FA4EB003B8A2C /* ParamRequestHotDeal.m in Sources */,
 				A80624E61C7A09B200ABF9EC /* User.m in Sources */,
+				A8AB35891C7A82B60018C186 /* ReservationCell.m in Sources */,
 				A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */,
+				A8AB35851C7A808C0018C186 /* Reservation.m in Sources */,
 				A88EB3E51C501918008DC5CF /* ParsingData.m in Sources */,
 				A8FECAD91C7A526100BA4656 /* NSDictionary+Additions.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
@@ -1029,7 +1034,6 @@
 				A84C71831C56E02400598FE9 /* LocationManager.m in Sources */,
 				A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */,
 				A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */,
-				A88EB4031C503958008DC5CF /* UserProfil.m in Sources */,
 				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
 				A80624EA1C7A182F00ABF9EC /* MakeReservationAction.m in Sources */,
 				A84C71891C56E7A000598FE9 /* CustomMKAnnotationView.m in Sources */,
