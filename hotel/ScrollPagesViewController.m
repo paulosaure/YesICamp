@@ -319,6 +319,7 @@
 
 - (void)setHeaderSectionWithString:(NSString *)title
 {
+    [self.promotionsViewController isSearching:YES];
     [self.promotionsViewController setSearchTextview:title];
 }
 
