@@ -64,7 +64,7 @@
     [attributeString addAttribute:NSStrikethroughStyleAttributeName
                             value:@2
                             range:NSMakeRange(0, [attributeString length])];
-    self.oldPriceLabel.textColor = [UIColor redColor];
+    self.oldPriceLabel.textColor = [UIColor whiteColor];
     self.oldPriceLabel.attributedText = attributeString;
     
     // Price

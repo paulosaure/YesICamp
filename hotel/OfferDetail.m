@@ -24,6 +24,7 @@
 // Data
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic, strong) NSMutableArray *contentData;
+@property (nonatomic, strong) NSMutableArray *imagesData;
 
 @end
 
@@ -51,6 +52,7 @@
     
     // Init data for tableView
     self.contentData = [NSMutableArray array];
+    self.imagesData = [[NSMutableArray alloc] initWithArray:self.offer.images];
     
     // Init view page controller
     self.pageViewController = [[UIPageViewController alloc] init];
@@ -90,7 +92,7 @@
     pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), PAGE_CONTROLLER_HEIGHT);
     pageController.view.backgroundColor = BLACK_COLOR;
     
-    if([self.offer.images count])
+    if([self.imagesData count])
     {
         NSArray *startingViewControllers = @[[self itemControllerForIndex: 0]];
         [pageController setViewControllers: startingViewControllers
@@ -121,7 +123,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(PageItemController *)viewController
 {
-    if (viewController.itemIndex+1 < [self.offer.images count])
+    if (viewController.itemIndex+1 < [self.imagesData count])
         return [self itemControllerForIndex:viewController.itemIndex+1];
     
     return nil;
@@ -129,11 +131,11 @@
 
 - (PageItemController *) itemControllerForIndex: (NSUInteger) itemIndex
 {
-    if (itemIndex < [self.offer.images count])
+    if (itemIndex < [self.imagesData count])
     {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil];
         PageItemController *pageItemController = (PageItemController *)[storyBoard instantiateViewControllerWithIdentifier: PageItemControllerID];
-        [pageItemController configurePageWith:self.offer.images[itemIndex] index:itemIndex];
+        [pageItemController configurePageWith:self.imagesData[itemIndex] index:itemIndex];
         return pageItemController;
     }
     
@@ -144,7 +146,7 @@
 
 - (NSInteger) presentationCountForPageViewController: (UIPageViewController *) pageViewController
 {
-    return [self.offer.images count];
+    return [self.imagesData count];
 }
 
 - (NSInteger) presentationIndexForPageViewController: (UIPageViewController *) pageViewController
@@ -181,6 +183,7 @@
 - (void)handleOfferDetail:(NSNotification *)notif
 {
     self.offer = notif.object;
+    [self.imagesData addObjectsFromArray:self.offer.images];
     [self constructDataArray];
     [self.tableView reloadData];
 }
