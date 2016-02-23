@@ -60,7 +60,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     request.HTTPMethod = method;
     
-    if ([method isEqualToString:POST_METHOD])
+    if (action.param)
     {
         [self configurePostRequest:request postParam:action.param];
     }

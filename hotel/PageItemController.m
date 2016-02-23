@@ -11,7 +11,6 @@
 @interface PageItemController ()
 
 // Data
-@property (nonatomic, strong) NSString *imageUrl;
 @property (nonatomic, strong) UIImage *image;
 
 // IBOutlets
@@ -28,12 +27,7 @@
     [super viewDidLoad];
     self.contentImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.view.backgroundColor = [UIColor clearColor];
-    
-    if (!self.contentImageView.image)
-    {
-        NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, self.imageUrl];
-        self.contentImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
-    }
+    self.contentImageView.image = self.image;
 }
 
 - (void)awakeFromNib
@@ -43,9 +37,14 @@
 
 #pragma mark - Content
 
-- (void)configurePageWith:(OfferImage *)image index:(NSInteger)index
+- (void)configurePageWith:(OfferImage *)offerImage index:(NSInteger)index
 {
-    self.imageUrl = image.imageUrl;
+    if (!offerImage.image)
+    {
+        NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, offerImage.imageUrl];
+        offerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+    }
+    self.image = offerImage.image;
     self.itemIndex = index;
 }
 
