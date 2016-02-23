@@ -87,23 +87,25 @@
 
 - (void)createPageViewController
 {
-    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    pageController.dataSource = self;
-    pageController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), PAGE_CONTROLLER_HEIGHT);
-    pageController.view.backgroundColor = BLACK_COLOR;
-    
+    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    self.pageViewController.dataSource = self;
+    self.pageViewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), PAGE_CONTROLLER_HEIGHT);
+    self.pageViewController.view.backgroundColor = BLACK_COLOR;
+    [self setNumberOfPageItemController];
+}
+
+- (void)setNumberOfPageItemController
+{
     if([self.imagesData count])
     {
         NSArray *startingViewControllers = @[[self itemControllerForIndex: 0]];
-        [pageController setViewControllers: startingViewControllers
-                                 direction: UIPageViewControllerNavigationDirectionForward
-                                  animated: NO
-                                completion: nil];
+        [self.pageViewController setViewControllers: startingViewControllers
+                                          direction: UIPageViewControllerNavigationDirectionForward
+                                           animated: NO
+                                         completion: nil];
     }
-    
-    self.pageViewController = pageController;
-}
 
+}
 - (void)setupPageControl
 {
     [[UIPageControl appearance] setPageIndicatorTintColor: [UIColor grayColor]];
@@ -144,12 +146,12 @@
 
 #pragma mark - Page Indicator
 
-- (NSInteger) presentationCountForPageViewController: (UIPageViewController *) pageViewController
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
     return [self.imagesData count];
 }
 
-- (NSInteger) presentationIndexForPageViewController: (UIPageViewController *) pageViewController
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
     return 0;
 }
@@ -186,6 +188,7 @@
     [self.imagesData addObjectsFromArray:self.offer.images];
     [self constructDataArray];
     [self.tableView reloadData];
+    [self setNumberOfPageItemController];
 }
 
 #pragma mark - Actions
