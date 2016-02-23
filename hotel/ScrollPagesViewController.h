@@ -19,5 +19,6 @@ typedef NS_ENUM(NSInteger, PageController) {
 @interface ScrollPagesViewController : LPViewPagerController
 
 - (void)didSelectedTitleAtIndex:(NSUInteger)index;
+- (void)setHeaderSectionWithString:(NSString *)title;
 
 @end

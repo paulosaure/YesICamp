@@ -11,4 +11,7 @@
 
 @interface OffersListViewController : UIViewController
 
+- (void)setSearchTextview:(NSString *)title;
+
+
 @end

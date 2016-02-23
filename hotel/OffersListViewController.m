@@ -18,10 +18,11 @@
 
 
 // Outlets
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *startSearchButton;
 @property (weak, nonatomic) IBOutlet UIView *searchContentView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinnerView;
 
 // Data
 @property (nonatomic, strong) NSArray *offersList;
@@ -38,6 +39,8 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListWithCampingNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListNotification object:nil];
     
+    
+    [self isSearching:YES];
     [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
 }
 
@@ -123,6 +126,7 @@
 
 - (IBAction)startSearch:(id)sender
 {
+    [self isSearching:YES];
     if ([self.searchTextView.text isEqual:@""])
     {
         [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
@@ -138,9 +142,22 @@
 {
     self.offersList = notif.object;
     [self.tableView reloadData];
+    [self isSearching:NO];
 }
 
 #pragma mark - Utils
+
+- (void)isSearching:(BOOL)isSearching
+{
+    self.spinnerView.hidden = !isSearching;
+    self.startSearchButton.hidden = isSearching;
+    isSearching ? [self.spinnerView startAnimating] : [self.spinnerView stopAnimating];
+}
+
+- (void)setSearchTextview:(NSString *)title
+{
+    self.searchTextView.text = title;
+}
 
 - (void)displayWarningMessage
 {

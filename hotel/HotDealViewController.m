@@ -142,6 +142,7 @@
         return;
 
     [mapView deselectAnnotation:annotation.annotation animated:YES];
+    [self.parent setHeaderSectionWithString:annotation.annotation.title];
     [self.parent didSelectedTitleAtIndex:PageControllerPromo];
     // Start request action
     [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCampingId:((CustomMKAnnotation *)annotation.annotation).campingId]];

@@ -112,12 +112,12 @@
 
 - (void)calendarView:(DSLCalendarView *)calendarView willChangeToVisibleMonth:(NSDateComponents *)month duration:(NSTimeInterval)duration
 {
-//    NSLog(@"Will show %@ in %.3f seconds", month, duration);
+    //    NSLog(@"Will show %@ in %.3f seconds", month, duration);
 }
 
 - (void)calendarView:(DSLCalendarView *)calendarView didChangeToVisibleMonth:(NSDateComponents *)month
 {
-//    NSLog(@"Now showing %@", month);
+    //    NSLog(@"Now showing %@", month);
 }
 
 - (BOOL)day:(NSDateComponents*)day1 isBeforeDay:(NSDateComponents*)day2
@@ -129,7 +129,7 @@
 
 - (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)scanViewController
 {
-//    NSLog(@"User canceled payment info");
+    //    NSLog(@"User canceled payment info");
     // Handle user cancellation here...
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -146,9 +146,31 @@
 #pragma mark - Actions
 - (IBAction)bookDateAction:(id)sender
 {
-    CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
-    scanViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:scanViewController animated:YES completion:nil];
+    NSString *errorMessage = @"";
+    BOOL isError = YES;
+    if (![User sharedInstance].isConnected)
+    {
+        errorMessage = LOCALIZED_STRING(@"calendarPicker.not_connected.error");
+    }
+    else if ([self.fromDateLabel.text isEqualToString:@""])
+    {
+        errorMessage = LOCALIZED_STRING(@"calendarPicker.date_empty.error");
+    }
+    else
+    {
+        isError = NO;
+    }
+    
+    if (!isError)
+    {
+        CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
+        scanViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self presentViewController:scanViewController animated:YES completion:nil];
+    }
+    else
+    {
+        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:errorMessage];
+    }
 }
 
 #pragma mark - Utils

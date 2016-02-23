@@ -101,7 +101,8 @@
             viewController = self.promotionsViewController;
             if (!viewController)
             {
-                viewController = [self.myStoryboard instantiateViewControllerWithIdentifier:PromotionsViewControllerID];
+                self.promotionsViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:PromotionsViewControllerID];
+                viewController = self.promotionsViewController;
             }
             break;
             
@@ -109,7 +110,8 @@
             viewController = self.hotDealViewController;
             if (!viewController)
             {
-                viewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HotDealViewControllerID];
+                self.hotDealViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HotDealViewControllerID];
+                viewController = self.hotDealViewController;
                 ((HotDealViewController *)viewController).parent = self;
             }
             break;
@@ -119,7 +121,8 @@
             viewController = self.homePageViewController;
             if (!viewController)
             {
-                viewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HomePageViewControllerID];
+                self.homePageViewController = [self.myStoryboard instantiateViewControllerWithIdentifier:HomePageViewControllerID];
+                viewController = self.homePageViewController;
             }
             break;
     }
@@ -313,6 +316,11 @@
 }
 
 #pragma mark - Utils
+
+- (void)setHeaderSectionWithString:(NSString *)title
+{
+    [self.promotionsViewController setSearchTextview:title];
+}
 
 - (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
 {

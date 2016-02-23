@@ -15,13 +15,13 @@
 "homePage.error.fielsEmpty"         = "Veuillez remplir tous les champs.";
 "homePage.password_short.error"     = "Mot de passe trop court.\n(Min 8 caractères)";
 
-"homePage.inscription.button"   = "Inscription";
-"homePage.connection.button"    = "Connexion";
-"homePage.email.placeholder"    = "E-mail *";
-"homePage.password.placeholder" = "Mot de passe *";
-"connection.connection_success.message" = "Connexion réussie";
-"connection.connection_failed.message" = "Identifiant ou mot de passe incorrect";
-"connection.header_section.title"   = "Réservations";
+"homePage.inscription.button"               = "Inscription";
+"homePage.connection.button"                = "Connexion";
+"homePage.email.placeholder"                = "E-mail *";
+"homePage.password.placeholder"             = "Mot de passe *";
+"connection.connection_success.message"     = "Connexion réussie";
+"connection.connection_failed.message"      = "Identifiant ou mot de passe incorrect";
+"connection.header_section.title"           = "Réservations";
 
 "offersList.search_text_view.placeholder"   = "Destination";
 "offersList.header_section.title"           = "Offres";
@@ -46,3 +46,5 @@
 "calendarPicker.from_date.label"    = "Du";
 "calendarPicker.to_date.label"      = "au";
 "calendarPicker.select_date.title"  = "Sélectionnez la période voulue";
+"calendarPicker.not_connected.error"= "Vous devez être connecté pour pouvoir réserver";
+"calendarPicker.date_empty.error"   = "Veuillez sélectionner une période";

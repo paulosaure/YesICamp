@@ -558,6 +558,9 @@
                                             <action selector="startSearch:" destination="lI2-n3-yc5" eventType="touchUpInside" id="ERd-Iv-eK2"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="l5E-tf-8ku">
+                                        <rect key="frame" x="565" y="5" width="30" height="30"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -565,7 +568,11 @@
                                     <constraint firstItem="GOO-eu-xLK" firstAttribute="leading" secondItem="dfZ-Li-cNW" secondAttribute="leading" constant="5" id="0fB-pU-47e"/>
                                     <constraint firstItem="GOO-eu-xLK" firstAttribute="top" secondItem="dfZ-Li-cNW" secondAttribute="top" constant="5" id="Ejd-lE-3vV"/>
                                     <constraint firstAttribute="trailing" secondItem="vhX-40-izB" secondAttribute="trailing" constant="5" id="IJo-Yy-gp3"/>
+                                    <constraint firstItem="l5E-tf-8ku" firstAttribute="width" secondItem="vhX-40-izB" secondAttribute="width" id="Tr5-Rg-Z5G"/>
+                                    <constraint firstItem="l5E-tf-8ku" firstAttribute="height" secondItem="vhX-40-izB" secondAttribute="height" id="XS9-l8-zIJ"/>
                                     <constraint firstItem="vhX-40-izB" firstAttribute="leading" secondItem="GOO-eu-xLK" secondAttribute="trailing" constant="5" id="dHb-dx-ahO"/>
+                                    <constraint firstItem="l5E-tf-8ku" firstAttribute="centerY" secondItem="vhX-40-izB" secondAttribute="centerY" id="dVX-Ca-KVx"/>
+                                    <constraint firstItem="l5E-tf-8ku" firstAttribute="centerX" secondItem="vhX-40-izB" secondAttribute="centerX" id="j2a-Kd-qyq"/>
                                     <constraint firstAttribute="bottom" secondItem="vhX-40-izB" secondAttribute="bottom" constant="5" id="kx2-XB-jxL"/>
                                     <constraint firstItem="vhX-40-izB" firstAttribute="top" secondItem="dfZ-Li-cNW" secondAttribute="top" constant="5" id="z5d-T9-Iy8"/>
                                 </constraints>
@@ -593,6 +600,7 @@
                     <connections>
                         <outlet property="searchContentView" destination="dfZ-Li-cNW" id="J9X-nz-JZE"/>
                         <outlet property="searchTextView" destination="GOO-eu-xLK" id="tW7-Lo-qzT"/>
+                        <outlet property="spinnerView" destination="l5E-tf-8ku" id="c1o-EG-J19"/>
                         <outlet property="startSearchButton" destination="vhX-40-izB" id="xke-Jn-uxU"/>
                         <outlet property="tableView" destination="J7E-Ca-oPl" id="eAY-Bj-mKB"/>
                     </connections>

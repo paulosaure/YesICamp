@@ -15,7 +15,7 @@
 /**
  * Alert View
  */
-
+#define EmptyFieldsNotification @"EmptyFieldsNotification"
 
 /**
  * Shortcuts
