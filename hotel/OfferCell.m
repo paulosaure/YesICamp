@@ -77,20 +77,22 @@
     [self configureStars:3];
     
     OfferImage *offerImage = [offer.images firstObject];
+    UIImage *image = offerImage.image;
     if (!offerImage.image)
     {
         if (!offerImage.imageUrl)
         {
-            offerImage.image = [UIImage imageNamed:@"no-photo"];
+            image = [UIImage imageNamed:@"no-photo"];
         }
         else
         {
             NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, offerImage.imageUrl];
             offerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+            image = offerImage.image;
         }
     }
     
-    self.imageBackgroundView.image = offerImage.image;
+    self.imageBackgroundView.image = image;
 }
 
 - (void)configureWithInformationsHotDeal:(Camping *)camping

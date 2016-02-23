@@ -57,6 +57,7 @@
 		A8AB35851C7A808C0018C186 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35841C7A808C0018C186 /* Reservation.m */; };
 		A8AB35891C7A82B60018C186 /* ReservationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35881C7A82B60018C186 /* ReservationCell.m */; };
 		A8AB358B1C7A82FD0018C186 /* ReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */; };
+		A8AB35901C7CEE0A0018C186 /* GetReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB358F1C7CEE0A0018C186 /* GetReservationAction.m */; };
 		A8B0234F1C51579D00C10AA7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0234E1C51579D00C10AA7 /* libc++.tbd */; };
 		A8B023531C51585400C10AA7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B023521C51585400C10AA7 /* libsqlite3.tbd */; };
 		A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */; };
@@ -185,6 +186,8 @@
 		A8AB35871C7A82B60018C186 /* ReservationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationCell.h; sourceTree = "<group>"; };
 		A8AB35881C7A82B60018C186 /* ReservationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationCell.m; sourceTree = "<group>"; };
 		A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationCell.xib; sourceTree = "<group>"; };
+		A8AB358E1C7CEE0A0018C186 /* GetReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetReservationAction.h; sourceTree = "<group>"; };
+		A8AB358F1C7CEE0A0018C186 /* GetReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetReservationAction.m; sourceTree = "<group>"; };
 		A8B0234E1C51579D00C10AA7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A8B023501C5157ED00C10AA7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		A8B023521C51585400C10AA7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -551,6 +554,7 @@
 				A870B29F1C616C3B0006CAAA /* GetHotsDealsList */,
 				A8FEC7351C6F9111003B8A2C /* GetOfferDetail */,
 				A88EB3F21C5036EF008DC5CF /* GetOffersList */,
+				A8AB358D1C7CEDE90018C186 /* GetReservation */,
 				A80624E71C7A181000ABF9EC /* MakeReservation */,
 			);
 			name = Action;
@@ -712,6 +716,15 @@
 				A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */,
 			);
 			name = ReservationCell;
+			sourceTree = "<group>";
+		};
+		A8AB358D1C7CEDE90018C186 /* GetReservation */ = {
+			isa = PBXGroup;
+			children = (
+				A8AB358E1C7CEE0A0018C186 /* GetReservationAction.h */,
+				A8AB358F1C7CEE0A0018C186 /* GetReservationAction.m */,
+			);
+			name = GetReservation;
 			sourceTree = "<group>";
 		};
 		A8C22D1B1C728C2E0012147C /* GlobalConfiguration */ = {
@@ -998,6 +1011,7 @@
 				A8FEC7381C6F912D003B8A2C /* GetOfferDetailAction.m in Sources */,
 				A819795E1C76553600B2A177 /* CalendarPickerViewController.m in Sources */,
 				A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */,
+				A8AB35901C7CEE0A0018C186 /* GetReservationAction.m in Sources */,
 				A870B2A21C616C610006CAAA /* GetHotsDealsListAction.m in Sources */,
 				A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */,
 				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,

@@ -10,14 +10,11 @@
 
 @interface User ()
 
-@property (nonatomic, strong) NSString *uid;
-@property (nonatomic, strong) NSString *client;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *age;
-@property (nonatomic, strong) NSString *tokenId;
 
 @end
 
@@ -43,6 +40,8 @@
     self.email = [account objectForKeyOrNil:@"email"];
     self.age = [account objectForKeyOrNil:@"age"];
     self.tokenId = token;
+    self.uid = uid;
+    self.client = client;
     
     self.isConnected = YES;
 }

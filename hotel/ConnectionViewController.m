@@ -13,6 +13,7 @@
 #import "UITextField+Effects.h"
 #import "UIButton+Effects.h"
 #import "ReservationCell.h"
+#import "GetReservationAction.h"
 
 @interface ConnectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -34,11 +35,11 @@
 {
     [super viewDidLoad];
     [self configureUI];
-    [self userIsConnect:YES];
     
     // Configure table View
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.estimatedRowHeight = 200;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[ReservationCell cellNib] forCellReuseIdentifier:RESERVATION_CELL_IDENTIFIER];
     
@@ -56,7 +57,6 @@
     self.tableView.hidden = YES;
     self.view.backgroundColor = [UIColor clearColor];
     
-
     self.tableView.backgroundColor = [UIColor clearColor];
 }
 
@@ -83,11 +83,6 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 300;
-}
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
@@ -106,14 +101,19 @@
 #pragma mark - UITableViewDelegate
 
 
-#pragma mark - Notification
+#pragma mark - Notifications
+
+- (void)didReceiveReservations:(NSNotification *)notification
+{
+    
+}
 
 - (void)handleConnecionResponse:(NSNotification *)notification
 {
     NSString *response = notification.object;
     NSString *title = @"";
     NSString *message;
-    
+
     if ([response isEqualToString:@""])
     {
         message = LOCALIZED_STRING(@"connection.connection_success.message");
@@ -171,6 +171,13 @@
     self.contentConnectionView.hidden = isConnected;
     self.signUpButton.hidden = isConnected;
     self.tableView.hidden = !isConnected;
+    
+    if (isConnected)
+    {
+        User *user = [User sharedInstance];
+        [NOTIFICATION_CENTER addObserver:self selector:@selector(didReceiveReservations:) name:ReservationListNotification object:nil];
+        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction actionWithUid:user.uid tokenId:user.tokenId client:user.client]];
+    }
 }
 
 - (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender

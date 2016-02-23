@@ -12,6 +12,7 @@
 #import "UILabel+Effects.h"
 #import "DateLabelWithPadding.h"
 #import <CardIO.h>
+#import "MakeReservationAction.h"
 
 @interface CalendarPickerViewController () <DSLCalendarViewDelegate, CardIOPaymentViewControllerDelegate>
 
@@ -140,8 +141,29 @@
     NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", info.redactedCardNumber, (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear, info.cvv);
     // Use the card info...
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservation:) name:didReservationNotification object:nil];
+    
+#warning TODO
+    [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithTokenId:@""
+                                                                                      offerId:@""
+                                                                                    dateBegin:@""
+                                                                                      dateEnd:@""
+                                                                           redactedCardNumber:@""
+                                                                                  expiryMonth:@""
+                                                                                   expiryYear:@""
+                                                                                          cvv:@""]
+                                              method:POST_METHOD];
 }
 
+#pragma mark - Notification
+
+- (void)didBookReservation:(NSNotification *)notification
+{
+    [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:notification.object];
+#warning TODO 
+    // Pop to parent controller et afficher la liste des réservation avec celle qu'on vient de faire
+}
 
 #pragma mark - Actions
 - (IBAction)bookDateAction:(id)sender

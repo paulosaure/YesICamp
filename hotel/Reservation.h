@@ -10,4 +10,6 @@
 
 @interface Reservation : NSObject
 
+- (instancetype)initWithDictionnary:(NSDictionary *)dic;
+
 @end

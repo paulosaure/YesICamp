@@ -14,8 +14,10 @@
 
 #pragma mark - Constructor
 
-+ (instancetype)action
++ (instancetype)actionWithTokenId:(NSString *)tokenId offerId:(NSString *)offerId dateBegin:(NSString *)dateBegin dateEnd:(NSString *)dateEnd redactedCardNumber:(NSString *)redactedCardNumber expiryMonth:(NSString *)expiryMonth expiryYear:(NSString *)expiryYear cvv:(NSString *)cvv
 {
+    
+#warning TODO
     MakeReservationAction *action = [[MakeReservationAction alloc] initWithUrl:ACTION_URL(RESERVATION_URL) service:WebServiceMakeReservation];
     
     return action;
@@ -31,16 +33,17 @@
     NSDictionary *body = [obj objectForKey:RESPONSE_BODY];
     NSString *response = @"";
     
+#warning TODO
     if (header.statusCode != 200)
     {
 
     }
     else
     {
-
+        
     }
     
-    [NOTIFICATION_CENTER postNotificationName:DidReservationNotification object:response];
+    [NOTIFICATION_CENTER postNotificationName:didReservationNotification object:response];
 }
 
 @end

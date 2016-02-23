@@ -52,14 +52,15 @@
     self.price.textColor = [UIColor whiteColor];
     
     self.reservationNumberLabel.text = @"N°1234567";
-    self.dateFromLabel.text = @"23/12/2015";
-    self.dateToLabel.text = @"23/12/2015";
+    self.dateFromLabel.text = @"Date d'arrivé : \n23/12/2015";
+    self.dateToLabel.text = @"Date de départ : \n23/12/2015";
     
     self.campingAddressLabel.text = @"5 rue des mimomza Nice 06560";
     self.campingNameLabel.text = @"Blue camping";
     self.campingTelAddress.text = @"0650789797";
     
     self.price.text = @"40€";
+    self.price.textColor = GREEN_COLOR;
     self.verticalSeparatorView.backgroundColor = GREEN_COLOR;
     self.horizontalSeparatorView.backgroundColor = GREEN_COLOR;
     

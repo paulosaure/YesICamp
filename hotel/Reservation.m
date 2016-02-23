@@ -20,4 +20,16 @@
 
 @implementation Reservation
 
+- (instancetype)initWithDictionnary:(NSDictionary *)dic;
+{
+    if (self = [super init])
+    {
+        // TDO
+#warning TODO
+        
+    }
+    
+    return self;
+}
+
 @end
