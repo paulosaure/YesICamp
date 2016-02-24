@@ -27,7 +27,7 @@
     } else if ([categoryString isEqualToString:@"calme"]) {
         category = CampingCategoryCalme;
     } else {
-        NSLog(@"Error Category Inconnue");
+        NSLog(@"Error Category Inconnue : %@", categoryString);
     }
     
     return category;
@@ -49,8 +49,7 @@
         case CampingCategoryEmpty:
             return [UIColor colorWithRed:237.0f/255.0f green:127.0f/255.0f blue:16.0f/255.0f alpha:1.0f];
         default:
-            NSLog(@"Error enum category Inconnue, default color black");
-            return [UIColor yellowColor];
+            return [UIColor brownColor];
             break;
     }
 }

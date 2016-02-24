@@ -71,8 +71,8 @@
     self.priceLabel.text = [NSString stringWithFormat:@"%@%@", offer.price, LOCALIZED_STRING(@"globals.unity")];
     
     // Category
-    self.categoryLabel.text = [@"fun" uppercaseString];
-    self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
+    self.categoryLabel.text = [offer.category uppercaseString];
+    self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:offer.category];
     
     [self configureStars:3];
     

@@ -27,6 +27,7 @@
         self.percent = [dic objectForKeyOrNil:@"percent"];
         self.begin = [dic objectForKeyOrNil:@"begin"];
         self.end = [dic objectForKeyOrNil:@"end"];
+        self.category = [dic objectForKeyOrNil:@"category"];
         self.productID = [dic objectForKeyOrNil:@"product_id"];
         self.campingID = [dic objectForKeyOrNil:@"camping_id"];
         self.creation = [dic objectForKeyOrNil:@"created_at"];
