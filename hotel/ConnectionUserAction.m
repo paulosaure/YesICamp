@@ -30,7 +30,6 @@
     NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
     NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *body = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSString *response = @"";
     
     if (header.statusCode == 200)
     {

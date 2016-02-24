@@ -10,7 +10,8 @@
 "globals.yes"                       = "Oui";
 "globals.no"                        = "Non";
 "globals.ok"                        = "Ok";
-"globals.error" = "Erreur";
+"globals.error"                     = "Erreur";
+"globals.technical_error"           = "Erreur technique";
 
 "homePage.error.fielsEmpty"         = "Veuillez remplir tous les champs.";
 "homePage.password_short.error"     = "Mot de passe trop court.\n(Min 8 caractères)";
@@ -22,6 +23,8 @@
 "connection.connection_success.message"     = "Connexion réussie";
 "connection.connection_failed.message"      = "Identifiant ou mot de passe incorrect";
 "connection.header_section.title"           = "Réservations";
+
+"did_reservation_success"           = "Réservation réussie";
 
 "offersList.search_text_view.placeholder"   = "Destination";
 "offersList.header_section.title"           = "Offres";

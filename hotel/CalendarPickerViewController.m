@@ -13,9 +13,14 @@
 #import "DateLabelWithPadding.h"
 #import <CardIO.h>
 #import "MakeReservationAction.h"
+#import "GetReservationAction.h"
+
+#define DATE_FORMAT_SERVER  @"%ld-%ld-%ld"
+#define DATE_FORMAT_DISPLAYED       @"%ld/%ld/%ld"
 
 @interface CalendarPickerViewController () <DSLCalendarViewDelegate, CardIOPaymentViewControllerDelegate>
 
+// Outlets
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet DSLCalendarView *calendarView;
 @property (weak, nonatomic) IBOutlet UIButton *bookDateButton;
@@ -24,6 +29,11 @@
 @property (weak, nonatomic) IBOutlet DateLabelWithPadding *toWordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
+
+
+// Data
+@property (weak, nonatomic) NSString *fromDate;
+@property (weak, nonatomic) NSString *toDate;
 
 @end
 
@@ -79,8 +89,13 @@
 {
     if (range != nil)
     {
-        NSString *fromDate = [NSString stringWithFormat:@"%ld/%ld/%ld",(long)range.startDay.day, (long)range.startDay.month, (long)range.startDay.year];
-        NSString *toDate = [NSString stringWithFormat:@"%ld/%ld/%ld",(long)range.endDay.day, (long)range.endDay.month, (long)range.startDay.year];
+        // Record date with good format for serveur
+        self.fromDate = [NSString stringWithFormat:DATE_FORMAT_SERVER, (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
+        self.toDate = [NSString stringWithFormat:DATE_FORMAT_SERVER, (long)range.endDay.year, (long)range.endDay.month, (long)range.endDay.day];
+        
+        // Display Date
+        NSString *fromDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.startDay.day, (long)range.startDay.month, (long)range.startDay.year];
+        NSString *toDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.endDay.day, (long)range.endDay.month, (long)range.startDay.year];
         [self updateDateLabelFrom:fromDate to:toDate];
     }
     else
@@ -145,8 +160,8 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservation:) name:didReservationNotification object:nil];
     
     [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithOfferId:[self.offer.uid stringValue]
-                                                                                    dateBegin:self.fromDateLabel.text
-                                                                                      dateEnd:self.toDateLabel.text
+                                                                                    dateBegin:self.fromDate
+                                                                                      dateEnd:self.toDate
                                                                            redactedCardNumber:info.redactedCardNumber
                                                                                   expiryMonth:info.expiryMonth
                                                                                    expiryYear:info.expiryYear
@@ -158,9 +173,26 @@
 
 - (void)didBookReservation:(NSNotification *)notification
 {
-    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:notification.object];
-#warning TODO 
-    // Pop to parent controller et afficher la liste des réservation avec celle qu'on vient de faire
+    NSNumber *statusCode = notification.object;
+    NSString *title = @"";
+    NSString *message = @"";
+    
+    if ([statusCode isEqualToNumber:@200])
+    {
+        title = LOCALIZED_STRING(@"did_reservation_success");
+        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
+    }
+    else
+    {
+        title = LOCALIZED_STRING(@"globals.error");
+        message = LOCALIZED_STRING(@"globals.technical_error");
+    }
+    
+    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:title
+                                                                     message:message
+                                                               messageButton:LOCALIZED_STRING(@"globals.ok")
+                                                         popToViewController:YES];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
 }
 
 #pragma mark - Actions

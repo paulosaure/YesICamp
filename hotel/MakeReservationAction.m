@@ -7,7 +7,6 @@
 //
 
 #import "MakeReservationAction.h"
-#import "GetReservationAction.h"
 
 #define RESERVATION_URL @"user/book"
 

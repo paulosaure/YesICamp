@@ -22,4 +22,17 @@
     return self;
 }
 
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message messageButton:(NSString *)messageButton popToViewController:(BOOL)popToViewController
+{
+    if (self = [super init])
+    {
+        _title = title;
+        _message = message;
+        _messageButton = messageButton;
+        _popToRootViewController = popToViewController;
+    }
+    
+    return self;
+}
+
 @end

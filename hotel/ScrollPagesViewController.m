@@ -310,7 +310,11 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {
-                                    //Handel your yes please button action here
+                                    if (information.popToRootViewController)
+                                    {
+                                        [self.navigationController popToRootViewControllerAnimated:YES];
+                                        [self didSelectedTitleAtIndex:PageControllerAccount];
+                                    }
                                 }];
     
     [alert addAction:yesButton];

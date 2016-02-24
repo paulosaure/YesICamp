@@ -11,9 +11,11 @@
 @interface PopUpInformation : NSObject
 
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message messageButton:(NSString *)messageButton;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message messageButton:(NSString *)messageButton popToViewController:(BOOL)popToViewController;
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSString *messageButton;
+@property (nonatomic, assign) BOOL popToRootViewController;
 
 @end

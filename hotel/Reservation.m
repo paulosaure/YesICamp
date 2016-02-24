@@ -10,12 +10,6 @@
 
 @interface Reservation ()
 
-@property (nonatomic, strong) NSString *reservationId;
-@property (nonatomic, strong) User *user;
-@property (nonatomic, strong) Offer *offer;
-@property (nonatomic, strong) NSDate *dateFrom;
-@property (nonatomic, strong) NSDate *dateTo;
-
 @end
 
 @implementation Reservation
@@ -24,9 +18,15 @@
 {
     if (self = [super init])
     {
-        // TDO
-#warning TODO
-        
+        _uid = [dic objectForKeyOrNil:@"id"];
+        _addressCamping = [dic objectForKeyOrNil:@"address"];
+        _nameCamping = [dic objectForKeyOrNil:@"camping"];
+        _phoneCamping = [dic objectForKeyOrNil:@"phone"];
+        _offerId = [dic objectForKeyOrNil:@"offer_id"];
+        _price = [dic objectForKeyOrNil:@"price"];
+        _dateFrom = [dic objectForKeyOrNil:@"begin"];
+        _dateTo = [dic objectForKeyOrNil:@"end"];
+        _statusReservation = [dic objectForKeyOrNil:@"status"];
     }
     
     return self;

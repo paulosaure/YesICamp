@@ -42,7 +42,15 @@
         [reservations addObject:[[Reservation alloc] initWithDictionnary:reservation]];
     }
     
-    [NOTIFICATION_CENTER postNotificationName:ReservationListNotification object:reservations];
+    if (header.statusCode == 200)
+    {
+        [User sharedInstance].reservations = reservations;
+        [NOTIFICATION_CENTER postNotificationName:ReservationListNotification object:reservations];
+    }
+    else
+    {
+        [NOTIFICATION_CENTER postNotificationName:ReservationListNotification object:nil];
+    }
 }
 
 @end

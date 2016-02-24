@@ -12,4 +12,14 @@
 
 - (instancetype)initWithDictionnary:(NSDictionary *)dic;
 
+@property (nonatomic, strong, readonly) NSNumber *uid;
+@property (nonatomic, strong, readonly) NSString *addressCamping;
+@property (nonatomic, strong, readonly) NSString *nameCamping;
+@property (nonatomic, strong, readonly) NSString *phoneCamping;
+@property (nonatomic, strong, readonly) NSNumber *offerId;
+@property (nonatomic, strong, readonly) NSNumber *price;
+@property (nonatomic, strong, readonly) NSString *dateFrom;
+@property (nonatomic, strong, readonly) NSString *dateTo;
+@property (nonatomic, strong, readonly) NSString *statusReservation;
+
 @end

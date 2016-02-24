@@ -23,9 +23,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
 @property (weak, nonatomic) IBOutlet UIButton *connectionButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
+// Content
+@property (nonatomic, strong) NSArray *reservationArray;
 
 @end
 
@@ -66,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;//[[User sharedInstance].reservations count];
+    return [self.reservationArray count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -107,15 +109,25 @@
 
 - (void)didReceiveReservations:(NSNotification *)notification
 {
-    NSNumber *statusCode = notification.object;
-    
-    if ([statusCode isEqualToNumber:@200])
+    self.reservationArray = notification.object;
+
+    if (self.reservationArray)
     {
-        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
+        if ([self.reservationArray count] != 0)
+        {
+            [self.tableView reloadData];
+        }
+        else
+        {
+            NSLog(@"aucune réservation");
+        }
     }
     else
     {
-        LOCALIZED_STRING(@"globals.error");
+        PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                         message:@""
+                                                                   messageButton:LOCALIZED_STRING(@"globals.ok")];
+        [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
     }
 }
 
