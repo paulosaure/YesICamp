@@ -162,7 +162,7 @@
     [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithOfferId:[self.offer.uid stringValue]
                                                                                     dateBegin:self.fromDate
                                                                                       dateEnd:self.toDate
-                                                                           redactedCardNumber:info.redactedCardNumber
+                                                                           redactedCardNumber:info.cardNumber
                                                                                   expiryMonth:info.expiryMonth
                                                                                    expiryYear:info.expiryYear
                                                                                           cvv:info.cvv]
