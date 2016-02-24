@@ -65,6 +65,12 @@
         [self configurePostRequest:request postParam:action.param];
     }
     
+    User *user = [User sharedInstance];
+    if (user.isConnected)
+    {
+        [self addUserParamInRequest:request user:user];
+    }
+    
     // Generate session
     if (!self.config)
     {
@@ -87,12 +93,17 @@
 {
     NSData *postData = [postParam dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-    
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
 }
 
+- (void)addUserParamInRequest:(NSMutableURLRequest *)request user:(User *)user
+{
+    [request setValue:user.uid forHTTPHeaderField:@"Uid"];
+    [request setValue:user.tokenId forHTTPHeaderField:@"Access-token"];
+    [request setValue:user.client forHTTPHeaderField:@"Client"];
+}
 
 #pragma mark - NSURLSessionTaskDelegate
 

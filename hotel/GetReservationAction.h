@@ -10,6 +10,6 @@
 
 @interface GetReservationAction : HTTPAction
 
-+ (instancetype)actionWithUid:(NSString *)uid tokenId:(NSString *)tokenId client:(NSString *)client;
++ (instancetype)action;
 
 @end

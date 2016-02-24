@@ -12,6 +12,7 @@
 
 + (instancetype)sharedInstance;
 - (void)didConnectionSucceded:(NSDictionary *)account uid:(NSString *)uid tokenId:(NSString *)token client:(NSString *)client;
+- (NSString *)paramsClientInformation;
 
 @property (nonatomic, assign) BOOL isConnected;
 @property (nonatomic, strong) NSArray *reservations;

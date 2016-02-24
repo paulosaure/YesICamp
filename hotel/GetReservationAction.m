@@ -14,10 +14,9 @@
 
 #pragma mark - Constructor
 
-+ (instancetype)actionWithUid:(NSString *)uid tokenId:(NSString *)tokenId client:(NSString *)client
++ (instancetype)action
 {
-    NSString *urlSuffix = [NSString stringWithFormat:@"%@?uid=%@&tokenId=%@&client=%@",RESERVATIONS_URL, uid, tokenId, client];
-    GetReservationAction *action = [[GetReservationAction alloc] initWithUrl:ACTION_URL(urlSuffix) service:WebServiceGetReservationList];
+    GetReservationAction *action = [[GetReservationAction alloc] initWithUrl:ACTION_URL(RESERVATIONS_URL) service:WebServiceGetReservationList];
     
     return action;
 }
@@ -29,11 +28,16 @@
     [super handleDownloadedData:obj];
     
     NSMutableArray *reservations = [NSMutableArray array];
-    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
-    NSArray *reservationsJson = (NSArray *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
-
-    for (NSDictionary *reservation in reservationsJson)
+    // Get data
+    NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
+    NSString *body = [obj objectForKey:RESPONSE_BODY];
+    
+    // Transform body to Json
+    NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *bodyReservations = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    
+    for (NSDictionary *reservation in bodyReservations)
     {
         [reservations addObject:[[Reservation alloc] initWithDictionnary:reservation]];
     }

@@ -145,9 +145,7 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservation:) name:didReservationNotification object:nil];
     
 #warning TODO
-    [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithTokenId:@""
-                                                                                      offerId:@""
-                                                                                    dateBegin:@""
+    [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithDateBegin:@""
                                                                                       dateEnd:@""
                                                                            redactedCardNumber:@""
                                                                                   expiryMonth:@""

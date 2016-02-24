@@ -8,17 +8,16 @@
 
 #import "MakeReservationAction.h"
 
-#define RESERVATION_URL @""
+#define RESERVATION_URL @"user/book"
 
 @implementation MakeReservationAction
 
 #pragma mark - Constructor
 
-+ (instancetype)actionWithTokenId:(NSString *)tokenId offerId:(NSString *)offerId dateBegin:(NSString *)dateBegin dateEnd:(NSString *)dateEnd redactedCardNumber:(NSString *)redactedCardNumber expiryMonth:(NSString *)expiryMonth expiryYear:(NSString *)expiryYear cvv:(NSString *)cvv
++ (instancetype)actionWithDateBegin:(NSString *)dateBegin dateEnd:(NSString *)dateEnd redactedCardNumber:(NSString *)redactedCardNumber expiryMonth:(NSString *)expiryMonth expiryYear:(NSString *)expiryYear cvv:(NSString *)cvv
 {
-    
-#warning TODO
-    MakeReservationAction *action = [[MakeReservationAction alloc] initWithUrl:ACTION_URL(RESERVATION_URL) service:WebServiceMakeReservation];
+    NSString *postCardParam = [NSString stringWithFormat:@"dateBegin=%@&dateEnd=%@&redactedCardNumber=%@&expiryMonth=%@&expiryYear=%@&cvv=%@",dateBegin, dateEnd, redactedCardNumber,expiryYear ,expiryMonth, cvv];
+    MakeReservationAction *action = [[MakeReservationAction alloc] initWithUrl:ACTION_URL(RESERVATION_URL) service:WebServiceMakeReservation param:postCardParam];
     
     return action;
 }

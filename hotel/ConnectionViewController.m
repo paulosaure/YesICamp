@@ -105,10 +105,10 @@
 
 - (void)didReceiveReservations:(NSNotification *)notification
 {
-    
+    NSLog(@"ok");
 }
 
-- (void)handleConnecionResponse:(NSNotification *)notification
+- (void)handleConnectionResponse:(NSNotification *)notification
 {
     NSString *response = notification.object;
     NSString *title = @"";
@@ -117,6 +117,8 @@
     if ([response isEqualToString:@""])
     {
         message = LOCALIZED_STRING(@"connection.connection_success.message");
+        [User sharedInstance].isConnected = YES;
+        [self userIsConnect:YES];
     }
     else
     {
@@ -134,7 +136,7 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {
-                                    [self userIsConnect:[User sharedInstance].isConnected];
+                                    
                                 }];
     
     [alert addAction:yesButton];
@@ -151,7 +153,7 @@
     }
     else
     {
-        [NOTIFICATION_CENTER addObserver:self selector:@selector(handleConnecionResponse:) name:ConnectionReponseNotification object:nil];
+        [NOTIFICATION_CENTER addObserver:self selector:@selector(handleConnectionResponse:) name:ConnectionReponseNotification object:nil];
         [[NetworkManagement sharedInstance] addNewAction:[ConnectionUserAction action:self.pseudoTextView.text
                                                                              password:self.passwordTextView.text]
                                                   method:POST_METHOD];
@@ -174,9 +176,8 @@
     
     if (isConnected)
     {
-        User *user = [User sharedInstance];
         [NOTIFICATION_CENTER addObserver:self selector:@selector(didReceiveReservations:) name:ReservationListNotification object:nil];
-        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction actionWithUid:user.uid tokenId:user.tokenId client:user.client]];
+        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
     }
 }
 

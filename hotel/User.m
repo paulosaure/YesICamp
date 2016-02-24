@@ -46,4 +46,8 @@
     self.isConnected = YES;
 }
 
+- (NSString *)paramsClientInformation
+{
+    return [NSString stringWithFormat:@"uid=%@&tokenId=%@&client=%@",self.uid, self.tokenId, self.client];
+}
 @end
