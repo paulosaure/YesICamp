@@ -32,11 +32,7 @@
     NSDictionary *body = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     NSString *response = @"";
     
-    if (header.statusCode != 200)
-    {
-        response = LOCALIZED_STRING(@"globals.error");
-    }
-    else
+    if (header.statusCode == 200)
     {
         NSDictionary *data = [body objectForKeyOrNil:@"data"];
         [[User sharedInstance] didConnectionSucceded: data
@@ -45,7 +41,7 @@
                                               client:[header.allHeaderFields objectForKey:@"client"]];
     }
     
-    [NOTIFICATION_CENTER postNotificationName:ConnectionReponseNotification object:response];
+    [NOTIFICATION_CENTER postNotificationName:ConnectionReponseNotification object:@(header.statusCode)];
 }
 
 @end

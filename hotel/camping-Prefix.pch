@@ -15,7 +15,7 @@
 /**
  * Alert View
  */
-#define EmptyFieldsNotification @"EmptyFieldsNotification"
+#define popUpNotification @"popUpNotification"
 
 /**
  * Shortcuts
@@ -64,6 +64,7 @@
 #import "Offer.h"
 #import "User.h"
 #import "Reservation.h"
+#import "PopUpInformation.h"
 #import "NSDictionary+Additions.h"
 
 #endif /* hotel_Prefix_pch */

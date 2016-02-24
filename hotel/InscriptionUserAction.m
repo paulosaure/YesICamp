@@ -29,14 +29,7 @@
     
     NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
     NSDictionary *body = [obj objectForKey:RESPONSE_BODY];
-    NSString *response = @"";
-    
-    if (header.statusCode != 200)
-    {
-        response = LOCALIZED_STRING(@"globals.error");
-    }
-    
-    [NOTIFICATION_CENTER postNotificationName:InscriptionReponseNotification object:response];
+    [NOTIFICATION_CENTER postNotificationName:InscriptionReponseNotification object:@(header.statusCode)];
 }
 
 @end

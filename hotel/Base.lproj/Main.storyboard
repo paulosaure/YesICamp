@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-S4-fUi">
-                                <rect key="frame" x="0.0" y="219.5" width="600" height="161"/>
+                                <rect key="frame" x="0.0" y="219" width="600" height="161"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wub-HX-tTt">
                                         <rect key="frame" x="8" y="108" width="584" height="45"/>
@@ -97,6 +97,9 @@
                                             <action selector="connection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2S1-GC-zmq"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hrh-un-9us">
+                                        <rect key="frame" x="290" y="120.5" width="20" height="20"/>
+                                    </activityIndicatorView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.com" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ry5-re-uB8">
                                         <rect key="frame" x="8" y="8" width="584" height="45"/>
                                         <constraints>
@@ -118,8 +121,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="hrh-un-9us" firstAttribute="centerX" secondItem="wub-HX-tTt" secondAttribute="centerX" id="1dv-Hd-Fpl"/>
                                     <constraint firstItem="lam-uI-n3G" firstAttribute="top" secondItem="ry5-re-uB8" secondAttribute="bottom" constant="5" id="20q-nH-Tkt"/>
                                     <constraint firstItem="wub-HX-tTt" firstAttribute="leading" secondItem="VwJ-S4-fUi" secondAttribute="leading" constant="8" id="5Ky-oK-JLh"/>
+                                    <constraint firstItem="hrh-un-9us" firstAttribute="centerY" secondItem="wub-HX-tTt" secondAttribute="centerY" id="Ib0-2V-xaE"/>
                                     <constraint firstItem="ry5-re-uB8" firstAttribute="leading" secondItem="VwJ-S4-fUi" secondAttribute="leading" constant="8" id="LRF-zJ-1ha"/>
                                     <constraint firstItem="wub-HX-tTt" firstAttribute="top" secondItem="lam-uI-n3G" secondAttribute="bottom" constant="5" id="T2q-n5-8fQ"/>
                                     <constraint firstItem="ry5-re-uB8" firstAttribute="top" secondItem="VwJ-S4-fUi" secondAttribute="top" constant="8" id="Udu-ql-pBR"/>
@@ -161,6 +166,7 @@
                         <outlet property="passwordTextView" destination="lam-uI-n3G" id="tM0-B6-vOu"/>
                         <outlet property="pseudoTextView" destination="ry5-re-uB8" id="yaI-Ed-vWL"/>
                         <outlet property="signUpButton" destination="JbV-pz-XSx" id="Kjy-IF-jXX"/>
+                        <outlet property="spinner" destination="hrh-un-9us" id="qbI-Qq-eKZ"/>
                         <outlet property="tableView" destination="ZuF-Gu-PeT" id="D94-S9-Xbh"/>
                     </connections>
                 </viewController>

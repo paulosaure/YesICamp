@@ -144,13 +144,13 @@
     
     [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservation:) name:didReservationNotification object:nil];
     
-#warning TODO
-    [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithDateBegin:@""
-                                                                                      dateEnd:@""
-                                                                           redactedCardNumber:@""
-                                                                                  expiryMonth:@""
-                                                                                   expiryYear:@""
-                                                                                          cvv:@""]
+    [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithOfferId:[self.offer.uid stringValue]
+                                                                                    dateBegin:self.fromDateLabel.text
+                                                                                      dateEnd:self.toDateLabel.text
+                                                                           redactedCardNumber:info.redactedCardNumber
+                                                                                  expiryMonth:info.expiryMonth
+                                                                                   expiryYear:info.expiryYear
+                                                                                          cvv:info.cvv]
                                               method:POST_METHOD];
 }
 
@@ -158,7 +158,7 @@
 
 - (void)didBookReservation:(NSNotification *)notification
 {
-    [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:notification.object];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:notification.object];
 #warning TODO 
     // Pop to parent controller et afficher la liste des réservation avec celle qu'on vient de faire
 }
@@ -189,7 +189,10 @@
     }
     else
     {
-        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:errorMessage];
+        PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                         message:errorMessage
+                                                                   messageButton:LOCALIZED_STRING(@"globals.ok")];
+        [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
     }
 }
 

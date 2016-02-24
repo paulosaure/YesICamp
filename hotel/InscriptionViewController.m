@@ -65,11 +65,11 @@
     self.imageProfileView.hidden = YES;
     
     
-     [self.firstNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.firstname.placeholder")];
-     [self.lastNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
-     [self.emailTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.email.placeholder")];
-     [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.password.placeholder")];
-     [self.ageTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.age.placeholder")];
+    [self.firstNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.firstname.placeholder")];
+    [self.lastNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
+    [self.emailTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.email.placeholder")];
+    [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.password.placeholder")];
+    [self.ageTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.age.placeholder")];
     
     [self.choosePhotoButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"inscription.select_picture.button")];
     [self.inscriptionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"inscription.inscription.button")];
@@ -91,19 +91,20 @@
 
 - (void)handleInscriptionResponse:(NSNotification *)notification
 {
-    NSString *response = notification.object;
+    NSNumber *statusCode = notification.object;
     NSString *title = @"";
     NSString *message;
-    if ([response isEqualToString:@""])
+    
+    if ([statusCode isEqualToNumber:@200])
     {
         message = LOCALIZED_STRING(@"inscription.registration_success.message");
     }
     else
     {
         title = LOCALIZED_STRING(@"globals.error");
-        message = response;
+        message = [statusCode stringValue];
     }
-        
+    
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:title
                                   message:message
@@ -136,13 +137,14 @@
 
 - (IBAction)startInscription:(id)sender
 {
+    NSString *errorMessage;
     BOOL allFielsComplete = YES;
     for (UITextField *field in self.fields)
     {
         if ([field.text isEqualToString:@""])
         {
             allFielsComplete = NO;
-            [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:LOCALIZED_STRING(@"homePage.error.fielsEmpty")];
+            errorMessage = LOCALIZED_STRING(@"homePage.error.fielsEmpty");
             break;
         }
     }
@@ -151,7 +153,7 @@
     if (self.passwordTextView.text.length < 8)
     {
         allFielsComplete = NO;
-        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:LOCALIZED_STRING(@"homePage.password_short.error")];
+        errorMessage = LOCALIZED_STRING(@"homePage.password_short.error");
     }
     
     if (allFielsComplete)
@@ -163,7 +165,13 @@
                                                                               password:self.passwordTextView.text
                                                                                    age:self.ageTextView.text]
                                                   method:POST_METHOD];
-        NSLog(@"start inscription");
+    }
+    else
+    {
+        PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                         message:errorMessage
+                                                                   messageButton:LOCALIZED_STRING(@"globals.ok")];
+        [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
     }
 }
 

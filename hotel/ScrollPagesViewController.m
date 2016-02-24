@@ -70,7 +70,7 @@
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushProfilViewController:) name:PushOfferDetailViewNotificiation object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushHotDealViewController:) name:HotDealSelectedNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(pushCalendarPickerViewController:) name:CalendarPickerNotification object:nil];
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushAlertEmptyFields:) name:EmptyFieldsNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(pushAlertFields:) name:popUpNotification object:nil];
 }
 
 - (void)configureUI
@@ -296,15 +296,17 @@
     [self.navigationController pushViewController:view animated:YES];
 }
 
-- (void)pushAlertEmptyFields:(NSNotification *)notification
+- (void)pushAlertFields:(NSNotification *)notification
 {
+    PopUpInformation *information = notification.object;
+    
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:LOCALIZED_STRING(@"globals.error")
-                                  message:notification.object
+                                  alertControllerWithTitle:information.title
+                                  message:information.message
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:LOCALIZED_STRING(@"globals.ok")
+                                actionWithTitle:information.messageButton
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
                                 {

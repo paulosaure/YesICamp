@@ -58,6 +58,7 @@
 		A8AB35891C7A82B60018C186 /* ReservationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35881C7A82B60018C186 /* ReservationCell.m */; };
 		A8AB358B1C7A82FD0018C186 /* ReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */; };
 		A8AB35901C7CEE0A0018C186 /* GetReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB358F1C7CEE0A0018C186 /* GetReservationAction.m */; };
+		A8AB35941C7E497B0018C186 /* PopUpInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35931C7E497B0018C186 /* PopUpInformation.m */; };
 		A8B0234F1C51579D00C10AA7 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0234E1C51579D00C10AA7 /* libc++.tbd */; };
 		A8B023531C51585400C10AA7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B023521C51585400C10AA7 /* libsqlite3.tbd */; };
 		A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C22D121C712DC60012147C /* CustomMKAnnotationView.xib */; };
@@ -188,6 +189,8 @@
 		A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationCell.xib; sourceTree = "<group>"; };
 		A8AB358E1C7CEE0A0018C186 /* GetReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetReservationAction.h; sourceTree = "<group>"; };
 		A8AB358F1C7CEE0A0018C186 /* GetReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetReservationAction.m; sourceTree = "<group>"; };
+		A8AB35921C7E497B0018C186 /* PopUpInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpInformation.h; sourceTree = "<group>"; };
+		A8AB35931C7E497B0018C186 /* PopUpInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpInformation.m; sourceTree = "<group>"; };
 		A8B0234E1C51579D00C10AA7 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A8B023501C5157ED00C10AA7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		A8B023521C51585400C10AA7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -496,6 +499,7 @@
 		A88EB3DC1C5015D1008DC5CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8AB35911C7E496E0018C186 /* popUp */,
 				A88EB3DD1C5015DB008DC5CF /* Camping */,
 				A870B27B1C5CB8910006CAAA /* HotDeal */,
 				A8F2FF061C557EAB007DF893 /* Offer */,
@@ -725,6 +729,15 @@
 				A8AB358F1C7CEE0A0018C186 /* GetReservationAction.m */,
 			);
 			name = GetReservation;
+			sourceTree = "<group>";
+		};
+		A8AB35911C7E496E0018C186 /* popUp */ = {
+			isa = PBXGroup;
+			children = (
+				A8AB35921C7E497B0018C186 /* PopUpInformation.h */,
+				A8AB35931C7E497B0018C186 /* PopUpInformation.m */,
+			);
+			name = popUp;
 			sourceTree = "<group>";
 		};
 		A8C22D1B1C728C2E0012147C /* GlobalConfiguration */ = {
@@ -1051,6 +1064,7 @@
 				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
 				A80624EA1C7A182F00ABF9EC /* MakeReservationAction.m in Sources */,
 				A84C71891C56E7A000598FE9 /* CustomMKAnnotationView.m in Sources */,
+				A8AB35941C7E497B0018C186 /* PopUpInformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

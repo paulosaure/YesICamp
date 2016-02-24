@@ -10,6 +10,6 @@
 
 @interface MakeReservationAction : HTTPAction
 
-+ (instancetype)actionWithDateBegin:(NSString *)dateBegin dateEnd:(NSString *)dateEnd redactedCardNumber:(NSString *)redactedCardNumber expiryMonth:(NSString *)expiryMonth expiryYear:(NSString *)expiryYear cvv:(NSString *)cvv;
++ (instancetype)actionWithOfferId:(NSString *)offerId dateBegin:(NSString *)dateBegin dateEnd:(NSString *)dateEnd redactedCardNumber:(NSString *)redactedCardNumber expiryMonth:(unsigned long)expiryMonth expiryYear:(unsigned long)expiryYear cvv:(NSString *)cvv;
 
 @end

@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -58,6 +59,7 @@
     self.view.backgroundColor = [UIColor clearColor];
     
     self.tableView.backgroundColor = [UIColor clearColor];
+    [self isSearching:NO];
 }
 
 #pragma mark - UITableViewDataSource
@@ -105,42 +107,41 @@
 
 - (void)didReceiveReservations:(NSNotification *)notification
 {
-    NSLog(@"ok");
+    NSNumber *statusCode = notification.object;
+    
+    if ([statusCode isEqualToNumber:@200])
+    {
+        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
+    }
+    else
+    {
+        LOCALIZED_STRING(@"globals.error");
+    }
 }
 
 - (void)handleConnectionResponse:(NSNotification *)notification
 {
-    NSString *response = notification.object;
+    [self isSearching:NO];
+    
+    NSNumber *statusCode = notification.object;
     NSString *title = @"";
     NSString *message;
 
-    if ([response isEqualToString:@""])
+    if ([statusCode isEqualToNumber:@200])
     {
-        message = LOCALIZED_STRING(@"connection.connection_success.message");
-        [User sharedInstance].isConnected = YES;
         [self userIsConnect:YES];
+        message = LOCALIZED_STRING(@"connection.connection_success.message");
     }
     else
     {
         title = LOCALIZED_STRING(@"globals.error");
-        message = response;
+        message = [statusCode stringValue];
     }
     
-    UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:title
-                                  message:message
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:LOCALIZED_STRING(@"globals.ok")
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * action)
-                                {
-                                    
-                                }];
-    
-    [alert addAction:yesButton];
-    [self presentViewController:alert animated:YES completion:nil];
+    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:title
+                                                                     message:message
+                                                               messageButton:LOCALIZED_STRING(@"globals.ok")];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
 }
 
 #pragma mark - Actions
@@ -149,10 +150,15 @@
 {
     if ([self.pseudoTextView.text isEqualToString:@""] || [self.passwordTextView.text isEqualToString:@""])
     {
-        [NOTIFICATION_CENTER postNotificationName:EmptyFieldsNotification object:LOCALIZED_STRING(@"homePage.error.fielsEmpty")];
+        PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                         message:LOCALIZED_STRING(@"homePage.error.fielsEmpty")
+                                                                   messageButton:LOCALIZED_STRING(@"globals.ok")];
+        
+        [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
     }
     else
     {
+        [self isSearching:YES];
         [NOTIFICATION_CENTER addObserver:self selector:@selector(handleConnectionResponse:) name:ConnectionReponseNotification object:nil];
         [[NetworkManagement sharedInstance] addNewAction:[ConnectionUserAction action:self.pseudoTextView.text
                                                                              password:self.passwordTextView.text]
@@ -167,6 +173,13 @@
 
 
 #pragma mark - Utils
+
+- (void)isSearching:(BOOL)isSearching
+{
+    self.spinner.hidden = !isSearching;
+    self.connectionButton.hidden = isSearching;
+    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+}
 
 - (void)userIsConnect:(BOOL)isConnected
 {
