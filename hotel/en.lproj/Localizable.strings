@@ -56,6 +56,9 @@
 
 "payment.creditCard.button"                     = "Fill informations";
 "payment.pay.button"                            = "Validate payment";
+"payment.nationality.label"                     = "Nationality";
+"payment.countryCode.label"                     = "Country of residence";
+"payment.birthdate.label"                       = "Birth date";
 "payment.scan_credit_card.button"               = "Scan your credit card";
 "payment.card_number.placeholder"               = "Card number";
 "payment.card_expiration_date.placeholder"      = "Expiration date";

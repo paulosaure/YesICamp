@@ -586,6 +586,9 @@
                                     <constraint firstAttribute="height" constant="45" id="aAJ-hr-rQb"/>
                                 </constraints>
                                 <state key="normal" title="Validate Payment"/>
+                                <connections>
+                                    <action selector="payButton:" destination="haq-wt-fs5" eventType="touchUpInside" id="WJE-1q-eZr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

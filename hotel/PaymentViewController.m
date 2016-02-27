@@ -44,11 +44,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *scanPayButton;
 @property (weak, nonatomic) IBOutlet UIButton *paymentButton;
 
-
 // View
 @property (weak, nonatomic) IBOutlet UIView *separatorView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+
+// Data
+@property (nonatomic, strong) CardDetail *cardDetail;
+@property (nonatomic, strong) CardRegistration *cardRegistration;
 
 @end
 
@@ -73,6 +76,7 @@
     [self.firstNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
     [self.emailTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
     
+    // Populate text fields
     User *user = [User sharedInstance];
     if (user)
     {
@@ -81,11 +85,15 @@
         self.emailTextView.text = user.email;
     }
     
+    // Label
     [self.cardNumberNumberLabel addTransparentColorEffect:GREEN_COLOR placeHolder:LOCALIZED_STRING(@"payment.card_number.placeholder")];
     [self.expirationDateNumberLabel addTransparentColorEffect:GREEN_COLOR placeHolder:LOCALIZED_STRING(@"payment.card_expiration_date.placeholder")];
     [self.cvxNumberLabel addTransparentColorEffect:GREEN_COLOR placeHolder:LOCALIZED_STRING(@"payment.card_cvx.placeholder")];
     
     // PickerView
+    self.birthdateLabel.text = LOCALIZED_STRING(@"payment.birthdate.label");
+    self.nationalityLabel.text = LOCALIZED_STRING(@"payment.nationality.label");
+    self.countryCodeLabel.text = LOCALIZED_STRING(@"payment.countryCode.label");
     [self.birthDatePickerView addTransparentColorEffect:GREEN_COLOR];
     [self.nationalityPickerView addTransparentColorEffect:GREEN_COLOR];
     [self.countryCodePickerView addTransparentColorEffect:GREEN_COLOR];
@@ -138,13 +146,18 @@
 
 - (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)info inPaymentViewController:(CardIOPaymentViewController *)scanViewController
 {
-    // The full card number is available as info.cardNumber, but don't log that!
-    NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", info.cardNumber, (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear, info.cvv);
-    // Use the card info...
+    // Register card info
+    NSString *expirationDate = [NSString stringWithFormat:@"%02lu/%lu", (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear];
+    self.cardDetail.cardNumber = info.cardNumber;
+    self.cardDetail.cardExpirationDate = expirationDate;
+    self.cardDetail.cardCvx = info.cvv;
+    
+    // Popoulate UI
+    self.cardNumberNumberLabel.text = info.cardNumber;
+    self.expirationDateNumberLabel.text = expirationDate;
+    self.cvxNumberLabel.text = info.cvv;
+    
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    //    [NOTIFICATION_CENTER addObserver:self selector:@selector(didPayReservation:) name:didReservationNotification object:nil];
-    
 }
 
 #pragma mark - Actions
@@ -154,5 +167,10 @@
     scanViewController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:scanViewController animated:YES completion:nil];
 }
+
+- (IBAction)payButton:(id)sender {
+        
+}
+
 
 @end
