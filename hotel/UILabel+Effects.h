@@ -11,5 +11,6 @@
 @interface UILabel (Effects)
 
 - (void)addTransparentColorEffect:(UIColor *)color;
+- (void)addTransparentColorEffect:(UIColor *)color placeHolder:(NSString *)placeHolder;
 
 @end

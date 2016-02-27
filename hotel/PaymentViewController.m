@@ -11,42 +11,41 @@
 #import <CardIO.h>
 #import "GetReservationAction.h"
 #import "CountryPicker.h"
+#import "UITextField+Effects.h"
+#import "UILabel+Effects.h"
+#import "UIButton+Effects.h"
+#import "LabelWithPadding.h"
+#import "UIView+Effects.h"
 
 @interface PaymentViewController () <CardIOPaymentViewControllerDelegate>
 
 // Outlets
 
 // Personal information Label
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *firstNameLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *birthdateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countryCodeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nationalityLabel;
 
-// Card information Label
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cardNumberLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *expirationDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *cvxLabel;
-
 // Personal information TextView
 @property (weak, nonatomic) IBOutlet UITextField *nameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *emailTextView;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextView;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *birthDatePickerView;
 @property (weak, nonatomic) IBOutlet CountryPicker *countryCodePickerView;
 @property (weak, nonatomic) IBOutlet CountryPicker *nationalityPickerView;
 
 // Card information TextView
-@property (weak, nonatomic) IBOutlet UITextField *cardNumberTextView;
-@property (weak, nonatomic) IBOutlet UITextField *expirationDateTextView;
-@property (weak, nonatomic) IBOutlet UITextField *cvxTextView;
+@property (weak, nonatomic) IBOutlet UILabel *cardNumberNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expirationDateNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cvxNumberLabel;
 
 // Button
 @property (weak, nonatomic) IBOutlet UIButton *scanPayButton;
 @property (weak, nonatomic) IBOutlet UIButton *paymentButton;
 
+
+// View
 @property (weak, nonatomic) IBOutlet UIView *separatorView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -69,10 +68,39 @@
 
 - (void)configureUI
 {
+    // TextView
+    [self.nameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.firstname.placeholder")];
+    [self.firstNameTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
+    [self.emailTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"inscription.lastname.placeholder")];
+    
+    User *user = [User sharedInstance];
+    if (user)
+    {
+        self.nameTextView.text = user.lastName;
+        self.firstNameTextView.text = user.firstName;
+        self.emailTextView.text = user.email;
+    }
+    
+    [self.cardNumberNumberLabel addTransparentColorEffect:GREEN_COLOR placeHolder:LOCALIZED_STRING(@"payment.card_number.placeholder")];
+    [self.expirationDateNumberLabel addTransparentColorEffect:GREEN_COLOR placeHolder:LOCALIZED_STRING(@"payment.card_expiration_date.placeholder")];
+    [self.cvxNumberLabel addTransparentColorEffect:GREEN_COLOR placeHolder:LOCALIZED_STRING(@"payment.card_cvx.placeholder")];
+    
+    // PickerView
+    [self.birthDatePickerView addTransparentColorEffect:GREEN_COLOR];
+    [self.nationalityPickerView addTransparentColorEffect:GREEN_COLOR];
+    [self.countryCodePickerView addTransparentColorEffect:GREEN_COLOR];
+    
+    
+    [self.birthDatePickerView setValue:[UIColor whiteColor] forKey:@"textColor"];
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %ld %@",[LOCALIZED_STRING(@"payment.pay.button") uppercaseString], (long)self.amount, LOCALIZED_STRING(@"globals.unity")];
     
+    // Button
     [self.paymentButton addEffectbelowBookButton:titleButton];
+    [self.scanPayButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"payment.scan_credit_card.button")];
+    
+    // View
+    self.separatorView.backgroundColor = GREEN_COLOR;
 }
 
 - (void)didPayReservation:(NSNotification *)notification
@@ -111,46 +139,20 @@
 - (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)info inPaymentViewController:(CardIOPaymentViewController *)scanViewController
 {
     // The full card number is available as info.cardNumber, but don't log that!
-    NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", info.redactedCardNumber, (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear, info.cvv);
+    NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", info.cardNumber, (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear, info.cvv);
     // Use the card info...
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
     
-//    [NOTIFICATION_CENTER addObserver:self selector:@selector(didPayReservation:) name:didReservationNotification object:nil];
+    //    [NOTIFICATION_CENTER addObserver:self selector:@selector(didPayReservation:) name:didReservationNotification object:nil];
     
 }
 
 #pragma mark - Actions
-//- (IBAction)bookDateAction:(id)sender
-//{
-//    NSString *errorMessage = @"";
-//    BOOL isError = YES;
-//    if (![User sharedInstance].isConnected)
-//    {
-//        errorMessage = LOCALIZED_STRING(@"calendarPicker.not_connected.error");
-//    }
-//    else if ([self.fromDateLabel.text isEqualToString:@""])
-//    {
-//        errorMessage = LOCALIZED_STRING(@"calendarPicker.date_empty.error");
-//    }
-//    else
-//    {
-//        isError = NO;
-//    }
-//    
-//    if (!isError)
-//    {
-//        CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
-//        scanViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-//        [self presentViewController:scanViewController animated:YES completion:nil];
-//    }
-//    else
-//    {
-//        PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
-//                                                                         message:errorMessage
-//                                                                   messageButton:LOCALIZED_STRING(@"globals.ok")];
-//        [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
-//    }
-//}
-//
+- (IBAction)scanCreditCardAction:(id)sender
+{
+    CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
+    scanViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:scanViewController animated:YES completion:nil];
+}
 
 @end

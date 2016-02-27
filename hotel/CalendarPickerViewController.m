@@ -10,7 +10,7 @@
 #import "DSLCalendarView.h"
 #import "UIButton+Effects.h"
 #import "UILabel+Effects.h"
-#import "DateLabelWithPadding.h"
+#import "LabelWithPadding.h"
 #import "BookReservationAction.h"
 #import "PaymentViewController.h"
 
@@ -24,8 +24,8 @@
 @property (nonatomic, weak) IBOutlet DSLCalendarView *calendarView;
 @property (weak, nonatomic) IBOutlet UIButton *checkDateValidityButton;
 
-@property (weak, nonatomic) IBOutlet DateLabelWithPadding *fromWordLabel;
-@property (weak, nonatomic) IBOutlet DateLabelWithPadding *toWordLabel;
+@property (weak, nonatomic) IBOutlet LabelWithPadding *fromWordLabel;
+@property (weak, nonatomic) IBOutlet LabelWithPadding *toWordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
 

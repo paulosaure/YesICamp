@@ -6,12 +6,12 @@
 //  Copyright © 2016 Paul Lavoine. All rights reserved.
 //
 
-#import "DateLabelWithPadding.h"
+#import "LabelWithPadding.h"
 
 #define PADDING 10
 #define PADDING_UILABEL UIEdgeInsetsMake(PADDING, PADDING, PADDING, PADDING)
 
-@implementation DateLabelWithPadding
+@implementation LabelWithPadding
 
 - (void)drawTextInRect:(CGRect)rect
 {

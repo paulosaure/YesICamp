@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DateLabelWithPadding : UILabel
+@interface LabelWithPadding : UILabel
 
 @end

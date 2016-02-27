@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */; };
-		A80624D61C79A7E200ABF9EC /* DateLabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */; };
+		A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */; };
 		A80624E61C7A09B200ABF9EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E51C7A09B200ABF9EC /* User.m */; };
 		A80624EA1C7A182F00ABF9EC /* BookReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E91C7A182F00ABF9EC /* BookReservationAction.m */; };
 		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
@@ -51,6 +51,7 @@
 		A898A0B41C81FD1C009BDDB3 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A898A0B31C81FD1C009BDDB3 /* PaymentViewController.m */; };
 		A89FDF541C81FF5E00585355 /* PayReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FDF531C81FF5E00585355 /* PayReservationAction.m */; };
 		A89FDF5D1C8225D100585355 /* CountryPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FDF5C1C8225D100585355 /* CountryPicker.m */; };
+		A89FDF611C823B2100585355 /* UIView+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FDF601C823B2100585355 /* UIView+Effects.m */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
 		A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBE1C5005C30026E456 /* ConnectionViewController.m */; };
@@ -102,8 +103,8 @@
 		726CDCA74CA8DA8EA470A5C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A80624D11C79A5E900ABF9EC /* UILabel+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Effects.h"; sourceTree = "<group>"; };
 		A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Effects.m"; sourceTree = "<group>"; };
-		A80624D41C79A7E200ABF9EC /* DateLabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateLabelWithPadding.h; sourceTree = "<group>"; };
-		A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateLabelWithPadding.m; sourceTree = "<group>"; };
+		A80624D41C79A7E200ABF9EC /* LabelWithPadding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelWithPadding.h; sourceTree = "<group>"; };
+		A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelWithPadding.m; sourceTree = "<group>"; };
 		A80624E41C7A09B200ABF9EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A80624E51C7A09B200ABF9EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A80624E81C7A182F00ABF9EC /* BookReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookReservationAction.h; sourceTree = "<group>"; };
@@ -181,6 +182,8 @@
 		A89FDF531C81FF5E00585355 /* PayReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayReservationAction.m; sourceTree = "<group>"; };
 		A89FDF5B1C8225CC00585355 /* CountryPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryPicker.h; path = hotel/CountryPicker.h; sourceTree = SOURCE_ROOT; };
 		A89FDF5C1C8225D100585355 /* CountryPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryPicker.m; path = hotel/CountryPicker.m; sourceTree = SOURCE_ROOT; };
+		A89FDF5F1C823B2100585355 /* UIView+Effects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Effects.h"; sourceTree = "<group>"; };
+		A89FDF601C823B2100585355 /* UIView+Effects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Effects.m"; sourceTree = "<group>"; };
 		A8A63DB41C5005C30026E456 /* hotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A63DB81C5005C30026E456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8A63DBA1C5005C30026E456 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -308,13 +311,13 @@
 			name = "UILabel+Effects";
 			sourceTree = "<group>";
 		};
-		A80624D81C79AB6500ABF9EC /* DateLabelWithPadding */ = {
+		A80624D81C79AB6500ABF9EC /* LabelWithPadding */ = {
 			isa = PBXGroup;
 			children = (
-				A80624D41C79A7E200ABF9EC /* DateLabelWithPadding.h */,
-				A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */,
+				A80624D41C79A7E200ABF9EC /* LabelWithPadding.h */,
+				A80624D51C79A7E200ABF9EC /* LabelWithPadding.m */,
 			);
-			name = DateLabelWithPadding;
+			name = LabelWithPadding;
 			sourceTree = "<group>";
 		};
 		A80624E31C7A09A300ABF9EC /* User */ = {
@@ -540,8 +543,8 @@
 			children = (
 				A89FDF581C821BC800585355 /* CountryData */,
 				A8FECAD11C7A46A700BA4656 /* CategoryLabelWithPadding */,
-				A80624D81C79AB6500ABF9EC /* DateLabelWithPadding */,
 				A8C22D1B1C728C2E0012147C /* GlobalConfiguration */,
+				A80624D81C79AB6500ABF9EC /* LabelWithPadding */,
 				A84C71801C56DFFF00598FE9 /* LocationManager */,
 				A81979571C763F3A00B2A177 /* MKAnnotation */,
 				A84C71861C56E77000598FE9 /* MKAnnotationView */,
@@ -549,6 +552,7 @@
 				A84C717B1C56C99F00598FE9 /* PageItem */,
 				A80624D71C79A7E700ABF9EC /* UILabel+Effects */,
 				A870B2991C6006D20006CAAA /* UIButton+Effects */,
+				A89FDF5E1C823B0400585355 /* UIPicker+Effects */,
 				A870B2921C6005E80006CAAA /* UITextField+Effects */,
 				A84C716B1C56A83400598FE9 /* ViewPager */,
 			);
@@ -708,6 +712,15 @@
 			name = CountryData;
 			path = "/Users/Pouicky/Downloads/CountryPicker-master/Examples/../CountryPicker";
 			sourceTree = "<absolute>";
+		};
+		A89FDF5E1C823B0400585355 /* UIPicker+Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A89FDF5F1C823B2100585355 /* UIView+Effects.h */,
+				A89FDF601C823B2100585355 /* UIView+Effects.m */,
+			);
+			name = "UIPicker+Effects";
+			sourceTree = "<group>";
 		};
 		A8A63DAB1C5005C30026E456 = {
 			isa = PBXGroup;
@@ -1118,7 +1131,7 @@
 				A88EB3CC1C500EAE008DC5CF /* OfferDetail.m in Sources */,
 				A89FDF5D1C8225D100585355 /* CountryPicker.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
-				A80624D61C79A7E200ABF9EC /* DateLabelWithPadding.m in Sources */,
+				A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */,
 				A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */,
 				A84C717E1C56C9A800598FE9 /* PageItemController.m in Sources */,
 				A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */,
@@ -1134,6 +1147,7 @@
 				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
 				A80624EA1C7A182F00ABF9EC /* BookReservationAction.m in Sources */,
 				A84C71891C56E7A000598FE9 /* CustomMKAnnotationView.m in Sources */,
+				A89FDF611C823B2100585355 /* UIView+Effects.m in Sources */,
 				A898A0B41C81FD1C009BDDB3 /* PaymentViewController.m in Sources */,
 				A8AB35941C7E497B0018C186 /* PopUpInformation.m in Sources */,
 			);

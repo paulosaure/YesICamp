@@ -17,6 +17,11 @@
 @property (nonatomic, assign) BOOL isConnected;
 @property (nonatomic, strong) NSArray *reservations;
 
+
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
+@property (nonatomic, strong) NSString *email;
+
 @property (nonatomic, strong) NSString *uid;
 @property (nonatomic, strong) NSString *client;
 @property (nonatomic, strong) NSString *tokenId;

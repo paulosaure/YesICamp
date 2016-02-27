@@ -229,7 +229,9 @@
 
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 245, 24)];
         label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor whiteColor];
         label.tag = 1;
+        [label setFont:[UIFont systemFontOfSize:24]];
         if (self.labelFont) {
             label.font = self.labelFont;
         }

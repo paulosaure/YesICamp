@@ -15,6 +15,7 @@
     NSAttributedString *passPlaceholder = [[NSAttributedString alloc] initWithString:placeholder attributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.attributedPlaceholder = passPlaceholder;
     
+    self.textColor = [UIColor whiteColor];
     self.backgroundColor = [UIColor clearColor];
     self.layer.borderColor = color.CGColor;
     self.layer.borderWidth = 1.0f;
