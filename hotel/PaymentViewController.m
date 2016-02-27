@@ -10,6 +10,7 @@
 #import "UIButton+Effects.h"
 #import <CardIO.h>
 #import "GetReservationAction.h"
+#import "CountryPicker.h"
 
 @interface PaymentViewController () <CardIOPaymentViewControllerDelegate>
 
@@ -20,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *firstNameLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *birthdateLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *countryCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countryCodeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nationalityLabel;
 
 // Card information Label
@@ -32,13 +33,15 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextView;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *emailTextView;
-@property (weak, nonatomic) IBOutlet UITextField *birthdateTextView;
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *birthDatePickerView;
+@property (weak, nonatomic) IBOutlet CountryPicker *countryCodePickerView;
+@property (weak, nonatomic) IBOutlet CountryPicker *nationalityPickerView;
 
 // Card information TextView
 @property (weak, nonatomic) IBOutlet UITextField *cardNumberTextView;
 @property (weak, nonatomic) IBOutlet UITextField *expirationDateTextView;
 @property (weak, nonatomic) IBOutlet UITextField *cvxTextView;
-
 
 // Button
 @property (weak, nonatomic) IBOutlet UIButton *scanPayButton;
