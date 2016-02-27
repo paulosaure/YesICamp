@@ -15,6 +15,11 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *age;
+@property (nonatomic, strong) NSString *birthDate;
+@property (nonatomic, strong) NSString *countryCode;
+@property (nonatomic, strong) NSString *nationality;
+@property (nonatomic, strong) CardDetail *cardDetail;
+@property (nonatomic, strong) CardRegistration *cardRegistration;
 
 @end
 
@@ -39,6 +44,9 @@
     self.lastName = [account objectForKeyOrNil:@"lastname"];
     self.email = [account objectForKeyOrNil:@"email"];
     self.age = [account objectForKeyOrNil:@"age"];
+    self.nationality = [account objectForKeyOrNil:@"nationality"];
+    self.birthDate = [account objectForKeyOrNil:@"birthDate"];
+    self.countryCode = [account objectForKeyOrNil:@"countryCode"];
     self.tokenId = token;
     self.uid = uid;
     self.client = client;

@@ -38,16 +38,21 @@
 "inscription.inscription.button"            = "Sign Up";
 "inscription.registration_success.message"  = "Successful booking";
 
-"hotdeal.price_from.label"          = "from";
-"hotdeal.price_to.label"            = "to";
-"hotdeal.header_section.title"      = "Campings";
+"hotdeal.price_from.label"                      = "from";
+"hotdeal.price_to.label"                        = "to";
+"hotdeal.header_section.title"                  = "Campings";
 
-"offerDetail.price.work"            = "price";
-"offerDetail.reservation.button"    = "Book";
+"offerDetail.price.work"                        = "price";
+"offerDetail.reservation.button"                = "Book";
 
-"calendarPicker.pay.button"         = "Pay";
-"calendarPicker.from_date.label"    = "From";
-"calendarPicker.to_date.label"      = "to";
-"calendarPicker.select_date.title"  = "Select the relevant period";
-"calendarPicker.not_connected.error"= "You should be connected to book a reservation";
-"calendarPicker.date_empty.error"   = "Please select a period";
+"calendarPicker.from_date.label"                = "From";
+"calendarPicker.to_date.label"                  = "to";
+"calendarPicker.select_date.title"              = "Select the relevant period";
+"calendarPicker.not_connected.error"            = "You should be connected to book a reservation";
+"calendarPicker.date_empty.error"               = "Please select a period";
+"calendarPicker.checkValidity.button"           = "Check Validity";
+"calendarPicker.price_per_night.information"    = "per night";
+"calendarPicker.book_not_possible.error"        = "Impossible reservation";
+
+"payment.creditCard.button"                     = "Fill informations";
+"payment.pay.button"                            = "Validate payment";

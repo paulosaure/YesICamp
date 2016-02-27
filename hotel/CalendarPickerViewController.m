@@ -11,19 +11,18 @@
 #import "UIButton+Effects.h"
 #import "UILabel+Effects.h"
 #import "DateLabelWithPadding.h"
-#import <CardIO.h>
-#import "MakeReservationAction.h"
-#import "GetReservationAction.h"
+#import "BookReservationAction.h"
+#import "PaymentViewController.h"
 
 #define DATE_FORMAT_SERVER  @"%ld-%ld-%ld"
 #define DATE_FORMAT_DISPLAYED       @"%ld/%ld/%ld"
 
-@interface CalendarPickerViewController () <DSLCalendarViewDelegate, CardIOPaymentViewControllerDelegate>
+@interface CalendarPickerViewController () <DSLCalendarViewDelegate>
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet DSLCalendarView *calendarView;
-@property (weak, nonatomic) IBOutlet UIButton *bookDateButton;
+@property (weak, nonatomic) IBOutlet UIButton *checkDateValidityButton;
 
 @property (weak, nonatomic) IBOutlet DateLabelWithPadding *fromWordLabel;
 @property (weak, nonatomic) IBOutlet DateLabelWithPadding *toWordLabel;
@@ -49,12 +48,6 @@
     [self configureUI];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [CardIOUtilities preload];
-}
-
 #pragma mark - Configuration
 
 - (void)configureUI
@@ -74,8 +67,8 @@
     [self.toWordLabel addTransparentColorEffect:GREEN_COLOR];
     self.toDateLabel.textColor = [UIColor whiteColor];
     
-    NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@",[LOCALIZED_STRING(@"calendarPicker.pay.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"globals.unity")];
-    [self.bookDateButton addEffectbelowBookButton:titleButton];
+    NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@ %@",[LOCALIZED_STRING(@"calendarPicker.checkValidity.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"globals.unity"), LOCALIZED_STRING(@"calendarPicker.price_per_night.information")];
+    [self.checkDateValidityButton addEffectbelowBookButton:titleButton];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -141,94 +134,79 @@
     return ([day1.date compare:day2.date] == NSOrderedAscending);
 }
 
-#pragma mark - CardIOPaymentViewControllerDelegate
+#pragma mark - Actions
 
-- (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)scanViewController
+- (IBAction)checkValidityDateAction:(id)sender
 {
-    //    NSLog(@"User canceled payment info");
-    // Handle user cancellation here...
-    [scanViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)info inPaymentViewController:(CardIOPaymentViewController *)scanViewController
-{
-    // The full card number is available as info.cardNumber, but don't log that!
-    NSLog(@"Received card info. Number: %@, expiry: %02lu/%lu, cvv: %@.", info.redactedCardNumber, (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear, info.cvv);
-    // Use the card info...
-    [scanViewController dismissViewControllerAnimated:YES completion:nil];
     
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservation:) name:didReservationNotification object:nil];
+    PaymentViewController *paymentViewController = (PaymentViewController *)[[UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil] instantiateViewControllerWithIdentifier:PaymentViewControllerID];
     
-    [[NetworkManagement sharedInstance] addNewAction:[MakeReservationAction actionWithOfferId:[self.offer.uid stringValue]
-                                                                                    dateBegin:self.fromDate
-                                                                                      dateEnd:self.toDate
-                                                                           redactedCardNumber:info.cardNumber
-                                                                                  expiryMonth:info.expiryMonth
-                                                                                   expiryYear:info.expiryYear
-                                                                                          cvv:info.cvv]
-                                              method:POST_METHOD];
+    paymentViewController.bookingId = 88624923;
+    paymentViewController.amount = 140;
+    [self.navigationController pushViewController:paymentViewController animated:YES];
+    
+    
+    
+//    NSString *errorMessage;
+//    if (![User sharedInstance].isConnected)
+//    {
+//        errorMessage = LOCALIZED_STRING(@"calendarPicker.not_connected.error");
+//    }
+//    else if ([self.fromDateLabel.text isEqualToString:@""])
+//    {
+//        errorMessage = LOCALIZED_STRING(@"calendarPicker.date_empty.error");
+//    }
+//    else
+//    {
+//        [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservationSucceded:) name:didBookReservationSuccededNotification object:nil];
+//        [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservationFailed:) name:didBookReservationFailedNotification object:nil];
+//        
+//        [[NetworkManagement sharedInstance] addNewAction:[BookReservationAction actionWithOfferId:[self.offer.uid stringValue]
+//                                                                                        dateBegin:self.fromDate
+//                                                                                          dateEnd:self.toDate]
+//                                                  method:POST_METHOD];
+//    }
 }
 
 #pragma mark - Notification
 
-- (void)didBookReservation:(NSNotification *)notification
+- (void)didBookReservationSucceded:(NSNotification *)notification
 {
-    NSNumber *statusCode = notification.object;
-    NSString *title = @"";
-    NSString *message = @"";
+    PaymentViewController *paymentViewController = (PaymentViewController *)[[UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil] instantiateViewControllerWithIdentifier:PaymentViewControllerID];
     
-    if ([statusCode isEqualToNumber:@200])
-    {
-        title = LOCALIZED_STRING(@"did_reservation_success");
-        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
-    }
-    else
-    {
-        title = LOCALIZED_STRING(@"globals.error");
-        message = LOCALIZED_STRING(@"globals.technical_error");
-    }
+    paymentViewController.bookingId = [notification.object integerValue];
+    paymentViewController.amount = [self numberOfDaysBetween:self.fromDate end:self.toDate] * [self.offer.price integerValue];
     
-    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:title
-                                                                     message:message
-                                                               messageButton:LOCALIZED_STRING(@"globals.ok")
-                                                         popToViewController:YES];
-    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
+    [self.navigationController pushViewController:paymentViewController animated:YES];
 }
 
-#pragma mark - Actions
-- (IBAction)bookDateAction:(id)sender
+- (void)didBookReservationFailed:(NSNotification *)notification
 {
-    NSString *errorMessage = @"";
-    BOOL isError = YES;
-    if (![User sharedInstance].isConnected)
-    {
-        errorMessage = LOCALIZED_STRING(@"calendarPicker.not_connected.error");
-    }
-    else if ([self.fromDateLabel.text isEqualToString:@""])
-    {
-        errorMessage = LOCALIZED_STRING(@"calendarPicker.date_empty.error");
-    }
-    else
-    {
-        isError = NO;
-    }
+    NSString *errorMessage = LOCALIZED_STRING(@"calendarPicker.book_not_possible.error");
+    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                     message:errorMessage
+                                                               messageButton:LOCALIZED_STRING(@"globals.ok")];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
     
-    if (!isError)
-    {
-        CardIOPaymentViewController *scanViewController = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self];
-        scanViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-        [self presentViewController:scanViewController animated:YES completion:nil];
-    }
-    else
-    {
-        PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
-                                                                         message:errorMessage
-                                                                   messageButton:LOCALIZED_STRING(@"globals.ok")];
-        [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
-    }
 }
 
 #pragma mark - Utils
+
+- (NSInteger)numberOfDaysBetween:(NSString *)start end:(NSString *)end
+{
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"yyyy-MM-dd"];
+    NSDate *startDate = [f dateFromString:start];
+    NSDate *endDate = [f dateFromString:end];
+    
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay
+                                                        fromDate:startDate
+                                                          toDate:endDate
+                                                         options:NSCalendarWrapComponents];
+    
+    return [components day];
+}
 - (void)updateDateLabelFrom:(NSString *)from to:(NSString *)to
 {
     self.fromDateLabel.text = [from uppercaseString];

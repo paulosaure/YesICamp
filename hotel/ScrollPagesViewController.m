@@ -62,6 +62,13 @@
     [self.view addGestureRecognizer:swipe];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    // TODO Remove
+    [self didSelectedTitleAtIndex:PageControllerPromo];
+}
+
 #pragma mark - Configurations
 
 - (void)configureNotification

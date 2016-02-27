@@ -14,17 +14,17 @@
 {
     CampingCategory category;
     
-    if ([categoryString isEqualToString:@"charme"]) {
+    if ([categoryString isEqualToString:@"Charme"]) {
         category = CampingCategoryCharme;
-    } else if ([categoryString isEqualToString:@"fun"]) {
+    } else if ([categoryString isEqualToString:@"Fun"]) {
         category = CampingCategoryFun;
-    } else if ([categoryString isEqualToString:@"lux"]) {
+    } else if ([categoryString isEqualToString:@"Lux"]) {
         category = CampingCategoryLuxe;
-    } else if ([categoryString isEqualToString:@"glamping"]) {
+    } else if ([categoryString isEqualToString:@"Glamping"]) {
         category = CampingCategoryGlamping;
-    } else if ([categoryString isEqualToString:@"terrainNu"]) {
+    } else if ([categoryString isEqualToString:@"TerrainNu"]) {
         category = CampingCategoryEmpty;
-    } else if ([categoryString isEqualToString:@"calme"]) {
+    } else if ([categoryString isEqualToString:@"Au calme"]) {
         category = CampingCategoryCalme;
     } else {
         NSLog(@"Error Category Inconnue : %@", categoryString);

@@ -10,7 +10,7 @@
 		A80624D31C79A5E900ABF9EC /* UILabel+Effects.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D21C79A5E900ABF9EC /* UILabel+Effects.m */; };
 		A80624D61C79A7E200ABF9EC /* DateLabelWithPadding.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */; };
 		A80624E61C7A09B200ABF9EC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E51C7A09B200ABF9EC /* User.m */; };
-		A80624EA1C7A182F00ABF9EC /* MakeReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E91C7A182F00ABF9EC /* MakeReservationAction.m */; };
+		A80624EA1C7A182F00ABF9EC /* BookReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E91C7A182F00ABF9EC /* BookReservationAction.m */; };
 		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
 		A819795E1C76553600B2A177 /* CalendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A819795D1C76553600B2A177 /* CalendarPickerViewController.m */; };
 		A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716D1C56A83400598FE9 /* LPTitleView.m */; };
@@ -46,6 +46,10 @@
 		A88EB4231C504026008DC5CF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4221C504026008DC5CF /* AssetsLibrary.framework */; };
 		A88EB4251C50402D008DC5CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88EB4241C50402D008DC5CF /* Security.framework */; };
 		A89763CE1C58163D0060BC5C /* GetOffersListAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89763CD1C58163D0060BC5C /* GetOffersListAction.m */; };
+		A898A0AC1C81F1C5009BDDB3 /* CardRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = A898A0AB1C81F1C5009BDDB3 /* CardRegistration.m */; };
+		A898A0B01C81F8B0009BDDB3 /* CardDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A898A0AF1C81F8B0009BDDB3 /* CardDetail.m */; };
+		A898A0B41C81FD1C009BDDB3 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A898A0B31C81FD1C009BDDB3 /* PaymentViewController.m */; };
+		A89FDF541C81FF5E00585355 /* PayReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FDF531C81FF5E00585355 /* PayReservationAction.m */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
 		A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBE1C5005C30026E456 /* ConnectionViewController.m */; };
@@ -101,8 +105,8 @@
 		A80624D51C79A7E200ABF9EC /* DateLabelWithPadding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateLabelWithPadding.m; sourceTree = "<group>"; };
 		A80624E41C7A09B200ABF9EC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		A80624E51C7A09B200ABF9EC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		A80624E81C7A182F00ABF9EC /* MakeReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeReservationAction.h; sourceTree = "<group>"; };
-		A80624E91C7A182F00ABF9EC /* MakeReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeReservationAction.m; sourceTree = "<group>"; };
+		A80624E81C7A182F00ABF9EC /* BookReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookReservationAction.h; sourceTree = "<group>"; };
+		A80624E91C7A182F00ABF9EC /* BookReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookReservationAction.m; sourceTree = "<group>"; };
 		A81979581C763F5800B2A177 /* CustomMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMKAnnotation.h; sourceTree = "<group>"; };
 		A81979591C763F5800B2A177 /* CustomMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotation.m; sourceTree = "<group>"; };
 		A819795C1C76553600B2A177 /* CalendarPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPickerViewController.h; sourceTree = "<group>"; };
@@ -166,6 +170,14 @@
 		A88EB4321C515230008DC5CF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A89763CC1C58163D0060BC5C /* GetOffersListAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOffersListAction.h; sourceTree = "<group>"; };
 		A89763CD1C58163D0060BC5C /* GetOffersListAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOffersListAction.m; sourceTree = "<group>"; };
+		A898A0AA1C81F1C5009BDDB3 /* CardRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardRegistration.h; sourceTree = "<group>"; };
+		A898A0AB1C81F1C5009BDDB3 /* CardRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardRegistration.m; sourceTree = "<group>"; };
+		A898A0AE1C81F8B0009BDDB3 /* CardDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetail.h; sourceTree = "<group>"; };
+		A898A0AF1C81F8B0009BDDB3 /* CardDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetail.m; sourceTree = "<group>"; };
+		A898A0B21C81FD1C009BDDB3 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		A898A0B31C81FD1C009BDDB3 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		A89FDF521C81FF5E00585355 /* PayReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayReservationAction.h; sourceTree = "<group>"; };
+		A89FDF531C81FF5E00585355 /* PayReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayReservationAction.m; sourceTree = "<group>"; };
 		A8A63DB41C5005C30026E456 /* hotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A63DB81C5005C30026E456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8A63DBA1C5005C30026E456 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -311,13 +323,13 @@
 			name = User;
 			sourceTree = "<group>";
 		};
-		A80624E71C7A181000ABF9EC /* MakeReservation */ = {
+		A80624E71C7A181000ABF9EC /* CheckValidityReservation */ = {
 			isa = PBXGroup;
 			children = (
-				A80624E81C7A182F00ABF9EC /* MakeReservationAction.h */,
-				A80624E91C7A182F00ABF9EC /* MakeReservationAction.m */,
+				A80624E81C7A182F00ABF9EC /* BookReservationAction.h */,
+				A80624E91C7A182F00ABF9EC /* BookReservationAction.m */,
 			);
-			name = MakeReservation;
+			name = CheckValidityReservation;
 			sourceTree = "<group>";
 		};
 		A81979571C763F3A00B2A177 /* MKAnnotation */ = {
@@ -499,10 +511,12 @@
 		A88EB3DC1C5015D1008DC5CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8AB35911C7E496E0018C186 /* popUp */,
+				A898A0AD1C81F8A6009BDDB3 /* CardDetail */,
+				A898A0A91C81F1AF009BDDB3 /* CardRegistration */,
 				A88EB3DD1C5015DB008DC5CF /* Camping */,
 				A870B27B1C5CB8910006CAAA /* HotDeal */,
 				A8F2FF061C557EAB007DF893 /* Offer */,
+				A8AB35911C7E496E0018C186 /* PopUp */,
 				A8AB35821C7A804C0018C186 /* Reservation */,
 				A80624E31C7A09A300ABF9EC /* User */,
 			);
@@ -553,13 +567,14 @@
 			children = (
 				A870B28F1C5FFD330006CAAA /* HTTPAction.h */,
 				A870B2901C5FFD330006CAAA /* HTTPAction.m */,
+				A80624E71C7A181000ABF9EC /* CheckValidityReservation */,
 				A88EB3F01C5036E5008DC5CF /* Connection */,
 				A88EB3F11C5036EB008DC5CF /* Inscription */,
 				A870B29F1C616C3B0006CAAA /* GetHotsDealsList */,
 				A8FEC7351C6F9111003B8A2C /* GetOfferDetail */,
 				A88EB3F21C5036EF008DC5CF /* GetOffersList */,
 				A8AB358D1C7CEDE90018C186 /* GetReservation */,
-				A80624E71C7A181000ABF9EC /* MakeReservation */,
+				A89FDF511C81FF3E00585355 /* PayReservationAction */,
 			);
 			name = Action;
 			sourceTree = "<group>";
@@ -617,6 +632,7 @@
 				A8CF58C31C50076D002D227A /* Inscription */,
 				A88EB3C51C500E3A008DC5CF /* OfferDetail */,
 				A88EB3C41C500E2B008DC5CF /* OffersList */,
+				A898A0B11C81FCFE009BDDB3 /* Payment */,
 				A8F2FF0E1C558624007DF893 /* ScrollPages */,
 			);
 			name = ViewControllers;
@@ -641,6 +657,42 @@
 				A8F2FF0B1C5585D1007DF893 /* hotel-Bridging-Header.h */,
 			);
 			name = External;
+			sourceTree = "<group>";
+		};
+		A898A0A91C81F1AF009BDDB3 /* CardRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				A898A0AA1C81F1C5009BDDB3 /* CardRegistration.h */,
+				A898A0AB1C81F1C5009BDDB3 /* CardRegistration.m */,
+			);
+			name = CardRegistration;
+			sourceTree = "<group>";
+		};
+		A898A0AD1C81F8A6009BDDB3 /* CardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A898A0AE1C81F8B0009BDDB3 /* CardDetail.h */,
+				A898A0AF1C81F8B0009BDDB3 /* CardDetail.m */,
+			);
+			name = CardDetail;
+			sourceTree = "<group>";
+		};
+		A898A0B11C81FCFE009BDDB3 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				A898A0B21C81FD1C009BDDB3 /* PaymentViewController.h */,
+				A898A0B31C81FD1C009BDDB3 /* PaymentViewController.m */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+		A89FDF511C81FF3E00585355 /* PayReservationAction */ = {
+			isa = PBXGroup;
+			children = (
+				A89FDF521C81FF5E00585355 /* PayReservationAction.h */,
+				A89FDF531C81FF5E00585355 /* PayReservationAction.m */,
+			);
+			name = PayReservationAction;
 			sourceTree = "<group>";
 		};
 		A8A63DAB1C5005C30026E456 = {
@@ -731,13 +783,13 @@
 			name = GetReservation;
 			sourceTree = "<group>";
 		};
-		A8AB35911C7E496E0018C186 /* popUp */ = {
+		A8AB35911C7E496E0018C186 /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
 				A8AB35921C7E497B0018C186 /* PopUpInformation.h */,
 				A8AB35931C7E497B0018C186 /* PopUpInformation.m */,
 			);
-			name = popUp;
+			name = PopUp;
 			sourceTree = "<group>";
 		};
 		A8C22D1B1C728C2E0012147C /* GlobalConfiguration */ = {
@@ -1025,11 +1077,14 @@
 				A819795E1C76553600B2A177 /* CalendarPickerViewController.m in Sources */,
 				A88EB3E01C5015F0008DC5CF /* Camping.m in Sources */,
 				A8AB35901C7CEE0A0018C186 /* GetReservationAction.m in Sources */,
+				A898A0AC1C81F1C5009BDDB3 /* CardRegistration.m in Sources */,
 				A870B2A21C616C610006CAAA /* GetHotsDealsListAction.m in Sources */,
 				A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */,
 				A870B2981C6006940006CAAA /* UITextField+Effects.m in Sources */,
+				A898A0B01C81F8B0009BDDB3 /* CardDetail.m in Sources */,
 				A8FEC7461C6FA4EB003B8A2C /* ParamRequestHotDeal.m in Sources */,
 				A80624E61C7A09B200ABF9EC /* User.m in Sources */,
+				A89FDF541C81FF5E00585355 /* PayReservationAction.m in Sources */,
 				A8AB35891C7A82B60018C186 /* ReservationCell.m in Sources */,
 				A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */,
 				A8AB35851C7A808C0018C186 /* Reservation.m in Sources */,
@@ -1062,8 +1117,9 @@
 				A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */,
 				A88EB3F71C50374B008DC5CF /* ConnectionUserAction.m in Sources */,
 				A870B27E1C5CB8C80006CAAA /* HotDeal.m in Sources */,
-				A80624EA1C7A182F00ABF9EC /* MakeReservationAction.m in Sources */,
+				A80624EA1C7A182F00ABF9EC /* BookReservationAction.m in Sources */,
 				A84C71891C56E7A000598FE9 /* CustomMKAnnotationView.m in Sources */,
+				A898A0B41C81FD1C009BDDB3 /* PaymentViewController.m in Sources */,
 				A8AB35941C7E497B0018C186 /* PopUpInformation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

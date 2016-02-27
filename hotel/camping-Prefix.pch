@@ -66,5 +66,7 @@
 #import "Reservation.h"
 #import "PopUpInformation.h"
 #import "NSDictionary+Additions.h"
+#import "CardDetail.h"
+#import "CardRegistration.h"
 
 #endif /* hotel_Prefix_pch */

@@ -45,9 +45,14 @@
 "offerDetail.price.work" = "prix";
 "offerDetail.reservation.button"    = "Réserver";
 
-"calendarPicker.pay.button"         = "Payer";
-"calendarPicker.from_date.label"    = "Du";
-"calendarPicker.to_date.label"      = "au";
-"calendarPicker.select_date.title"  = "Sélectionnez la période voulue";
-"calendarPicker.not_connected.error"= "Vous devez être connecté pour pouvoir réserver";
-"calendarPicker.date_empty.error"   = "Veuillez sélectionner une période";
+"calendarPicker.from_date.label"                = "Du";
+"calendarPicker.to_date.label"                  = "au";
+"calendarPicker.select_date.title"              = "Sélectionnez la période voulue";
+"calendarPicker.not_connected.error"            = "Vous devez être connecté pour pouvoir réserver";
+"calendarPicker.date_empty.error"               = "Veuillez sélectionner une période";
+"calendarPicker.checkValidity.button"           = "Vérifier la disponibilité";
+"calendarPicker.price_per_night.information"    = "par nuit";
+"calendarPicker.book_not_possible.error"        = "Réservation impossible";
+
+"payment.creditCard.button"                     = "Remplir les informations";
+"payment.pay.button"                            = "Valider le payment";
