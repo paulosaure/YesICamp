@@ -50,7 +50,7 @@
 		A898A0B01C81F8B0009BDDB3 /* CardDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = A898A0AF1C81F8B0009BDDB3 /* CardDetail.m */; };
 		A898A0B41C81FD1C009BDDB3 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A898A0B31C81FD1C009BDDB3 /* PaymentViewController.m */; };
 		A89FDF541C81FF5E00585355 /* PayReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FDF531C81FF5E00585355 /* PayReservationAction.m */; };
-		A89FDF591C821BC800585355 /* CountryPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FDF561C821BC800585355 /* CountryPicker.m */; };
+		A89FDF5D1C8225D100585355 /* CountryPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A89FDF5C1C8225D100585355 /* CountryPicker.m */; };
 		A8A63DB91C5005C30026E456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DB81C5005C30026E456 /* main.m */; };
 		A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBB1C5005C30026E456 /* AppDelegate.m */; };
 		A8A63DBF1C5005C30026E456 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DBE1C5005C30026E456 /* ConnectionViewController.m */; };
@@ -179,8 +179,8 @@
 		A898A0B31C81FD1C009BDDB3 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		A89FDF521C81FF5E00585355 /* PayReservationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayReservationAction.h; sourceTree = "<group>"; };
 		A89FDF531C81FF5E00585355 /* PayReservationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayReservationAction.m; sourceTree = "<group>"; };
-		A89FDF551C821BC800585355 /* CountryPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryPicker.h; sourceTree = "<group>"; };
-		A89FDF561C821BC800585355 /* CountryPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryPicker.m; sourceTree = "<group>"; };
+		A89FDF5B1C8225CC00585355 /* CountryPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryPicker.h; path = hotel/CountryPicker.h; sourceTree = SOURCE_ROOT; };
+		A89FDF5C1C8225D100585355 /* CountryPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryPicker.m; path = hotel/CountryPicker.m; sourceTree = SOURCE_ROOT; };
 		A8A63DB41C5005C30026E456 /* hotel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A63DB81C5005C30026E456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8A63DBA1C5005C30026E456 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -702,8 +702,8 @@
 		A89FDF581C821BC800585355 /* CountryData */ = {
 			isa = PBXGroup;
 			children = (
-				A89FDF551C821BC800585355 /* CountryPicker.h */,
-				A89FDF561C821BC800585355 /* CountryPicker.m */,
+				A89FDF5B1C8225CC00585355 /* CountryPicker.h */,
+				A89FDF5C1C8225D100585355 /* CountryPicker.m */,
 			);
 			name = CountryData;
 			path = "/Users/Pouicky/Downloads/CountryPicker-master/Examples/../CountryPicker";
@@ -1116,7 +1116,7 @@
 				A8FECAD41C7A46DD00BA4656 /* CategoryLabelWithPadding.m in Sources */,
 				A84C71781C56C49400598FE9 /* OfferDetailCell.m in Sources */,
 				A88EB3CC1C500EAE008DC5CF /* OfferDetail.m in Sources */,
-				A89FDF591C821BC800585355 /* CountryPicker.m in Sources */,
+				A89FDF5D1C8225D100585355 /* CountryPicker.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
 				A80624D61C79A7E200ABF9EC /* DateLabelWithPadding.m in Sources */,
 				A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */,

@@ -70,7 +70,7 @@
 - (void)configureUI
 {
     
-    NSString *titleButton = [NSString stringWithFormat:@"%@  |  %ld %@",[LOCALIZED_STRING(@"payment.pay.button") uppercaseString], self.amount, LOCALIZED_STRING(@"globals.unity")];
+    NSString *titleButton = [NSString stringWithFormat:@"%@  |  %ld %@",[LOCALIZED_STRING(@"payment.pay.button") uppercaseString], (long)self.amount, LOCALIZED_STRING(@"globals.unity")];
     
     [self.paymentButton addEffectbelowBookButton:titleButton];
 }
