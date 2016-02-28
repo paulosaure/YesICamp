@@ -10,4 +10,10 @@
 
 @interface CardRegistration : NSObject
 
+- (instancetype)initWithAccessKey:(NSString *)accessKey preRegistrationData:(NSString *)preRegistrationData cardRegistrationUrl:(NSString *)cardRegistrationUrl;
+
+@property (nonatomic, strong, readonly) NSString *cardRegistrationUrl;
+@property (nonatomic, strong, readonly) NSString *accessKey;
+@property (nonatomic, strong, readonly) NSString *preRegistrationData;
+
 @end

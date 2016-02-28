@@ -14,9 +14,6 @@
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *currency;
 @property (nonatomic, strong) NSString *uid;
-@property (nonatomic, strong) NSString *accessKey;
-@property (nonatomic, strong) NSString *preRegistrationData;
-@property (nonatomic, strong) NSString *cardRegistrationUrl;
 @property (nonatomic, strong) NSString *registrationData;
 @property (nonatomic, strong) NSString *cardType;
 @property (nonatomic, strong) NSString *cardId;
@@ -29,4 +26,15 @@
 
 @implementation CardRegistration
 
+- (instancetype)initWithAccessKey:(NSString *)accessKey preRegistrationData:(NSString *)preRegistrationData cardRegistrationUrl:(NSString *)cardRegistrationUrl
+{
+    if (self = [super init])
+    {
+        _accessKey = accessKey;
+        _preRegistrationData = preRegistrationData;
+        _cardRegistrationUrl = cardRegistrationUrl;
+    }
+    
+    return self;
+}
 @end

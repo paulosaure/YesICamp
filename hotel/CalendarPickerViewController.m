@@ -146,7 +146,7 @@
     [self.navigationController pushViewController:paymentViewController animated:YES];
     
     
-    
+// TODO UNCOMMENT et remove au dessus
 //    NSString *errorMessage;
 //    if (![User sharedInstance].isConnected)
 //    {

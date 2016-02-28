@@ -11,11 +11,17 @@
 #import <CardIO.h>
 #import "GetReservationAction.h"
 #import "CountryPicker.h"
+#import "GlobalConfiguration.h"
+
 #import "UITextField+Effects.h"
 #import "UILabel+Effects.h"
 #import "UIButton+Effects.h"
 #import "LabelWithPadding.h"
 #import "UIView+Effects.h"
+
+#import "SendCardRegistrationAction.h"
+#import "SendRegistrationDataAction.h"
+#import "SendCardDetailAction.h"
 
 @interface PaymentViewController () <CardIOPaymentViewControllerDelegate>
 
@@ -52,6 +58,9 @@
 // Data
 @property (nonatomic, strong) CardDetail *cardDetail;
 @property (nonatomic, strong) CardRegistration *cardRegistration;
+@property (nonatomic, strong) NSString *codeCountry;
+@property (nonatomic, strong) NSString *currency;
+@property (nonatomic, assign) CardIOCreditCardType cardType;
 
 @end
 
@@ -60,6 +69,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self configureNotification];
     [self configureUI];
 }
 
@@ -67,6 +78,11 @@
 {
     [super viewWillAppear:animated];
     [CardIOUtilities preload];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 - (void)configureUI
@@ -92,14 +108,20 @@
     
     // PickerView
     self.birthdateLabel.text = LOCALIZED_STRING(@"payment.birthdate.label");
-    self.nationalityLabel.text = LOCALIZED_STRING(@"payment.nationality.label");
-    self.countryCodeLabel.text = LOCALIZED_STRING(@"payment.countryCode.label");
+    [self.birthDatePickerView setMaximumDate:[NSDate date]];
+    [self.birthDatePickerView setDate:[NSDate date] animated:YES];
     [self.birthDatePickerView addTransparentColorEffect:GREEN_COLOR];
+    
+    NSLocale *currentLocale = [NSLocale currentLocale];
+    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+    
+    self.nationalityLabel.text = LOCALIZED_STRING(@"payment.nationality.label");
+    [self.nationalityPickerView setSelectedCountryCode:countryCode];
     [self.nationalityPickerView addTransparentColorEffect:GREEN_COLOR];
+    
+    self.countryCodeLabel.text = LOCALIZED_STRING(@"payment.countryCode.label");
+    [self.countryCodePickerView setSelectedCountryCode:countryCode];
     [self.countryCodePickerView addTransparentColorEffect:GREEN_COLOR];
-    
-    
-    [self.birthDatePickerView setValue:[UIColor whiteColor] forKey:@"textColor"];
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %ld %@",[LOCALIZED_STRING(@"payment.pay.button") uppercaseString], (long)self.amount, LOCALIZED_STRING(@"globals.unity")];
     
@@ -111,36 +133,22 @@
     self.separatorView.backgroundColor = GREEN_COLOR;
 }
 
-- (void)didPayReservation:(NSNotification *)notification
+- (void)configureNotification
 {
-    NSNumber *statusCode = notification.object;
-    NSString *title = @"";
-    NSString *message = @"";
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(didReceiveCardRegistrationSucceded:) name:didReceiveCardRegistrationSuccededNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(didReceiveCardRegistrationFailed:) name:didReceiveCardRegistrationFailedNotification object:nil];
     
-    if ([statusCode isEqualToNumber:@200])
-    {
-        title = LOCALIZED_STRING(@"did_reservation_success");
-        [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
-    }
-    else
-    {
-        title = LOCALIZED_STRING(@"globals.error");
-        message = LOCALIZED_STRING(@"globals.technical_error");
-    }
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(didReceiveRegistrationDataSucceded:) name:didReceiveRegistrationDataSuccededNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(didReceiveRegistrationDataFailed:) name:didReceiveRegistrationDataFailedNotification object:nil];
     
-    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:title
-                                                                     message:message
-                                                               messageButton:LOCALIZED_STRING(@"globals.ok")
-                                                         popToViewController:YES];
-    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(didPaymentSucceded:) name:didPaymentSuccededNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(didPaymentFailed:) name:didPaymentFailedNotification object:nil];
 }
 
 #pragma mark - CardIOPaymentViewControllerDelegate
 
 - (void)userDidCancelPaymentViewController:(CardIOPaymentViewController *)scanViewController
 {
-    //    NSLog(@"User canceled payment info");
-    // Handle user cancellation here...
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -148,9 +156,13 @@
 {
     // Register card info
     NSString *expirationDate = [NSString stringWithFormat:@"%02lu/%lu", (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear];
+    self.cardDetail = [[CardDetail alloc] init];
     self.cardDetail.cardNumber = info.cardNumber;
     self.cardDetail.cardExpirationDate = expirationDate;
     self.cardDetail.cardCvx = info.cvv;
+    self.cardType = info.cardType;
+    self.currency = @"EUR";
+    // TODO TMP
     
     // Popoulate UI
     self.cardNumberNumberLabel.text = info.cardNumber;
@@ -158,6 +170,54 @@
     self.cvxNumberLabel.text = info.cvv;
     
     [scanViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Notifications
+
+- (void)didReceiveCardRegistrationSucceded:(NSNotification *)notification
+{
+    NSLog(@"didReceiveCardRegistrationSucceded");
+    NSLog(@"On envoie la requete avec le card detail");
+    self.cardRegistration = notification.object;
+    [[NetworkManagement sharedInstance] addNewAction:[SendCardDetailAction actionSendCardDetail:self.cardDetail cardRegistration:self.cardRegistration] method:POST_METHOD];
+}
+
+- (void)didReceiveCardRegistrationFailed:(NSNotification *)notification
+{
+    NSLog(@"didReceiveCardRegistrationFailed");
+}
+
+- (void)didReceiveRegistrationDataSucceded:(NSNotification *)notification
+{
+    NSLog(@"didReceiveRegistrationDataSucceded");
+    NSLog(@"On envoie la requete registration data");
+    [[NetworkManagement sharedInstance] addNewAction:[SendRegistrationDataAction actionSendRegistrationData:self.cardRegistration bookingId:[@(self.bookingId) stringValue]] method:POST_METHOD];
+}
+
+- (void)didReceiveRegistrationDataFailed:(NSNotification *)notification
+{
+    NSLog(@"didReceiveRegistrationDataFailed");
+}
+
+- (void)didPaymentSucceded:(NSNotification *)notification
+{
+    NSLog(@"didPaymentSucceded");
+    [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
+    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"did_reservation_success")
+                                                                     message:@""
+                                                               messageButton:LOCALIZED_STRING(@"globals.ok")
+                                                         popToViewController:YES];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
+}
+
+- (void)didPaymentFailed:(NSNotification *)notification
+{
+    NSLog(@"didPaymentFailed");
+    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                     message:LOCALIZED_STRING(@"globals.technical_error")
+                                                               messageButton:LOCALIZED_STRING(@"globals.ok")
+                                                         popToViewController:YES];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
 }
 
 #pragma mark - Actions
@@ -168,8 +228,32 @@
     [self presentViewController:scanViewController animated:YES completion:nil];
 }
 
-- (IBAction)payButton:(id)sender {
+- (IBAction)payButton:(id)sender
+{
+    if (![self.cardNumberNumberLabel.text isEqualToString:@""] &
+        ![self.expirationDateNumberLabel.text isEqualToString:@""] &
+        ![self.cvxNumberLabel.text isEqualToString:@""] &
+        ![self.nameTextView.text isEqualToString:@""] &
+        ![self.firstNameTextView.text isEqualToString:@""] &
+        ![self.emailTextView.text isEqualToString:@""])
+    {
         
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+        NSString *date = [dateFormat stringFromDate:self.birthDatePickerView.date];
+        
+        PaymentForm *paymentForm = [[PaymentForm alloc] initWithBookingID:[@(self.bookingId) stringValue]
+                                                                firstname:self.firstNameTextView.text
+                                                                 lastname:self.nameTextView.text
+                                                                    email:self.emailTextView.text
+                                                                 birthday:date
+                                                              nationality:self.nationalityPickerView.selectedCountryName
+                                                       countryOfResidence:self.countryCodePickerView.selectedCountryName
+                                                                 currency:self.currency
+                                                                 cardType:[[GlobalConfiguration class] cardTypeWithCardIOCreditCardType:self.cardType]];
+        
+        [[NetworkManagement sharedInstance] addNewAction:[SendCardRegistrationAction actionSendCardRegistration:paymentForm] method:POST_METHOD];
+    }
 }
 
 

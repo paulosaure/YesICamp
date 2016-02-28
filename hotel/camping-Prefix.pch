@@ -68,5 +68,6 @@
 #import "NSDictionary+Additions.h"
 #import "CardDetail.h"
 #import "CardRegistration.h"
+#import "PaymentForm.h"
 
 #endif /* hotel_Prefix_pch */

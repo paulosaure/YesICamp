@@ -17,7 +17,7 @@
 + (instancetype)actionWithOfferId:(NSString *)offerId dateBegin:(NSString *)dateBegin dateEnd:(NSString *)dateEnd
 {
     NSString *postCardParam = [NSString stringWithFormat:@"offer_id=%@&begin=%@&end=%@",offerId, dateBegin, dateEnd];
-    BookReservationAction *action = [[BookReservationAction alloc] initWithUrl:ACTION_URL(RESERVATION_URL) service:WebServiceMakeReservation param:postCardParam];
+    BookReservationAction *action = [[BookReservationAction alloc] initWithUrl:ACTION_URL(RESERVATION_URL) service:WebServiceBookReservation param:postCardParam];
     
     return action;
 }

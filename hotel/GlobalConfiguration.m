@@ -10,6 +10,30 @@
 
 @implementation GlobalConfiguration
 
++ (NSString *)cardTypeWithCardIOCreditCardType:(CardIOCreditCardType)cardType
+{
+    switch (cardType) {
+        
+        case CardIOCreditCardTypeAmbiguous :
+            break;
+        case CardIOCreditCardTypeAmex :
+            break;
+        case CardIOCreditCardTypeJCB :
+            break;
+        case CardIOCreditCardTypeVisa :
+            break;
+        case CardIOCreditCardTypeDiscover  :
+            break;
+        case CardIOCreditCardTypeUnrecognized :
+            break;
+        case CardIOCreditCardTypeMastercard :
+            return @"CB_VISA_MASTERCARD";
+        default:
+            break;
+    }
+    return @"";
+}
+
 + (CampingCategory)categoryWithCategoryString:(NSString *)categoryString
 {
     CampingCategory category;
