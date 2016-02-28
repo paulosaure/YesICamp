@@ -170,7 +170,7 @@
     self.cardDetail.cardExpirationDate = expirationDate;
     self.cardDetail.cardCvx = info.cvv;
     self.cardType = info.cardType;
-
+    
      // TODO TMP
     self.currency = @"EUR";
     
@@ -240,25 +240,42 @@
 
 - (IBAction)payButton:(id)sender
 {
+    NSString *date;
+    
+    // TMP REMOVE
+//    self.firstNameTextView.text = @"firstNameTest";
+//    self.nameTextView.text = @"lastNameTest";
+//    self.emailTextView.text = @"emailTest";
+    date = @"1991-12-03";
+    self.cardDetail.cardNumber = @"4970433620287350";
+    self.cardDetail.cardExpirationDate = @"12/2018";
+    self.cardDetail.cardCvx = @"123";
+    self.nationalityPickerView.selectedCountryCode = @"FR";
+    self.currency = @"EUR";
+    self.cardType = CardIOCreditCardTypeVisa;
+    
+    
     if (![self.cardNumberNumberLabel.text isEqualToString:@""] &
         ![self.expirationDateNumberLabel.text isEqualToString:@""] &
         ![self.cvxNumberLabel.text isEqualToString:@""] &
         ![self.nameTextView.text isEqualToString:@""] &
         ![self.firstNameTextView.text isEqualToString:@""] &
-        ![self.emailTextView.text isEqualToString:@""])
+        ![self.emailTextView.text isEqualToString:@""] &
+        ![self.cardDetail.cardNumber isEqualToString:@""] &
+        ![self.cardDetail.cardExpirationDate isEqualToString:@""] &
+        ![self.cardDetail.cardCvx isEqualToString:@""])
     {
-        
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd"];
-        NSString *date = [dateFormat stringFromDate:self.birthDatePickerView.date];
+        date = [dateFormat stringFromDate:self.birthDatePickerView.date];
         
         PaymentForm *paymentForm = [[PaymentForm alloc] initWithBookingID:[@(self.bookingId) stringValue]
                                                                 firstname:self.firstNameTextView.text
                                                                  lastname:self.nameTextView.text
                                                                     email:self.emailTextView.text
                                                                  birthday:date
-                                                              nationality:self.nationalityPickerView.selectedCountryName
-                                                       countryOfResidence:self.countryCodePickerView.selectedCountryName
+                                                              nationality:self.nationalityPickerView.selectedCountryCode
+                                                       countryOfResidence:self.countryCodePickerView.selectedCountryCode
                                                                  currency:self.currency
                                                                  cardType:[[GlobalConfiguration class] cardTypeWithCardIOCreditCardType:self.cardType]];
         
@@ -266,5 +283,13 @@
     }
 }
 
+#pragma mark - Utils
+
+- (void)isSearching:(BOOL)isSearching
+{
+//    self.spinner.hidden = !isSearching;
+//    self.connectionButton.hidden = isSearching;
+//    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+}
 
 @end

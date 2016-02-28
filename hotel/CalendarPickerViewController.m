@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet LabelWithPadding *toWordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 
 // Data
@@ -69,6 +70,8 @@
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@ %@",[LOCALIZED_STRING(@"calendarPicker.checkValidity.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"globals.unity"), LOCALIZED_STRING(@"calendarPicker.price_per_night.information")];
     [self.checkDateValidityButton addEffectbelowBookButton:titleButton];
+    
+    [self isSearching:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -138,40 +141,55 @@
 
 - (IBAction)checkValidityDateAction:(id)sender
 {
+    NSString *errorMessage = @"";
+    if (![User sharedInstance].isConnected)
+    {
+        errorMessage = LOCALIZED_STRING(@"calendarPicker.not_connected.error");
+    }
+    else if ([self.fromDateLabel.text isEqualToString:@""])
+    {
+        errorMessage = LOCALIZED_STRING(@"calendarPicker.date_empty.error");
+    }
     
-    PaymentViewController *paymentViewController = (PaymentViewController *)[[UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil] instantiateViewControllerWithIdentifier:PaymentViewControllerID];
-    
-    paymentViewController.bookingId = 88624923;
-    paymentViewController.amount = 140;
-    [self.navigationController pushViewController:paymentViewController animated:YES];
-    
-    
-// TODO UNCOMMENT et remove au dessus
-//    NSString *errorMessage;
-//    if (![User sharedInstance].isConnected)
-//    {
-//        errorMessage = LOCALIZED_STRING(@"calendarPicker.not_connected.error");
-//    }
-//    else if ([self.fromDateLabel.text isEqualToString:@""])
-//    {
-//        errorMessage = LOCALIZED_STRING(@"calendarPicker.date_empty.error");
-//    }
-//    else
-//    {
-//        [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservationSucceded:) name:didBookReservationSuccededNotification object:nil];
-//        [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservationFailed:) name:didBookReservationFailedNotification object:nil];
-//        
-//        [[NetworkManagement sharedInstance] addNewAction:[BookReservationAction actionWithOfferId:[self.offer.uid stringValue]
-//                                                                                        dateBegin:self.fromDate
-//                                                                                          dateEnd:self.toDate]
-//                                                  method:POST_METHOD];
-//    }
+    if (![errorMessage isEqualToString:@""])
+    {
+        PopUpInformation *information = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                        message:errorMessage
+                                                                  messageButton:LOCALIZED_STRING(@"globals.ok")];
+        
+        UIAlertController * alert =  [UIAlertController
+                                      alertControllerWithTitle:information.title
+                                      message:information.message
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* yesButton = [UIAlertAction
+                                    actionWithTitle:information.messageButton
+                                    style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * action)
+                                    {
+                                    }];
+        
+        [alert addAction:yesButton];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else
+    {
+        [self isSearching:YES];
+        [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservationSucceded:) name:didBookReservationSuccededNotification object:nil];
+        [NOTIFICATION_CENTER addObserver:self selector:@selector(didBookReservationFailed:) name:didBookReservationFailedNotification object:nil];
+        
+        [[NetworkManagement sharedInstance] addNewAction:[BookReservationAction actionWithOfferId:[self.offer.uid stringValue]
+                                                                                        dateBegin:self.fromDate
+                                                                                          dateEnd:self.toDate]
+                                                  method:POST_METHOD];
+    }
 }
 
-#pragma mark - Notification
+#pragma mark - Notifications
 
 - (void)didBookReservationSucceded:(NSNotification *)notification
 {
+    [self isSearching:NO];
     PaymentViewController *paymentViewController = (PaymentViewController *)[[UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil] instantiateViewControllerWithIdentifier:PaymentViewControllerID];
     
     paymentViewController.bookingId = [notification.object integerValue];
@@ -182,6 +200,7 @@
 
 - (void)didBookReservationFailed:(NSNotification *)notification
 {
+    [self isSearching:NO];
     NSString *errorMessage = LOCALIZED_STRING(@"calendarPicker.book_not_possible.error");
     PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
                                                                      message:errorMessage
@@ -191,6 +210,13 @@
 }
 
 #pragma mark - Utils
+
+- (void)isSearching:(BOOL)isSearching
+{
+    self.spinner.hidden = !isSearching;
+    self.checkDateValidityButton.hidden = isSearching;
+    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+}
 
 - (NSInteger)numberOfDaysBetween:(NSString *)start end:(NSString *)end
 {

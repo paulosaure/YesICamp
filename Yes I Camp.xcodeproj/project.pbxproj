@@ -338,13 +338,13 @@
 			name = User;
 			sourceTree = "<group>";
 		};
-		A80624E71C7A181000ABF9EC /* CheckValidityReservation */ = {
+		A80624E71C7A181000ABF9EC /* BookReservation */ = {
 			isa = PBXGroup;
 			children = (
 				A80624E81C7A182F00ABF9EC /* BookReservationAction.h */,
 				A80624E91C7A182F00ABF9EC /* BookReservationAction.m */,
 			);
-			name = CheckValidityReservation;
+			name = BookReservation;
 			sourceTree = "<group>";
 		};
 		A81979571C763F3A00B2A177 /* MKAnnotation */ = {
@@ -583,7 +583,7 @@
 			children = (
 				A870B28F1C5FFD330006CAAA /* HTTPAction.h */,
 				A870B2901C5FFD330006CAAA /* HTTPAction.m */,
-				A80624E71C7A181000ABF9EC /* CheckValidityReservation */,
+				A80624E71C7A181000ABF9EC /* BookReservation */,
 				A88EB3F01C5036E5008DC5CF /* Connection */,
 				A88EB3F11C5036EB008DC5CF /* Inscription */,
 				A870B29F1C616C3B0006CAAA /* GetHotsDealsList */,

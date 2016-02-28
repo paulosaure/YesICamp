@@ -37,13 +37,13 @@
     NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *bodyReservations = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
-    for (NSDictionary *reservation in bodyReservations)
-    {
-        [reservations addObject:[[Reservation alloc] initWithDictionnary:reservation]];
-    }
-    
     if (header.statusCode == 200)
     {
+        for (NSDictionary *reservation in bodyReservations)
+        {
+            [reservations addObject:[[Reservation alloc] initWithDictionnary:reservation]];
+        }
+        
         [User sharedInstance].reservations = reservations;
         [NOTIFICATION_CENTER postNotificationName:ReservationListNotification object:reservations];
     }

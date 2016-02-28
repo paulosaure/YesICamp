@@ -19,12 +19,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "hotel/ConnectionUserAction.m"
-            timestampString = "478348977.524273"
+            filePath = "hotel/SendCardRegistrationAction.m"
+            timestampString = "478355917.422143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "-handleDownloadedData:"
             landmarkType = "5">
          </BreakpointContent>
