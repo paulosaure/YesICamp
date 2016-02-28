@@ -112,6 +112,15 @@
     [self.birthDatePickerView setDate:[NSDate date] animated:YES];
     [self.birthDatePickerView addTransparentColorEffect:GREEN_COLOR];
     
+    //Set Color of Date Picker
+    [self.birthDatePickerView setValue:[UIColor whiteColor] forKeyPath:@"textColor"];
+    SEL selector = NSSelectorFromString(@"setHighlightsToday:");
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDatePicker instanceMethodSignatureForSelector:selector]];
+    BOOL no = NO;
+    [invocation setSelector:selector];
+    [invocation setArgument:&no atIndex:2];
+    [invocation invokeWithTarget:self.birthDatePickerView];
+    
     NSLocale *currentLocale = [NSLocale currentLocale];
     NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
     
@@ -161,8 +170,9 @@
     self.cardDetail.cardExpirationDate = expirationDate;
     self.cardDetail.cardCvx = info.cvv;
     self.cardType = info.cardType;
+
+     // TODO TMP
     self.currency = @"EUR";
-    // TODO TMP
     
     // Popoulate UI
     self.cardNumberNumberLabel.text = info.cardNumber;
