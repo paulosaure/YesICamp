@@ -54,7 +54,7 @@
     
     if (header.statusCode == 200)
     {
-        CardRegistration *cardRegistration = [[CardRegistration alloc] initWithAccessKey:[cardRegistrationJson objectForKey:@"AccessKey"]
+        CardRegistration *cardRegistration = [[CardRegistration alloc] initWithAccessKey:[cardRegistrationJson                  objectForKey:@"AccessKey"]
                                                                      preRegistrationData:[cardRegistrationJson objectForKey:@"PreregistrationData"]
                                                                      cardRegistrationUrl:[cardRegistrationJson objectForKey:@"CardRegistrationURL"]];
         

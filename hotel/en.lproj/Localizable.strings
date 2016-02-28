@@ -62,4 +62,5 @@
 "payment.scan_credit_card.button"               = "Scan your credit card";
 "payment.card_number.placeholder"               = "Card number";
 "payment.card_expiration_date.placeholder"      = "Expiration date";
-"payment.card_cvx.placeholder"                 = "Cvx";
+"payment.card_cvx.placeholder"                  = "Cvx";
+"payment.transaction_result.failed"             = "Payment failed";

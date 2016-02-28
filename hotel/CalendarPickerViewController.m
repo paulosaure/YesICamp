@@ -206,7 +206,6 @@
                                                                      message:errorMessage
                                                                messageButton:LOCALIZED_STRING(@"globals.ok")];
     [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
-    
 }
 
 #pragma mark - Utils

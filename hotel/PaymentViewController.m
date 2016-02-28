@@ -195,6 +195,7 @@
 - (void)didReceiveCardRegistrationFailed:(NSNotification *)notification
 {
     NSLog(@"didReceiveCardRegistrationFailed");
+    [self displayTransactionFailedPopup];
 }
 
 - (void)didReceiveRegistrationDataSucceded:(NSNotification *)notification
@@ -207,6 +208,7 @@
 - (void)didReceiveRegistrationDataFailed:(NSNotification *)notification
 {
     NSLog(@"didReceiveRegistrationDataFailed");
+    [self displayTransactionFailedPopup];
 }
 
 - (void)didPaymentSucceded:(NSNotification *)notification
@@ -223,11 +225,7 @@
 - (void)didPaymentFailed:(NSNotification *)notification
 {
     NSLog(@"didPaymentFailed");
-    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
-                                                                     message:LOCALIZED_STRING(@"globals.technical_error")
-                                                               messageButton:LOCALIZED_STRING(@"globals.ok")
-                                                         popToViewController:YES];
-    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
+    [self displayTransactionFailedPopup];
 }
 
 #pragma mark - Actions
@@ -285,6 +283,13 @@
 
 #pragma mark - Utils
 
+- (void)displayTransactionFailedPopup
+{
+    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                     message:LOCALIZED_STRING(@"payment.transaction_result.failed")
+                                                               messageButton:LOCALIZED_STRING(@"globals.ok")];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
+}
 - (void)isSearching:(BOOL)isSearching
 {
 //    self.spinner.hidden = !isSearching;
