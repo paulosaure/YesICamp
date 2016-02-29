@@ -12,9 +12,9 @@
 
 @implementation SendRegistrationDataAction
 
-+ (instancetype)actionSendRegistrationData:(CardRegistration *)cardRegistration bookingId:(NSString *)bookingId
++ (instancetype)actionSendRegistrationData:(NSString *)registrationData bookingId:(NSString *)bookingId
 {
-    NSString *postCardParam = [NSString stringWithFormat:@"booking_id=%@&registration_data=%@",bookingId, cardRegistration.preRegistrationData];
+    NSString *postCardParam = [NSString stringWithFormat:@"booking_id=%@&registration_data=%@",bookingId, registrationData];
     SendRegistrationDataAction *action = [[SendRegistrationDataAction alloc] initWithUrl:ACTION_URL(PAYMENT_URL) service:WebServiceSendRegistrationData param:postCardParam];
     
     return action;

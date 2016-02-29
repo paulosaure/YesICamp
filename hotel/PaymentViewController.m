@@ -54,10 +54,12 @@
 @property (weak, nonatomic) IBOutlet UIView *separatorView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 // Data
 @property (nonatomic, strong) CardDetail *cardDetail;
 @property (nonatomic, strong) CardRegistration *cardRegistration;
+@property (nonatomic, strong) NSString *registrationData;
 @property (nonatomic, strong) NSString *codeCountry;
 @property (nonatomic, strong) NSString *currency;
 @property (nonatomic, assign) CardIOCreditCardType cardType;
@@ -70,6 +72,7 @@
 {
     [super viewDidLoad];
     
+    self.cardDetail = [[CardDetail alloc] init];
     [self configureNotification];
     [self configureUI];
 }
@@ -140,6 +143,8 @@
     
     // View
     self.separatorView.backgroundColor = GREEN_COLOR;
+    
+    [self isSearching:NO];
 }
 
 - (void)configureNotification
@@ -164,14 +169,13 @@
 - (void)userDidProvideCreditCardInfo:(CardIOCreditCardInfo *)info inPaymentViewController:(CardIOPaymentViewController *)scanViewController
 {
     // Register card info
-    NSString *expirationDate = [NSString stringWithFormat:@"%02lu/%lu", (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear];
-    self.cardDetail = [[CardDetail alloc] init];
+    NSString *expirationDate = [NSString stringWithFormat:@"%02lu%lu", (unsigned long)info.expiryMonth, (unsigned long)info.expiryYear];
     self.cardDetail.cardNumber = info.cardNumber;
     self.cardDetail.cardExpirationDate = expirationDate;
     self.cardDetail.cardCvx = info.cvv;
     self.cardType = info.cardType;
     
-     // TODO TMP
+    // TODO TMP
     self.currency = @"EUR";
     
     // Popoulate UI
@@ -183,7 +187,7 @@
 }
 
 #pragma mark - Notifications
-
+// First request
 - (void)didReceiveCardRegistrationSucceded:(NSNotification *)notification
 {
     NSLog(@"didReceiveCardRegistrationSucceded");
@@ -194,25 +198,35 @@
 
 - (void)didReceiveCardRegistrationFailed:(NSNotification *)notification
 {
+    [self isSearching:NO];
     NSLog(@"didReceiveCardRegistrationFailed");
     [self displayTransactionFailedPopup];
 }
 
+// Seconde request
 - (void)didReceiveRegistrationDataSucceded:(NSNotification *)notification
 {
     NSLog(@"didReceiveRegistrationDataSucceded");
     NSLog(@"On envoie la requete registration data");
-    [[NetworkManagement sharedInstance] addNewAction:[SendRegistrationDataAction actionSendRegistrationData:self.cardRegistration bookingId:[@(self.bookingId) stringValue]] method:POST_METHOD];
+    // Record data
+    self.registrationData = notification.object;
+    self.registrationData = [self.registrationData stringByReplacingOccurrencesOfString:@"data="
+                                                                             withString:@""];
+    // Send new request to serveur
+    [[NetworkManagement sharedInstance] addNewAction:[SendRegistrationDataAction actionSendRegistrationData:self.registrationData bookingId:[@(self.bookingId) stringValue]] method:POST_METHOD];
 }
 
 - (void)didReceiveRegistrationDataFailed:(NSNotification *)notification
 {
+    [self isSearching:NO];
     NSLog(@"didReceiveRegistrationDataFailed");
     [self displayTransactionFailedPopup];
 }
 
+// Third request
 - (void)didPaymentSucceded:(NSNotification *)notification
 {
+    [self isSearching:NO];
     NSLog(@"didPaymentSucceded");
     [[NetworkManagement sharedInstance] addNewAction:[GetReservationAction action] method:GET_METHOD];
     PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"did_reservation_success")
@@ -224,6 +238,7 @@
 
 - (void)didPaymentFailed:(NSNotification *)notification
 {
+    [self isSearching:NO];
     NSLog(@"didPaymentFailed");
     [self displayTransactionFailedPopup];
 }
@@ -238,15 +253,16 @@
 
 - (IBAction)payButton:(id)sender
 {
+    [self isSearching:YES];
     NSString *date;
     
     // TMP REMOVE
-//    self.firstNameTextView.text = @"firstNameTest";
-//    self.nameTextView.text = @"lastNameTest";
-//    self.emailTextView.text = @"emailTest";
+    //    self.firstNameTextView.text = @"firstNameTest";
+    //    self.nameTextView.text = @"lastNameTest";
+    //    self.emailTextView.text = @"emailTest";
     date = @"1991-12-03";
-    self.cardDetail.cardNumber = @"4970433620287350";
-    self.cardDetail.cardExpirationDate = @"12/2018";
+    self.cardDetail.cardNumber = @"4970101122334414";
+    self.cardDetail.cardExpirationDate = @"0718";
     self.cardDetail.cardCvx = @"123";
     self.nationalityPickerView.selectedCountryCode = @"FR";
     self.currency = @"EUR";
@@ -285,16 +301,31 @@
 
 - (void)displayTransactionFailedPopup
 {
-    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
-                                                                     message:LOCALIZED_STRING(@"payment.transaction_result.failed")
-                                                               messageButton:LOCALIZED_STRING(@"globals.ok")];
-    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
+    PopUpInformation *information = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
+                                                                    message:LOCALIZED_STRING(@"payment.transaction_result.failed")
+                                                              messageButton:LOCALIZED_STRING(@"globals.ok")];
+    
+    UIAlertController * alert =  [UIAlertController
+                                  alertControllerWithTitle:information.title
+                                  message:information.message
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:information.messageButton
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {
+                                }];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
 - (void)isSearching:(BOOL)isSearching
 {
-//    self.spinner.hidden = !isSearching;
-//    self.connectionButton.hidden = isSearching;
-//    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+    self.spinner.hidden = !isSearching;
+    self.paymentButton.hidden = isSearching;
+    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
 }
 
 @end

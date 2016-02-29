@@ -12,17 +12,16 @@
 
 + (instancetype)actionSendCardDetail:(CardDetail *)cardDetail cardRegistration:(CardRegistration *)cardRegistration
 {
-    NSString *postCardParam = [NSString stringWithFormat:@"PreRegistrationData=%@&AccessKey=%@cardNumber=%@&expirationDate=%@&cvx=%@",
-                               cardRegistration.preRegistrationData,
-                               cardRegistration.accessKey,
-                               cardDetail.cardNumber,
-                               cardDetail.cardExpirationDate,
-                               cardDetail.cardCvx];
+    NSLog(@"\n\ndata : %@\nkey : %@", cardRegistration.preRegistrationData, cardRegistration.accessKey);
+    NSString *postCardParam = [NSString stringWithFormat:@"data=%@&accessKeyRef=%@&cardNumber=%@&cardExpirationDate=%@&cardCvx=%@", cardRegistration.preRegistrationData,
+                        cardRegistration.accessKey,
+                        cardDetail.cardNumber,
+                        cardDetail.cardExpirationDate,
+                        cardDetail.cardCvx];
     
     SendCardDetailAction *action = [[SendCardDetailAction alloc] initWithUrl:cardRegistration.cardRegistrationUrl
                                                                      service:WebServiceSendCardDetail
                                                                        param:postCardParam];
-    
     return action;
 }
 
@@ -33,8 +32,11 @@
     [super handleDownloadedData:obj];
     
     NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
-    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *registrationDataJson = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSHTTPURLResponse *body = [obj objectForKey:RESPONSE_BODY];
+//    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
+//    NSDictionary *registrationDataJson = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    
+    NSLog(@"Body : %@", body);
     
     if (header.statusCode == 200)
     {

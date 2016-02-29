@@ -597,6 +597,9 @@
                                     <action selector="payButton:" destination="haq-wt-fs5" eventType="touchUpInside" id="WJE-1q-eZr"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CcM-OR-Mes">
+                                <rect key="frame" x="282" y="1159" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -607,7 +610,9 @@
                             <constraint firstItem="Kdc-6R-XAu" firstAttribute="top" secondItem="Uli-bG-fPh" secondAttribute="bottom" id="U8R-ql-ayg"/>
                             <constraint firstItem="LJW-nu-UnB" firstAttribute="top" secondItem="yc1-ue-BHg" secondAttribute="top" id="YA7-xa-b1q"/>
                             <constraint firstAttribute="trailing" secondItem="LJW-nu-UnB" secondAttribute="trailing" id="gVl-Wx-8aa"/>
+                            <constraint firstItem="CcM-OR-Mes" firstAttribute="centerY" secondItem="Uli-bG-fPh" secondAttribute="centerY" id="lFu-N1-gWt"/>
                             <constraint firstItem="Ft0-XZ-GWp" firstAttribute="width" secondItem="yc1-ue-BHg" secondAttribute="width" id="oQm-Bi-2OM"/>
+                            <constraint firstItem="CcM-OR-Mes" firstAttribute="centerX" secondItem="Uli-bG-fPh" secondAttribute="centerX" id="oRi-em-mxA"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -630,6 +635,7 @@
                         <outlet property="scanPayButton" destination="L2I-dC-O33" id="qQj-OR-9Ma"/>
                         <outlet property="scrollView" destination="LJW-nu-UnB" id="ePN-H4-Y0d"/>
                         <outlet property="separatorView" destination="UdX-Px-eHe" id="wZ4-8S-Gh6"/>
+                        <outlet property="spinner" destination="CcM-OR-Mes" id="xLm-sS-AXF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCs-pk-OiT" userLabel="First Responder" sceneMemberID="firstResponder"/>

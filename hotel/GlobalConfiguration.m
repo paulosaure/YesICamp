@@ -13,7 +13,7 @@
 + (NSString *)cardTypeWithCardIOCreditCardType:(CardIOCreditCardType)cardType
 {
     switch (cardType) {
-        
+            
         case CardIOCreditCardTypeAmbiguous :
             break;
         case CardIOCreditCardTypeAmex :
@@ -21,17 +21,16 @@
         case CardIOCreditCardTypeJCB :
             break;
         case CardIOCreditCardTypeVisa :
-            break;
+            return @"CB_VISA_MASTERCARD";
         case CardIOCreditCardTypeDiscover  :
             break;
         case CardIOCreditCardTypeUnrecognized :
             break;
         case CardIOCreditCardTypeMastercard :
-            return @"CB_VISA_MASTERCARD";
         default:
-            break;
+            return @"CB_VISA_MASTERCARD";
     }
-    return @"";
+    return @"CB_VISA_MASTERCARD";
 }
 
 + (CampingCategory)categoryWithCategoryString:(NSString *)categoryString

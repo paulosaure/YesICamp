@@ -54,6 +54,8 @@
     
     if (header.statusCode == 200)
     {
+        NSLog(@"Recu : \n\ndata : %@\nkey : %@\n\n", [cardRegistrationJson objectForKey:@"PreregistrationData"], [cardRegistrationJson objectForKey:@"AccessKey"]);
+        
         CardRegistration *cardRegistration = [[CardRegistration alloc] initWithAccessKey:[cardRegistrationJson                  objectForKey:@"AccessKey"]
                                                                      preRegistrationData:[cardRegistrationJson objectForKey:@"PreregistrationData"]
                                                                      cardRegistrationUrl:[cardRegistrationJson objectForKey:@"CardRegistrationURL"]];

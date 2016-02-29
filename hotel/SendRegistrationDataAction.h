@@ -13,6 +13,6 @@
 
 @interface SendRegistrationDataAction : HTTPAction
 
-+ (instancetype)actionSendRegistrationData:(CardRegistration *)cardRegistration bookingId:(NSString *)bookingId;
++ (instancetype)actionSendRegistrationData:(NSString *)registrationData bookingId:(NSString *)bookingId;
 
 @end

@@ -193,7 +193,7 @@
     PaymentViewController *paymentViewController = (PaymentViewController *)[[UIStoryboard storyboardWithName:MAIN_STORYBOARD bundle:nil] instantiateViewControllerWithIdentifier:PaymentViewControllerID];
     
     paymentViewController.bookingId = [notification.object integerValue];
-    paymentViewController.amount = [self numberOfDaysBetween:self.fromDate end:self.toDate] * [self.offer.price integerValue];
+    paymentViewController.amount = ([self numberOfDaysBetween:self.fromDate end:self.toDate] + 1) * [self.offer.price integerValue];
     
     [self.navigationController pushViewController:paymentViewController animated:YES];
 }

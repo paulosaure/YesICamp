@@ -120,11 +120,15 @@
     
     // Retrieve actionType
     HTTPAction *action = [self.dictionary objectForKey:key];
- 
-    NSDictionary *response = @{
-                              RESPONSE_HEADER : downloadTask.response,
-                              RESPONSE_BODY : stringFromFileAtURL
-                              };
+    
+    NSDictionary *response = nil;
+    if (stringFromFileAtURL)
+    {
+        response = @{
+                     RESPONSE_HEADER : downloadTask.response,
+                     RESPONSE_BODY : stringFromFileAtURL
+                     };
+    }
     
     // Notify action
     [action handleDownloadedData:response];
