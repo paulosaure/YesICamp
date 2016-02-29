@@ -10,8 +10,6 @@
 
 @interface OfferDetail : UIViewController
 
-- (instancetype)init;
-
 @property (nonatomic, strong) Offer *offer;
 
 @end

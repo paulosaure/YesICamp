@@ -884,14 +884,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-9F-Ubh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ALr-Sm-13Y" id="XOS-hB-qgL"/>
-                                    <outlet property="delegate" destination="ALr-Sm-13Y" id="wST-3a-qHy"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-E3-C3d">
                                 <rect key="frame" x="0.0" y="555" width="600" height="45"/>
                                 <constraints>
@@ -902,20 +894,60 @@
                                     <action selector="reserveCamping:" destination="ALr-Sm-13Y" eventType="touchUpInside" id="Vr9-w2-WR7"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="sRG-WP-Run">
+                                <rect key="frame" x="282" y="559" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQe-9F-Ubh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="XJv-9n-fuz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc5-ZQ-0OD">
+                                            <rect key="frame" x="272.5" y="20" width="55" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="jNl-mb-Ti6"/>
+                                                <constraint firstAttribute="width" secondItem="Rc5-ZQ-0OD" secondAttribute="height" multiplier="11:6" id="x3W-7h-2ZP"/>
+                                            </constraints>
+                                            <state key="normal" image="mail"/>
+                                            <connections>
+                                                <action selector="sendEmail:" destination="ALr-Sm-13Y" eventType="touchUpInside" id="1PN-kf-z5B"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Rc5-ZQ-0OD" secondAttribute="bottom" constant="20" id="CKE-KC-10T"/>
+                                        <constraint firstItem="Rc5-ZQ-0OD" firstAttribute="centerY" secondItem="XJv-9n-fuz" secondAttribute="centerY" id="GlH-3D-1HN"/>
+                                        <constraint firstItem="Rc5-ZQ-0OD" firstAttribute="top" secondItem="XJv-9n-fuz" secondAttribute="top" constant="20" id="dFZ-6M-07J"/>
+                                        <constraint firstItem="Rc5-ZQ-0OD" firstAttribute="centerX" secondItem="XJv-9n-fuz" secondAttribute="centerX" id="lhj-z3-kEj"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="ALr-Sm-13Y" id="XOS-hB-qgL"/>
+                                    <outlet property="delegate" destination="ALr-Sm-13Y" id="wST-3a-qHy"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Txa-E3-C3d" firstAttribute="leading" secondItem="lOf-TM-PXw" secondAttribute="leading" id="0Oe-CU-O5Y"/>
+                            <constraint firstItem="sRG-WP-Run" firstAttribute="centerX" secondItem="Txa-E3-C3d" secondAttribute="centerX" id="67o-OL-RCx"/>
                             <constraint firstItem="oQe-9F-Ubh" firstAttribute="top" secondItem="lOf-TM-PXw" secondAttribute="top" id="AfX-kF-anV"/>
                             <constraint firstItem="oQe-9F-Ubh" firstAttribute="leading" secondItem="lOf-TM-PXw" secondAttribute="leading" id="Aou-9p-eYo"/>
                             <constraint firstItem="Txa-E3-C3d" firstAttribute="top" secondItem="oQe-9F-Ubh" secondAttribute="bottom" id="B5V-Jp-x2d"/>
                             <constraint firstAttribute="trailing" secondItem="Txa-E3-C3d" secondAttribute="trailing" id="RhB-wh-oO5"/>
                             <constraint firstAttribute="trailing" secondItem="oQe-9F-Ubh" secondAttribute="trailing" id="lGY-Aw-9M5"/>
                             <constraint firstItem="ttg-7m-Zi0" firstAttribute="top" secondItem="Txa-E3-C3d" secondAttribute="bottom" id="oXW-cX-lEF"/>
+                            <constraint firstItem="sRG-WP-Run" firstAttribute="centerY" secondItem="Txa-E3-C3d" secondAttribute="centerY" id="saU-Kw-7lK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="footerView" destination="XJv-9n-fuz" id="c9w-6t-R3f"/>
+                        <outlet property="mailButtonFooterView" destination="Rc5-ZQ-0OD" id="Xiy-yE-Qjo"/>
                         <outlet property="reservationButton" destination="Txa-E3-C3d" id="8l7-aI-FKJ"/>
+                        <outlet property="spinner" destination="sRG-WP-Run" id="Fo5-CC-18L"/>
                         <outlet property="tableView" destination="oQe-9F-Ubh" id="xEI-0O-MwM"/>
                     </connections>
                 </viewController>
@@ -959,6 +991,7 @@
     <resources>
         <image name="extend" width="199" height="201"/>
         <image name="localize" width="160" height="160"/>
+        <image name="mail" width="110" height="79"/>
         <image name="search" width="175" height="175"/>
     </resources>
 </document>

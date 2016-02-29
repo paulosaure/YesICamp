@@ -12,7 +12,6 @@
 
 + (instancetype)actionSendCardDetail:(CardDetail *)cardDetail cardRegistration:(CardRegistration *)cardRegistration
 {
-    NSLog(@"\n\ndata : %@\nkey : %@", cardRegistration.preRegistrationData, cardRegistration.accessKey);
     NSString *postCardParam = [NSString stringWithFormat:@"data=%@&accessKeyRef=%@&cardNumber=%@&cardExpirationDate=%@&cardCvx=%@", cardRegistration.preRegistrationData,
                         cardRegistration.accessKey,
                         cardDetail.cardNumber,

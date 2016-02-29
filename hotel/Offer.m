@@ -22,6 +22,7 @@
     {
         self.uid = [dic objectForKeyOrNil:@"id"];
         self.title = [dic objectForKeyOrNil:@"title"];
+        self.email = [dic objectForKeyOrNil:@"email"];
         self.oldPrice = [dic objectForKeyOrNil:@"real_price"];
         self.price = [dic objectForKeyOrNil:@"price"];
         self.percent = [dic objectForKeyOrNil:@"percent"];

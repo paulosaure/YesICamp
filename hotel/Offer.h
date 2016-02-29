@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSNumber *uid;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSNumber *oldPrice;
 @property (nonatomic, strong) NSNumber *price;

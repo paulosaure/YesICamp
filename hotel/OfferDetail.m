@@ -12,14 +12,18 @@
 #import "CalendarPickerViewController.h"
 #import "GetOfferDetailAction.h"
 #import "UIButton+Effects.h"
+#import <MessageUI/MessageUI.h>
 
 #define PAGE_CONTROLLER_HEIGHT 350
 
-@interface OfferDetail () <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+@interface OfferDetail () <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, MFMailComposeViewControllerDelegate>
 
 // Outlets
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UIButton *reservationButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (nonatomic, weak) IBOutlet UIView *footerView;
+@property (weak, nonatomic) IBOutlet UIButton *mailButtonFooterView;
 
 // Data
 @property (nonatomic, strong) UIPageViewController *pageViewController;
@@ -32,19 +36,11 @@
 
 #pragma mark - View lifeCycle
 
-- (instancetype)init
-{
-    if (self = [super init])
-    {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self isSearching:YES];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOfferDetail:) name:OfferDetailNotification object:nil];
     
     [[NetworkManagement sharedInstance] addNewAction:[GetOfferDetailAction action:[self.offer.uid stringValue]]];
@@ -62,14 +58,15 @@
     [self createPageViewController];
     [self setupPageControl];
     
+    // register Cell Nib
+    [self.tableView registerNib:[OfferDetailCell cellNib] forCellReuseIdentifier:OFFER_DETAIL_CELL_IDENTIFIER];
+    
     // Change height table header view
     self.tableView.estimatedRowHeight = 65.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableHeaderView = self.pageViewController.view;
+    self.tableView.tableFooterView = self.footerView;
     
-    // register Cell Nib
-    [self.tableView registerNib:[OfferDetailCell cellNib] forCellReuseIdentifier:OFFER_DETAIL_CELL_IDENTIFIER];
-
     [self configureUI];
 }
 
@@ -77,6 +74,7 @@
 {
     self.view.backgroundColor = [UIColor blackColor];
     self.tableView.backgroundColor = [UIColor blackColor];
+    self.mailButtonFooterView.imageView.tintColor = GREEN_COLOR;
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@",[LOCALIZED_STRING(@"offerDetail.reservation.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"globals.unity")];
     [self.reservationButton addEffectbelowBookButton:titleButton];
@@ -104,7 +102,7 @@
                                            animated: NO
                                          completion: nil];
     }
-
+    
 }
 - (void)setupPageControl
 {
@@ -180,6 +178,31 @@
     [cell setBackgroundColor:[UIColor clearColor]];
 }
 
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result) {
+        case MFMailComposeResultSent:
+            NSLog(@"You sent the email.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"You saved a draft of this email");
+            break;
+        case MFMailComposeResultCancelled:
+            NSLog(@"You cancelled sending this email.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed:  An error occurred when trying to compose this email");
+            break;
+        default:
+            NSLog(@"An error occurred when trying to compose this email");
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 #pragma mark - Notification
 
 - (void)handleOfferDetail:(NSNotification *)notif
@@ -189,9 +212,28 @@
     [self constructDataArray];
     [self.tableView reloadData];
     [self setNumberOfPageItemController];
+    [self isSearching:NO];
 }
 
 #pragma mark - Actions
+- (IBAction)sendEmail:(id)sender
+{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
+        mail.mailComposeDelegate = self;
+        [mail setSubject:@"Sample Subject"];
+        [mail setMessageBody:@"Here is some main text in the email!" isHTML:NO];
+        [mail setToRecipients:@[self.offer.email]];
+        
+        [self presentViewController:mail animated:YES completion:NULL];
+    }
+    else
+    {
+        NSLog(@"This device cannot send email");
+    }
+
+}
 
 - (IBAction)reserveCamping:(id)sender
 {
@@ -199,6 +241,14 @@
 }
 
 #pragma mark - Utils
+
+- (void)isSearching:(BOOL)isSearching
+{
+    self.spinner.hidden = !isSearching;
+    self.reservationButton.hidden = isSearching;
+    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+}
+
 - (void)constructDataArray
 {
     self.contentData = [NSMutableArray arrayWithArray:self.offer.mainTextInfos];
