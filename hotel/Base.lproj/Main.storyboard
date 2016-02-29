@@ -97,10 +97,10 @@
                                             <action selector="connection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2S1-GC-zmq"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hrh-un-9us">
-                                        <rect key="frame" x="290" y="120.5" width="20" height="20"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hrh-un-9us">
+                                        <rect key="frame" x="282" y="111.5" width="37" height="37"/>
                                     </activityIndicatorView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testtest@test.com" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ry5-re-uB8">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.com" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ry5-re-uB8">
                                         <rect key="frame" x="8" y="8" width="584" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="ugk-RD-3xd"/>
@@ -138,6 +138,35 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZuF-Gu-PeT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="7jJ-uA-Gc7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie6-7H-qhR">
+                                            <rect key="frame" x="8" y="10" width="584" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="pJJ-5E-krM"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="deconnectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nLt-kD-07E"/>
+                                            </connections>
+                                        </button>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ugg-6G-qyJ">
+                                            <rect key="frame" x="282" y="14" width="37" height="37"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="ugg-6G-qyJ" firstAttribute="centerY" secondItem="Ie6-7H-qhR" secondAttribute="centerY" id="Cxr-Ej-eQI"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ie6-7H-qhR" secondAttribute="bottom" constant="10" id="EX6-sU-8cP"/>
+                                        <constraint firstItem="Ie6-7H-qhR" firstAttribute="leading" secondItem="7jJ-uA-Gc7" secondAttribute="leading" constant="8" id="O6j-GK-yrz"/>
+                                        <constraint firstItem="ugg-6G-qyJ" firstAttribute="centerX" secondItem="Ie6-7H-qhR" secondAttribute="centerX" id="Pmw-d9-7rS"/>
+                                        <constraint firstItem="Ie6-7H-qhR" firstAttribute="top" secondItem="7jJ-uA-Gc7" secondAttribute="top" constant="10" id="VjN-S9-Z7h"/>
+                                        <constraint firstItem="Ie6-7H-qhR" firstAttribute="centerX" secondItem="7jJ-uA-Gc7" secondAttribute="centerX" id="fMJ-Re-7gf"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ie6-7H-qhR" secondAttribute="trailing" constant="8" id="kSR-bE-tZg"/>
+                                    </constraints>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="y7r-RT-LgJ"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="XsH-Zu-LiT"/>
@@ -163,10 +192,13 @@
                     <connections>
                         <outlet property="connectionButton" destination="wub-HX-tTt" id="Ob5-Rp-DWL"/>
                         <outlet property="contentConnectionView" destination="VwJ-S4-fUi" id="rk0-oE-Dsg"/>
+                        <outlet property="deconnectionButton" destination="Ie6-7H-qhR" id="Wvp-3E-B2y"/>
+                        <outlet property="footerView" destination="7jJ-uA-Gc7" id="Rh3-DO-Qun"/>
                         <outlet property="passwordTextView" destination="lam-uI-n3G" id="tM0-B6-vOu"/>
                         <outlet property="pseudoTextView" destination="ry5-re-uB8" id="yaI-Ed-vWL"/>
                         <outlet property="signUpButton" destination="JbV-pz-XSx" id="Kjy-IF-jXX"/>
                         <outlet property="spinner" destination="hrh-un-9us" id="qbI-Qq-eKZ"/>
+                        <outlet property="spinnerDeconnection" destination="ugg-6G-qyJ" id="O6o-hO-y86"/>
                         <outlet property="tableView" destination="ZuF-Gu-PeT" id="D94-S9-Xbh"/>
                     </connections>
                 </viewController>

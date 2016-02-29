@@ -18,11 +18,15 @@
 
 "homePage.inscription.button"       = "Sign up";
 "homePage.connection.button"        = "Log In";
+"homePage.deconnection.button"      = "Log out";
 "homePage.email.placeholder"        = "E-mail *";
 "homePage.password.placeholder"     = "Password *";
 "connection.connection_success.message" = "Successful connection";
 "connection.connection_failed.message" = "Wrong ID or Password";
 "connection.header_section.title"   = "Reservations";
+
+"connection.deconnection_success.message" = "Successful deconnection";
+
 
 "did_reservation_success"           = "Successful booked";
 

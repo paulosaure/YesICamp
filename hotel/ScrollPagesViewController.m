@@ -66,7 +66,7 @@
 {
     [super viewDidAppear:animated];
     // TODO Remove
-    [self didSelectedTitleAtIndex:PageControllerPromo];
+//    [self didSelectedTitleAtIndex:PageControllerPromo];
 }
 
 #pragma mark - Configurations

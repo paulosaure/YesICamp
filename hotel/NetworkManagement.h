@@ -10,6 +10,7 @@
 
 #define GET_METHOD @"GET"
 #define POST_METHOD @"POST"
+#define DELETE_METHOD @"DELETE"
 
 #define RESPONSE_HEADER     @"header"
 #define RESPONSE_BODY       @"body"

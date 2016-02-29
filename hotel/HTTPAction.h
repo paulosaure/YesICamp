@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, WebService)
     WebServiceGetCampingsList,
     WebServiceGetHotsDealsList,
     WebServiceConnection,
+    WebServiceDeconnection,
     WebServiceInscription,
     WebServiceGetOfferDetail,
     WebServiceGetReservationList,

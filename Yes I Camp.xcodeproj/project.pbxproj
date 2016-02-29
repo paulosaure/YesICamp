@@ -13,6 +13,7 @@
 		A80624EA1C7A182F00ABF9EC /* BookReservationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A80624E91C7A182F00ABF9EC /* BookReservationAction.m */; };
 		A819795A1C763F5800B2A177 /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A81979591C763F5800B2A177 /* CustomMKAnnotation.m */; };
 		A819795E1C76553600B2A177 /* CalendarPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A819795D1C76553600B2A177 /* CalendarPickerViewController.m */; };
+		A82722791C84F8CD0024D0BA /* DeconnectionUserAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A82722781C84F8CD0024D0BA /* DeconnectionUserAction.m */; };
 		A84C71701C56A83400598FE9 /* LPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716D1C56A83400598FE9 /* LPTitleView.m */; };
 		A84C71711C56A83400598FE9 /* LPViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C716F1C56A83400598FE9 /* LPViewPagerController.m */; };
 		A84C71731C56BC9500598FE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C71721C56BC9500598FE9 /* MapKit.framework */; };
@@ -116,6 +117,8 @@
 		A81979591C763F5800B2A177 /* CustomMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotation.m; sourceTree = "<group>"; };
 		A819795C1C76553600B2A177 /* CalendarPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarPickerViewController.h; sourceTree = "<group>"; };
 		A819795D1C76553600B2A177 /* CalendarPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarPickerViewController.m; sourceTree = "<group>"; };
+		A82722771C84F8CD0024D0BA /* DeconnectionUserAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeconnectionUserAction.h; sourceTree = "<group>"; };
+		A82722781C84F8CD0024D0BA /* DeconnectionUserAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeconnectionUserAction.m; sourceTree = "<group>"; };
 		A84C716C1C56A83400598FE9 /* LPTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPTitleView.h; sourceTree = "<group>"; };
 		A84C716D1C56A83400598FE9 /* LPTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPTitleView.m; sourceTree = "<group>"; };
 		A84C716E1C56A83400598FE9 /* LPViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPViewPagerController.h; sourceTree = "<group>"; };
@@ -365,6 +368,15 @@
 			name = CalendarPicker;
 			sourceTree = "<group>";
 		};
+		A82722761C84F8AB0024D0BA /* Deconnection */ = {
+			isa = PBXGroup;
+			children = (
+				A82722771C84F8CD0024D0BA /* DeconnectionUserAction.h */,
+				A82722781C84F8CD0024D0BA /* DeconnectionUserAction.m */,
+			);
+			name = Deconnection;
+			sourceTree = "<group>";
+		};
 		A84C716B1C56A83400598FE9 /* ViewPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +597,7 @@
 				A870B2901C5FFD330006CAAA /* HTTPAction.m */,
 				A80624E71C7A181000ABF9EC /* BookReservation */,
 				A88EB3F01C5036E5008DC5CF /* Connection */,
+				A82722761C84F8AB0024D0BA /* Deconnection */,
 				A88EB3F11C5036EB008DC5CF /* Inscription */,
 				A870B29F1C616C3B0006CAAA /* GetHotsDealsList */,
 				A8FEC7351C6F9111003B8A2C /* GetOfferDetail */,
@@ -1176,6 +1189,7 @@
 				A8FECAD91C7A526100BA4656 /* NSDictionary+Additions.m in Sources */,
 				A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */,
 				A8C22D1E1C728C5C0012147C /* GlobalConfiguration.m in Sources */,
+				A82722791C84F8CD0024D0BA /* DeconnectionUserAction.m in Sources */,
 				A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,
 				A870B2911C5FFD330006CAAA /* HTTPAction.m in Sources */,

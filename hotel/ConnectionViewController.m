@@ -14,17 +14,25 @@
 #import "UIButton+Effects.h"
 #import "ReservationCell.h"
 #import "GetReservationAction.h"
+#import "DeconnectionUserAction.h"
 
 @interface ConnectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UIView *contentConnectionView;
+
 @property (weak, nonatomic) IBOutlet UITextField *pseudoTextView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
-@property (weak, nonatomic) IBOutlet UIButton *connectionButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UIButton *connectionButton;
+@property (weak, nonatomic) IBOutlet UIButton *deconnectionButton;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinnerDeconnection;
 
 // Content
 @property (nonatomic, strong) NSArray *reservationArray;
@@ -37,26 +45,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureUI];
+    
+    [self.tableView registerNib:[ReservationCell cellNib] forCellReuseIdentifier:RESERVATION_CELL_IDENTIFIER];
     
     // Configure table View
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.estimatedRowHeight = 200;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    [self.tableView registerNib:[ReservationCell cellNib] forCellReuseIdentifier:RESERVATION_CELL_IDENTIFIER];
+    self.tableView.tableHeaderView = nil;
+    self.tableView.tableFooterView = self.footerView;
     
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
     [self.view addGestureRecognizer:singleFingerTap];
     
     
     // TODO REMOVE en dessous
-//    [self isSearching:YES];
-//    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleConnectionResponse:) name:ConnectionReponseNotification object:nil];
-//    [[NetworkManagement sharedInstance] addNewAction:[ConnectionUserAction action:self.pseudoTextView.text
-//                                                                         password:self.passwordTextView.text]
-//                                              method:POST_METHOD];
+    //    [self isSearching:YES];
+    //    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleConnectionResponse:) name:ConnectionReponseNotification object:nil];
+    //    [[NetworkManagement sharedInstance] addNewAction:[ConnectionUserAction action:self.pseudoTextView.text
+    //                                                                         password:self.passwordTextView.text]
+    //                                              method:POST_METHOD];
     // TODO remove audessus
+    
+    [self configureUI];
 }
 
 - (void)configureUI
@@ -64,13 +76,16 @@
     [self.pseudoTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.email.placeholder")];
     [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.password.placeholder")];
     [self.connectionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.connection.button")];
+    [self.deconnectionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.deconnection.button")];
+    
     [self.signUpButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.inscription.button")];
     self.passwordTextView.secureTextEntry = YES;
     self.tableView.hidden = YES;
     self.view.backgroundColor = [UIColor clearColor];
     
     self.tableView.backgroundColor = [UIColor clearColor];
-    [self isSearching:NO];
+    self.spinner.hidden = YES;
+    self.spinnerDeconnection.hidden = YES;
 }
 
 #pragma mark - UITableViewDataSource
@@ -119,7 +134,7 @@
 - (void)didReceiveReservations:(NSNotification *)notification
 {
     self.reservationArray = notification.object;
-
+    
     if (self.reservationArray)
     {
         if ([self.reservationArray count] != 0)
@@ -142,12 +157,12 @@
 
 - (void)handleConnectionResponse:(NSNotification *)notification
 {
-    [self isSearching:NO];
+    [self isSearching:NO isConnection:YES];
     
     NSNumber *statusCode = notification.object;
     NSString *title = @"";
     NSString *message;
-
+    
     if ([statusCode isEqualToNumber:@200])
     {
         [self userIsConnect:YES];
@@ -156,6 +171,30 @@
     else
     {
         title = LOCALIZED_STRING(@"globals.error");
+        message = [statusCode stringValue];
+    }
+    
+    PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:title
+                                                                     message:message
+                                                               messageButton:LOCALIZED_STRING(@"globals.ok")];
+    [NOTIFICATION_CENTER postNotificationName:popUpNotification object:informations];
+}
+
+- (void)handleDeconnectionResponse:(NSNotification *)notification
+{
+    [self isSearching:NO isConnection:NO];
+    NSNumber *statusCode = notification.object;
+    NSString *title = @"";
+    NSString *message;
+    
+    if ([statusCode isEqualToNumber:@200])
+    {
+        [self userIsConnect:NO];
+        message = LOCALIZED_STRING(@"connection.deconnection_success.message");
+    }
+    else
+    {
+        title = LOCALIZED_STRING(@"globals.technical_error");
         message = [statusCode stringValue];
     }
     
@@ -179,12 +218,20 @@
     }
     else
     {
-        [self isSearching:YES];
+        [self isSearching:YES isConnection:YES];
         [NOTIFICATION_CENTER addObserver:self selector:@selector(handleConnectionResponse:) name:ConnectionReponseNotification object:nil];
         [[NetworkManagement sharedInstance] addNewAction:[ConnectionUserAction action:self.pseudoTextView.text
                                                                              password:self.passwordTextView.text]
                                                   method:POST_METHOD];
     }
+}
+
+- (IBAction)deconnectionAction:(id)sender
+{
+    [self isSearching:YES isConnection:NO];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleDeconnectionResponse:) name:DeconnectionReponseNotification object:nil];
+    [[NetworkManagement sharedInstance] addNewAction:[DeconnectionUserAction action]
+                                              method:DELETE_METHOD];
 }
 
 - (IBAction)pushInscriptionViewController:(id)sender
@@ -195,11 +242,14 @@
 
 #pragma mark - Utils
 
-- (void)isSearching:(BOOL)isSearching
+- (void)isSearching:(BOOL)isSearching isConnection:(BOOL)isConnection
 {
-    self.spinner.hidden = !isSearching;
-    self.connectionButton.hidden = isSearching;
-    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+    UIActivityIndicatorView *spinner = (isConnection) ? self.spinner : self.spinnerDeconnection;
+    UIButton *button = (isConnection) ? self.connectionButton : self.deconnectionButton;
+    
+    spinner.hidden = !isSearching;
+    button.hidden = isSearching;
+    isSearching ? [spinner startAnimating] : [spinner stopAnimating];
 }
 
 - (void)userIsConnect:(BOOL)isConnected
