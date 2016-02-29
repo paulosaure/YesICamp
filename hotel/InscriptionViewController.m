@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *choosePhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *inscriptionButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 
 @property (nonatomic, strong) UIImage *image;
@@ -75,6 +76,7 @@
     [self.inscriptionButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"inscription.inscription.button")];
     
     self.view.backgroundColor = BLACK_COLOR;
+    self.spinner.hidden = YES;
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -91,6 +93,7 @@
 
 - (void)handleInscriptionResponse:(NSNotification *)notification
 {
+    [self isSearching:NO];
     NSNumber *statusCode = notification.object;
     NSString *title = @"";
     NSString *message;
@@ -158,6 +161,7 @@
     
     if (allFielsComplete)
     {
+        [self isSearching:YES];
         [NOTIFICATION_CENTER addObserver:self selector:@selector(handleInscriptionResponse:) name:InscriptionReponseNotification object:nil];
         [[NetworkManagement sharedInstance] addNewAction:[InscriptionUserAction action:self.firstNameTextView.text
                                                                               lastName:self.lastNameTextView.text
@@ -176,6 +180,13 @@
 }
 
 #pragma mark - Utils
+
+- (void)isSearching:(BOOL)isSearching
+{
+    self.spinner.hidden = !isSearching;
+    self.inscriptionButton.hidden = isSearching;
+    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+}
 
 - (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
 {

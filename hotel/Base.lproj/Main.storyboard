@@ -766,6 +766,9 @@
                                     <action selector="choosePhoto:" destination="4aC-Re-cjo" eventType="touchUpInside" id="Bj7-Ep-Lrw"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="UXq-vH-MHK">
+                                <rect key="frame" x="282" y="539" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -787,6 +790,8 @@
                             <constraint firstItem="AcZ-Do-oDQ" firstAttribute="top" secondItem="CxM-Yu-22J" secondAttribute="bottom" constant="10" id="ZBE-uN-2zr"/>
                             <constraint firstItem="AcZ-Do-oDQ" firstAttribute="leading" secondItem="ycw-22-NPD" secondAttribute="leading" constant="20" id="bXY-QS-AjE"/>
                             <constraint firstItem="EWL-vX-BYX" firstAttribute="top" secondItem="AiJ-aw-7BR" secondAttribute="bottom" constant="10" id="cyf-XE-UT3"/>
+                            <constraint firstItem="UXq-vH-MHK" firstAttribute="centerX" secondItem="JE6-Be-mLB" secondAttribute="centerX" id="gLf-Rz-n40"/>
+                            <constraint firstItem="UXq-vH-MHK" firstAttribute="centerY" secondItem="JE6-Be-mLB" secondAttribute="centerY" id="jn5-Z9-XSL"/>
                             <constraint firstItem="1vl-dG-LRR" firstAttribute="top" secondItem="8h7-lV-UA3" secondAttribute="bottom" constant="20" id="oBj-YE-OZQ"/>
                             <constraint firstItem="JE6-Be-mLB" firstAttribute="top" secondItem="1vl-dG-LRR" secondAttribute="bottom" constant="30" id="oe4-bB-g9J"/>
                             <constraint firstItem="JE6-Be-mLB" firstAttribute="leading" secondItem="ycw-22-NPD" secondAttribute="leading" constant="20" id="rqI-Rz-SjU"/>
@@ -813,6 +818,7 @@
                         <outlet property="inscriptionButton" destination="JE6-Be-mLB" id="h5V-n7-uuV"/>
                         <outlet property="lastNameTextView" destination="CxM-Yu-22J" id="Hp6-aA-D5n"/>
                         <outlet property="passwordTextView" destination="sHO-Mx-pD1" id="aLD-S6-kxO"/>
+                        <outlet property="spinner" destination="UXq-vH-MHK" id="Q0x-Ux-Gsa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BX7-ZD-atu" userLabel="First Responder" sceneMemberID="firstResponder"/>
