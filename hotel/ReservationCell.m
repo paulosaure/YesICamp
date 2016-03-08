@@ -65,7 +65,7 @@
                                             NSFontAttributeName:[UIFont boldSystemFontOfSize:20.0f],
                                             NSForegroundColorAttributeName:[UIColor whiteColor]
                                             };
-    NSAttributedString *reservationNumber = [[NSAttributedString alloc] initWithString:[reservation.offerId stringValue]
+    NSAttributedString *reservationNumber = [[NSAttributedString alloc] initWithString:[reservation.uid stringValue]
                                                                             attributes:reservationAttributes];
     self.reservationNumberLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"reservation.rervation_number.title"), reservationNumber];
     
