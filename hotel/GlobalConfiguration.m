@@ -39,7 +39,7 @@
     
     if ([categoryString isEqualToString:@"Charme"]) {
         category = CampingCategoryCharme;
-    } else if ([categoryString isEqualToString:@"Fun"]) {
+    } else if ([categoryString isEqualToString:@"fun"]) {
         category = CampingCategoryFun;
     } else if ([categoryString isEqualToString:@"Lux"]) {
         category = CampingCategoryLuxe;

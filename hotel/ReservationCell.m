@@ -13,8 +13,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *reservationNumberLabel;
 
 @property (nonatomic, weak) IBOutlet UIView *contentCampingInformationView;
-@property (nonatomic, weak) IBOutlet UILabel *dateFromLabel;
-@property (nonatomic, weak) IBOutlet UILabel *dateToLabel;
+@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingAddressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingTelAddress;
@@ -44,17 +43,32 @@
 - (void)configureWithReservation:(Reservation *)reservation isLast:(BOOL)isLast
 {
     self.reservationNumberLabel.textColor = [UIColor whiteColor];
-    self.dateToLabel.textColor = [UIColor whiteColor];
-    self.dateFromLabel.textColor = [UIColor whiteColor];
+    self.dateLabel.textColor = [UIColor whiteColor];
     self.campingTelAddress.textColor = [UIColor whiteColor];
     self.campingNameLabel.textColor = [UIColor whiteColor];
     self.campingAddressLabel.textColor = [UIColor whiteColor];
     self.price.textColor = [UIColor whiteColor];
     
-    self.reservationNumberLabel.text = [NSString stringWithFormat:@"N° %@",[reservation.offerId stringValue] ];
-    self.dateFromLabel.text = reservation.dateFrom;
-    self.dateToLabel.text = reservation.dateTo;
-
+    NSDictionary *dateAttributes = @{
+                                     NSFontAttributeName:[UIFont boldSystemFontOfSize:22.0f],
+                                     NSForegroundColorAttributeName:GREEN_COLOR
+                                     };
+    
+    NSAttributedString *dateFrom = [[NSAttributedString alloc] initWithString:reservation.dateFrom
+                                                                   attributes:dateAttributes];
+    NSAttributedString *dateTo = [[NSAttributedString alloc] initWithString:reservation.dateTo
+                                                                 attributes:dateAttributes];
+    self.dateLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"reservation.date.title"), dateFrom, dateTo];
+    
+    
+    NSDictionary *reservationAttributes = @{
+                                            NSFontAttributeName:[UIFont boldSystemFontOfSize:20.0f],
+                                            NSForegroundColorAttributeName:[UIColor whiteColor]
+                                            };
+    NSAttributedString *reservationNumber = [[NSAttributedString alloc] initWithString:[reservation.offerId stringValue]
+                                                                            attributes:reservationAttributes];
+    self.reservationNumberLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"reservation.rervation_number.title"), reservationNumber];
+    
     self.campingAddressLabel.text = reservation.addressCamping;
     self.campingNameLabel.text = reservation.nameCamping;
     self.campingTelAddress.text = reservation.phoneCamping;

@@ -68,3 +68,5 @@
 "payment.transaction_result.failed"             = "Votre paiement a échoué";
 
 "noreservation.no_reservation.title"            = "Vous n'avez aucune réservation";
+"reservation.date.title"                        = "Du %@ au %@";
+"reservation.rervation_number.title"            = "Numéro de réservation : %@";

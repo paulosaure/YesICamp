@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'ABD018813EB0AAE04194C45C'
+               BlueprintIdentifier = '93CC595B7BCB44F81CB4C26A'
                BlueprintName = 'DSLCalendarView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libDSLCalendarView.a'>

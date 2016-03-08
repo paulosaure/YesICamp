@@ -69,6 +69,6 @@
 "payment.transaction_result.failed"             = "Payment failed";
 
 "noreservation.no_reservation.title"            = "You have no reservation";
-
-
+"reservation.date.title"                        = "From %@ to %@";
+"reservation.rervation_number.title"            = "Booking number : %@";
 

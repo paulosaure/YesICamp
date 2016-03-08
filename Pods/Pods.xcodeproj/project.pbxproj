@@ -8,75 +8,86 @@
 
 /* Begin PBXBuildFile section */
 		00F09DB5E05D1208F27161E2F016FE36 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37864639795C4854F0231F20AE600CAD /* MobileCoreServices.framework */; };
-		01C57A659031A397DB9F9DC355B02FC9 /* DSLCalendarDayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 471F1066992F90260CB586DC9BB09A0B /* DSLCalendarDayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01C57A659031A397DB9F9DC355B02FC9 /* DSLCalendarDayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 477AE834B9996A5BD5D12AD29C653E93 /* DSLCalendarDayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		022B549F10007177A43FAB1DD5114F7D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BA91FAAE708116C42507E22D769743 /* Security.framework */; };
 		02FFE41756FE6D808916E8CCFD2273BB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3FA101C77BBB9691CE81BAE29586E8 /* CoreGraphics.framework */; };
-		08B24783731BD4CF40D2A9430A0B6A7F /* NSDate+DSLCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24487B9941DF224A2A37589942D2E667 /* NSDate+DSLCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A08FC71C4E3B8E0F8734BCDA7CCA7CB /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6443840C198EF3D7E94AC94043C613A0 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		140B02FCA595FEA804E09E34B444CF5F /* DSLCalendarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3AD14922BBE2EF67737EA2A45CA21B5 /* DSLCalendarView-dummy.m */; };
-		14CD3DFB4A25BAEFB205730FA6750025 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A8FA48C5F4F80377B99D8C0C636E1C1 /* AFAutoPurgingImageCache.m */; };
-		15460ABD372C937E2A07A2FCDF98C473 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EE8541211797C12954A398164F05BB /* UIActivityIndicatorView+AFNetworking.m */; };
-		19E6319F6ECED7539AABBD9A211F7AEC /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C8466D0F69D1610FE53D3C3AD35C7D /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08B24783731BD4CF40D2A9430A0B6A7F /* NSDate+DSLCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = DF7E11A466434BA20BF74439BEEE6E36 /* NSDate+DSLCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A08FC71C4E3B8E0F8734BCDA7CCA7CB /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DFF051A17E23B128E174B92CCEFACE6 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		140B02FCA595FEA804E09E34B444CF5F /* DSLCalendarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F501B586BA4B42059867289901C1B5 /* DSLCalendarView-dummy.m */; };
+		14CD3DFB4A25BAEFB205730FA6750025 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDD4F8D40E32DDBF6BA23DD08A73EE7 /* AFAutoPurgingImageCache.m */; };
+		15460ABD372C937E2A07A2FCDF98C473 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D67257F5A56AEFFF2103C274DCDEE28D /* UIActivityIndicatorView+AFNetworking.m */; };
+		19E6319F6ECED7539AABBD9A211F7AEC /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = EB3876B3D22CC90DBF21BB820DECA6E2 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2053D71CF543C3A3CC47C5409D61923C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3FA101C77BBB9691CE81BAE29586E8 /* CoreGraphics.framework */; };
-		23415204AA48A02959E4E5245CF96037 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9641DA6A9C7AB63179782328A9C6FD /* AFHTTPSessionManager.m */; };
-		2359387620C5E815BF0594BC40311734 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = C598FA8D39AC946D196CC2BF7B7CD6E7 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		311E5200832E4AE174A193851A2C6317 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 779B9237C65A2200BAF934426F9A0428 /* AFSecurityPolicy.m */; };
-		326A543AD4E39A2DAECA1CD385E3AEA2 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 59E3FF3B7509BAABC22271B4E1F48A55 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3292175C99BB4A963A561BCA566FA938 /* DSLCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7AE9B747E0D2B6616FA487D40D577B /* DSLCalendarMonthView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		23415204AA48A02959E4E5245CF96037 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B32756145EEAFA9F780A13B85244A209 /* AFHTTPSessionManager.m */; };
+		2359387620C5E815BF0594BC40311734 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D9B5F15DC0CBAB848C3A58DA883BAF7 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DAE2A8E68AFE5F0D477F19A9B7D9210 /* NSAttributedString+CCLFormat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB68B7D59E28339BB1DE68FAB38D919 /* NSAttributedString+CCLFormat-dummy.m */; };
+		311E5200832E4AE174A193851A2C6317 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 273AF041EF6F976093A6E0A148AE45C1 /* AFSecurityPolicy.m */; };
+		326A543AD4E39A2DAECA1CD385E3AEA2 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 834039084B6FA23FB92AA1DB17181228 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3292175C99BB4A963A561BCA566FA938 /* DSLCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED905F6C93ADC08E61A1083791BB1E /* DSLCalendarMonthView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		34D7F9EC266CAB09918FF040B13C4660 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0D0663BFEACD3F126A939DB77861F /* Foundation.framework */; };
-		3511AE7ADBB71D05565854F0E70B7D08 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B3551752968622326680CE1AE039019 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38EEA9ED6B922946C54AD6BAC93B73AD /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C004D59A49CAC723313D22BEFF3B316 /* UIProgressView+AFNetworking.m */; };
-		3939531EB270B4145C7ADFBAB2E5695F /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D0A0B93DABF2DCCB93339E45DC934319 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43098B12DF5546CB576986E68DBCAFCA /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 495CC6F2F428BCC636867D9F9AEB2578 /* AFNetworkReachabilityManager.m */; };
-		4BA19F7DD8F9FDA648137B2CE89E7588 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6DD85F500CA76667F563A99BF7A3F7 /* AFNetworkActivityIndicatorManager.m */; };
-		4F87463B1B5E6819C4319B55F642FEF7 /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2094C05EF0181DB1A1CD5EA7426028 /* DSLCalendarDayCalloutView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		53275339A317045424FFCA59431D0BF2 /* DSLCalendarRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 05F90F3C5A4ECBBD009B46ED5EEA6A81 /* DSLCalendarRange.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D1268E78FDFB5F6213A56E6AA18D554 /* DSLCalendarRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ACC8D452D527A3BF353425DBA6C0DF4 /* DSLCalendarRange.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5D52DB6DF2E6C24CECB0015A9177A2E1 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4561AE78E9D2CBB41282E60FA5EEA1 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E82D438BCCC68487A82FA6C32DC3866 /* DSLCalendarDayCalloutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AEA32842F220666682FAB81022911B6 /* DSLCalendarDayCalloutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3511AE7ADBB71D05565854F0E70B7D08 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CD25909491490994EF230FD5D181FEF5 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		38EEA9ED6B922946C54AD6BAC93B73AD /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9777AD211470AA8563399B8012FEDE77 /* UIProgressView+AFNetworking.m */; };
+		3939531EB270B4145C7ADFBAB2E5695F /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 96C6D59C7ADFC50E9AAF4F9F96B377E9 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40C3E99DB5C31784DEA8761A62EEE431 /* NSAttributedString+CCLFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A05EF03DE86614B87CD81A692985AD /* NSAttributedString+CCLFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		43098B12DF5546CB576986E68DBCAFCA /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5217605F61207B5CC3DF3840E81E9052 /* AFNetworkReachabilityManager.m */; };
+		4B66809B24B2CF5E24E666F077C03010 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
+		4BA19F7DD8F9FDA648137B2CE89E7588 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66769D194B33E67EA38F4BEDBC794BD2 /* AFNetworkActivityIndicatorManager.m */; };
+		4F87463B1B5E6819C4319B55F642FEF7 /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7839D1F239E7E741AA98519E956A7 /* DSLCalendarDayCalloutView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		53275339A317045424FFCA59431D0BF2 /* DSLCalendarRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 691F3D5A1BAAD8EBDEB6CA5A46D11487 /* DSLCalendarRange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59DC760D0B0E0CDCEAD19306EFCE9A13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0D0663BFEACD3F126A939DB77861F /* Foundation.framework */; };
+		5D1268E78FDFB5F6213A56E6AA18D554 /* DSLCalendarRange.m in Sources */ = {isa = PBXBuildFile; fileRef = F440C624B75AEF5575AB85AA62F5047A /* DSLCalendarRange.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5D4303360D8E0180C13B3A680C4866A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0D0663BFEACD3F126A939DB77861F /* Foundation.framework */; };
+		5D52DB6DF2E6C24CECB0015A9177A2E1 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 953969D54F90FBCFA3D5E9BF52499876 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E82D438BCCC68487A82FA6C32DC3866 /* DSLCalendarDayCalloutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FA468CA265785FAF650E9498A4C51E5 /* DSLCalendarDayCalloutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6083F51989A0009C740D92767F4DC1FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0D0663BFEACD3F126A939DB77861F /* Foundation.framework */; };
-		670A648C3D2D9175BA3A428A7A03A99D /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5155751891FC6375AB4BB1D7BDCE0414 /* NSDate+DSLCalendarView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6EC97BDB3FC508526F9E388095A7DDCC /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E07B6D821438E1B3B67851A78566B6DA /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78940A6980F359C4304C695EF6E67C5D /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D294F6E490E20311D193C67F29317656 /* UIButton+AFNetworking.m */; };
-		7D9A535773168F92F3B08ACE33C3DB80 /* DSLCalendarMonthView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8BB090FB3A92CBF4976BAC403F00E29 /* DSLCalendarMonthView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F0578A0258E02384F6229C678E60D31 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DD742F59AECF0856C78C549BF6AB49 /* UIRefreshControl+AFNetworking.m */; };
-		830050886B18F54E17F117FD8EFC717B /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C1B0F1DA32610018D823D4D50B56AFF /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		85FAB6F1D2FE0598BF2E61D7BB084B8D /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F20376820B0356359744CF1441461C62 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		894E248EE8D3561276100EE119996C09 /* DSLCalendarMonthSelectorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9694BF4BA74603F89A3D94B4CC235018 /* DSLCalendarMonthSelectorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E129866CBE5309FA7AE5142F8758D99 /* DSLCalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D015C4F2B14C4819A39F94E5DA08C6C6 /* DSLCalendarDayView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8E82178CC9BD8BE3DBF2C10E33807AEB /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EA5FC2B558DFDB9A292E11F563DC50 /* AFURLRequestSerialization.m */; };
-		8FD1BA377FB8DFF8B6EFDCB05362D390 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8D0D0663BFEACD3F126A939DB77861F /* Foundation.framework */; };
-		A8FC6A53F6C1CB4DEFD972664E1AF3B1 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAA5B3E5BB6CFA69B17D09A37937028 /* AFNetworking-dummy.m */; };
-		AC6DF25904CD4B13AB0D2AFC55A19D08 /* DSLCalendarMonthSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF0246450FC74DA2C540F901722E00D7 /* DSLCalendarMonthSelectorView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		ACE9C1A6E8D5121C6C5F907C7A9CFCC9 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 79AD2026B5D9A1BA59F190A2D2B9E5AC /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD359A96DD4AA2C962E50A5CD5524F54 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D54357DB520FA5249E1B652A74D24C39 /* UIWebView+AFNetworking.m */; };
-		B0BE398350F83A7B0102C3BBAFC51428 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C4B9AF86E43C531450CF051F70C269 /* UIImageView+AFNetworking.m */; };
-		B51AA1F7701DCDBCC9B88A15320F9C2C /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E37C67C869465DD5951683B56DAE9C3 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5CF67F7870BAB70A76E57479B706B42 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F4629A4F353BB7EF151BDA862321F489 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B879BFCCB77F50D0B7BD4628D415CF6E /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
-		C1B65C3D849FEE4FB5298A8135A765DA /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2D95B8E86F3CA3096FB71A9076E8F4 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C2201E34603B014192F0967473518496 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A39919A2B3CF4AD5F9B47C2C30729D97 /* AFURLResponseSerialization.m */; };
+		670A648C3D2D9175BA3A428A7A03A99D /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C820F56DD8C33891B5649D3D377A9E /* NSDate+DSLCalendarView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6EC97BDB3FC508526F9E388095A7DDCC /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A058EEAB065B8914FC52789D9C83351B /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78940A6980F359C4304C695EF6E67C5D /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5D41B44ABE4BA364EE9535EF2A1C59 /* UIButton+AFNetworking.m */; };
+		7D9A535773168F92F3B08ACE33C3DB80 /* DSLCalendarMonthView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9799C1C74F4FD0A7CF1EFEE310D9B9FF /* DSLCalendarMonthView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F0578A0258E02384F6229C678E60D31 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDD6694870793014675B1AC6DD7BA3 /* UIRefreshControl+AFNetworking.m */; };
+		830050886B18F54E17F117FD8EFC717B /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC6288464E0330A2B1FA82B49A6420A /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85FAB6F1D2FE0598BF2E61D7BB084B8D /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = DB56DB3E4396CADA379946E4D92DA4F5 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		894E248EE8D3561276100EE119996C09 /* DSLCalendarMonthSelectorView.h in Headers */ = {isa = PBXBuildFile; fileRef = C2894159B81A01B23E871237CDA9233F /* DSLCalendarMonthSelectorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E129866CBE5309FA7AE5142F8758D99 /* DSLCalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A97883756270FC869718AD9FF163692 /* DSLCalendarDayView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8E82178CC9BD8BE3DBF2C10E33807AEB /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2100FF4760DA1A828D5B9C51077A603A /* AFURLRequestSerialization.m */; };
+		A8FC6A53F6C1CB4DEFD972664E1AF3B1 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72021DF04E5C3B070EE1C592A8D2050B /* AFNetworking-dummy.m */; };
+		AC6DF25904CD4B13AB0D2AFC55A19D08 /* DSLCalendarMonthSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF22AF1B94F777A160A99BA7C93ED5B /* DSLCalendarMonthSelectorView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		ACE9C1A6E8D5121C6C5F907C7A9CFCC9 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 71ABC4D22E146F3C3F7E59B232B9CCAA /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD359A96DD4AA2C962E50A5CD5524F54 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD926F41B4A5F889C316647776913E /* UIWebView+AFNetworking.m */; };
+		B0BE398350F83A7B0102C3BBAFC51428 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B5FBA0F40C2CD50AEDCA816F0A39E3 /* UIImageView+AFNetworking.m */; };
+		B51AA1F7701DCDBCC9B88A15320F9C2C /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED4FBEFD363AF4EDBB377D97D1747BB /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5CF67F7870BAB70A76E57479B706B42 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B4E054CDE116B9E6815FF6341AD2CB /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1B5F75D3D6D6E64406A4531EFA9DDD9 /* NSAttributedString+CCLFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 239E3B6EAEF50811534CB8699053F39C /* NSAttributedString+CCLFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1B65C3D849FEE4FB5298A8135A765DA /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C93C4629692738C44A263CA1176BCB4C /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2201E34603B014192F0967473518496 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F28DBDA37475E52B546A994EDC5729 /* AFURLResponseSerialization.m */; };
 		CE8965366A3B07A6C0615055A31B8B83 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8908189965D177AD6BAB607AE614C1E /* SystemConfiguration.framework */; };
-		D31FEE51AF4BE2A6CC059F80B983CD3B /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E02AED4A12E0EED130A381763CB5E /* AFImageDownloader.m */; };
-		DFDAC8245626953C4BCE5A2DA6BE2A5B /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = B60E7A3510335CDEEABE14D1806E4209 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E212C2AA95E8F6EFB69A5F1455F291F8 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 08990742137E8D388B9F1D93D8C40CB4 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED69D9B5A342FE9BD3F170D5CDDEC948 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6837917A31D063C1450AF8F61B3660F9 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F27A0A744FEC2636D6C4D14CF6F9C0BD /* DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2604F4008811F36F896B237E109DA576 /* DSLCalendarView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F3774B1449FCE5B3CA3E1B336E11D284 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD38D719696E16E4C3DC43FF7FE9A9F /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4E33B732FC139131DE0EF6E8AEAAA11 /* DSLCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = A577258152BE4F6827A8AC7A37757183 /* DSLCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D31FEE51AF4BE2A6CC059F80B983CD3B /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 308694476D3FE03C1A05B64EC3ECF50E /* AFImageDownloader.m */; };
+		DFDAC8245626953C4BCE5A2DA6BE2A5B /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AAEB2EE6F56EA2EF5351C79B057B2C4 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E212C2AA95E8F6EFB69A5F1455F291F8 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 09E454421D03CEAF7568319B47E023EB /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED69D9B5A342FE9BD3F170D5CDDEC948 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A4EE6A50E9B7FD4F4158C4340053269D /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F27A0A744FEC2636D6C4D14CF6F9C0BD /* DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB1C2A63E6EB0FDDC450B287A421FFB /* DSLCalendarView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F3774B1449FCE5B3CA3E1B336E11D284 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C85C164C7448C6A97FB3B046924ED6BD /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4E33B732FC139131DE0EF6E8AEAAA11 /* DSLCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = D618EF2F7A212C8329787B300C2D8612 /* DSLCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F556B5E423171A7ED3565ABB55E30A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241A2B7247375EE22111B162FCE4AE84 /* UIKit.framework */; };
-		FCDDD3BC67EA205C87238A2A87D5C36C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 82202B753453C30CA1E3025F800A21EB /* AFURLSessionManager.m */; };
+		FCDDD3BC67EA205C87238A2A87D5C36C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D90E59CCF7D5E9EDD16EBF29B67B585 /* AFURLSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6AB5F6FF3A71B847FCF58EF7518C5DE6 /* PBXContainerItemProxy */ = {
+		76E2084E5A5D745F40865821BE5A58A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0567FA252832207BC6A51CAE57368C06;
+			remoteInfo = "NSAttributedString+CCLFormat";
+		};
+		C395F6AAEF16F6635B3FD4C15D9CF224 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 928353533005A4198EBDA5B700D37B64;
 			remoteInfo = AFNetworking;
 		};
-		B9E2AEC57E73E35F216F70ED71BBFD2C /* PBXContainerItemProxy */ = {
+		CA6D9F334C356078FB2A809BCB165615 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -86,114 +97,112 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05EA5FC2B558DFDB9A292E11F563DC50 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		05F90F3C5A4ECBBD009B46ED5EEA6A81 /* DSLCalendarRange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarRange.h; path = DSLCalendarView/DSLCalendarRange.h; sourceTree = "<group>"; };
-		08990742137E8D388B9F1D93D8C40CB4 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		06CB7D326A3A4D36D956EA5BE65AEF26 /* DSLCalendarDaySelection-middle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-middle.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-middle.png"; sourceTree = "<group>"; };
+		07B5FBA0F40C2CD50AEDCA816F0A39E3 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		09E454421D03CEAF7568319B47E023EB /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		0DC581D725928328F84B9F8D5624BAD0 /* libopencv_imgproc.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopencv_imgproc.a; path = CardIO/libopencv_imgproc.a; sourceTree = "<group>"; };
+		0DFF051A17E23B128E174B92CCEFACE6 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		18EE8541211797C12954A398164F05BB /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		1AD38D719696E16E4C3DC43FF7FE9A9F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		1B62DC8369AEEE9CEFBB506CB6923FB5 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = CardIO/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
-		1CD7AD91CD03F409DD1B84BBCB7F1FAC /* DSLCalendarDaySelection-middle@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-middle@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-middle@2x.png"; sourceTree = "<group>"; };
-		1D7AE9B747E0D2B6616FA487D40D577B /* DSLCalendarMonthView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarMonthView.m; path = DSLCalendarView/DSLCalendarMonthView.m; sourceTree = "<group>"; };
-		1DBC3C6E33F96C8157B84EA86EDDFF02 /* DSLCalendarDayCallout.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = DSLCalendarDayCallout.png; path = DSLCalendarView/Images/DSLCalendarDayCallout.png; sourceTree = "<group>"; };
-		1E4561AE78E9D2CBB41282E60FA5EEA1 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		1F2D95B8E86F3CA3096FB71A9076E8F4 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		11F501B586BA4B42059867289901C1B5 /* DSLCalendarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DSLCalendarView-dummy.m"; sourceTree = "<group>"; };
+		14841202D32CA98A513963A79ADD6D09 /* DSLCalendarDaySelection-middle@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-middle@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-middle@2x.png"; sourceTree = "<group>"; };
+		188D19938442BFBFF5C3179693348F98 /* DSLCalendar-nextMonth@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-nextMonth@2x.png"; path = "DSLCalendarView/Images/DSLCalendar-nextMonth@2x.png"; sourceTree = "<group>"; };
+		1A8746EEEBD8FB7F14F99E19E617B59D /* DSLCalendarDaySelection@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection@2x.png"; sourceTree = "<group>"; };
+		1D9B5F15DC0CBAB848C3A58DA883BAF7 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		1E4DAF56E149EC8BF9B27EE8FE22E77C /* DSLCalendar-previousMonth.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-previousMonth.png"; path = "DSLCalendarView/Images/DSLCalendar-previousMonth.png"; sourceTree = "<group>"; };
+		1FA468CA265785FAF650E9498A4C51E5 /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarDayCalloutView.h; path = DSLCalendarView/DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
+		2100FF4760DA1A828D5B9C51077A603A /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		21F28DBDA37475E52B546A994EDC5729 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		239E3B6EAEF50811534CB8699053F39C /* NSAttributedString+CCLFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+CCLFormat.h"; path = "NSAttributedStringFormat/NSAttributedString+CCLFormat.h"; sourceTree = "<group>"; };
 		241A2B7247375EE22111B162FCE4AE84 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		24487B9941DF224A2A37589942D2E667 /* NSDate+DSLCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+DSLCalendarView.h"; path = "DSLCalendarView/NSDate+DSLCalendarView.h"; sourceTree = "<group>"; };
-		2604F4008811F36F896B237E109DA576 /* DSLCalendarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarView.m; path = DSLCalendarView/DSLCalendarView.m; sourceTree = "<group>"; };
+		24ED905F6C93ADC08E61A1083791BB1E /* DSLCalendarMonthView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarMonthView.m; path = DSLCalendarView/DSLCalendarMonthView.m; sourceTree = "<group>"; };
 		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		27FFF587CD91F120257D8D8B5EC93796 /* DSLCalendarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSLCalendarView-prefix.pch"; sourceTree = "<group>"; };
-		2AEA32842F220666682FAB81022911B6 /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarDayCalloutView.h; path = DSLCalendarView/DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
+		273AF041EF6F976093A6E0A148AE45C1 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		2958BC4D3297DB87B24232A3475C5A2B /* DSLCalendarDaySelection-right.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-right.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-right.png"; sourceTree = "<group>"; };
 		2C3FA101C77BBB9691CE81BAE29586E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		2EBF22D7AAC42078DBF8CAA36063E098 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = CardIO/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
-		2F142037E50CB68F7A532C70D628F236 /* libopencv_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopencv_core.a; path = CardIO/libopencv_core.a; sourceTree = "<group>"; };
+		2DD4DB70022AD0D9CC2010A6A0D3B570 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		308694476D3FE03C1A05B64EC3ECF50E /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
+		31F46C845BA90D1BF378113AD2FDB982 /* DSLCalendarDayCallout.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = DSLCalendarDayCallout.png; path = DSLCalendarView/Images/DSLCalendarDayCallout.png; sourceTree = "<group>"; };
+		32F2D960E275C50790FD5E21A94FDC8B /* libDSLCalendarView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDSLCalendarView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		36898E95753ED9820348481E6891864D /* DSLCalendarDaySelection.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = DSLCalendarDaySelection.png; path = DSLCalendarView/Images/DSLCalendarDaySelection.png; sourceTree = "<group>"; };
 		37864639795C4854F0231F20AE600CAD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3A8FA48C5F4F80377B99D8C0C636E1C1 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
-		3C004D59A49CAC723313D22BEFF3B316 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		416B4488F412CDECCA2716632D6B3564 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
-		43ED1086D1ABAEBAF5AFECBCABBE8626 /* DSLCalendar-nextMonth.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-nextMonth.png"; path = "DSLCalendarView/Images/DSLCalendar-nextMonth.png"; sourceTree = "<group>"; };
-		441C865070B915A63FF96049917F40C8 /* DSLCalendarDaySelection@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection@2x.png"; sourceTree = "<group>"; };
-		471F1066992F90260CB586DC9BB09A0B /* DSLCalendarDayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarDayView.h; path = DSLCalendarView/DSLCalendarDayView.h; sourceTree = "<group>"; };
-		495CC6F2F428BCC636867D9F9AEB2578 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		390EEE7A9EBD4906BDFA9B8A8505A08A /* DSLCalendarMonthSelectorView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DSLCalendarMonthSelectorView.xib; path = DSLCalendarView/DSLCalendarMonthSelectorView.xib; sourceTree = "<group>"; };
+		3CDD4F8D40E32DDBF6BA23DD08A73EE7 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
+		3FF7C247A7A63773320700E1F6DD4B50 /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = CardIO/CardIOUtilities.h; sourceTree = "<group>"; };
+		477AE834B9996A5BD5D12AD29C653E93 /* DSLCalendarDayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarDayView.h; path = DSLCalendarView/DSLCalendarDayView.h; sourceTree = "<group>"; };
 		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		5155751891FC6375AB4BB1D7BDCE0414 /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DSLCalendarView.m"; path = "DSLCalendarView/NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
-		55C3AA5555998A0DA6DE0DDF62BE2749 /* DSLCalendarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSLCalendarView.xcconfig; sourceTree = "<group>"; };
-		584E156C93C9C51D0D16FE8CC7067581 /* DSLCalendarDaySelection-middle.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-middle.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-middle.png"; sourceTree = "<group>"; };
-		5999341854F076E874568180B0BC7FB4 /* DSLCalendarDaySelection.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = DSLCalendarDaySelection.png; path = DSLCalendarView/Images/DSLCalendarDaySelection.png; sourceTree = "<group>"; };
-		59C4B9AF86E43C531450CF051F70C269 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		59E3FF3B7509BAABC22271B4E1F48A55 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
-		5C1B0F1DA32610018D823D4D50B56AFF /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		6443840C198EF3D7E94AC94043C613A0 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		6837917A31D063C1450AF8F61B3660F9 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		4EDD4036E0C1C057E532C752666DAB33 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
+		4F8A74272918697F5785F5C9EF9711DB /* DSLCalendarDaySelection-left.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-left.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-left.png"; sourceTree = "<group>"; };
+		5217605F61207B5CC3DF3840E81E9052 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		5A116D078D14FF57C0ADF4619616F183 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E5D41B44ABE4BA364EE9535EF2A1C59 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		61A22C85B4A8A300AFEA94354CDBC512 /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = CardIO/CardIODetectionMode.h; sourceTree = "<group>"; };
+		64DD926F41B4A5F889C316647776913E /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		66769D194B33E67EA38F4BEDBC794BD2 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		6ADC501C53401EC01719D0A98AA7B510 /* DSLCalendarDayCalloutView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DSLCalendarDayCalloutView.xib; path = DSLCalendarView/DSLCalendarDayCalloutView.xib; sourceTree = "<group>"; };
-		6B3551752968622326680CE1AE039019 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
-		6C1AE9651B82C3B2E44D7055F8F0D16A /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
-		6DD0326DB3BB2F0C27DD3DEB25CEE812 /* libDSLCalendarView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDSLCalendarView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A31917FEE10F93B1807CCEA6651F2A /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = CardIO/CardIOViewDelegate.h; sourceTree = "<group>"; };
-		779B9237C65A2200BAF934426F9A0428 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		79AD2026B5D9A1BA59F190A2D2B9E5AC /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		7B9641DA6A9C7AB63179782328A9C6FD /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		7CB2997EAE105846155A9C1500A57EF6 /* DSLCalendarDaySelection-left.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-left.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-left.png"; sourceTree = "<group>"; };
-		80602E558498CC41FD67CC4C9674098C /* DSLCalendarDaySelection-left@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-left@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-left@2x.png"; sourceTree = "<group>"; };
-		82202B753453C30CA1E3025F800A21EB /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
-		8331505D0B661199B57440DB260B6241 /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = CardIO/CardIO.h; sourceTree = "<group>"; };
-		8ACC8D452D527A3BF353425DBA6C0DF4 /* DSLCalendarRange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarRange.m; path = DSLCalendarView/DSLCalendarRange.m; sourceTree = "<group>"; };
-		8FAA1B27F2541A5E9A5E432B6B2867E1 /* DSLCalendarDaySelection-right.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-right.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-right.png"; sourceTree = "<group>"; };
-		9694BF4BA74603F89A3D94B4CC235018 /* DSLCalendarMonthSelectorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarMonthSelectorView.h; path = DSLCalendarView/DSLCalendarMonthSelectorView.h; sourceTree = "<group>"; };
-		9873425383D9C8F560A3ACCAB0956987 /* libopencv_imgproc.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopencv_imgproc.a; path = CardIO/libopencv_imgproc.a; sourceTree = "<group>"; };
+		691F3D5A1BAAD8EBDEB6CA5A46D11487 /* DSLCalendarRange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarRange.h; path = DSLCalendarView/DSLCalendarRange.h; sourceTree = "<group>"; };
+		6D90E59CCF7D5E9EDD16EBF29B67B585 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		71ABC4D22E146F3C3F7E59B232B9CCAA /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		71E74DFFEE4D27570431F01AC90EFE8A /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = CardIO/CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		72021DF04E5C3B070EE1C592A8D2050B /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		78B4E054CDE116B9E6815FF6341AD2CB /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		7A97883756270FC869718AD9FF163692 /* DSLCalendarDayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarDayView.m; path = DSLCalendarView/DSLCalendarDayView.m; sourceTree = "<group>"; };
+		7B7A2E766AD22E178059DBF7F6E627A8 /* libCardIO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libCardIO.a; path = CardIO/libCardIO.a; sourceTree = "<group>"; };
+		7C74F33B4923EE3C9C803185A679375D /* DSLCalendarDaySelection-left@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-left@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-left@2x.png"; sourceTree = "<group>"; };
+		7DE785EF44A23D2B89EB42139D7A5767 /* DSLCalendarDaySelection-right@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-right@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-right@2x.png"; sourceTree = "<group>"; };
+		82064A7620390400DA13CDDB80351E57 /* NSAttributedString+CCLFormat-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CCLFormat-prefix.pch"; sourceTree = "<group>"; };
+		834039084B6FA23FB92AA1DB17181228 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
+		84D7CE2B49FE28D3CF29650528198CDC /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A5BF161D5D5EE369748F529942E8DE7 /* libopencv_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopencv_core.a; path = CardIO/libopencv_core.a; sourceTree = "<group>"; };
+		8BF22AF1B94F777A160A99BA7C93ED5B /* DSLCalendarMonthSelectorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarMonthSelectorView.m; path = DSLCalendarView/DSLCalendarMonthSelectorView.m; sourceTree = "<group>"; };
+		8CB1C2A63E6EB0FDDC450B287A421FFB /* DSLCalendarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarView.m; path = DSLCalendarView/DSLCalendarView.m; sourceTree = "<group>"; };
+		8DB68B7D59E28339BB1DE68FAB38D919 /* NSAttributedString+CCLFormat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CCLFormat-dummy.m"; sourceTree = "<group>"; };
+		8ED4FBEFD363AF4EDBB377D97D1747BB /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		953969D54F90FBCFA3D5E9BF52499876 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		96C6D59C7ADFC50E9AAF4F9F96B377E9 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		9777AD211470AA8563399B8012FEDE77 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		9799C1C74F4FD0A7CF1EFEE310D9B9FF /* DSLCalendarMonthView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarMonthView.h; path = DSLCalendarView/DSLCalendarMonthView.h; sourceTree = "<group>"; };
 		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		99F1B51AA44128E3D78BAE7286EE8CF6 /* libCardIO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libCardIO.a; path = CardIO/libCardIO.a; sourceTree = "<group>"; };
-		9E37C67C869465DD5951683B56DAE9C3 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		9AAEB2EE6F56EA2EF5351C79B057B2C4 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		9BBDD6694870793014675B1AC6DD7BA3 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		A058EEAB065B8914FC52789D9C83351B /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		A39919A2B3CF4AD5F9B47C2C30729D97 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		A577258152BE4F6827A8AC7A37757183 /* DSLCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarView.h; path = DSLCalendarView/DSLCalendarView.h; sourceTree = "<group>"; };
-		A9C8466D0F69D1610FE53D3C3AD35C7D /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
-		ADB13B391F6147E803BC437A55D51FD2 /* DSLCalendar-previousMonth.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-previousMonth.png"; path = "DSLCalendarView/Images/DSLCalendar-previousMonth.png"; sourceTree = "<group>"; };
-		AF6DD85F500CA76667F563A99BF7A3F7 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
-		B3AD14922BBE2EF67737EA2A45CA21B5 /* DSLCalendarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DSLCalendarView-dummy.m"; sourceTree = "<group>"; };
-		B5DD742F59AECF0856C78C549BF6AB49 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		B60E7A3510335CDEEABE14D1806E4209 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
-		B7692586AF590339C4400A715216B110 /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = CardIO/CardIOView.h; sourceTree = "<group>"; };
-		B8BB090FB3A92CBF4976BAC403F00E29 /* DSLCalendarMonthView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarMonthView.h; path = DSLCalendarView/DSLCalendarMonthView.h; sourceTree = "<group>"; };
+		A474004ABCE2538E85889E27179903E8 /* DSLCalendarDayCalloutView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DSLCalendarDayCalloutView.xib; path = DSLCalendarView/DSLCalendarDayCalloutView.xib; sourceTree = "<group>"; };
+		A4EE6A50E9B7FD4F4158C4340053269D /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		A713850131F7821684B844947863CA43 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = CardIO/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		ADEB9C8C4A6AD521F298B6BA376712D3 /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = CardIO/CardIOView.h; sourceTree = "<group>"; };
+		B2A05EF03DE86614B87CD81A692985AD /* NSAttributedString+CCLFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+CCLFormat.m"; path = "NSAttributedStringFormat/NSAttributedString+CCLFormat.m"; sourceTree = "<group>"; };
+		B302D4246C129310C132E75FD0AAE1FB /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = CardIO/CardIO.h; sourceTree = "<group>"; };
+		B32756145EEAFA9F780A13B85244A209 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		B446CF06AD3ECEA2D31D9CCA9131C00E /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = CardIO/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BB3BB231D3D2916E153AB783AFF05F86 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C598FA8D39AC946D196CC2BF7B7CD6E7 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		BE13AB63BA5207349FA330C4C5328E2B /* DSLCalendarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DSLCalendarView-prefix.pch"; sourceTree = "<group>"; };
+		BE785A909FB968FBE5CC6C2365C6F315 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = CardIO/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		BF652CDC9E71504B27F236463ED4ABD9 /* NSAttributedString+CCLFormat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "NSAttributedString+CCLFormat.xcconfig"; sourceTree = "<group>"; };
+		C2894159B81A01B23E871237CDA9233F /* DSLCalendarMonthSelectorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarMonthSelectorView.h; path = DSLCalendarView/DSLCalendarMonthSelectorView.h; sourceTree = "<group>"; };
+		C8412930DAD10678D3CDF277A30DF3A5 /* DSLCalendar-previousMonth@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-previousMonth@2x.png"; path = "DSLCalendarView/Images/DSLCalendar-previousMonth@2x.png"; sourceTree = "<group>"; };
+		C85193545D5A3FD535EE7F03ECD2404A /* DSLCalendarDayCallout@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDayCallout@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDayCallout@2x.png"; sourceTree = "<group>"; };
+		C85C164C7448C6A97FB3B046924ED6BD /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		C8908189965D177AD6BAB607AE614C1E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		C8D0D0663BFEACD3F126A939DB77861F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D015C4F2B14C4819A39F94E5DA08C6C6 /* DSLCalendarDayView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarDayView.m; path = DSLCalendarView/DSLCalendarDayView.m; sourceTree = "<group>"; };
-		D0A0B93DABF2DCCB93339E45DC934319 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
-		D0E642E9CDDF5DD87FFA2BB8C1786E39 /* DSLCalendarMonthSelectorView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DSLCalendarMonthSelectorView.xib; path = DSLCalendarView/DSLCalendarMonthSelectorView.xib; sourceTree = "<group>"; };
-		D294F6E490E20311D193C67F29317656 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		D3328DC5A8526A4C083D5AC705AC490E /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93C4629692738C44A263CA1176BCB4C /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		CD2372206E327249C67B16ED564BCAFC /* DSLCalendarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DSLCalendarView.xcconfig; sourceTree = "<group>"; };
+		CD25909491490994EF230FD5D181FEF5 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		CED7839D1F239E7E741AA98519E956A7 /* DSLCalendarDayCalloutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarDayCalloutView.m; path = DSLCalendarView/DSLCalendarDayCalloutView.m; sourceTree = "<group>"; };
 		D3BA91FAAE708116C42507E22D769743 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		D54357DB520FA5249E1B652A74D24C39 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		D8A545EF02B723026BD4D3C52B49AC49 /* DSLCalendarDayCallout@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDayCallout@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDayCallout@2x.png"; sourceTree = "<group>"; };
-		D9EEABE3929AF9B451AF421E02A4B77B /* DSLCalendar-nextMonth@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-nextMonth@2x.png"; path = "DSLCalendarView/Images/DSLCalendar-nextMonth@2x.png"; sourceTree = "<group>"; };
-		DAAA5B3E5BB6CFA69B17D09A37937028 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		DB23457FA2836437A81BF26B1C429FC4 /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = CardIO/CardIOUtilities.h; sourceTree = "<group>"; };
-		E07B6D821438E1B3B67851A78566B6DA /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		EC2094C05EF0181DB1A1CD5EA7426028 /* DSLCalendarDayCalloutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarDayCalloutView.m; path = DSLCalendarView/DSLCalendarDayCalloutView.m; sourceTree = "<group>"; };
-		EC3856D63578C53572BF5A940E234793 /* DSLCalendar-previousMonth@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-previousMonth@2x.png"; path = "DSLCalendarView/Images/DSLCalendar-previousMonth@2x.png"; sourceTree = "<group>"; };
-		EF0246450FC74DA2C540F901722E00D7 /* DSLCalendarMonthSelectorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarMonthSelectorView.m; path = DSLCalendarView/DSLCalendarMonthSelectorView.m; sourceTree = "<group>"; };
-		F0A52F4DD0F2FF9722F94B39152A1225 /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = CardIO/CardIODetectionMode.h; sourceTree = "<group>"; };
-		F1801C6D1D0F339D7144D96151543F34 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = CardIO/CardIOPaymentViewController.h; sourceTree = "<group>"; };
-		F20376820B0356359744CF1441461C62 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		F4629A4F353BB7EF151BDA862321F489 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		F931D3BDBFC21BB99E787533F3C0EE19 /* DSLCalendarDaySelection-right@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendarDaySelection-right@2x.png"; path = "DSLCalendarView/Images/DSLCalendarDaySelection-right@2x.png"; sourceTree = "<group>"; };
-		FF5E02AED4A12E0EED130A381763CB5E /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
+		D618EF2F7A212C8329787B300C2D8612 /* DSLCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSLCalendarView.h; path = DSLCalendarView/DSLCalendarView.h; sourceTree = "<group>"; };
+		D67257F5A56AEFFF2103C274DCDEE28D /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		DB56DB3E4396CADA379946E4D92DA4F5 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		DB777EC024B5C64726E07158FA64908E /* DSLCalendar-nextMonth.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "DSLCalendar-nextMonth.png"; path = "DSLCalendarView/Images/DSLCalendar-nextMonth.png"; sourceTree = "<group>"; };
+		DF7E11A466434BA20BF74439BEEE6E36 /* NSDate+DSLCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+DSLCalendarView.h"; path = "DSLCalendarView/NSDate+DSLCalendarView.h"; sourceTree = "<group>"; };
+		E5C820F56DD8C33891B5649D3D377A9E /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DSLCalendarView.m"; path = "DSLCalendarView/NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
+		E6DB2D7CA48CDB44FF3AF94D9412C19E /* libNSAttributedString+CCLFormat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libNSAttributedString+CCLFormat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB3876B3D22CC90DBF21BB820DECA6E2 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
+		EEC6288464E0330A2B1FA82B49A6420A /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		F440C624B75AEF5575AB85AA62F5047A /* DSLCalendarRange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSLCalendarRange.m; path = DSLCalendarView/DSLCalendarRange.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0CD17BBCC0131F2C2C9ACD7B21704384 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FD1BA377FB8DFF8B6EFDCB05362D390 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		488629FF61918A5C75FF5C018AADCB9B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,9 +225,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C2B5D8CA951D0BD83A778979BBC617C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59DC760D0B0E0CDCEAD19306EFCE9A13 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E051FBA04D578444E47C4570F0178356 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4303360D8E0180C13B3A680C4866A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		013149318CD1B804A7033235C0ED3D78 /* DSLCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				1FA468CA265785FAF650E9498A4C51E5 /* DSLCalendarDayCalloutView.h */,
+				CED7839D1F239E7E741AA98519E956A7 /* DSLCalendarDayCalloutView.m */,
+				477AE834B9996A5BD5D12AD29C653E93 /* DSLCalendarDayView.h */,
+				7A97883756270FC869718AD9FF163692 /* DSLCalendarDayView.m */,
+				C2894159B81A01B23E871237CDA9233F /* DSLCalendarMonthSelectorView.h */,
+				8BF22AF1B94F777A160A99BA7C93ED5B /* DSLCalendarMonthSelectorView.m */,
+				9799C1C74F4FD0A7CF1EFEE310D9B9FF /* DSLCalendarMonthView.h */,
+				24ED905F6C93ADC08E61A1083791BB1E /* DSLCalendarMonthView.m */,
+				691F3D5A1BAAD8EBDEB6CA5A46D11487 /* DSLCalendarRange.h */,
+				F440C624B75AEF5575AB85AA62F5047A /* DSLCalendarRange.m */,
+				D618EF2F7A212C8329787B300C2D8612 /* DSLCalendarView.h */,
+				8CB1C2A63E6EB0FDDC450B287A421FFB /* DSLCalendarView.m */,
+				DF7E11A466434BA20BF74439BEEE6E36 /* NSDate+DSLCalendarView.h */,
+				E5C820F56DD8C33891B5649D3D377A9E /* NSDate+DSLCalendarView.m */,
+				FE6498E3398C4ACB957E00B81A5F5008 /* Resources */,
+				84D603A55306ACEB85F4FD456810076D /* Support Files */,
+			);
+			path = DSLCalendarView;
+			sourceTree = "<group>";
+		};
 		037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,33 +283,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1050561A3B4A7F364F4AFE597CAA645E /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				A9C8466D0F69D1610FE53D3C3AD35C7D /* AFAutoPurgingImageCache.h */,
-				3A8FA48C5F4F80377B99D8C0C636E1C1 /* AFAutoPurgingImageCache.m */,
-				59E3FF3B7509BAABC22271B4E1F48A55 /* AFImageDownloader.h */,
-				FF5E02AED4A12E0EED130A381763CB5E /* AFImageDownloader.m */,
-				D0A0B93DABF2DCCB93339E45DC934319 /* AFNetworkActivityIndicatorManager.h */,
-				AF6DD85F500CA76667F563A99BF7A3F7 /* AFNetworkActivityIndicatorManager.m */,
-				5C1B0F1DA32610018D823D4D50B56AFF /* UIActivityIndicatorView+AFNetworking.h */,
-				18EE8541211797C12954A398164F05BB /* UIActivityIndicatorView+AFNetworking.m */,
-				08990742137E8D388B9F1D93D8C40CB4 /* UIButton+AFNetworking.h */,
-				D294F6E490E20311D193C67F29317656 /* UIButton+AFNetworking.m */,
-				1F2D95B8E86F3CA3096FB71A9076E8F4 /* UIImage+AFNetworking.h */,
-				E07B6D821438E1B3B67851A78566B6DA /* UIImageView+AFNetworking.h */,
-				59C4B9AF86E43C531450CF051F70C269 /* UIImageView+AFNetworking.m */,
-				F20376820B0356359744CF1441461C62 /* UIKit+AFNetworking.h */,
-				1E4561AE78E9D2CBB41282E60FA5EEA1 /* UIProgressView+AFNetworking.h */,
-				3C004D59A49CAC723313D22BEFF3B316 /* UIProgressView+AFNetworking.m */,
-				79AD2026B5D9A1BA59F190A2D2B9E5AC /* UIRefreshControl+AFNetworking.h */,
-				B5DD742F59AECF0856C78C549BF6AB49 /* UIRefreshControl+AFNetworking.m */,
-				F4629A4F353BB7EF151BDA862321F489 /* UIWebView+AFNetworking.h */,
-				D54357DB520FA5249E1B652A74D24C39 /* UIWebView+AFNetworking.m */,
-			);
-			name = UIKit;
-			sourceTree = "<group>";
-		};
 		1F866C4FD622AAEA41E36EEF0EE4C9DF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,15 +296,46 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		52D1A3707072FA0776AA229F84A4636C /* Serialization */ = {
+		46D97456AFE82DB08C076FF37D76B17C /* NSAttributedString+CCLFormat */ = {
 			isa = PBXGroup;
 			children = (
-				C598FA8D39AC946D196CC2BF7B7CD6E7 /* AFURLRequestSerialization.h */,
-				05EA5FC2B558DFDB9A292E11F563DC50 /* AFURLRequestSerialization.m */,
-				9E37C67C869465DD5951683B56DAE9C3 /* AFURLResponseSerialization.h */,
-				A39919A2B3CF4AD5F9B47C2C30729D97 /* AFURLResponseSerialization.m */,
+				239E3B6EAEF50811534CB8699053F39C /* NSAttributedString+CCLFormat.h */,
+				B2A05EF03DE86614B87CD81A692985AD /* NSAttributedString+CCLFormat.m */,
+				FC6A0F13279CF05BC8215C83AB89411A /* Support Files */,
+			);
+			path = "NSAttributedString+CCLFormat";
+			sourceTree = "<group>";
+		};
+		57EC457CE544AB82E70485A9304B9BB1 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				1D9B5F15DC0CBAB848C3A58DA883BAF7 /* AFURLRequestSerialization.h */,
+				2100FF4760DA1A828D5B9C51077A603A /* AFURLRequestSerialization.m */,
+				8ED4FBEFD363AF4EDBB377D97D1747BB /* AFURLResponseSerialization.h */,
+				21F28DBDA37475E52B546A994EDC5729 /* AFURLResponseSerialization.m */,
 			);
 			name = Serialization;
+			sourceTree = "<group>";
+		};
+		6A45578CB82EC4343C956C52DE7EBAD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B7A2E766AD22E178059DBF7F6E627A8 /* libCardIO.a */,
+				8A5BF161D5D5EE369748F529942E8DE7 /* libopencv_core.a */,
+				0DC581D725928328F84B9F8D5624BAD0 /* libopencv_imgproc.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F2D9840A9C8A5A9A3C286DC889662C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A994095CE29410968DFFB1E28194B43A /* AFNetworking */,
+				FF782930C7C688A6010D7A796EE0BBDB /* CardIO */,
+				013149318CD1B804A7033235C0ED3D78 /* DSLCalendarView */,
+				46D97456AFE82DB08C076FF37D76B17C /* NSAttributedString+CCLFormat */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -291,80 +343,75 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				0F75DF6C7C5F002280EC53F48E80B587 /* Frameworks */,
-				C95EFC0C4C7FBB2D88E20D13D156FB8D /* Pods */,
-				8AE41ED6D90385F00DC3122D1695BD82 /* Products */,
+				6F2D9840A9C8A5A9A3C286DC889662C0 /* Pods */,
+				8542C8A7581C0BD79EC9F8735B894055 /* Products */,
 				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8AE41ED6D90385F00DC3122D1695BD82 /* Products */ = {
+		84D603A55306ACEB85F4FD456810076D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D3328DC5A8526A4C083D5AC705AC490E /* libAFNetworking.a */,
-				6DD0326DB3BB2F0C27DD3DEB25CEE812 /* libDSLCalendarView.a */,
-				BB3BB231D3D2916E153AB783AFF05F86 /* libPods.a */,
+				CD2372206E327249C67B16ED564BCAFC /* DSLCalendarView.xcconfig */,
+				11F501B586BA4B42059867289901C1B5 /* DSLCalendarView-dummy.m */,
+				BE13AB63BA5207349FA330C4C5328E2B /* DSLCalendarView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DSLCalendarView";
+			sourceTree = "<group>";
+		};
+		8542C8A7581C0BD79EC9F8735B894055 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84D7CE2B49FE28D3CF29650528198CDC /* libAFNetworking.a */,
+				32F2D960E275C50790FD5E21A94FDC8B /* libDSLCalendarView.a */,
+				E6DB2D7CA48CDB44FF3AF94D9412C19E /* libNSAttributedString+CCLFormat.a */,
+				5A116D078D14FF57C0ADF4619616F183 /* libPods.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8B908B38A113FDF52849FAC23ECD671F /* CardIO */ = {
+		A3E77C589615E88CD73B9A15AEC27FA5 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				8331505D0B661199B57440DB260B6241 /* CardIO.h */,
-				1B62DC8369AEEE9CEFBB506CB6923FB5 /* CardIOCreditCardInfo.h */,
-				F0A52F4DD0F2FF9722F94B39152A1225 /* CardIODetectionMode.h */,
-				F1801C6D1D0F339D7144D96151543F34 /* CardIOPaymentViewController.h */,
-				2EBF22D7AAC42078DBF8CAA36063E098 /* CardIOPaymentViewControllerDelegate.h */,
-				DB23457FA2836437A81BF26B1C429FC4 /* CardIOUtilities.h */,
-				B7692586AF590339C4400A715216B110 /* CardIOView.h */,
-				72A31917FEE10F93B1807CCEA6651F2A /* CardIOViewDelegate.h */,
-				9D700F73E64DEAD3BC4FD6824F8ECC3C /* Frameworks */,
+				A4EE6A50E9B7FD4F4158C4340053269D /* AFNetworkReachabilityManager.h */,
+				5217605F61207B5CC3DF3840E81E9052 /* AFNetworkReachabilityManager.m */,
 			);
-			path = CardIO;
+			name = Reachability;
 			sourceTree = "<group>";
 		};
-		9D700F73E64DEAD3BC4FD6824F8ECC3C /* Frameworks */ = {
+		A87AD628B3AA5521566B414C4005258B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				99F1B51AA44128E3D78BAE7286EE8CF6 /* libCardIO.a */,
-				2F142037E50CB68F7A532C70D628F236 /* libopencv_core.a */,
-				9873425383D9C8F560A3ACCAB0956987 /* libopencv_imgproc.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9F095DE59D9869F833C5E989731CDC7B /* DSLCalendarView */ = {
-			isa = PBXGroup;
-			children = (
-				2AEA32842F220666682FAB81022911B6 /* DSLCalendarDayCalloutView.h */,
-				EC2094C05EF0181DB1A1CD5EA7426028 /* DSLCalendarDayCalloutView.m */,
-				471F1066992F90260CB586DC9BB09A0B /* DSLCalendarDayView.h */,
-				D015C4F2B14C4819A39F94E5DA08C6C6 /* DSLCalendarDayView.m */,
-				9694BF4BA74603F89A3D94B4CC235018 /* DSLCalendarMonthSelectorView.h */,
-				EF0246450FC74DA2C540F901722E00D7 /* DSLCalendarMonthSelectorView.m */,
-				B8BB090FB3A92CBF4976BAC403F00E29 /* DSLCalendarMonthView.h */,
-				1D7AE9B747E0D2B6616FA487D40D577B /* DSLCalendarMonthView.m */,
-				05F90F3C5A4ECBBD009B46ED5EEA6A81 /* DSLCalendarRange.h */,
-				8ACC8D452D527A3BF353425DBA6C0DF4 /* DSLCalendarRange.m */,
-				A577258152BE4F6827A8AC7A37757183 /* DSLCalendarView.h */,
-				2604F4008811F36F896B237E109DA576 /* DSLCalendarView.m */,
-				24487B9941DF224A2A37589942D2E667 /* NSDate+DSLCalendarView.h */,
-				5155751891FC6375AB4BB1D7BDCE0414 /* NSDate+DSLCalendarView.m */,
-				F3DE7BF5656806B1F20A6573D88D237D /* Resources */,
-				C2804B3B86A8CB63163BE470A0447073 /* Support Files */,
-			);
-			path = DSLCalendarView;
-			sourceTree = "<group>";
-		};
-		AC88A8E641BB4FCB50E93369333FBB62 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6C1AE9651B82C3B2E44D7055F8F0D16A /* AFNetworking.xcconfig */,
-				DAAA5B3E5BB6CFA69B17D09A37937028 /* AFNetworking-dummy.m */,
-				416B4488F412CDECCA2716632D6B3564 /* AFNetworking-prefix.pch */,
+				4EDD4036E0C1C057E532C752666DAB33 /* AFNetworking.xcconfig */,
+				72021DF04E5C3B070EE1C592A8D2050B /* AFNetworking-dummy.m */,
+				2DD4DB70022AD0D9CC2010A6A0D3B570 /* AFNetworking-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/AFNetworking";
+			sourceTree = "<group>";
+		};
+		A994095CE29410968DFFB1E28194B43A /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				0DFF051A17E23B128E174B92CCEFACE6 /* AFNetworking.h */,
+				BEB2F6ADA2B7052C3F8CB46ABBF37FAC /* NSURLSession */,
+				A3E77C589615E88CD73B9A15AEC27FA5 /* Reachability */,
+				AF5AB5F4732D5A8E2214900BF2E82012 /* Security */,
+				57EC457CE544AB82E70485A9304B9BB1 /* Serialization */,
+				A87AD628B3AA5521566B414C4005258B /* Support Files */,
+				C38A875DC7FC62B7CE76A5D9587973B7 /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		AF5AB5F4732D5A8E2214900BF2E82012 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				9AAEB2EE6F56EA2EF5351C79B057B2C4 /* AFSecurityPolicy.h */,
+				273AF041EF6F976093A6E0A148AE45C1 /* AFSecurityPolicy.m */,
+			);
+			name = Security;
 			sourceTree = "<group>";
 		};
 		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
@@ -382,91 +429,92 @@
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		C2804B3B86A8CB63163BE470A0447073 /* Support Files */ = {
+		BEB2F6ADA2B7052C3F8CB46ABBF37FAC /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
-				55C3AA5555998A0DA6DE0DDF62BE2749 /* DSLCalendarView.xcconfig */,
-				B3AD14922BBE2EF67737EA2A45CA21B5 /* DSLCalendarView-dummy.m */,
-				27FFF587CD91F120257D8D8B5EC93796 /* DSLCalendarView-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DSLCalendarView";
-			sourceTree = "<group>";
-		};
-		C49DAE80B9B62AFDF443454C2F9ECEB3 /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				1AD38D719696E16E4C3DC43FF7FE9A9F /* AFHTTPSessionManager.h */,
-				7B9641DA6A9C7AB63179782328A9C6FD /* AFHTTPSessionManager.m */,
-				6B3551752968622326680CE1AE039019 /* AFURLSessionManager.h */,
-				82202B753453C30CA1E3025F800A21EB /* AFURLSessionManager.m */,
+				C85C164C7448C6A97FB3B046924ED6BD /* AFHTTPSessionManager.h */,
+				B32756145EEAFA9F780A13B85244A209 /* AFHTTPSessionManager.m */,
+				CD25909491490994EF230FD5D181FEF5 /* AFURLSessionManager.h */,
+				6D90E59CCF7D5E9EDD16EBF29B67B585 /* AFURLSessionManager.m */,
 			);
 			name = NSURLSession;
 			sourceTree = "<group>";
 		};
-		C95EFC0C4C7FBB2D88E20D13D156FB8D /* Pods */ = {
+		C38A875DC7FC62B7CE76A5D9587973B7 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				FDC8EE8BC860D29F3292AAEFAD496B3C /* AFNetworking */,
-				8B908B38A113FDF52849FAC23ECD671F /* CardIO */,
-				9F095DE59D9869F833C5E989731CDC7B /* DSLCalendarView */,
+				EB3876B3D22CC90DBF21BB820DECA6E2 /* AFAutoPurgingImageCache.h */,
+				3CDD4F8D40E32DDBF6BA23DD08A73EE7 /* AFAutoPurgingImageCache.m */,
+				834039084B6FA23FB92AA1DB17181228 /* AFImageDownloader.h */,
+				308694476D3FE03C1A05B64EC3ECF50E /* AFImageDownloader.m */,
+				96C6D59C7ADFC50E9AAF4F9F96B377E9 /* AFNetworkActivityIndicatorManager.h */,
+				66769D194B33E67EA38F4BEDBC794BD2 /* AFNetworkActivityIndicatorManager.m */,
+				EEC6288464E0330A2B1FA82B49A6420A /* UIActivityIndicatorView+AFNetworking.h */,
+				D67257F5A56AEFFF2103C274DCDEE28D /* UIActivityIndicatorView+AFNetworking.m */,
+				09E454421D03CEAF7568319B47E023EB /* UIButton+AFNetworking.h */,
+				5E5D41B44ABE4BA364EE9535EF2A1C59 /* UIButton+AFNetworking.m */,
+				C93C4629692738C44A263CA1176BCB4C /* UIImage+AFNetworking.h */,
+				A058EEAB065B8914FC52789D9C83351B /* UIImageView+AFNetworking.h */,
+				07B5FBA0F40C2CD50AEDCA816F0A39E3 /* UIImageView+AFNetworking.m */,
+				DB56DB3E4396CADA379946E4D92DA4F5 /* UIKit+AFNetworking.h */,
+				953969D54F90FBCFA3D5E9BF52499876 /* UIProgressView+AFNetworking.h */,
+				9777AD211470AA8563399B8012FEDE77 /* UIProgressView+AFNetworking.m */,
+				71ABC4D22E146F3C3F7E59B232B9CCAA /* UIRefreshControl+AFNetworking.h */,
+				9BBDD6694870793014675B1AC6DD7BA3 /* UIRefreshControl+AFNetworking.m */,
+				78B4E054CDE116B9E6815FF6341AD2CB /* UIWebView+AFNetworking.h */,
+				64DD926F41B4A5F889C316647776913E /* UIWebView+AFNetworking.m */,
 			);
-			name = Pods;
+			name = UIKit;
 			sourceTree = "<group>";
 		};
-		D4A252C32BBA8DC1F9E5004FAB167ECA /* Security */ = {
+		FC6A0F13279CF05BC8215C83AB89411A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B60E7A3510335CDEEABE14D1806E4209 /* AFSecurityPolicy.h */,
-				779B9237C65A2200BAF934426F9A0428 /* AFSecurityPolicy.m */,
+				BF652CDC9E71504B27F236463ED4ABD9 /* NSAttributedString+CCLFormat.xcconfig */,
+				8DB68B7D59E28339BB1DE68FAB38D919 /* NSAttributedString+CCLFormat-dummy.m */,
+				82064A7620390400DA13CDDB80351E57 /* NSAttributedString+CCLFormat-prefix.pch */,
 			);
-			name = Security;
+			name = "Support Files";
+			path = "../Target Support Files/NSAttributedString+CCLFormat";
 			sourceTree = "<group>";
 		};
-		F1C80D54EEE2247ED25B389E8B8761A4 /* Reachability */ = {
+		FE6498E3398C4ACB957E00B81A5F5008 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6837917A31D063C1450AF8F61B3660F9 /* AFNetworkReachabilityManager.h */,
-				495CC6F2F428BCC636867D9F9AEB2578 /* AFNetworkReachabilityManager.m */,
-			);
-			name = Reachability;
-			sourceTree = "<group>";
-		};
-		F3DE7BF5656806B1F20A6573D88D237D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				43ED1086D1ABAEBAF5AFECBCABBE8626 /* DSLCalendar-nextMonth.png */,
-				D9EEABE3929AF9B451AF421E02A4B77B /* DSLCalendar-nextMonth@2x.png */,
-				ADB13B391F6147E803BC437A55D51FD2 /* DSLCalendar-previousMonth.png */,
-				EC3856D63578C53572BF5A940E234793 /* DSLCalendar-previousMonth@2x.png */,
-				1DBC3C6E33F96C8157B84EA86EDDFF02 /* DSLCalendarDayCallout.png */,
-				D8A545EF02B723026BD4D3C52B49AC49 /* DSLCalendarDayCallout@2x.png */,
-				6ADC501C53401EC01719D0A98AA7B510 /* DSLCalendarDayCalloutView.xib */,
-				5999341854F076E874568180B0BC7FB4 /* DSLCalendarDaySelection.png */,
-				7CB2997EAE105846155A9C1500A57EF6 /* DSLCalendarDaySelection-left.png */,
-				80602E558498CC41FD67CC4C9674098C /* DSLCalendarDaySelection-left@2x.png */,
-				584E156C93C9C51D0D16FE8CC7067581 /* DSLCalendarDaySelection-middle.png */,
-				1CD7AD91CD03F409DD1B84BBCB7F1FAC /* DSLCalendarDaySelection-middle@2x.png */,
-				8FAA1B27F2541A5E9A5E432B6B2867E1 /* DSLCalendarDaySelection-right.png */,
-				F931D3BDBFC21BB99E787533F3C0EE19 /* DSLCalendarDaySelection-right@2x.png */,
-				441C865070B915A63FF96049917F40C8 /* DSLCalendarDaySelection@2x.png */,
-				D0E642E9CDDF5DD87FFA2BB8C1786E39 /* DSLCalendarMonthSelectorView.xib */,
+				DB777EC024B5C64726E07158FA64908E /* DSLCalendar-nextMonth.png */,
+				188D19938442BFBFF5C3179693348F98 /* DSLCalendar-nextMonth@2x.png */,
+				1E4DAF56E149EC8BF9B27EE8FE22E77C /* DSLCalendar-previousMonth.png */,
+				C8412930DAD10678D3CDF277A30DF3A5 /* DSLCalendar-previousMonth@2x.png */,
+				31F46C845BA90D1BF378113AD2FDB982 /* DSLCalendarDayCallout.png */,
+				C85193545D5A3FD535EE7F03ECD2404A /* DSLCalendarDayCallout@2x.png */,
+				A474004ABCE2538E85889E27179903E8 /* DSLCalendarDayCalloutView.xib */,
+				36898E95753ED9820348481E6891864D /* DSLCalendarDaySelection.png */,
+				4F8A74272918697F5785F5C9EF9711DB /* DSLCalendarDaySelection-left.png */,
+				7C74F33B4923EE3C9C803185A679375D /* DSLCalendarDaySelection-left@2x.png */,
+				06CB7D326A3A4D36D956EA5BE65AEF26 /* DSLCalendarDaySelection-middle.png */,
+				14841202D32CA98A513963A79ADD6D09 /* DSLCalendarDaySelection-middle@2x.png */,
+				2958BC4D3297DB87B24232A3475C5A2B /* DSLCalendarDaySelection-right.png */,
+				7DE785EF44A23D2B89EB42139D7A5767 /* DSLCalendarDaySelection-right@2x.png */,
+				1A8746EEEBD8FB7F14F99E19E617B59D /* DSLCalendarDaySelection@2x.png */,
+				390EEE7A9EBD4906BDFA9B8A8505A08A /* DSLCalendarMonthSelectorView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		FDC8EE8BC860D29F3292AAEFAD496B3C /* AFNetworking */ = {
+		FF782930C7C688A6010D7A796EE0BBDB /* CardIO */ = {
 			isa = PBXGroup;
 			children = (
-				6443840C198EF3D7E94AC94043C613A0 /* AFNetworking.h */,
-				C49DAE80B9B62AFDF443454C2F9ECEB3 /* NSURLSession */,
-				F1C80D54EEE2247ED25B389E8B8761A4 /* Reachability */,
-				D4A252C32BBA8DC1F9E5004FAB167ECA /* Security */,
-				52D1A3707072FA0776AA229F84A4636C /* Serialization */,
-				AC88A8E641BB4FCB50E93369333FBB62 /* Support Files */,
-				1050561A3B4A7F364F4AFE597CAA645E /* UIKit */,
+				B302D4246C129310C132E75FD0AAE1FB /* CardIO.h */,
+				A713850131F7821684B844947863CA43 /* CardIOCreditCardInfo.h */,
+				61A22C85B4A8A300AFEA94354CDBC512 /* CardIODetectionMode.h */,
+				71E74DFFEE4D27570431F01AC90EFE8A /* CardIOPaymentViewController.h */,
+				BE785A909FB968FBE5CC6C2365C6F315 /* CardIOPaymentViewControllerDelegate.h */,
+				3FF7C247A7A63773320700E1F6DD4B50 /* CardIOUtilities.h */,
+				ADEB9C8C4A6AD521F298B6BA376712D3 /* CardIOView.h */,
+				B446CF06AD3ECEA2D31D9CCA9131C00E /* CardIOViewDelegate.h */,
+				6A45578CB82EC4343C956C52DE7EBAD5 /* Frameworks */,
 			);
-			path = AFNetworking;
+			path = CardIO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +531,14 @@
 				53275339A317045424FFCA59431D0BF2 /* DSLCalendarRange.h in Headers */,
 				F4E33B732FC139131DE0EF6E8AEAAA11 /* DSLCalendarView.h in Headers */,
 				08B24783731BD4CF40D2A9430A0B6A7F /* NSDate+DSLCalendarView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		652554F8EC1A0492F645A775B47F4CFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1B5F75D3D6D6E64406A4531EFA9DDD9 /* NSAttributedString+CCLFormat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +570,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0567FA252832207BC6A51CAE57368C06 /* NSAttributedString+CCLFormat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD9035A2948C98323D6C93A52FDEA831 /* Build configuration list for PBXNativeTarget "NSAttributedString+CCLFormat" */;
+			buildPhases = (
+				2E6707E8365FC34515FC64D839982D0E /* Sources */,
+				E051FBA04D578444E47C4570F0178356 /* Frameworks */,
+				652554F8EC1A0492F645A775B47F4CFE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NSAttributedString+CCLFormat";
+			productName = "NSAttributedString+CCLFormat";
+			productReference = E6DB2D7CA48CDB44FF3AF94D9412C19E /* libNSAttributedString+CCLFormat.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		18AAC55CF5CBE3300F432AFAA09272B3 /* DSLCalendarView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 721FBCFA80C0211483425BAF785FFC24 /* Build configuration list for PBXNativeTarget "DSLCalendarView" */;
@@ -528,25 +601,7 @@
 			);
 			name = DSLCalendarView;
 			productName = DSLCalendarView;
-			productReference = 6DD0326DB3BB2F0C27DD3DEB25CEE812 /* libDSLCalendarView.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		7C20559AF93D61A4A3E63B5B141247D2 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 465550C8E86E424F1E8F0E397DFB1035 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				1F36A69C9ED8617FA75BFAE08234FF85 /* Sources */,
-				0CD17BBCC0131F2C2C9ACD7B21704384 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BA2A7D021D08C6E0B56F1D8B00022666 /* PBXTargetDependency */,
-				7E76A410E737813FDC0BB44FF4C7E1E9 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = BB3BB231D3D2916E153AB783AFF05F86 /* libPods.a */;
+			productReference = 32F2D960E275C50790FD5E21A94FDC8B /* libDSLCalendarView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		928353533005A4198EBDA5B700D37B64 /* AFNetworking */ = {
@@ -563,7 +618,26 @@
 			);
 			name = AFNetworking;
 			productName = AFNetworking;
-			productReference = D3328DC5A8526A4C083D5AC705AC490E /* libAFNetworking.a */;
+			productReference = 84D7CE2B49FE28D3CF29650528198CDC /* libAFNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B4F238CE18AA63DC56DD445EC300C772 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C7EAB11E6B19C3D593F32A7A4FAF484 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				77F6CB6857CE4CD3E3CA5B743A373394 /* Sources */,
+				8C2B5D8CA951D0BD83A778979BBC617C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E31B3A61ADCABFAD55BE047437399E3 /* PBXTargetDependency */,
+				3858ECCC0354ED7859AB5C593C192D20 /* PBXTargetDependency */,
+				4CBAF83F7FBD7AB4B5BBBCE071A27336 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 5A116D078D14FF57C0ADF4619616F183 /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -583,23 +657,33 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8AE41ED6D90385F00DC3122D1695BD82 /* Products */;
+			productRefGroup = 8542C8A7581C0BD79EC9F8735B894055 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				928353533005A4198EBDA5B700D37B64 /* AFNetworking */,
 				18AAC55CF5CBE3300F432AFAA09272B3 /* DSLCalendarView */,
-				7C20559AF93D61A4A3E63B5B141247D2 /* Pods */,
+				0567FA252832207BC6A51CAE57368C06 /* NSAttributedString+CCLFormat */,
+				B4F238CE18AA63DC56DD445EC300C772 /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1F36A69C9ED8617FA75BFAE08234FF85 /* Sources */ = {
+		2E6707E8365FC34515FC64D839982D0E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B879BFCCB77F50D0B7BD4628D415CF6E /* Pods-dummy.m in Sources */,
+				2DAE2A8E68AFE5F0D477F19A9B7D9210 /* NSAttributedString+CCLFormat-dummy.m in Sources */,
+				40C3E99DB5C31784DEA8761A62EEE431 /* NSAttributedString+CCLFormat.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F6CB6857CE4CD3E3CA5B743A373394 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B66809B24B2CF5E24E666F077C03010 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,24 +728,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7E76A410E737813FDC0BB44FF4C7E1E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DSLCalendarView;
-			target = 18AAC55CF5CBE3300F432AFAA09272B3 /* DSLCalendarView */;
-			targetProxy = B9E2AEC57E73E35F216F70ED71BBFD2C /* PBXContainerItemProxy */;
-		};
-		BA2A7D021D08C6E0B56F1D8B00022666 /* PBXTargetDependency */ = {
+		0E31B3A61ADCABFAD55BE047437399E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AFNetworking;
 			target = 928353533005A4198EBDA5B700D37B64 /* AFNetworking */;
-			targetProxy = 6AB5F6FF3A71B847FCF58EF7518C5DE6 /* PBXContainerItemProxy */;
+			targetProxy = C395F6AAEF16F6635B3FD4C15D9CF224 /* PBXContainerItemProxy */;
+		};
+		3858ECCC0354ED7859AB5C593C192D20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DSLCalendarView;
+			target = 18AAC55CF5CBE3300F432AFAA09272B3 /* DSLCalendarView */;
+			targetProxy = CA6D9F334C356078FB2A809BCB165615 /* PBXContainerItemProxy */;
+		};
+		4CBAF83F7FBD7AB4B5BBBCE071A27336 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "NSAttributedString+CCLFormat";
+			target = 0567FA252832207BC6A51CAE57368C06 /* NSAttributedString+CCLFormat */;
+			targetProxy = 76E2084E5A5D745F40865821BE5A58A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0EB5E89BB17510AE9D4971A42147A390 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C1AE9651B82C3B2E44D7055F8F0D16A /* AFNetworking.xcconfig */;
+			baseConfigurationReference = 4EDD4036E0C1C057E532C752666DAB33 /* AFNetworking.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
@@ -679,7 +769,7 @@
 		};
 		162B149B0DD54501D7C75154E5B604EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C1AE9651B82C3B2E44D7055F8F0D16A /* AFNetworking.xcconfig */;
+			baseConfigurationReference = 4EDD4036E0C1C057E532C752666DAB33 /* AFNetworking.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
@@ -697,7 +787,7 @@
 		};
 		1646C474E096E6FB3FB6871198517220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55C3AA5555998A0DA6DE0DDF62BE2749 /* DSLCalendarView.xcconfig */;
+			baseConfigurationReference = CD2372206E327249C67B16ED564BCAFC /* DSLCalendarView.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/DSLCalendarView/DSLCalendarView-prefix.pch";
@@ -713,7 +803,25 @@
 			};
 			name = Debug;
 		};
-		3617FC656C2771E4A99AEA420365A361 /* Debug */ = {
+		45BA0C58E532E7F7D53A9D398CBED73E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF652CDC9E71504B27F236463ED4ABD9 /* NSAttributedString+CCLFormat.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NSAttributedString+CCLFormat/NSAttributedString+CCLFormat-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		582F96626A25FD6F831FE7DC123AB662 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
 			buildSettings = {
@@ -725,6 +833,24 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5C6430219DAE61BF241F4DF4EF530155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF652CDC9E71504B27F236463ED4ABD9 /* NSAttributedString+CCLFormat.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NSAttributedString+CCLFormat/NSAttributedString+CCLFormat-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -771,7 +897,7 @@
 		};
 		AD0D1EC855A4007A177E1770B97D04CB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55C3AA5555998A0DA6DE0DDF62BE2749 /* DSLCalendarView.xcconfig */;
+			baseConfigurationReference = CD2372206E327249C67B16ED564BCAFC /* DSLCalendarView.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/DSLCalendarView/DSLCalendarView-prefix.pch";
@@ -787,7 +913,7 @@
 			};
 			name = Release;
 		};
-		D5BC9F763A8D6C2046404E5EC5072F00 /* Release */ = {
+		E47159B63EE5727EAA5C867A099161DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
 			buildSettings = {
@@ -841,20 +967,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1C7EAB11E6B19C3D593F32A7A4FAF484 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				582F96626A25FD6F831FE7DC123AB662 /* Debug */,
+				E47159B63EE5727EAA5C867A099161DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
 				FB45FFD90572718D82AB9092B750F0CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		465550C8E86E424F1E8F0E397DFB1035 /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3617FC656C2771E4A99AEA420365A361 /* Debug */,
-				D5BC9F763A8D6C2046404E5EC5072F00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -873,6 +999,15 @@
 			buildConfigurations = (
 				162B149B0DD54501D7C75154E5B604EE /* Debug */,
 				0EB5E89BB17510AE9D4971A42147A390 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD9035A2948C98323D6C93A52FDEA831 /* Build configuration list for PBXNativeTarget "NSAttributedString+CCLFormat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C6430219DAE61BF241F4DF4EF530155 /* Debug */,
+				45BA0C58E532E7F7D53A9D398CBED73E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

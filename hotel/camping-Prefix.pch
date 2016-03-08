@@ -69,5 +69,6 @@
 #import "CardDetail.h"
 #import "CardRegistration.h"
 #import "PaymentForm.h"
+#import <NSAttributedString+CCLFormat.h>
 
 #endif /* hotel_Prefix_pch */
