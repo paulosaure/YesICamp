@@ -246,6 +246,9 @@
                                     <outlet property="delegate" destination="FE5-gx-oNJ" id="8kV-Bc-wfS"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4kx-qx-CJa">
+                                <rect key="frame" x="282" y="416.5" width="37" height="37"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCC-YX-5tF">
                                 <rect key="frame" x="550" y="220" width="45" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -270,7 +273,9 @@
                             <constraint firstItem="SZv-yj-ydv" firstAttribute="top" secondItem="tL8-Ue-goy" secondAttribute="bottom" id="dSM-kX-cqT"/>
                             <constraint firstItem="tL8-Ue-goy" firstAttribute="top" secondItem="nfn-8u-ikp" secondAttribute="bottom" id="daZ-c0-mq2"/>
                             <constraint firstItem="GCC-YX-5tF" firstAttribute="trailing" secondItem="nfn-8u-ikp" secondAttribute="trailing" constant="-5" id="gJi-sR-o3S"/>
+                            <constraint firstItem="4kx-qx-CJa" firstAttribute="centerY" secondItem="tL8-Ue-goy" secondAttribute="centerY" id="mLe-9q-jOn"/>
                             <constraint firstAttribute="trailing" secondItem="nfn-8u-ikp" secondAttribute="trailing" id="ou3-gt-9gG"/>
+                            <constraint firstItem="4kx-qx-CJa" firstAttribute="centerX" secondItem="tL8-Ue-goy" secondAttribute="centerX" id="rqY-4v-TZG"/>
                             <constraint firstAttribute="trailing" secondItem="tL8-Ue-goy" secondAttribute="trailing" id="yLn-Vh-Wgb"/>
                         </constraints>
                     </view>
@@ -279,6 +284,7 @@
                         <outlet property="localizeUserButton" destination="GCC-YX-5tF" id="7Ha-TE-baZ"/>
                         <outlet property="mapView" destination="nfn-8u-ikp" id="wcw-3S-Dbw"/>
                         <outlet property="mapViewHeightConstraint" destination="Ns0-IM-YHJ" id="AZ1-J0-NBm"/>
+                        <outlet property="spinner" destination="4kx-qx-CJa" id="3gG-5q-1Mz"/>
                         <outlet property="tableView" destination="tL8-Ue-goy" id="zWA-sD-7Vg"/>
                     </connections>
                 </viewController>

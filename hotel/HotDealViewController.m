@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mapViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *extendMapButton;
 @property (weak, nonatomic) IBOutlet UIButton *localizeUserButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 // Data
 @property (nonatomic, strong) NSArray *campings;
@@ -41,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     if (![[LocationManager sharedInstance] userDidRefuseLocationPermission])
     {
         [[LocationManager sharedInstance] updateLocation];
@@ -79,6 +80,8 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.alpha = 0.9f;
     self.view.backgroundColor = [UIColor clearColor];
+    
+    [self isSearching:YES];
 }
 
 - (void)configurePins
@@ -91,9 +94,9 @@
         location.longitude = [camping.longitude doubleValue];
         
         NSString *price = [NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"globals.unity")];
-
+        
         CustomMKAnnotation *annotation = [[CustomMKAnnotation alloc] initWithTitle:camping.title price:price campingId:[camping.uid stringValue] location:location];
-
+        
         [self.mapView addAnnotation:annotation];
     }
 }
@@ -120,7 +123,7 @@
     if ([annotation isKindOfClass:[CustomMKAnnotation class]])
     {
         CustomMKAnnotationView *annotationView = (CustomMKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:CustomMKAnnotationID];
-
+        
         if (annotationView == nil)
         {
             annotationView = annotation.annotationView;
@@ -129,7 +132,7 @@
         {
             [annotationView configureAnnotationWith:annotation];
         }
-
+        
         return annotationView;
     }
     
@@ -140,7 +143,7 @@
 {
     if([annotation.annotation isKindOfClass:[MKUserLocation class]])
         return;
-
+    
     [mapView deselectAnnotation:annotation.annotation animated:YES];
     [self.parent setHeaderSectionWithString:annotation.annotation.title];
     [self.parent didSelectedTitleAtIndex:PageControllerPromo];
@@ -237,10 +240,18 @@
     [self configurePins];
     [self.mapView reloadInputViews];
     [self.tableView reloadData];
+    [self isSearching:NO];
 }
 
 
 #pragma mark - Utils
+- (void)isSearching:(BOOL)isSearching
+{
+    self.spinner.hidden = !isSearching;
+    //    self.startSearchButton.hidden = isSearching;
+    isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
+}
+
 - (void)centerMapViewOnUserLocation
 {
     [self centerMapViewWithCoordinate:[LocationManager sharedInstance].lastLocation.coordinate];
