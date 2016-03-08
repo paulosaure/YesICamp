@@ -66,3 +66,5 @@
 "payment.card_expiration_date.placeholder"      = "Date d'expiration";
 "payment.card_cvx.placeholder"                  = "Cvx";
 "payment.transaction_result.failed"             = "Votre paiement a échoué";
+
+"noreservation.no_reservation.title"            = "Vous n'avez aucune réservation";

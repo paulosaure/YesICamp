@@ -52,7 +52,7 @@
     self.priceLabel.text = nil;
 }
 
-- (void)configureWithCamping:(Offer *)offer
+- (void)configureWithOffer:(Offer *)offer
 {
     [self globalConfiguration];
     
@@ -74,8 +74,6 @@
     self.categoryLabel.text = [offer.category uppercaseString];
     self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:offer.category];
     
-    [self configureStars:3];
-    
     OfferImage *offerImage = [offer.images firstObject];
     UIImage *image = offerImage.image;
     if (!offerImage.image)
@@ -95,7 +93,7 @@
     self.imageBackgroundView.image = image;
 }
 
-- (void)configureWithInformationsHotDeal:(Camping *)camping
+- (void)configureWithCamping:(Camping *)camping
 {
     [self globalConfiguration];
     
@@ -113,29 +111,27 @@
     self.categoryLabel.text = [@"fun" uppercaseString];
     self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
     
-    [self configureStars:3];
-    
-    UIImage *imageCover;
-    if (!camping.imageCover)
+    CampingImage *campingImage = [camping.images firstObject];
+    UIImage *image = campingImage.image;
+    if (!campingImage.image)
     {
-        if ([camping.images count] == 0)
+        if (!campingImage.imageUrl)
         {
-            imageCover = [UIImage imageNamed:@"no-photo"];
+            image = [UIImage imageNamed:@"no-photo"];
         }
         else
         {
-            NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, camping.imageCoverUrl];
-            camping.imageCover = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
-            imageCover = camping.imageCover;
+            NSString *urlImage = [NSString stringWithFormat:@"%@%@", MAIN_URL, campingImage.imageUrl];
+            campingImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]]];
+            image = campingImage.image;
         }
     }
-    
-    self.imageBackgroundView.image = imageCover;
+
+    self.imageBackgroundView.image = image;
 }
 
 - (void)globalConfiguration
 {
-    
     self.backgroundColor = [UIColor clearColor];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     

@@ -83,7 +83,7 @@
     OfferCell *cell = [tableView dequeueReusableCellWithIdentifier:OFFER_CELL_IDENTIFIER];
     
     // Configure celle
-    [cell configureWithCamping:self.offersList[indexPath.row]];
+    [cell configureWithOffer:self.offersList[indexPath.row]];
 
     return cell;
 }

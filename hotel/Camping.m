@@ -24,6 +24,7 @@
         self.longitude = [dic objectForKeyOrNil:@"longitude"];
         self.latitude = [dic objectForKeyOrNil:@"latitude"];
         self.offers = [self constructOffers:[dic objectForKeyOrNil:@"offers"]];
+        self.images = [self constructOfferImages:[dic objectForKeyOrNil:@"pictures"]];
     }
     
     return self;
@@ -65,6 +66,20 @@
         }
     }
     return maxPrice;
+}
+
+- (NSArray *)constructOfferImages:(NSArray *)arrayJson
+{
+    NSMutableArray *images = [NSMutableArray array];
+    for (NSDictionary *image in arrayJson)
+    {
+        CampingImage *campingImage = [[CampingImage alloc] init];
+        campingImage.uid = [image objectForKeyOrNil:@"id"];
+        campingImage.imageUrl = [image objectForKeyOrNil:@"url"];
+        [images addObject:campingImage];
+    }
+    
+    return images;
 }
 
 @end

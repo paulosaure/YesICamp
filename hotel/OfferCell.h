@@ -11,7 +11,7 @@
 @interface OfferCell : UITableViewCell
 
 + (UINib *)cellNib;
-- (void)configureWithCamping:(Offer *)offer;
-- (void)configureWithInformationsHotDeal:(Camping *)camping;
+- (void)configureWithOffer:(Offer *)offer;
+- (void)configureWithCamping:(Camping *)camping;
 
 @end

@@ -60,7 +60,7 @@
                 <outlet property="separatorView" destination="yO7-uT-r5G" id="2dD-Pa-LIe"/>
                 <outlet property="titleLabel" destination="kNt-FY-pcM" id="SDW-Io-AAf"/>
             </connections>
-            <point key="canvasLocation" x="584" y="393.5"/>
+            <point key="canvasLocation" x="500" y="383.5"/>
         </tableViewCell>
     </objects>
 </document>

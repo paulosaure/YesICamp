@@ -166,7 +166,7 @@
     OfferCell *cell = [tableView dequeueReusableCellWithIdentifier:OFFER_CELL_IDENTIFIER];
     
     // Configure cell
-    [cell configureWithInformationsHotDeal:self.campings[indexPath.row]];
+    [cell configureWithCamping:self.campings[indexPath.row]];
     
     return cell;
 }

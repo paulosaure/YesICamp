@@ -13,6 +13,7 @@
 #import "UITextField+Effects.h"
 #import "UIButton+Effects.h"
 #import "ReservationCell.h"
+#import "NoReservationCell.h"
 #import "GetReservationAction.h"
 #import "DeconnectionUserAction.h"
 
@@ -47,6 +48,7 @@
     [super viewDidLoad];
     
     [self.tableView registerNib:[ReservationCell cellNib] forCellReuseIdentifier:RESERVATION_CELL_IDENTIFIER];
+    [self.tableView registerNib:[NoReservationCell cellNib] forCellReuseIdentifier:NO_RESERVATION_CELL_IDENTIFIER];
     
     // Configure table View
     self.tableView.delegate = self;
@@ -92,7 +94,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.reservationArray count];
+    return [self.reservationArray count] ? [self.reservationArray count] : 1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -102,11 +104,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell;
+    
+    if ([self.reservationArray count] != 0)
+    {
     // Dequeue cell
-    ReservationCell *cell = [tableView dequeueReusableCellWithIdentifier:RESERVATION_CELL_IDENTIFIER];
+   cell = (ReservationCell *)[tableView dequeueReusableCellWithIdentifier:RESERVATION_CELL_IDENTIFIER];
     
     // Configure celle
-    [cell configureWithReservation:[User sharedInstance].reservations[indexPath.row] isLast:(indexPath.row + 1 == [[User sharedInstance].reservations count])];
+    [(ReservationCell *)cell configureWithReservation:[User sharedInstance].reservations[indexPath.row] isLast:(indexPath.row + 1 == [[User sharedInstance].reservations count])];
+    }
+    else
+    {
+        cell = (NoReservationCell *)[tableView dequeueReusableCellWithIdentifier:NO_RESERVATION_CELL_IDENTIFIER];
+    }
     
     return cell;
 }

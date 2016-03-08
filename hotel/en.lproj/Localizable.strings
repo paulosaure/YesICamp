@@ -21,14 +21,13 @@
 "homePage.deconnection.button"      = "Log out";
 "homePage.email.placeholder"        = "E-mail *";
 "homePage.password.placeholder"     = "Password *";
-"connection.connection_success.message" = "Successful connection";
-"connection.connection_failed.message" = "Wrong ID or Password";
-"connection.header_section.title"   = "Reservations";
+"connection.connection_success.message"     = "Successful connection";
+"connection.connection_failed.message"      = "Wrong ID or Password";
+"connection.header_section.title"           = "Reservations";
 
-"connection.deconnection_success.message" = "Successful deconnection";
+"connection.deconnection_success.message"   = "Successful deconnection";
 
-
-"did_reservation_success"           = "Successful booked";
+"did_reservation_success"                   = "Successful booked";
 
 "offersList.search_text_view.placeholder"   = "Destination";
 "offersList.header_section.title"           = "Offers";
@@ -68,3 +67,8 @@
 "payment.card_expiration_date.placeholder"      = "Expiration date";
 "payment.card_cvx.placeholder"                  = "Cvx";
 "payment.transaction_result.failed"             = "Payment failed";
+
+"noreservation.no_reservation.title"            = "You have no reservation";
+
+
+
