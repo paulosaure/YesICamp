@@ -260,14 +260,15 @@
     //    self.firstNameTextView.text = @"firstNameTest";
     //    self.nameTextView.text = @"lastNameTest";
     //    self.emailTextView.text = @"emailTest";
+#if DEBUG
     date = @"1991-12-03";
-    self.cardDetail.cardNumber = @"4970101122334414";
+    self.cardDetail.cardNumber = @"3569990000000157";
     self.cardDetail.cardExpirationDate = @"0718";
     self.cardDetail.cardCvx = @"123";
     self.nationalityPickerView.selectedCountryCode = @"FR";
     self.currency = @"EUR";
     self.cardType = CardIOCreditCardTypeVisa;
-    
+#endif
     
     if (![self.cardNumberNumberLabel.text isEqualToString:@""] &
         ![self.expirationDateNumberLabel.text isEqualToString:@""] &

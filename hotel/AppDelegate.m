@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DeconnectionUserAction.h"
 
 @interface AppDelegate ()
 
@@ -42,7 +43,13 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[NetworkManagement sharedInstance] addNewAction:[DeconnectionUserAction action]
+                                              method:DELETE_METHOD];
+}
+
+- (void)dealloc
+{
+    [NOTIFICATION_CENTER removeObserver:self];
 }
 
 @end
