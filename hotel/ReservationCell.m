@@ -17,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *campingNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingAddressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingTelAddress;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @property (nonatomic, weak) IBOutlet UILabel *price;
 
@@ -40,6 +41,17 @@
     return cellNib;
 }
 
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    self.dateLabel.attributedText = [[NSAttributedString alloc] init];
+    self.campingNameLabel.text = nil;
+    self.campingAddressLabel.text = nil;
+    self.campingTelAddress.text = nil;
+    self.reservationNumberLabel.attributedText = [[NSAttributedString alloc] init];
+    self.statusLabel.attributedText = [[NSAttributedString alloc] init];
+}
+
 - (void)configureWithReservation:(Reservation *)reservation isLast:(BOOL)isLast
 {
     self.reservationNumberLabel.textColor = [UIColor whiteColor];
@@ -49,6 +61,8 @@
     self.campingAddressLabel.textColor = [UIColor whiteColor];
     self.price.textColor = [UIColor whiteColor];
     
+    
+    // Date label
     NSDictionary *dateAttributes = @{
                                      NSFontAttributeName:[UIFont boldSystemFontOfSize:22.0f],
                                      NSForegroundColorAttributeName:GREEN_COLOR
@@ -60,18 +74,30 @@
                                                                  attributes:dateAttributes];
     self.dateLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"reservation.date.title"), dateFrom, dateTo];
     
-    
+    // Reservation Number label
     NSDictionary *reservationAttributes = @{
                                             NSFontAttributeName:[UIFont boldSystemFontOfSize:20.0f],
                                             NSForegroundColorAttributeName:[UIColor whiteColor]
                                             };
     NSAttributedString *reservationNumber = [[NSAttributedString alloc] initWithString:[reservation.uid stringValue]
                                                                             attributes:reservationAttributes];
-    self.reservationNumberLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"reservation.rervation_number.title"), reservationNumber];
+    self.reservationNumberLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"reservation.reservation_number.title"), reservationNumber];
     
     self.campingAddressLabel.text = reservation.addressCamping;
     self.campingNameLabel.text = reservation.nameCamping;
     self.campingTelAddress.text = reservation.phoneCamping;
+    
+    // Status Label
+    NSString *statusString = [Reservation reservationStatusLabelWithString:reservation.statusReservation];
+    NSDictionary *statusAttributes = @{
+                                       NSFontAttributeName:[UIFont boldSystemFontOfSize:17.0f],
+                                       NSForegroundColorAttributeName:[Reservation colorWithReservationStatusString:statusString]
+                                       };
+    
+    NSAttributedString *status = [[NSAttributedString alloc] initWithString:statusString
+                                                                 attributes:statusAttributes];
+    
+    self.statusLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"reservation.reservation_status.title"), status];
     
     self.price.text = [NSString stringWithFormat:@"%@%@", reservation.price, LOCALIZED_STRING(@"globals.unity")];
     self.price.textColor = GREEN_COLOR;

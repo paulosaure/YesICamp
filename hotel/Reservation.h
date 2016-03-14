@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, ReservationStatus)
+{
+    ReservationStatusPayed = 0, // default
+    ReservationStatusInProgress,
+    ReservationStatusFailed,
+    ReservationStatusUnknown
+};
+
 @interface Reservation : NSObject
 
 - (instancetype)initWithDictionnary:(NSDictionary *)dic;
++ (UIColor *)colorWithReservationStatusString:(NSString *) status;
++ (NSString *)reservationStatusLabelWithString:(NSString *)status;
 
 @property (nonatomic, strong, readonly) NSNumber *uid;
 @property (nonatomic, strong, readonly) NSString *addressCamping;

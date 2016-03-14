@@ -32,4 +32,58 @@
     return self;
 }
 
++ (NSString *)reservationStatusLabelWithString:(NSString *)status
+{
+    NSString *reservationStatus = @"Unknown";
+    
+    if ([status isEqualToString:@"to_pay"]) {
+        reservationStatus = @"Payed";
+    } else if ([status isEqualToString:@"payment_in_progress"]) {
+        reservationStatus = @"In Progress";
+    } else if ([status isEqualToString:@"Lux"]) {
+        reservationStatus = @"Failed";
+    } else {
+        NSLog(@"Status Paiement Inconnue : %@", status);
+    }
+    
+    return reservationStatus;
+}
+
++ (ReservationStatus)reservationStatusWithString:(NSString *)status
+{
+    ReservationStatus reservationStatus;
+    
+    if ([status isEqualToString:@"Payed"]) {
+        reservationStatus = ReservationStatusPayed;
+    } else if ([status isEqualToString:@"In Progress"]) {
+        reservationStatus = ReservationStatusInProgress;
+    } else if ([status isEqualToString:@"Failed"]) {
+        reservationStatus = ReservationStatusFailed;
+    } else {
+        reservationStatus = ReservationStatusUnknown;
+    }
+    
+    return reservationStatus;
+}
+
++ (UIColor *)colorWithReservationStatus:(ReservationStatus)status
+{
+    switch (status) {
+        case ReservationStatusPayed:
+            return [UIColor greenColor];
+        case ReservationStatusInProgress:
+            return [UIColor orangeColor];
+        case ReservationStatusFailed:
+            return [UIColor redColor];
+        default:
+            return [UIColor whiteColor];
+            break;
+    }
+}
+
++ (UIColor *)colorWithReservationStatusString:(NSString *)status
+{
+    return [self colorWithReservationStatus:[self reservationStatusWithString:status]];
+}
+
 @end
