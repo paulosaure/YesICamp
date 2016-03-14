@@ -70,5 +70,5 @@
 
 "noreservation.no_reservation.title"            = "You have no reservation";
 "reservation.date.title"                        = "From %@ to %@";
-"reservation.reservation_number.title"            = "Booking number : ";
-"reservation.reservation_status.title"            = "Status : ";
+"reservation.reservation_number.title"            = "Booking number : %@";
+"reservation.reservation_status.title"            = "Status : %@";
