@@ -75,6 +75,9 @@
     self.cardDetail = [[CardDetail alloc] init];
     [self configureNotification];
     [self configureUI];
+    
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
+    [self.view addGestureRecognizer:singleFingerTap];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -86,6 +89,21 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    
+    // TMP REMOVE
+    self.firstNameTextView.text = @"PauloTest";
+    self.nameTextView.text = @"Testounet";
+    self.emailTextView.text = @"test@test.com";
+    self.cardDetail.cardNumber = @"3569990000000157";
+    self.cardDetail.cardExpirationDate = @"0718";
+    self.cardDetail.cardCvx = @"123";
+    self.cardNumberNumberLabel.text = @"3569990000000157";
+    self.expirationDateNumberLabel.text = @"0718";
+    self.cvxNumberLabel.text = @"123";
+    self.nationalityPickerView.selectedCountryCode = @"FR";
+    self.currency = @"EUR";
+    self.cardType = CardIOCreditCardTypeVisa;
 }
 
 - (void)configureUI
@@ -112,7 +130,15 @@
     // PickerView
     self.birthdateLabel.text = LOCALIZED_STRING(@"payment.birthdate.label");
     [self.birthDatePickerView setMaximumDate:[NSDate date]];
-    [self.birthDatePickerView setDate:[NSDate date] animated:YES];
+    
+    // Set date picker to current date - 1 year
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setYear:-1];
+    NSDate *oneYearAgo = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    [self.birthDatePickerView setDate:oneYearAgo animated:YES];
+
+    // Set effect for date picker
     [self.birthDatePickerView addTransparentColorEffect:GREEN_COLOR];
     
     //Set Color of Date Picker
@@ -254,21 +280,6 @@
 - (IBAction)payButton:(id)sender
 {
     [self isSearching:YES];
-    NSString *date;
-    
-    // TMP REMOVE
-    //    self.firstNameTextView.text = @"firstNameTest";
-    //    self.nameTextView.text = @"lastNameTest";
-    //    self.emailTextView.text = @"emailTest";
-#if DEBUG
-    date = @"1991-12-03";
-    self.cardDetail.cardNumber = @"3569990000000157";
-    self.cardDetail.cardExpirationDate = @"0718";
-    self.cardDetail.cardCvx = @"123";
-    self.nationalityPickerView.selectedCountryCode = @"FR";
-    self.currency = @"EUR";
-    self.cardType = CardIOCreditCardTypeVisa;
-#endif
     
     if (![self.cardNumberNumberLabel.text isEqualToString:@""] &
         ![self.expirationDateNumberLabel.text isEqualToString:@""] &
@@ -282,7 +293,7 @@
     {
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd"];
-        date = [dateFormat stringFromDate:self.birthDatePickerView.date];
+        NSString *date = [dateFormat stringFromDate:self.birthDatePickerView.date];
         
         PaymentForm *paymentForm = [[PaymentForm alloc] initWithBookingID:[@(self.bookingId) stringValue]
                                                                 firstname:self.firstNameTextView.text
@@ -328,5 +339,11 @@
     self.paymentButton.hidden = isSearching;
     isSearching ? [self.spinner startAnimating] : [self.spinner stopAnimating];
 }
+
+- (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
+{
+    [self.view endEditing:YES];
+}
+
 
 @end
