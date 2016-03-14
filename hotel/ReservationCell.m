@@ -10,15 +10,14 @@
 
 @interface ReservationCell ()
 
-@property (nonatomic, weak) IBOutlet UILabel *reservationNumberLabel;
-
 @property (nonatomic, weak) IBOutlet UIView *contentCampingInformationView;
+
+@property (nonatomic, weak) IBOutlet UILabel *reservationNumberLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingNameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingAddressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *campingTelAddress;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-
 @property (nonatomic, weak) IBOutlet UILabel *price;
 
 @property (nonatomic, weak) IBOutlet UIView *verticalSeparatorView;
@@ -48,6 +47,7 @@
     self.campingNameLabel.text = nil;
     self.campingAddressLabel.text = nil;
     self.campingTelAddress.text = nil;
+    self.price.text = nil;
     self.reservationNumberLabel.attributedText = [[NSAttributedString alloc] init];
     self.statusLabel.attributedText = [[NSAttributedString alloc] init];
 }
