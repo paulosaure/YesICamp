@@ -73,6 +73,11 @@
     [[NetworkManagement sharedInstance] addNewAction:[GetHotsDealsListAction action:param]];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [NOTIFICATION_CENTER removeObserver:self];
+}
+
 - (void)configureUI
 {
     self.extendMapButton.tintColor = GREEN_COLOR;
@@ -267,6 +272,5 @@
     region.center = coordinate;
     [self.mapView setRegion:region animated:YES];
 }
-
 
 @end

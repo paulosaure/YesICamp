@@ -106,6 +106,11 @@
     self.cardType = CardIOCreditCardTypeVisa;
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [NOTIFICATION_CENTER removeObserver:self];
+}
+
 - (void)configureUI
 {
     // TextView
@@ -344,6 +349,5 @@
 {
     [self.view endEditing:YES];
 }
-
 
 @end

@@ -51,6 +51,11 @@
     [self configureUI];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [NOTIFICATION_CENTER removeObserver:self];
+}
+
 #pragma mark - Configuration
 
 - (void)configureUI

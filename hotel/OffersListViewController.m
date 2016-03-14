@@ -44,10 +44,9 @@
     [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidDisappear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    
+    [NOTIFICATION_CENTER removeObserver:self];
 }
 
 - (void)configureUI

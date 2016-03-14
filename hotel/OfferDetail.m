@@ -70,6 +70,11 @@
     [self configureUI];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [NOTIFICATION_CENTER removeObserver:self];
+}
+
 - (void)configureUI
 {
     self.view.backgroundColor = [UIColor blackColor];
@@ -255,4 +260,5 @@
     
     // Allows to add some additionnal information
 }
+
 @end

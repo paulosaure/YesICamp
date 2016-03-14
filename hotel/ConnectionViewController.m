@@ -96,6 +96,11 @@
     self.spinnerDeconnection.hidden = YES;
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [NOTIFICATION_CENTER removeObserver:self];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -286,6 +291,5 @@
 {
     [self.view endEditing:YES];
 }
-
 
 @end

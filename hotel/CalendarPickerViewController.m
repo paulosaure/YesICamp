@@ -74,6 +74,11 @@
     [self isSearching:NO];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+     [NOTIFICATION_CENTER removeObserver:self];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
@@ -232,11 +237,11 @@
     
     return [components day];
 }
+
 - (void)updateDateLabelFrom:(NSString *)from to:(NSString *)to
 {
     self.fromDateLabel.text = [from uppercaseString];
     self.toDateLabel.text = [to uppercaseString];
 }
-
 
 @end
