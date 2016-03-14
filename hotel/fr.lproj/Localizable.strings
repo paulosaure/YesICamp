@@ -71,3 +71,7 @@
 "reservation.date.title"                        = "Du %@ au %@";
 "reservation.reservation_number.title"          = "Numéro de réservation : %@";
 "reservation.reservation_status.title"          = "Status : %@";
+
+"reservation.reservation_status.payed"          = "Payé";
+"reservation.reservation_status.in_progress"    = "En cours";
+"reservation.reservation_status.failed"         = "Échec";

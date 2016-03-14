@@ -37,11 +37,11 @@
     NSString *reservationStatus = @"Unknown";
     
     if ([status isEqualToString:@"to_pay"]) {
-        reservationStatus = @"Payed";
+        reservationStatus = LOCALIZED_STRING(@"reservation.reservation_status.payed");
     } else if ([status isEqualToString:@"payment_in_progress"]) {
-        reservationStatus = @"In Progress";
+        reservationStatus = LOCALIZED_STRING(@"reservation.reservation_status.in_progress");
     } else if ([status isEqualToString:@"Lux"]) {
-        reservationStatus = @"Failed";
+        reservationStatus = LOCALIZED_STRING(@"reservation.reservation_status.failed");
     } else {
         NSLog(@"Status Paiement Inconnue : %@", status);
     }
@@ -53,11 +53,11 @@
 {
     ReservationStatus reservationStatus;
     
-    if ([status isEqualToString:@"Payed"]) {
+    if ([status isEqualToString:LOCALIZED_STRING(@"reservation.reservation_status.payed")]) {
         reservationStatus = ReservationStatusPayed;
-    } else if ([status isEqualToString:@"In Progress"]) {
+    } else if ([status isEqualToString:LOCALIZED_STRING(@"reservation.reservation_status.in_progress")]) {
         reservationStatus = ReservationStatusInProgress;
-    } else if ([status isEqualToString:@"Failed"]) {
+    } else if ([status isEqualToString:LOCALIZED_STRING(@"reservation.reservation_status.failed")]) {
         reservationStatus = ReservationStatusFailed;
     } else {
         reservationStatus = ReservationStatusUnknown;
