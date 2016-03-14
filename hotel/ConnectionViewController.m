@@ -56,7 +56,7 @@
     self.tableView.estimatedRowHeight = 200;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableHeaderView = nil;
-    self.tableView.tableFooterView = self.footerView;
+    [self userIsConnect:[User sharedInstance].isConnected];
     
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
     [self.view addGestureRecognizer:singleFingerTap];
@@ -88,7 +88,6 @@
     
     [self.signUpButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"homePage.inscription.button")];
     self.passwordTextView.secureTextEntry = YES;
-    self.tableView.hidden = YES;
     self.view.backgroundColor = [UIColor clearColor];
     
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -279,6 +278,7 @@
     self.contentConnectionView.hidden = isConnected;
     self.signUpButton.hidden = isConnected;
     self.tableView.hidden = !isConnected;
+    self.footerView.hidden = !isConnected;
     
     if (isConnected)
     {
