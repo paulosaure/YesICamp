@@ -92,17 +92,20 @@
     
     
     // TMP REMOVE
+    NSString *number = @"3569990000000157";
+    NSString *cvv = @"123";
+    NSString *date = @"0718";
     self.firstNameTextView.text = @"PauloTest";
     self.nameTextView.text = @"Testounet";
     self.emailTextView.text = @"test@test.com";
-    self.cardDetail.cardNumber = @"3569990000000157";
-    self.cardDetail.cardExpirationDate = @"0718";
-    self.cardDetail.cardCvx = @"123";
-    self.cardNumberNumberLabel.text = @"3569990000000157";
-    self.expirationDateNumberLabel.text = @"0718";
-    self.cvxNumberLabel.text = @"123";
     self.nationalityPickerView.selectedCountryCode = @"FR";
     self.currency = @"EUR";
+    self.cardDetail.cardNumber = number;
+    self.cardDetail.cardExpirationDate = date;
+    self.cardDetail.cardCvx = cvv;
+    self.cardNumberNumberLabel.text = number;
+    self.expirationDateNumberLabel.text = date;
+    self.cvxNumberLabel.text = cvv;
     self.cardType = CardIOCreditCardTypeVisa;
 }
 
@@ -155,20 +158,23 @@
     [invocation setArgument:&no atIndex:2];
     [invocation invokeWithTarget:self.birthDatePickerView];
     
+    // Retrieve code
     NSLocale *currentLocale = [NSLocale currentLocale];
     NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
     
+    // Nationality Picker View
     self.nationalityLabel.text = LOCALIZED_STRING(@"payment.nationality.label");
     [self.nationalityPickerView setSelectedCountryCode:countryCode];
     [self.nationalityPickerView addTransparentColorEffect:GREEN_COLOR];
     
+    // Country Picker View
     self.countryCodeLabel.text = LOCALIZED_STRING(@"payment.countryCode.label");
     [self.countryCodePickerView setSelectedCountryCode:countryCode];
     [self.countryCodePickerView addTransparentColorEffect:GREEN_COLOR];
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %ld %@",[LOCALIZED_STRING(@"payment.pay.button") uppercaseString], (long)self.amount, LOCALIZED_STRING(@"globals.unity")];
     
-    // Button
+    // Buttons
     [self.paymentButton addEffectbelowBookButton:titleButton];
     [self.scanPayButton addColorEffect:GREEN_COLOR text:LOCALIZED_STRING(@"payment.scan_credit_card.button")];
     
