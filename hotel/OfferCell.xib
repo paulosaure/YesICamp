@@ -43,14 +43,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3R-jj-RzM">
                         <rect key="frame" x="46" y="78" width="100" height="20"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-Oc-Zjk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-Oc-Zjk">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="QzX-MW-bWA"/>
                                     <constraint firstAttribute="height" constant="20" id="Xe1-zf-ws8"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="FKD-xU-2ZS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FKD-xU-2ZS">
                                 <rect key="frame" x="20" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="J5s-4T-ot0"/>
@@ -146,7 +146,4 @@
             <point key="canvasLocation" x="-141.5" y="444.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="star" width="1200" height="1200"/>
-    </resources>
 </document>

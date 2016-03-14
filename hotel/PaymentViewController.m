@@ -247,8 +247,8 @@
     NSLog(@"On envoie la requete registration data");
     // Record data
     self.registrationData = notification.object;
-    self.registrationData = [self.registrationData stringByReplacingOccurrencesOfString:@"data="
-                                                                             withString:@""];
+//    self.registrationData = [self.registrationData stringByReplacingOccurrencesOfString:@"data="
+//                                                                             withString:@""];
     // Send new request to serveur
     [[NetworkManagement sharedInstance] addNewAction:[SendRegistrationDataAction actionSendRegistrationData:self.registrationData bookingId:[@(self.bookingId) stringValue]] method:POST_METHOD];
 }

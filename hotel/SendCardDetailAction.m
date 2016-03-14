@@ -39,7 +39,7 @@
     
     if (header.statusCode == 200)
     {
-        [NOTIFICATION_CENTER postNotificationName:didReceiveRegistrationDataSuccededNotification object:nil];
+        [NOTIFICATION_CENTER postNotificationName:didReceiveRegistrationDataSuccededNotification object:body];
     }
     else
     {
