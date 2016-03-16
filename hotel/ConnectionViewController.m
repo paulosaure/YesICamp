@@ -61,15 +61,6 @@
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
     [self.view addGestureRecognizer:singleFingerTap];
     
-    
-    // TODO REMOVE en dessous
-    //    [self isSearching:YES];
-    //    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleConnectionResponse:) name:ConnectionReponseNotification object:nil];
-    //    [[NetworkManagement sharedInstance] addNewAction:[ConnectionUserAction action:self.pseudoTextView.text
-    //                                                                         password:self.passwordTextView.text]
-    //                                              method:POST_METHOD];
-    // TODO remove audessus
-    
     [self configureUI];
 }
 
