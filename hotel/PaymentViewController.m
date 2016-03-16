@@ -92,21 +92,21 @@
     
     
     // TMP REMOVE
-    NSString *number = @"3569990000000157";
-    NSString *cvv = @"123";
-    NSString *date = @"0718";
-    self.firstNameTextView.text = @"PauloTest";
-    self.nameTextView.text = @"Testounet";
-    self.emailTextView.text = @"test@test.com";
-    self.nationalityPickerView.selectedCountryCode = @"FR";
-    self.currency = @"EUR";
-    self.cardDetail.cardNumber = number;
-    self.cardDetail.cardExpirationDate = date;
-    self.cardDetail.cardCvx = cvv;
-    self.cardNumberNumberLabel.text = number;
-    self.expirationDateNumberLabel.text = date;
-    self.cvxNumberLabel.text = cvv;
-    self.cardType = CardIOCreditCardTypeVisa;
+//    NSString *number = @"3569990000000157";
+//    NSString *cvv = @"123";
+//    NSString *date = @"0718";
+//    self.firstNameTextView.text = @"PauloTest";
+//    self.nameTextView.text = @"Testounet";
+//    self.emailTextView.text = @"test@test.com";
+//    self.nationalityPickerView.selectedCountryCode = @"FR";
+//    self.currency = @"EUR";
+//    self.cardDetail.cardNumber = number;
+//    self.cardDetail.cardExpirationDate = date;
+//    self.cardDetail.cardCvx = cvv;
+//    self.cardNumberNumberLabel.text = number;
+//    self.expirationDateNumberLabel.text = date;
+//    self.cvxNumberLabel.text = cvv;
+//    self.cardType = CardIOCreditCardTypeVisa;
 }
 
 - (void)viewDidDisappear:(BOOL)animated

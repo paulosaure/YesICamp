@@ -75,11 +75,11 @@
 
 - (void)configureUI
 {
-    
-#if DEBUG
-    self.pseudoTextView.text = @"test@test.com";
-    self.passwordTextView.text = @"testPass";
-#endif
+//    
+//#if DEBUG
+//    self.pseudoTextView.text = @"test@test.com";
+//    self.passwordTextView.text = @"testPass";
+//#endif
 
     [self.pseudoTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.email.placeholder")];
     [self.passwordTextView addTransparentColorEffect:GREEN_COLOR placeholder:LOCALIZED_STRING(@"homePage.password.placeholder")];

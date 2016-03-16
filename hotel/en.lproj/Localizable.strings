@@ -55,6 +55,7 @@
 "calendarPicker.select_date.title"              = "Select the relevant period";
 "calendarPicker.not_connected.error"            = "You should be connected to book a reservation";
 "calendarPicker.date_empty.error"               = "Please select a period";
+"calendarPicker.same_date.error"                = "Dates should be differents";
 "calendarPicker.checkValidity.button"           = "Book";
 "calendarPicker.price_per_night.information"    = "per night";
 "calendarPicker.book_not_possible.error"        = "Impossible reservation";

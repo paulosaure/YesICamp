@@ -66,6 +66,7 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableHeaderView = self.pageViewController.view;
     self.tableView.tableFooterView = self.footerView;
+    self.mailButtonFooterView.hidden = YES;
     
     [self configureUI];
 }

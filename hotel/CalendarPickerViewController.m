@@ -68,6 +68,7 @@
     [self.toWordLabel addTransparentColorEffect:GREEN_COLOR];
     self.toDateLabel.textColor = [UIColor whiteColor];
     
+    
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@ %@",[LOCALIZED_STRING(@"calendarPicker.checkValidity.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"globals.unity"), LOCALIZED_STRING(@"calendarPicker.price_per_night.information")];
     [self.checkDateValidityButton addEffectbelowBookButton:titleButton];
     
@@ -76,7 +77,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-     [NOTIFICATION_CENTER removeObserver:self];
+    [NOTIFICATION_CENTER removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -155,6 +156,10 @@
     {
         errorMessage = LOCALIZED_STRING(@"calendarPicker.date_empty.error");
     }
+    else if ([self.fromDate isEqualToString:self.toDate])
+    {
+        errorMessage = LOCALIZED_STRING(@"calendarPicker.same_date.error");
+    }
     
     if (![errorMessage isEqualToString:@""])
     {
@@ -206,7 +211,7 @@
 - (void)didBookReservationFailed:(NSNotification *)notification
 {
     [self isSearching:NO];
-    NSString *errorMessage = LOCALIZED_STRING(@"calendarPicker.book_not_possible.error");
+    NSString *errorMessage = (notification.object) ? notification.object : LOCALIZED_STRING(@"calendarPicker.book_not_possible.error");
     PopUpInformation *informations = [[PopUpInformation alloc] initWithTitle:LOCALIZED_STRING(@"globals.error")
                                                                      message:errorMessage
                                                                messageButton:LOCALIZED_STRING(@"globals.ok")];
