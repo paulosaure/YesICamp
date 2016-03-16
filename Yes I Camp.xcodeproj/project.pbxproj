@@ -77,6 +77,8 @@
 		A8C5101B1C8F60B700127832 /* NoReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8C510191C8F60B700127832 /* NoReservationCell.xib */; };
 		A8C5101F1C8F679000127832 /* CampingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C5101E1C8F679000127832 /* CampingImage.m */; };
 		A8CF58C61C5007A2002D227A /* InscriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CF58C51C5007A2002D227A /* InscriptionViewController.m */; };
+		A8EC92F91C9A054100182AF8 /* PrivacyPolicyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8EC92F81C9A054100182AF8 /* PrivacyPolicyView.m */; };
+		A8EC92FB1C9A055000182AF8 /* PrivacyPolicyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EC92FA1C9A055000182AF8 /* PrivacyPolicyView.xib */; };
 		A8F2FEED1C54D2BA007DF893 /* HotDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */; };
 		A8F2FF091C557F01007DF893 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF081C557F01007DF893 /* Offer.m */; };
 		A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2FF1B1C559A56007DF893 /* ScrollPagesViewController.m */; };
@@ -237,6 +239,9 @@
 		A8C5101E1C8F679000127832 /* CampingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampingImage.m; sourceTree = "<group>"; };
 		A8CF58C41C5007A2002D227A /* InscriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InscriptionViewController.h; sourceTree = "<group>"; };
 		A8CF58C51C5007A2002D227A /* InscriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InscriptionViewController.m; sourceTree = "<group>"; };
+		A8EC92F71C9A054100182AF8 /* PrivacyPolicyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyView.h; sourceTree = "<group>"; };
+		A8EC92F81C9A054100182AF8 /* PrivacyPolicyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyView.m; sourceTree = "<group>"; };
+		A8EC92FA1C9A055000182AF8 /* PrivacyPolicyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivacyPolicyView.xib; sourceTree = "<group>"; };
 		A8F2FEEB1C54D2BA007DF893 /* HotDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDealViewController.h; sourceTree = "<group>"; };
 		A8F2FEEC1C54D2BA007DF893 /* HotDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDealViewController.m; sourceTree = "<group>"; };
 		A8F2FF071C557F01007DF893 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
@@ -672,6 +677,7 @@
 				A88EB3C51C500E3A008DC5CF /* OfferDetail */,
 				A88EB3C41C500E2B008DC5CF /* OffersList */,
 				A898A0B11C81FCFE009BDDB3 /* Payment */,
+				A8EC92F61C9A051D00182AF8 /* PrivacyPolicy */,
 				A8F2FF0E1C558624007DF893 /* ScrollPages */,
 			);
 			name = ViewControllers;
@@ -934,6 +940,16 @@
 			name = Inscription;
 			sourceTree = "<group>";
 		};
+		A8EC92F61C9A051D00182AF8 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				A8EC92F71C9A054100182AF8 /* PrivacyPolicyView.h */,
+				A8EC92F81C9A054100182AF8 /* PrivacyPolicyView.m */,
+				A8EC92FA1C9A055000182AF8 /* PrivacyPolicyView.xib */,
+			);
+			name = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
 		A8F2FEEA1C54D295007DF893 /* HotDeal */ = {
 			isa = PBXGroup;
 			children = (
@@ -1125,6 +1141,7 @@
 				A8A63DC21C5005C30026E456 /* Main.storyboard in Resources */,
 				A8AB358B1C7A82FD0018C186 /* ReservationCell.xib in Resources */,
 				A84C717A1C56C54A00598FE9 /* OfferDetailCell.xib in Resources */,
+				A8EC92FB1C9A055000182AF8 /* PrivacyPolicyView.xib in Resources */,
 				A8C22D131C712DC60012147C /* CustomMKAnnotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1233,6 +1250,7 @@
 				A88EB3CC1C500EAE008DC5CF /* OfferDetail.m in Sources */,
 				A89FDF5D1C8225D100585355 /* CountryPicker.m in Sources */,
 				A8C5101A1C8F60B700127832 /* NoReservationCell.m in Sources */,
+				A8EC92F91C9A054100182AF8 /* PrivacyPolicyView.m in Sources */,
 				A8A63DB91C5005C30026E456 /* main.m in Sources */,
 				A80624D61C79A7E200ABF9EC /* LabelWithPadding.m in Sources */,
 				A870B29C1C6006EF0006CAAA /* UIButton+Effects.m in Sources */,

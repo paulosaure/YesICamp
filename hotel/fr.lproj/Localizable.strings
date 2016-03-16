@@ -15,6 +15,7 @@
 
 "homePage.error.fielsEmpty"         = "Veuillez remplir tous les champs.";
 "homePage.password_short.error"     = "Mot de passe trop court.\n(Min 8 caractères)";
+"homePage.privacy_policy.error"     = "Veuillez accepter la politique de confidentialité";
 
 "homePage.inscription.button"               = "Inscription";
 "homePage.connection.button"                = "Connexion";
@@ -39,6 +40,8 @@
 "inscription.select_picture.button" = "Sélectionner une photo";
 "inscription.inscription.button"    = "Inscription";
 "inscription.registration_success.message"  = "Inscription réussie";
+"inscription.privacy_policy.button" = "Politique de confidentialité";
+
 
 "hotdeal.price_from.label"          = "de";
 "hotdeal.price_to.label"            = "à";

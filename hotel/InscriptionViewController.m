@@ -10,6 +10,7 @@
 #import "InscriptionUserAction.h"
 #import "UITextField+Effects.h"
 #import "UIButton+Effects.h"
+#import "PrivacyPolicyView.h"
 
 @interface InscriptionViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -23,10 +24,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *choosePhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *inscriptionButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIButton *checkBoxButton;
+@property (weak, nonatomic) IBOutlet UIButton *privacyPolicyButton;
 
 
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSArray *fields;
+@property (nonatomic, strong) IBOutlet PrivacyPolicyView *policyView;
 
 @end
 
@@ -65,6 +69,18 @@
     self.choosePhotoButton.titleLabel.numberOfLines = 2;
     self.choosePhotoButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.passwordTextView.secureTextEntry = YES;
+    
+    NSDictionary *privacyAttributes = @{
+                                        NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle),
+                                        NSForegroundColorAttributeName:GREEN_COLOR
+                                        };
+    
+    [self.privacyPolicyButton setAttributedTitle:[[NSAttributedString alloc] initWithString:LOCALIZED_STRING(@"inscription.privacy_policy.button") attributes:privacyAttributes] forState:UIControlStateNormal];
+    
+    
+    [self.checkBoxButton setImage:[UIImage imageNamed:@"checked"] forState:UIControlStateSelected];
+    [self.checkBoxButton.imageView setHidden:YES];
+    [self.checkBoxButton setTintColor:GREEN_COLOR];
     
     // Warning : Customer didn't want photo
     self.choosePhotoButton.hidden = YES;
@@ -163,6 +179,11 @@
         allFielsComplete = NO;
         errorMessage = LOCALIZED_STRING(@"homePage.password_short.error");
     }
+    else if (!self.checkBoxButton.isSelected)
+    {
+        allFielsComplete = NO;
+        errorMessage = LOCALIZED_STRING(@"homePage.privacy_policy.error");
+    }
     
     if (allFielsComplete)
     {
@@ -184,7 +205,37 @@
     }
 }
 
+#pragma mark - Actions
+- (IBAction)displayPrivacyPolicyAction:(id)sender
+{
+    [self animatePopUpShow];
+}
+
+- (IBAction)checkPrivacyPolicyAction:(UIButton *)sender
+{
+    [sender setSelected:!sender.selected];
+    [self.checkBoxButton.imageView setHidden:!sender.selected];
+}
+
+
 #pragma mark - Utils
+
+- (void)animatePopUpShow
+{
+    self.policyView = [[[NSBundle mainBundle] loadNibNamed:@"PrivacyPolicyView" owner:self options:nil] firstObject];
+    self.policyView.alpha = 0;
+    self.policyView.frame = CGRectMake (160, 240, 0, 0);
+    [self.view addSubview:self.policyView];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDelegate:self];
+
+    self.policyView.alpha = 0.8f;
+    self.policyView.frame = CGRectMake (30, 20, CGRectGetWidth(self.view.frame) - 60 , CGRectGetHeight(self.view.frame)- 150);
+    
+    [UIView commitAnimations];
+}
 
 - (void)isSearching:(BOOL)isSearching
 {
@@ -196,6 +247,8 @@
 - (void)gestureRecognizer:(UISwipeGestureRecognizer *)sender
 {
     [self.view endEditing:YES];
+    
+    [self.policyView removeFromSuperview];
 }
 
 @end

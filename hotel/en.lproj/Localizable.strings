@@ -15,6 +15,7 @@
 
 "homePage.error.fielsEmpty"         = "Please fill out all fields completely.";
 "homePage.password_short.error"     = "Password is too short.\n(Min 8 characters)";
+"homePage.privacy_policy.error"     = "Accept privacy policy";
 
 "homePage.inscription.button"       = "Sign up";
 "homePage.connection.button"        = "Log In";
@@ -40,6 +41,7 @@
 "inscription.select_picture.button"         = "Choose a picture";
 "inscription.inscription.button"            = "Sign Up";
 "inscription.registration_success.message"  = "Successful booking";
+"inscription.privacy_policy.button"         = "Privacy policy";
 
 "hotdeal.price_from.label"                      = "from";
 "hotdeal.price_to.label"                        = "to";
