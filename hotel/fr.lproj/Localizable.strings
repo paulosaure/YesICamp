@@ -47,8 +47,9 @@
 "hotdeal.price_to.label"            = "à";
 "hotdeal.header_section.title"      = "Campings";
 
-"offerDetail.price.work" = "prix";
-"offerDetail.reservation.button"    = "Réserver";
+"offerDetail.price.work"                        = "prix";
+"offerDetail.reservation.button"                = "Réserver";
+"offerDetail.reservation.no_informations"         = "Aucune informations spécifiées";
 
 "calendarPicker.from_date.label"                = "Du";
 "calendarPicker.to_date.label"                  = "au";

@@ -22,7 +22,7 @@
             break;
         case CardIOCreditCardTypeVisa :
             return @"CB_VISA_MASTERCARD";
-        case CardIOCreditCardTypeDiscover  :
+        case CardIOCreditCardTypeDiscover :
             break;
         case CardIOCreditCardTypeUnrecognized :
             break;
@@ -37,17 +37,17 @@
 {
     CampingCategory category;
     
-    if ([categoryString isEqualToString:@"Charme"]) {
+    if ([categoryString isEqualToString:@"charme"]) {
         category = CampingCategoryCharme;
     } else if ([categoryString isEqualToString:@"fun"]) {
         category = CampingCategoryFun;
-    } else if ([categoryString isEqualToString:@"Lux"]) {
+    } else if ([categoryString isEqualToString:@"luxe"]) {
         category = CampingCategoryLuxe;
-    } else if ([categoryString isEqualToString:@"Glamping"]) {
+    } else if ([categoryString isEqualToString:@"glamping"]) {
         category = CampingCategoryGlamping;
-    } else if ([categoryString isEqualToString:@"TerrainNu"]) {
+    } else if ([categoryString isEqualToString:@"terrain"]) {
         category = CampingCategoryEmpty;
-    } else if ([categoryString isEqualToString:@"Au calme"]) {
+    } else if ([categoryString isEqualToString:@"calme"]) {
         category = CampingCategoryCalme;
     } else {
         NSLog(@"Error Category Inconnue : %@", categoryString);

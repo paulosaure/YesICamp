@@ -49,6 +49,7 @@
 
 "offerDetail.price.work"                        = "price";
 "offerDetail.reservation.button"                = "Book";
+"offerDetail.reservation.no_informations"       = "No informations specified";
 
 "calendarPicker.from_date.label"                = "From";
 "calendarPicker.to_date.label"                  = "to";

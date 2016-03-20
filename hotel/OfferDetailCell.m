@@ -36,7 +36,8 @@
 {
     self.titleLabel.text = [[[offerDetailInformation allKeys] firstObject] uppercaseString];
     self.titleLabel.textColor = GREEN_COLOR;
-    self.descriptionLabel.text = [[offerDetailInformation allValues] firstObject];
+    NSArray *descriptions = [offerDetailInformation allValues];
+    self.descriptionLabel.text = ([descriptions firstObject] != [NSNull null]) ? [descriptions firstObject] : LOCALIZED_STRING(@"offerDetail.reservation.no_informations");
 }
 
 - (void)setSeparatorVisiblity:(BOOL)isLast
