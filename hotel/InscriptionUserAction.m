@@ -28,7 +28,7 @@
     [super handleDownloadedData:obj];
     
     NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
-    NSDictionary *body = [obj objectForKey:RESPONSE_BODY];
+//    NSDictionary *body = [obj objectForKey:RESPONSE_BODY];
     [NOTIFICATION_CENTER postNotificationName:InscriptionReponseNotification object:@(header.statusCode)];
 }
 

@@ -27,8 +27,8 @@
     [super handleDownloadedData:obj];
     
     NSHTTPURLResponse *header = [obj objectForKey:RESPONSE_HEADER];
-    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *registrationResultDataJson = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+//    NSData *data = [[obj objectForKey:RESPONSE_BODY] dataUsingEncoding:NSUTF8StringEncoding];
+//    NSDictionary *registrationResultDataJson = (NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     
     if (header.statusCode == 200)
     {

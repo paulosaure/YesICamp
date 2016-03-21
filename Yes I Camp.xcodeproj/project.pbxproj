@@ -1429,19 +1429,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/hotel/scanpay",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotel/camping-Prefix.pch";
 				INFOPLIST_FILE = hotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/hotel/scanpay",
-					"$(PROJECT_DIR)/hotel",
-				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.camp.YesICamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1461,19 +1452,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: KARAKTER (UHG3QGD9M7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: KARAKTER (UHG3QGD9M7)";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/hotel/scanpay",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotel/camping-Prefix.pch";
 				INFOPLIST_FILE = hotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/hotel/scanpay",
-					"$(PROJECT_DIR)/hotel",
-				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.camp.YesICamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

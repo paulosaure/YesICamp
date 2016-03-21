@@ -13,6 +13,7 @@
 #import "LabelWithPadding.h"
 #import "BookReservationAction.h"
 #import "PaymentViewController.h"
+#import <NSAttributedString+CCLFormat.h>
 
 #define DATE_FORMAT_SERVER  @"%ld-%ld-%ld"
 #define DATE_FORMAT_DISPLAYED       @"%ld/%ld/%ld"
@@ -46,7 +47,6 @@
     [super viewDidLoad];
     
     self.calendarView.delegate = self;
-
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
@@ -60,8 +60,15 @@
 
 - (void)configureUI
 {
-    self.titleLabel.text = LOCALIZED_STRING(@"calendarPicker.select_date.title");
-    self.titleLabel.textColor = GREEN_COLOR;
+    NSDictionary *dateAttributes = @{
+                                     NSForegroundColorAttributeName:GREEN_COLOR
+                                     };
+    NSAttributedString *dateBegin = [[NSAttributedString alloc] initWithString:self.offer.begin
+                                                                    attributes:dateAttributes];
+    NSAttributedString *dateEnd = [[NSAttributedString alloc] initWithString:self.offer.end
+                                                                  attributes:dateAttributes];
+    
+    self.titleLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"calendarPicker.select_date.title"), dateBegin, dateEnd];
     
     self.view.backgroundColor = BLACK_COLOR;
     
@@ -96,10 +103,7 @@
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range
 {
-    self.fromDate = nil;
-    self.toDate = nil;
-    NSString *toDate = @"";
-    NSString *fromDate = @"";
+    [self initDate];
     
     if (range != nil)
     {
@@ -107,7 +111,8 @@
         self.fromDate = [NSString stringWithFormat:DATE_FORMAT_SERVER, (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
         
         // Display Date
-        fromDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.startDay.day, (long)range.startDay.month, (long)range.startDay.year];
+        NSString *fromDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.startDay.day, (long)range.startDay.month, (long)range.startDay.year];
+        NSString *toDate = @"";
         
         if (![range.startDay isEqual:range.endDay])
         {
@@ -126,11 +131,7 @@
 
 - (DSLCalendarRange*)calendarView:(DSLCalendarView *)calendarView didDragToDay:(NSDateComponents *)day selectingRange:(DSLCalendarRange *)range
 {
-    self.fromDate = nil;
-    self.toDate = nil;
-    NSString *toDate = @"";
-    NSString *fromDate = @"";
-    [self updateDateLabelFrom:fromDate to:toDate];
+    [self initDate];
     
     NSDateComponents *today = [[NSDate date] dslCalendarView_dayWithCalendar:calendarView.visibleMonth.calendar];
     
@@ -275,6 +276,15 @@
                                                          options:NSCalendarWrapComponents];
     
     return [components day];
+}
+
+- (void)initDate
+{
+    self.fromDate = nil;
+    self.toDate = nil;
+    NSString *toDate = @"";
+    NSString *fromDate = @"";
+    [self updateDateLabelFrom:fromDate to:toDate];
 }
 
 - (void)updateDateLabelFrom:(NSString *)from to:(NSString *)to

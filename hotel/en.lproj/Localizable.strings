@@ -53,7 +53,7 @@
 
 "calendarPicker.from_date.label"                = "From";
 "calendarPicker.to_date.label"                  = "to";
-"calendarPicker.select_date.title"              = "Select the relevant period";
+"calendarPicker.select_date.title"              = "Select the relevant period :\nFrom %@ To %@";
 "calendarPicker.not_connected.error"            = "You should be connected to book a reservation";
 "calendarPicker.date_empty.error"               = "Please select a period";
 "calendarPicker.same_date.error"                = "Dates should be differents";
