@@ -53,7 +53,7 @@
 
 "calendarPicker.from_date.label"                = "Du";
 "calendarPicker.to_date.label"                  = "au";
-"calendarPicker.select_date.title"              = "Sélectionnez la période voulue :\nDu %@ Au %@";
+"calendarPicker.select_date.title"              = "Sélectionnez une période voulue :\nDu %@ Au %@";
 "calendarPicker.not_connected.error"            = "Vous devez être connecté pour pouvoir réserver";
 "calendarPicker.date_empty.error"               = "Veuillez sélectionner une période";
 "calendarPicker.same_date.error"                = "Veuillez sélectionner des dates différentes";
