@@ -32,8 +32,8 @@
 
 
 // Data
-@property (weak, nonatomic) NSString *fromDate;
-@property (weak, nonatomic) NSString *toDate;
+@property (strong, nonatomic) NSString *fromDate;
+@property (strong, nonatomic) NSString *toDate;
 
 @end
 
@@ -46,6 +46,13 @@
     [super viewDidLoad];
     
     self.calendarView.delegate = self;
+
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *maxDate = [dateFormatter dateFromString:self.offer.end];
+    self.calendarView.maxPossibleDate = [maxDate dslCalendarView_dayWithCalendar:self.calendarView.visibleMonth.calendar];
     [self configureUI];
 }
 
@@ -89,15 +96,26 @@
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range
 {
-    if (range != nil && ![range.startDay isEqual:range.endDay])
+    self.fromDate = nil;
+    self.toDate = nil;
+    NSString *toDate = @"";
+    NSString *fromDate = @"";
+    
+    if (range != nil)
     {
         // Record date with good format for serveur
         self.fromDate = [NSString stringWithFormat:DATE_FORMAT_SERVER, (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
-        self.toDate = [NSString stringWithFormat:DATE_FORMAT_SERVER, (long)range.endDay.year, (long)range.endDay.month, (long)range.endDay.day];
         
         // Display Date
-        NSString *fromDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.startDay.day, (long)range.startDay.month, (long)range.startDay.year];
-        NSString *toDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.endDay.day, (long)range.endDay.month, (long)range.startDay.year];
+        fromDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.startDay.day, (long)range.startDay.month, (long)range.startDay.year];
+        
+        if (![range.startDay isEqual:range.endDay])
+        {
+            self.toDate = [NSString stringWithFormat:DATE_FORMAT_SERVER, (long)range.endDay.year, (long)range.endDay.month, (long)range.endDay.day];
+            toDate = [NSString stringWithFormat:DATE_FORMAT_DISPLAYED,(long)range.endDay.day, (long)range.endDay.month, (long)range.startDay.year];
+            
+        }
+        
         [self updateDateLabelFrom:fromDate to:toDate];
     }
     else
@@ -108,12 +126,20 @@
 
 - (DSLCalendarRange*)calendarView:(DSLCalendarView *)calendarView didDragToDay:(NSDateComponents *)day selectingRange:(DSLCalendarRange *)range
 {
+    self.fromDate = nil;
+    self.toDate = nil;
+    NSString *toDate = @"";
+    NSString *fromDate = @"";
+    [self updateDateLabelFrom:fromDate to:toDate];
+    
     NSDateComponents *today = [[NSDate date] dslCalendarView_dayWithCalendar:calendarView.visibleMonth.calendar];
     
     NSDateComponents *startDate = range.startDay;
     NSDateComponents *endDate = range.endDay;
     
-    if ([self day:startDate isBeforeDay:today] && [self day:endDate isBeforeDay:today])
+    if (([self day:startDate isBeforeDay:today] && [self day:endDate isBeforeDay:today])
+        || ([self day:calendarView.maxPossibleDate isBeforeDay:startDate])
+        || ([self day:calendarView.maxPossibleDate isBeforeDay:endDate]))
     {
         return nil;
     }
@@ -163,6 +189,10 @@
     else if ([self.fromDate isEqualToString:self.toDate])
     {
         errorMessage = LOCALIZED_STRING(@"calendarPicker.same_date.error");
+    }
+    else if (self.fromDate == nil || self.toDate == nil)
+    {
+        errorMessage = LOCALIZED_STRING(@"calendarPicker.pick_two_date.error");
     }
     
     if (![errorMessage isEqualToString:@""])

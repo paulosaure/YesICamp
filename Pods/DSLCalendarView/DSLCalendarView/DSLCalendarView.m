@@ -431,7 +431,12 @@
     }
     
     DSLCalendarDayView *touchedView = [self dayViewForTouches:touches];
-    if (touchedView == nil || [self.draggingStartDay isEqual:touchedView.day]) {
+    NSDateComponents *today = [[NSDate date] dslCalendarView_dayWithCalendar:self.visibleMonth.calendar];
+    
+    if (touchedView == nil  || ([self.draggingStartDay isEqual:touchedView.day]
+                               && [touchedView.day.date compare:today.date] == NSOrderedAscending
+                               && [self.draggingStartDay.date compare:today.date] == NSOrderedAscending)
+                            || [self.maxPossibleDate.date compare:self.draggingStartDay.date] == NSOrderedAscending) {
         self.draggingStartDay = nil;
         return;
     }

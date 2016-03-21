@@ -40,6 +40,7 @@
 @property (nonatomic, weak) id<DSLCalendarViewDelegate>delegate;
 @property (nonatomic, copy) NSDateComponents *visibleMonth;
 @property (nonatomic, strong) DSLCalendarRange *selectedRange;
+@property (nonatomic, strong) NSDateComponents *maxPossibleDate;
 
 + (Class)monthSelectorViewClass;
 + (Class)monthViewClass;
