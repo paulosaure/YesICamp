@@ -431,7 +431,7 @@
     }
     
     DSLCalendarDayView *touchedView = [self dayViewForTouches:touches];
-    if (touchedView == nil) {
+    if (touchedView == nil || [self.draggingStartDay isEqual:touchedView.day]) {
         self.draggingStartDay = nil;
         return;
     }

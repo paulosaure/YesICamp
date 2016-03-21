@@ -89,7 +89,7 @@
 
 - (void)calendarView:(DSLCalendarView *)calendarView didSelectRange:(DSLCalendarRange *)range
 {
-    if (range != nil)
+    if (range != nil && ![range.startDay isEqual:range.endDay])
     {
         // Record date with good format for serveur
         self.fromDate = [NSString stringWithFormat:DATE_FORMAT_SERVER, (long)range.startDay.year, (long)range.startDay.month, (long)range.startDay.day];
@@ -113,14 +113,18 @@
     NSDateComponents *startDate = range.startDay;
     NSDateComponents *endDate = range.endDay;
     
-    if ([self day:startDate isBeforeDay:today] && [self day:endDate isBeforeDay:today]) {
+    if ([self day:startDate isBeforeDay:today] && [self day:endDate isBeforeDay:today])
+    {
         return nil;
     }
-    else {
-        if ([self day:startDate isBeforeDay:today]) {
+    else
+    {
+        if ([self day:startDate isBeforeDay:today])
+        {
             startDate = [today copy];
         }
-        if ([self day:endDate isBeforeDay:today]) {
+        if ([self day:endDate isBeforeDay:today])
+        {
             endDate = [today copy];
         }
         
