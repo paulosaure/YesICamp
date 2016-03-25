@@ -404,7 +404,7 @@
                             <constraint firstItem="2bc-wE-AWf" firstAttribute="top" secondItem="24P-aM-h32" secondAttribute="bottom" constant="200" id="1WH-Zd-ayG"/>
                             <constraint firstItem="24P-aM-h32" firstAttribute="centerX" secondItem="kSK-Dw-q9h" secondAttribute="centerX" id="Bsi-zr-1tC"/>
                             <constraint firstItem="w0P-QD-8Ec" firstAttribute="centerX" secondItem="24P-aM-h32" secondAttribute="centerX" id="CQj-C1-2br"/>
-                            <constraint firstItem="Ceh-G2-dMG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PT1-F7-wDc" secondAttribute="bottom" constant="2" id="ISq-hl-ov3"/>
+                            <constraint firstItem="Ceh-G2-dMG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PT1-F7-wDc" secondAttribute="bottom" constant="10" id="ISq-hl-ov3"/>
                             <constraint firstItem="0CD-Y0-9Nb" firstAttribute="top" secondItem="24P-aM-h32" secondAttribute="bottom" constant="5" id="K5z-vu-kIq"/>
                             <constraint firstItem="PT1-F7-wDc" firstAttribute="width" secondItem="24P-aM-h32" secondAttribute="width" id="LBh-dl-4Vn"/>
                             <constraint firstAttribute="trailing" secondItem="Ceh-G2-dMG" secondAttribute="trailing" id="Wfz-vV-hTV"/>
@@ -435,6 +435,8 @@
                         <outlet property="fromWordLabel" destination="lYV-YC-ere" id="rAo-7q-KC2"/>
                         <outlet property="spinner" destination="Ph8-uI-7xW" id="UXX-DI-u2Z"/>
                         <outlet property="titleLabel" destination="w0P-QD-8Ec" id="zqT-W1-uPJ"/>
+                        <outlet property="titleLabelBottomVerticalConstraint" destination="zCr-cE-rEO" id="crn-Kc-cl4"/>
+                        <outlet property="titleLabelTopVerticalConstraint" destination="fuV-9j-n6P" id="jMX-rS-6V2"/>
                         <outlet property="toDateLabel" destination="hQw-1e-7CV" id="L3Z-gj-lcT"/>
                         <outlet property="toWordLabel" destination="umj-Ue-QCs" id="4IR-l0-6h5"/>
                     </connections>

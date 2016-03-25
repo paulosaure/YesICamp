@@ -19,7 +19,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3h-hb-omi">
                                     <rect key="frame" x="10" y="20" width="580" height="3631.5"/>
-                                    <mutableString key="text">PROTECTION DE VOS DONNÉES PERSONNELLES
+                                    <string key="text">PROTECTION DE VOS DONNÉES PERSONNELLES
 Dans le cadre de l'utilisation des services accessibles sur son site internet, son site mobile et ses applications mobiles, Yes I Camp est susceptible de collecter et traiter des données à caractère personnel vous concernant. Yes I camp est attachée au respect des règles de protection de la vie privée de ses intenautes et mobinautes, des membres de son programme de fidélité, des prospects et des visiteurs de son site internet, son site mobile et ses applications mobiles. L'ensemble des traitements de données personnelles mis en œuvre dans le cadre des services accessibles respecte, non seulement la législation locale mais également les dispositions de la loi « informatique et libertés » du 6 janvier 1978 modifiée. 
  
 La collecte des informations et données personnelles sur ce site à fait l’objet d’une ‘Déclaration des traitements de données personnelles’ auprès de la CNIL selon la loi n° 2004-801 du 6 août 2004 relative à la protection des personnes physiques à l’égard des traitements de données à caractère personnel et modifiant la loi n° 78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés (Articles 15 et 16 de la loi n° 78-17).
@@ -78,7 +78,7 @@ Sur plusieurs pages du site internet de Yes I Camp vous est offerte la possibili
 MODIFICATIONS
 Yes I Camp se réserve le droit d'adapter la politique de protection des données personnelles. Nous vous conseillons de consulter régulièrement la dernière version de cette politique.
  
-Cette version a été élaborée le 14 mars 2016.</mutableString>
+Cette version a été élaborée le 14 mars 2016.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>

@@ -49,6 +49,8 @@
         category = CampingCategoryEmpty;
     } else if ([categoryString isEqualToString:@"calme"]) {
         category = CampingCategoryCalme;
+    } else if ([categoryString isEqualToString:@"basic"]) {
+        category = CampingCategoryBasic;
     } else {
         NSLog(@"Error Category Inconnue : %@", categoryString);
     }

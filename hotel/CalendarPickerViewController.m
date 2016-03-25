@@ -32,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *explicationLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelTopVerticalConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelBottomVerticalConstraint;
 
 // Data
 @property (strong, nonatomic) NSString *fromDate;
@@ -90,6 +92,20 @@
     [self.checkDateValidityButton addEffectbelowBookButton:titleButton];
     
     [self isSearching:NO];
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    /*Do iPhone 4 stuff here.*/
+    if (screenSize.height <= 480.0f) {
+        self.titleLabelTopVerticalConstraint.constant = 0;
+        self.titleLabelBottomVerticalConstraint.constant = 0;
+        
+        // Set navigation bar title
+        self.title = [NSString stringWithFormat:LOCALIZED_STRING(@"calendarPicker.select_date.short_title"), self.offer.begin, self.offer.end];
+        [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                          NSFontAttributeName:[UIFont systemFontOfSize:14 weight:400],
+                                                                          NSForegroundColorAttributeName:GREEN_COLOR
+                                                                          }];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
