@@ -307,35 +307,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0P-QD-8Ec">
+                                <rect key="frame" x="186" y="30.5" width="42.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24P-aM-h32" customClass="DSLCalendarView">
-                                <rect key="frame" x="47" y="59" width="320" height="310"/>
+                                <rect key="frame" x="47" y="60" width="320" height="310"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Qme-9K-4oR"/>
                                     <constraint firstAttribute="height" constant="310" id="jcL-gK-HcW"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0P-QD-8Ec">
-                                <rect key="frame" x="186" y="30" width="42.5" height="19.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ceh-G2-dMG">
-                                <rect key="frame" x="0.0" y="691" width="414" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="NC7-CB-e5c"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="checkValidityDateAction:" destination="gLm-hv-bei" eventType="touchUpInside" id="No2-yl-WDb"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ph8-uI-7xW">
-                                <rect key="frame" x="189" y="695" width="37" height="37"/>
-                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PT1-F7-wDc">
-                                <rect key="frame" x="47" y="409" width="320" height="17"/>
+                                <rect key="frame" x="47" y="421" width="320" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYV-YC-ere" customClass="LabelWithPadding">
                                         <rect key="frame" x="0.0" y="0.0" width="152" height="17"/>
@@ -392,6 +379,25 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ph8-uI-7xW">
+                                <rect key="frame" x="189" y="695" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ceh-G2-dMG">
+                                <rect key="frame" x="0.0" y="691" width="414" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="NC7-CB-e5c"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="checkValidityDateAction:" destination="gLm-hv-bei" eventType="touchUpInside" id="No2-yl-WDb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CD-Y0-9Nb">
+                                <rect key="frame" x="30" y="375" width="354" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -399,16 +405,20 @@
                             <constraint firstItem="24P-aM-h32" firstAttribute="centerX" secondItem="kSK-Dw-q9h" secondAttribute="centerX" id="Bsi-zr-1tC"/>
                             <constraint firstItem="w0P-QD-8Ec" firstAttribute="centerX" secondItem="24P-aM-h32" secondAttribute="centerX" id="CQj-C1-2br"/>
                             <constraint firstItem="Ceh-G2-dMG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PT1-F7-wDc" secondAttribute="bottom" constant="2" id="ISq-hl-ov3"/>
+                            <constraint firstItem="0CD-Y0-9Nb" firstAttribute="top" secondItem="24P-aM-h32" secondAttribute="bottom" constant="5" id="K5z-vu-kIq"/>
                             <constraint firstItem="PT1-F7-wDc" firstAttribute="width" secondItem="24P-aM-h32" secondAttribute="width" id="LBh-dl-4Vn"/>
                             <constraint firstAttribute="trailing" secondItem="Ceh-G2-dMG" secondAttribute="trailing" id="Wfz-vV-hTV"/>
                             <constraint firstItem="Ceh-G2-dMG" firstAttribute="leading" secondItem="kSK-Dw-q9h" secondAttribute="leading" id="bFY-Mo-sL5"/>
                             <constraint firstItem="Ph8-uI-7xW" firstAttribute="centerY" secondItem="Ceh-G2-dMG" secondAttribute="centerY" id="fFc-bN-aBf"/>
+                            <constraint firstItem="0CD-Y0-9Nb" firstAttribute="centerX" secondItem="24P-aM-h32" secondAttribute="centerX" id="feF-iu-o3Q"/>
                             <constraint firstItem="w0P-QD-8Ec" firstAttribute="top" secondItem="r3N-fR-qDY" secondAttribute="bottom" constant="10" id="fuV-9j-n6P"/>
+                            <constraint firstItem="0CD-Y0-9Nb" firstAttribute="leading" secondItem="kSK-Dw-q9h" secondAttribute="leadingMargin" constant="10" id="jVh-eW-VB3"/>
                             <constraint firstItem="Ph8-uI-7xW" firstAttribute="centerX" secondItem="Ceh-G2-dMG" secondAttribute="centerX" id="kkv-mz-aJL"/>
                             <constraint firstItem="2bc-wE-AWf" firstAttribute="top" secondItem="Ceh-G2-dMG" secondAttribute="bottom" id="mic-Ye-AZi"/>
-                            <constraint firstItem="PT1-F7-wDc" firstAttribute="top" secondItem="24P-aM-h32" secondAttribute="bottom" priority="750" constant="40" id="nwq-1B-RbP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0CD-Y0-9Nb" secondAttribute="trailing" constant="10" id="rTE-h9-88r"/>
                             <constraint firstItem="PT1-F7-wDc" firstAttribute="centerX" secondItem="24P-aM-h32" secondAttribute="centerX" id="vec-wo-Vg7"/>
                             <constraint firstItem="24P-aM-h32" firstAttribute="top" secondItem="w0P-QD-8Ec" secondAttribute="bottom" constant="10" id="zCr-cE-rEO"/>
+                            <constraint firstItem="PT1-F7-wDc" firstAttribute="top" secondItem="0CD-Y0-9Nb" secondAttribute="bottom" priority="750" constant="30" id="zew-ME-QWU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -420,6 +430,7 @@
                     <connections>
                         <outlet property="calendarView" destination="24P-aM-h32" id="Lxj-uj-css"/>
                         <outlet property="checkDateValidityButton" destination="Ceh-G2-dMG" id="9tM-Li-dF0"/>
+                        <outlet property="explicationLabel" destination="0CD-Y0-9Nb" id="J3I-N3-9Uz"/>
                         <outlet property="fromDateLabel" destination="nur-F5-dZ4" id="TXq-Iz-Z52"/>
                         <outlet property="fromWordLabel" destination="lYV-YC-ere" id="rAo-7q-KC2"/>
                         <outlet property="spinner" destination="Ph8-uI-7xW" id="UXX-DI-u2Z"/>

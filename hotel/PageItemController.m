@@ -28,6 +28,7 @@
     self.contentImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.view.backgroundColor = [UIColor clearColor];
     self.contentImageView.image = self.image;
+    self.contentImageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 - (void)awakeFromNib

@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet LabelWithPadding *toWordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fromDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *toDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *explicationLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 
@@ -82,6 +83,8 @@
     [self.toWordLabel addTransparentColorEffect:GREEN_COLOR];
     self.toDateLabel.textColor = [UIColor whiteColor];
     
+    self.explicationLabel.text = LOCALIZED_STRING(@"calendarPicker.explication.label");
+    self.explicationLabel.textColor = GREEN_COLOR;
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@ %@",[LOCALIZED_STRING(@"calendarPicker.checkValidity.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"globals.unity"), LOCALIZED_STRING(@"calendarPicker.price_per_night.information")];
     [self.checkDateValidityButton addEffectbelowBookButton:titleButton];

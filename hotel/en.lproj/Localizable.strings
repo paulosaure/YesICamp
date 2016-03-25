@@ -61,6 +61,7 @@
 "calendarPicker.price_per_night.information"    = "per night";
 "calendarPicker.book_not_possible.error"        = "Impossible reservation";
 "calendarPicker.pick_two_date.error"            = "Select minimum two date";
+"calendarPicker.explication.label"              = "Drag your finger until the choosen date";
 
 "payment.creditCard.button"                     = "Fill informations";
 "payment.pay.button"                            = "Validate payment";
