@@ -86,7 +86,7 @@
     self.toDateLabel.textColor = [UIColor whiteColor];
     
     self.explicationLabel.text = LOCALIZED_STRING(@"calendarPicker.explication.label");
-    self.explicationLabel.textColor = GREEN_COLOR;
+    self.explicationLabel.textColor = [UIColor whiteColor];
     
     NSString *titleButton = [NSString stringWithFormat:@"%@  |  %@ %@ %@",[LOCALIZED_STRING(@"calendarPicker.checkValidity.button") uppercaseString], self.offer.price, LOCALIZED_STRING(@"globals.unity"), LOCALIZED_STRING(@"calendarPicker.price_per_night.information")];
     [self.checkDateValidityButton addEffectbelowBookButton:titleButton];

@@ -73,11 +73,24 @@
             return [UIColor colorWithRed:102.0f/255.0f green:0.0f/255.0f blue:153.0f/255.0f alpha:1.0f];
         case CampingCategoryEmpty:
             return [UIColor colorWithRed:237.0f/255.0f green:127.0f/255.0f blue:16.0f/255.0f alpha:1.0f];
+        case CampingCategoryBasic :
+            return [UIColor colorWithRed:133.0f/255.0f green:109.0f/255.0f blue:77.0f/255.0f alpha:1.0f];
         default:
-            return [UIColor brownColor];
+            return [UIColor colorWithRed:31.0f/255.0f green:133.0f/255.0f blue:132.0f/255.0f alpha:1.0f];
             break;
     }
 }
+
+/*
+ FUN              rouge  #DE2916
+ CHARME      vert   #175732
+ LUXE           Noir  #000000
+ CALME         Bleu  #357AB7
+ BASIC         Bistre  #856D4D
+ GLAMPING   violet  #660099
+ TERRAIN NU  Orange #ED7F10
+ Unknown bleu aqua
+ */
 
 + (UIColor *)colorWithString:(NSString *)categoryString
 {
