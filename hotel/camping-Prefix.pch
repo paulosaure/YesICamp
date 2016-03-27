@@ -46,7 +46,7 @@
 
 // Network
 #define SESSION_UNIQUE_IDENTIFIER   @"com.paulLavoine.hotel"
-#define MAIN_URL                    @"https://yic.duperre.work"
+#define MAIN_URL                    @"https://yesicamp.mobi"
 // @"http://pacific-refuge-54058.herokuapp.com"
 #define API_URL                     @"/api"
 #define VERSION_URL                 @"/v1"

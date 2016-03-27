@@ -66,9 +66,20 @@
     NSDictionary *dateAttributes = @{
                                      NSForegroundColorAttributeName:GREEN_COLOR
                                      };
-    NSAttributedString *dateBegin = [[NSAttributedString alloc] initWithString:self.offer.begin
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *dateBeginEnglishFormat = [dateFormatter dateFromString:self.offer.begin];
+    NSDate *dateEndEnglishFormat = [dateFormatter dateFromString:self.offer.end];
+    NSDateFormatter *dateFormatterFrenchDate = [[NSDateFormatter alloc] init];
+    [dateFormatterFrenchDate setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatterFrenchDate setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateBeginFrenchFormat = [dateFormatterFrenchDate stringFromDate:dateBeginEnglishFormat];
+    NSString *dateEndFrenchFormat = [dateFormatterFrenchDate stringFromDate:dateEndEnglishFormat];
+    
+    NSAttributedString *dateBegin = [[NSAttributedString alloc] initWithString:dateBeginFrenchFormat
                                                                     attributes:dateAttributes];
-    NSAttributedString *dateEnd = [[NSAttributedString alloc] initWithString:self.offer.end
+    NSAttributedString *dateEnd = [[NSAttributedString alloc] initWithString:dateEndFrenchFormat
                                                                   attributes:dateAttributes];
     
     self.titleLabel.attributedText = [NSAttributedString attributedStringWithFormat:LOCALIZED_STRING(@"calendarPicker.select_date.title"), dateBegin, dateEnd];
@@ -100,7 +111,7 @@
         self.titleLabelBottomVerticalConstraint.constant = 0;
         
         // Set navigation bar title
-        self.title = [NSString stringWithFormat:LOCALIZED_STRING(@"calendarPicker.select_date.short_title"), self.offer.begin, self.offer.end];
+        self.title = [NSString stringWithFormat:LOCALIZED_STRING(@"calendarPicker.select_date.short_title"), dateBeginFrenchFormat, dateEndFrenchFormat];
         [self.navigationController.navigationBar setTitleTextAttributes:@{
                                                                           NSFontAttributeName:[UIFont systemFontOfSize:14 weight:400],
                                                                           NSForegroundColorAttributeName:GREEN_COLOR
