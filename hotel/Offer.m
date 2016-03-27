@@ -44,12 +44,18 @@
 
 - (NSArray *)constructMainTextInfos:(NSDictionary *)arrayJson
 {
+    if (!arrayJson)
+        return nil;
+    
     NSMutableArray *informations = [NSMutableArray array];
-    for (NSString *key in arrayJson)
-    {
-        NSDictionary *value = @{key : [arrayJson objectForKey:key]};
-        [informations addObject:value];
-    }
+    
+    NSDictionary *description = @{@"description" : [arrayJson objectForKey:@"description"]};
+    NSDictionary *services = @{@"services" : [arrayJson objectForKey:@"services"]};
+    NSDictionary *toKnow = @{@"a savoir" : [arrayJson objectForKey:@"a_savoir"]};
+    
+    [informations addObject:description];
+    [informations addObject:services];
+    [informations addObject:toKnow];
     
     return informations;
 }

@@ -86,8 +86,18 @@
     self.spinnerDeconnection.hidden = YES;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (![self.reservationArray count])
+    {
+        [self userIsConnect:[User sharedInstance].isConnected];
+    }
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [NOTIFICATION_CENTER removeObserver:self];
 }
 

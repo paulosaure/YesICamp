@@ -38,14 +38,22 @@
     
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListWithCampingNotification object:nil];
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListNotification object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    
-    [self isSearching:YES];
-    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
+    if (!self.offersList)
+    {
+        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
+        [self isSearching:YES];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [NOTIFICATION_CENTER removeObserver:self];
 }
 
@@ -83,7 +91,7 @@
     
     // Configure celle
     [cell configureWithOffer:self.offersList[indexPath.row]];
-
+    
     return cell;
 }
 
@@ -95,7 +103,7 @@
     [label setFont:[UIFont boldSystemFontOfSize:15]];
     label.textColor = [UIColor whiteColor];
     NSString *string = [[NSString stringWithFormat:@"%@ : %@",LOCALIZED_STRING(@"offersList.header_section.title"), self.searchTextView.text] uppercaseString];
-
+    
     [label setText:string];
     [view addSubview:label];
     [view setBackgroundColor:GREEN_COLOR];

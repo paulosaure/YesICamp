@@ -65,16 +65,26 @@
     
     // Add observer for html request
     [NOTIFICATION_CENTER addObserver:self selector:@selector(handleHotsDealsList:) name:HotsDealsListNotification object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    // Creation Param HTML request
-    ParamRequestHotDeal *param = [[ParamRequestHotDeal alloc] initParamWithLongitude:@([LocationManager sharedInstance].lastLocation.coordinate.longitude) latitude:@([LocationManager sharedInstance].lastLocation.coordinate.latitude) locationDisplay:@(LOCATION_DISPLAYED)];
-    
-    // Start request action
-    [[NetworkManagement sharedInstance] addNewAction:[GetHotsDealsListAction action:param]];
+    if (!self.campings)
+    {
+        // Creation Param HTML request
+        ParamRequestHotDeal *param = [[ParamRequestHotDeal alloc] initParamWithLongitude:@([LocationManager sharedInstance].lastLocation.coordinate.longitude) latitude:@([LocationManager sharedInstance].lastLocation.coordinate.latitude) locationDisplay:@(LOCATION_DISPLAYED)];
+        
+        // Start request action
+        [[NetworkManagement sharedInstance] addNewAction:[GetHotsDealsListAction action:param]];
+        [self isSearching:YES];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [NOTIFICATION_CENTER removeObserver:self];
 }
 
@@ -85,8 +95,6 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.alpha = 0.9f;
     self.view.backgroundColor = [UIColor clearColor];
-    
-    [self isSearching:YES];
 }
 
 - (void)configurePins
@@ -193,7 +201,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.tableView.frame.size.height - 40;
+    if ([[UIScreen mainScreen] bounds].size.height <= 480.0f)
+        return self.tableView.frame.size.height - 40;
+    
+    return (2*self.tableView.frame.size.height) / 3;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
