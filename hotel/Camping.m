@@ -55,6 +55,21 @@
     return minPrice;
 }
 
+- (Offer *)offerMinPriceWithCamping
+{
+    Offer *offerMin = (Offer *)[self.offers firstObject];
+    CGFloat minPrice = [((Offer *)[self.offers firstObject]).price floatValue];
+    for (Offer *offer in self.offers)
+    {
+        if ([offer.price floatValue] <= minPrice)
+        {
+            minPrice = [offer.price floatValue];
+            offerMin = offer;
+        }
+    }
+    return offerMin;
+}
+
 - (CGFloat)maxPriceWithCamping
 {
     CGFloat maxPrice = [((Offer *)[self.offers firstObject]).price floatValue];

@@ -56,7 +56,6 @@
     self.tableView.estimatedRowHeight = 200;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableHeaderView = nil;
-    [self userIsConnect:[User sharedInstance].isConnected];
     
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
     [self.view addGestureRecognizer:singleFingerTap];
@@ -89,6 +88,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self userIsConnect:[User sharedInstance].isConnected];
+    
     if (![self.reservationArray count])
     {
         [self userIsConnect:[User sharedInstance].isConnected];

@@ -45,7 +45,7 @@
 
 "hotdeal.price_from.label"                      = "from";
 "hotdeal.price_to.label"                        = "to";
-"hotdeal.header_section.title"                  = "Campings";
+"hotdeal.header_section.title"                  = "Offers";
 
 "offerDetail.price.work"                        = "price";
 "offerDetail.reservation.button"                = "Book";

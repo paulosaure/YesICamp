@@ -108,8 +108,6 @@
     self.priceLabel.text = [NSString stringWithFormat:@"%.f - %.f%@", [camping minPriceWithCamping], [camping maxPriceWithCamping], LOCALIZED_STRING(@"globals.unity")];
     
     // Category
-    self.categoryLabel.text = [@"fun" uppercaseString];
-    self.categoryLabel.backgroundColor = [GlobalConfiguration colorWithString:@"fun"];
     
     CampingImage *campingImage = [camping.images firstObject];
     UIImage *image = campingImage.image;

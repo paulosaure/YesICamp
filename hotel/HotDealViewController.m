@@ -32,6 +32,7 @@
 
 // Data
 @property (nonatomic, strong) NSArray *campings;
+@property (nonatomic, strong) NSMutableArray *offers;
 @property (nonatomic, assign) BOOL isMapExtended;
 @property (nonatomic, strong) NSDate *lastRequestDate;
 
@@ -49,29 +50,31 @@
         self.mapView.showsUserLocation = YES;
     }
     
-    self.mapView.delegate = self;
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
     
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:YES];
+   
     // register Cell Nib
     [self.tableView registerNib:[OfferCell cellNib] forCellReuseIdentifier:OFFER_CELL_IDENTIFIER];
-    
-    [self.view bringSubviewToFront:self.extendMapButton];
-    [self.view bringSubviewToFront:self.localizeUserButton];
     
     // Add annotation
     [self configurePins];
     [self configureUI];
     [self centerMapViewOnUserLocation];
-    
-    // Add observer for html request
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleHotsDealsList:) name:HotsDealsListNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    if (!self.campings)
+    self.mapView.delegate = self;
+    
+    [self.view bringSubviewToFront:self.extendMapButton];
+    [self.view bringSubviewToFront:self.localizeUserButton];
+    
+    // Add observer for html request
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleHotsDealsList:) name:HotsDealsListNotification object:nil];
+    
+    if (!self.offers)
     {
         // Creation Param HTML request
         ParamRequestHotDeal *param = [[ParamRequestHotDeal alloc] initParamWithLongitude:@([LocationManager sharedInstance].lastLocation.coordinate.longitude) latitude:@([LocationManager sharedInstance].lastLocation.coordinate.latitude) locationDisplay:@(LOCATION_DISPLAYED)];
@@ -106,9 +109,10 @@
         location.latitude = [camping.latitude doubleValue];
         location.longitude = [camping.longitude doubleValue];
         
-        NSString *price = [NSString stringWithFormat:@"%.f%@",[camping minPriceWithCamping], LOCALIZED_STRING(@"globals.unity")];
+        Offer *offer = [camping offerMinPriceWithCamping];
+        NSString *price = [NSString stringWithFormat:@"%.f%@",[offer.price floatValue], LOCALIZED_STRING(@"globals.unity")];
         
-        CustomMKAnnotation *annotation = [[CustomMKAnnotation alloc] initWithTitle:camping.title price:price campingId:[camping.uid stringValue] location:location];
+        CustomMKAnnotation *annotation = [[CustomMKAnnotation alloc] initWithTitle:offer.title price:price campingId:[offer.uid stringValue] location:location];
         
         [self.mapView addAnnotation:annotation];
     }
@@ -157,18 +161,18 @@
     if([annotation.annotation isKindOfClass:[MKUserLocation class]])
         return;
     
-    [mapView deselectAnnotation:annotation.annotation animated:YES];
-    [self.parent setHeaderSectionWithString:annotation.annotation.title];
-    [self.parent didSelectedTitleAtIndex:PageControllerPromo];
-    // Start request action
-    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCampingId:((CustomMKAnnotation *)annotation.annotation).campingId]];
+//    [mapView deselectAnnotation:annotation.annotation animated:YES];
+//    [self.parent setHeaderSectionWithString:annotation.annotation.title];
+//    [self.parent didSelectedTitleAtIndex:PageControllerPromo];
+//    // Start request action
+//    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCampingId:((CustomMKAnnotation *)annotation.annotation).campingId]];
 }
 
 #pragma mark - TableViewMethods Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.campings count];
+    return [self.offers count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -182,21 +186,26 @@
     OfferCell *cell = [tableView dequeueReusableCellWithIdentifier:OFFER_CELL_IDENTIFIER];
     
     // Configure cell
-    [cell configureWithCamping:self.campings[indexPath.row]];
+    [cell configureWithOffer:self.offers[indexPath.row]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [cell setBackgroundColor:[UIColor clearColor]];
+//    [cell setBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Camping *camping = [self.campings objectAtIndex:indexPath.row];
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([camping.latitude floatValue], [camping.longitude floatValue]);
-    [self centerMapViewWithCoordinate:location];
+    // Get camping
+    Offer *offer = self.offers[indexPath.row];
+    [NOTIFICATION_CENTER postNotificationName:@"PushOfferDetailViewNotificiation" object:offer];
+    
+    
+//    Camping *camping = [self.campings objectAtIndex:indexPath.row];
+//    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([camping.latitude floatValue], [camping.longitude floatValue]);
+//    [self centerMapViewWithCoordinate:location];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -253,6 +262,16 @@
 - (void)handleHotsDealsList:(NSNotification *)notif
 {
     self.campings = notif.object;
+    self.offers = [NSMutableArray array];
+    
+    for (Camping *camping in self.campings)
+    {
+        for (Offer *offer in camping.offers)
+        {
+            [self.offers addObject:offer];
+        }
+    }
+    
     [self configurePins];
     [self.mapView reloadInputViews];
     [self.tableView reloadData];

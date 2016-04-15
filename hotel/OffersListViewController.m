@@ -35,14 +35,14 @@
 {
     [super viewDidLoad];
     [self configureUI];
-    
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListWithCampingNotification object:nil];
-    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListWithCampingNotification object:nil];
+    [NOTIFICATION_CENTER addObserver:self selector:@selector(handleOffersList:) name:OffersListNotification object:nil];
     
     if (!self.offersList)
     {
@@ -55,6 +55,7 @@
 {
     [super viewDidDisappear:animated];
     [NOTIFICATION_CENTER removeObserver:self];
+    [self isSearching:NO];
 }
 
 - (void)configureUI

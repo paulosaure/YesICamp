@@ -18,10 +18,13 @@ typedef NS_ENUM(NSUInteger, CampingCategory) {
     CampingCategoryEmpty
 };
 
+@class Offer;
+
 @interface Camping : NSObject
 
 - (instancetype)initWithDictionnary:(NSDictionary *)dic;
 
+- (Offer *)offerMinPriceWithCamping;
 - (CGFloat)minPriceWithCamping;
 - (CGFloat)maxPriceWithCamping;
 
