@@ -7,6 +7,7 @@
 //
 
 #define OfferDetailNotification @"OfferDetailNotification"
+#define PushOfferDetailViewNotificiation @"PushOfferDetailViewNotificiation"
 
 @interface GetOfferDetailAction : HTTPAction
 

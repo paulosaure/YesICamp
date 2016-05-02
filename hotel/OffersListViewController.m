@@ -11,6 +11,7 @@
 #import "OfferDetail.h"
 #import "ParsingData.h"
 #import "GetOffersListAction.h"
+#import "GetOfferDetailAction.h"
 
 #define NUMBER_OFFERS_WITH_SEARCH       10
 

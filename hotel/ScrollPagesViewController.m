@@ -16,7 +16,7 @@
 #import "InscriptionViewController.h"
 #import "OfferDetail.h"
 #import "CalendarPickerViewController.h"
-
+#import "GetOfferDetailAction.h"
 
 @interface ScrollPagesViewController () <LPViewPagerDataSource, LPViewPagerDelegate, LPTitleViewDelegate>
 

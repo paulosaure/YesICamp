@@ -16,6 +16,7 @@
 #import "ScrollPagesViewController.h"
 #import "CustomMKAnnotation.h"
 #import "GetOffersListAction.h"
+#import "GetOfferDetailAction.h"
 
 #define MINIMUM_MAP_VIEW_HEIGHT         250
 #define LOCATION_DISPLAYED              15
@@ -162,11 +163,14 @@
     if([annotation.annotation isKindOfClass:[MKUserLocation class]])
         return;
     
-//    [mapView deselectAnnotation:annotation.annotation animated:YES];
+    [mapView deselectAnnotation:annotation.annotation animated:YES];
 //    [self.parent setHeaderSectionWithString:annotation.annotation.title];
 //    [self.parent didSelectedTitleAtIndex:PageControllerPromo];
-//    // Start request action
-//    [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCampingId:((CustomMKAnnotation *)annotation.annotation).campingId]];
+    
+    
+    // Get camping
+    Offer *offer = [self offerWithId:((CustomMKAnnotation *)annotation.annotation).campingId];
+    [NOTIFICATION_CENTER postNotificationName:PushOfferDetailViewNotificiation object:offer];
 }
 
 #pragma mark - TableViewMethods Delegate
@@ -201,7 +205,7 @@
 {
     // Get camping
     Offer *offer = self.offers[indexPath.row];
-    [NOTIFICATION_CENTER postNotificationName:@"PushOfferDetailViewNotificiation" object:offer];
+    [NOTIFICATION_CENTER postNotificationName:PushOfferDetailViewNotificiation object:offer];
     
     
 //    Camping *camping = [self.campings objectAtIndex:indexPath.row];
@@ -281,6 +285,18 @@
 
 
 #pragma mark - Utils
+
+- (Offer *)offerWithId:(NSString *)uid
+{
+    for (Offer *offer in self.offers)
+    {
+        if ([[offer.uid stringValue] isEqualToString:uid])
+            return offer;
+    }
+    
+    return nil;
+}
+
 - (void)cancelRequest
 {
     [self isSearching:NO];
