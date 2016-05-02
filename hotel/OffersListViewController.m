@@ -46,8 +46,7 @@
     
     if (!self.offersList)
     {
-        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
-        [self isSearching:YES];
+        [self searchWithCity:nil];
     }
 }
 
@@ -134,14 +133,13 @@
 
 - (IBAction)startSearch:(id)sender
 {
-    [self isSearching:YES];
     if ([self.searchTextView.text isEqual:@""])
     {
-        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
+        [self searchWithCity:nil];
     }
     else
     {
-        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCity:self.searchTextView.text count:NUMBER_OFFERS_WITH_SEARCH]];
+        [self searchWithCity:self.searchTextView.text];
     }
 }
 
@@ -154,6 +152,25 @@
 }
 
 #pragma mark - Utils
+
+- (void)searchWithCity:(NSString *)city
+{
+    [self isSearching:YES];
+    if (city)
+    {
+        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction actionWithCity:city count:NUMBER_OFFERS_WITH_SEARCH]];
+    }
+    else
+    {
+        [[NetworkManagement sharedInstance] addNewAction:[GetOffersListAction action]];
+    }
+    [self performSelector:@selector(cancelRequest) withObject:self afterDelay:30];
+}
+
+- (void)cancelRequest
+{
+    [self isSearching:NO];
+}
 
 - (void)isSearching:(BOOL)isSearching
 {

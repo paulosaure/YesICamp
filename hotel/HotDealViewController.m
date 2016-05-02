@@ -82,6 +82,7 @@
         // Start request action
         [[NetworkManagement sharedInstance] addNewAction:[GetHotsDealsListAction action:param]];
         [self isSearching:YES];
+        [self performSelector:@selector(cancelRequest) withObject:self afterDelay:30];
     }
 }
 
@@ -280,6 +281,11 @@
 
 
 #pragma mark - Utils
+- (void)cancelRequest
+{
+    [self isSearching:NO];
+}
+
 - (void)isSearching:(BOOL)isSearching
 {
     self.spinner.hidden = !isSearching;

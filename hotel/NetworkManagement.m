@@ -48,6 +48,11 @@
     [self connectionWithServer:action method:DEFAULT_METHOD];
 }
 
+- (void)removeAction:(HTTPAction *)action
+{
+    [self.session invalidateAndCancel];
+}
+
 - (void)addNewAction:(HTTPAction *)action method:(NSString *)method
 {
     [self connectionWithServer:action method:method];
