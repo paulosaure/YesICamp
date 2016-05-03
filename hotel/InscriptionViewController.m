@@ -57,6 +57,7 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
     [NOTIFICATION_CENTER removeObserver:self];
 }
 

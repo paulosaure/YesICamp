@@ -15,7 +15,8 @@ typedef NS_ENUM(NSUInteger, CampingCategory) {
     CampingCategoryBasic,
     CampingCategoryGlamping,
     CampingCategoryCalme,
-    CampingCategoryEmpty
+    CampingCategoryEmpty,
+    CampingCategoryUnknown
 };
 
 @class Offer;

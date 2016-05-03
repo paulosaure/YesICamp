@@ -35,7 +35,7 @@
 
 + (CampingCategory)categoryWithCategoryString:(NSString *)categoryString
 {
-    CampingCategory category;
+    CampingCategory category = CampingCategoryUnknown;
     
     if ([categoryString isEqualToString:@"charme"]) {
         category = CampingCategoryCharme;

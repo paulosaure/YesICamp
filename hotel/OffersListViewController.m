@@ -134,6 +134,8 @@
 
 - (IBAction)startSearch:(id)sender
 {
+    [self.view endEditing:YES];
+    
     if ([self.searchTextView.text isEqual:@""])
     {
         [self searchWithCity:nil];
