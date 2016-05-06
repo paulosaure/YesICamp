@@ -59,6 +59,23 @@
                                               method:DELETE_METHOD];
 }
 
+#pragma mark - Push notifications
+- (void)initPushNotifications:(NSDictionary *)launchOptions
+{
+    // Register for alert notifications
+    if ([APPLICATION respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)
+                                                                                 categories:nil];
+        [APPLICATION registerUserNotificationSettings:settings];
+    }
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+}
+
 - (void)dealloc
 {
     [NOTIFICATION_CENTER removeObserver:self];
