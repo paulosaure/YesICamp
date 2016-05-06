@@ -1095,6 +1095,11 @@
 					A8A63DB31C5005C30026E456 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = UHG3QGD9M7;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A8A63DCC1C5005C30026E456 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1426,7 +1431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: paul.lavoine91@gmail.com (CS8LE6KU9M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1436,7 +1441,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.camp.YesICamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8358b46-7235-43cc-af14-18b6611ddbfb";
+				PROVISIONING_PROFILE = "73105d72-b76e-4f5e-8ce4-31bd24968654";
 				SWIFT_OBJC_BRIDGING_HEADER = "hotel/hotel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1449,8 +1454,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: paul.lavoine91@gmail.com (CS8LE6KU9M)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KARAKTER (UHG3QGD9M7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: KARAKTER (UHG3QGD9M7)";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotel/camping-Prefix.pch";
@@ -1459,7 +1464,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.camp.YesICamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8358b46-7235-43cc-af14-18b6611ddbfb";
+				PROVISIONING_PROFILE = "a1391c6c-88c9-499c-92f0-4a92bffe4de8";
 				SWIFT_OBJC_BRIDGING_HEADER = "hotel/hotel-Bridging-Header.h";
 			};
 			name = Release;
