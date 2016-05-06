@@ -18,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [self initPushNotifications];
+    
     // Try to fetch user location
     [[LocationManager sharedInstance] updateLocation];
     
@@ -27,8 +30,10 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     NSLog(@"application:didRegisterForRemoteNotificationsWithDeviceToken: %@", deviceToken);
+    self.deviceToken = deviceToken;
     
-    // Register the device token with a webservice
+    // Send registration to Neolane
+    [[self class] sendRegistrationToServer];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
@@ -60,7 +65,7 @@
 }
 
 #pragma mark - Push notifications
-- (void)initPushNotifications:(NSDictionary *)launchOptions
+- (void)initPushNotifications
 {
     // Register for alert notifications
     if ([APPLICATION respondsToSelector:@selector(registerUserNotificationSettings:)])
@@ -74,6 +79,15 @@
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
     [application registerForRemoteNotifications];
+}
+
++ (void)sendRegistrationToServer
+{
+    NSData *deviceToken = [APP_DELEGATE deviceToken];
+    if (!deviceToken)
+        return;
+    
+    // TODO CALL WEBSERVICE TO SEND TOKEN
 }
 
 - (void)dealloc

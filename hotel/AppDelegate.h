@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+// Push token
+@property (nonatomic, strong) NSData *deviceToken;
 
 @end
 

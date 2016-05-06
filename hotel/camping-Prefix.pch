@@ -9,7 +9,7 @@
 #ifndef hotel_Prefix_pch
 #define hotel_Prefix_pch
 
-
+#define APP_DELEGATE            ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define MAIN_STORYBOARD @"Main"
 
 /**
