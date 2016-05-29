@@ -1431,8 +1431,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Dawn (9TTT3H3UEP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paul Dawn (9TTT3H3UEP)";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotel/camping-Prefix.pch";
@@ -1441,7 +1441,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.camp.YesICamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73105d72-b76e-4f5e-8ce4-31bd24968654";
+				PROVISIONING_PROFILE = "c80ed27c-d858-4bfc-82e3-3893c82971d2";
 				SWIFT_OBJC_BRIDGING_HEADER = "hotel/hotel-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1464,7 +1464,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.camp.YesICamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a1391c6c-88c9-499c-92f0-4a92bffe4de8";
+				PROVISIONING_PROFILE = "4b084823-16a1-4a09-bda3-0f3a256436a1";
 				SWIFT_OBJC_BRIDGING_HEADER = "hotel/hotel-Bridging-Header.h";
 			};
 			name = Release;
