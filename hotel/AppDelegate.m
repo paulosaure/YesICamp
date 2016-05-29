@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DeconnectionUserAction.h"
 #import "GetUUIDAction.h"
+#import "User.h"
 
 @interface AppDelegate ()
 
@@ -88,8 +89,9 @@
     if (!deviceToken)
         return;
     
+    NSString *name = [User sharedInstance].lastName ? [User sharedInstance].lastName : @"";
     [[NetworkManagement sharedInstance] addNewAction:[GetUUIDAction action:[[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding]
-                                                                      name:@"test"]
+                                                                      name:name]
                                               method:POST_METHOD];
 }
 
