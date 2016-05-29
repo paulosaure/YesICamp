@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger, WebService)
     WebServiceBookReservation,
     WebServiceSendCardRegistration,
     WebServiceSendCardDetail,
-    WebServiceSendRegistrationData
+    WebServiceSendRegistrationData,
+    WebServiceSendUUID,
 };
 
 @interface HTTPAction : NSObject

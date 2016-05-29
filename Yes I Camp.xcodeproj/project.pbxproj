@@ -64,6 +64,7 @@
 		A8A63DC71C5005C30026E456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8A63DC51C5005C30026E456 /* LaunchScreen.storyboard */; };
 		A8A63DD21C5005C30026E456 /* hotelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DD11C5005C30026E456 /* hotelTests.m */; };
 		A8A63DDD1C5005C30026E456 /* hotelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A63DDC1C5005C30026E456 /* hotelUITests.m */; };
+		A8A8182E1CFB9B4900A02039 /* GetUUIDAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A8182D1CFB9B4900A02039 /* GetUUIDAction.m */; };
 		A8AB35851C7A808C0018C186 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35841C7A808C0018C186 /* Reservation.m */; };
 		A8AB35891C7A82B60018C186 /* ReservationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A8AB35881C7A82B60018C186 /* ReservationCell.m */; };
 		A8AB358B1C7A82FD0018C186 /* ReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AB358A1C7A82FD0018C186 /* ReservationCell.xib */; };
@@ -217,6 +218,8 @@
 		A8A63DD81C5005C30026E456 /* hotelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A63DDC1C5005C30026E456 /* hotelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hotelUITests.m; sourceTree = "<group>"; };
 		A8A63DDE1C5005C30026E456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8A8182C1CFB9B4900A02039 /* GetUUIDAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUUIDAction.h; sourceTree = "<group>"; };
+		A8A8182D1CFB9B4900A02039 /* GetUUIDAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUUIDAction.m; sourceTree = "<group>"; };
 		A8AB35831C7A808C0018C186 /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
 		A8AB35841C7A808C0018C186 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
 		A8AB35871C7A82B60018C186 /* ReservationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationCell.h; sourceTree = "<group>"; };
@@ -618,6 +621,7 @@
 				A8FEC7351C6F9111003B8A2C /* GetOfferDetail */,
 				A88EB3F21C5036EF008DC5CF /* GetOffersList */,
 				A8AB358D1C7CEDE90018C186 /* GetReservation */,
+				A8A818291CFB9B1200A02039 /* GetUUID */,
 				A89FDF511C81FF3E00585355 /* PaymentAction */,
 			);
 			name = Action;
@@ -864,6 +868,15 @@
 				A8A63DDE1C5005C30026E456 /* Info.plist */,
 			);
 			path = hotelUITests;
+			sourceTree = "<group>";
+		};
+		A8A818291CFB9B1200A02039 /* GetUUID */ = {
+			isa = PBXGroup;
+			children = (
+				A8A8182C1CFB9B4900A02039 /* GetUUIDAction.h */,
+				A8A8182D1CFB9B4900A02039 /* GetUUIDAction.m */,
+			);
+			name = GetUUID;
 			sourceTree = "<group>";
 		};
 		A8AB35821C7A804C0018C186 /* Reservation */ = {
@@ -1245,6 +1258,7 @@
 				A82722791C84F8CD0024D0BA /* DeconnectionUserAction.m in Sources */,
 				A870B2791C5CB8670006CAAA /* HotDealCell.m in Sources */,
 				A8A63DBC1C5005C30026E456 /* AppDelegate.m in Sources */,
+				A8A8182E1CFB9B4900A02039 /* GetUUIDAction.m in Sources */,
 				A870B2911C5FFD330006CAAA /* HTTPAction.m in Sources */,
 				A88EB3C91C500E97008DC5CF /* OffersListViewController.m in Sources */,
 				A8F2FF1C1C559A56007DF893 /* ScrollPagesViewController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DeconnectionUserAction.h"
+#import "GetUUIDAction.h"
 
 @interface AppDelegate ()
 
@@ -31,7 +32,7 @@
 {
     NSLog(@"application:didRegisterForRemoteNotificationsWithDeviceToken: %@", deviceToken);
     self.deviceToken = deviceToken;
-    
+
     // Send registration to Neolane
     [[self class] sendRegistrationToServer];
 }
@@ -87,7 +88,9 @@
     if (!deviceToken)
         return;
     
-    // TODO CALL WEBSERVICE TO SEND TOKEN
+    [[NetworkManagement sharedInstance] addNewAction:[GetUUIDAction action:[[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding]
+                                                                      name:@"test"]
+                                              method:POST_METHOD];
 }
 
 - (void)dealloc
