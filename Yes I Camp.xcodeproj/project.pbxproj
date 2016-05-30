@@ -1478,7 +1478,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.camp.YesICamp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4b084823-16a1-4a09-bda3-0f3a256436a1";
+				PROVISIONING_PROFILE = "cb0a357d-7072-4843-99e8-90844377dec0";
 				SWIFT_OBJC_BRIDGING_HEADER = "hotel/hotel-Bridging-Header.h";
 			};
 			name = Release;
