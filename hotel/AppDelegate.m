@@ -89,10 +89,14 @@
     if (!deviceToken)
         return;
     
-    NSString *name = [User sharedInstance].lastName ? [User sharedInstance].lastName : @"";
-    [[NetworkManagement sharedInstance] addNewAction:[GetUUIDAction action:[[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding]
+    NSString *name = [NSString stringWithFormat:@"%@ %@", [UIDevice currentDevice].name, [UIDevice currentDevice].systemVersion];
+    [[NetworkManagement sharedInstance] addNewAction:[GetUUIDAction action:[deviceToken description]
                                                                       name:name]
                                               method:POST_METHOD];
+    
+    // Unscribe
+//    [[NetworkManagement sharedInstance] addNewAction:[GetUUIDAction actionUnscribe:[deviceToken description]]
+//                                              method:POST_METHOD];
 }
 
 - (void)dealloc

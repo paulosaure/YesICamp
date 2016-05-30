@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, WebService)
     WebServiceSendCardDetail,
     WebServiceSendRegistrationData,
     WebServiceSendUUID,
+    WebServiceUnscribeUUID,
 };
 
 @interface HTTPAction : NSObject

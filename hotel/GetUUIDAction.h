@@ -11,5 +11,6 @@
 @interface GetUUIDAction : HTTPAction
 
 + (instancetype)action:(NSString *)token name:(NSString *)name;
++ (instancetype)actionUnscribe:(NSString *)token;
 
 @end
