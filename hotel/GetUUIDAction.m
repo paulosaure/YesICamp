@@ -16,6 +16,7 @@
 #pragma mark - Constructor
 + (instancetype)action:(NSString *)token name:(NSString *)name
 {
+    // platform = 1 for iPhone
     NSString *postParam = [NSString stringWithFormat:@"token=%@&platform=1&name=%@",token, name];
     GetUUIDAction *action = [[GetUUIDAction alloc] initWithUrl:ACTION_URL(SEND_UUID_URL) service:WebServiceSendUUID param:postParam];
     return action;

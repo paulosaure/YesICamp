@@ -35,7 +35,7 @@
 
 "inscription.firstname.placeholder"         = "Firstname *";
 "inscription.lastname.placeholder"          = "Lastname *";
-"inscription.age.placeholder"               = "Age *";
+"inscription.age.placeholder"               = "Age";
 "inscription.email.placeholder"             = "E-mail *";
 "inscription.password.placeholder"          = "Password *";
 "inscription.select_picture.button"         = "Choose a picture";

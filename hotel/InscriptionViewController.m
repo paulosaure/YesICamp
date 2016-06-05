@@ -49,7 +49,7 @@
     UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizer:)];
     [self.view addGestureRecognizer:singleFingerTap];
     
-    self.fields = @[self.firstNameTextView, self.lastNameTextView, self.emailTextView, self.passwordTextView, self.ageTextView];
+    self.fields = @[self.firstNameTextView, self.lastNameTextView, self.emailTextView, self.passwordTextView];
     
     // Configuration
     [self configureUI];
